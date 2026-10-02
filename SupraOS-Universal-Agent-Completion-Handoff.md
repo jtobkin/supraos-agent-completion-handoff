@@ -1,6 +1,6 @@
 # SupraOS Universal Agent Completion Handoff
 
-Updated 2026-10-02T18:41:20.870926+00:00. Work is active; a final pause checkpoint is being prepared. This is a status snapshot, not a live monitor.
+Updated 2026-10-02T19:37:48.736480+00:00. **The session is paused at the owner’s request.** All workers are checkpointed; no owned qualification job remains active. This is a status snapshot, not a live monitor.
 
 ## Goal
 
@@ -14,7 +14,7 @@ The full project is **not shipped or activated**. Acceptance is **5 of 62 tasks 
 
 The frozen application candidate is `1d84264f85d30c30039d31eb436817c17155d4b2`. Its application type check passed on application-equivalent source. Its full Mac unit run finished with 4,517 files passed, 142 failed and 16 skipped; 57,927 tests passed, 177 failed and 674 skipped. Independent triage found 176 environment or derivative failures and one genuine catalog mismatch. The conservative catalog repair passed its focused suite and was integrated; the whole-run result remains RED. Linux qualification and the current production build remain pending. Earlier builds and tests do not qualify newer source.
 
-The separate headless original-result candidate passed its disposable PostgreSQL test after a test transaction fix. Its formal migration verification and conservative rollback rehearsal also passed in disposable PostgreSQL; joined route/transport recovery remains under qualification. The disposable release-routing fixture now passes its six strict checks; the health observer and full release sequence remain under qualification. Disposable tests are not production acceptance.
+The separate headless original-result candidate passed its disposable PostgreSQL test after a test transaction fix. Its formal migration verification and conservative rollback rehearsal also passed in disposable PostgreSQL; joined route/transport recovery remains under qualification. An earlier release-routing fixture passed six disposable Docker checks; its newer HTTP transport passed 14 actual socket checks but still needs a fresh Docker rerun. The full release sequence remains under qualification. Disposable tests are not production acceptance.
 
 Additional checks on the frozen application passed: full application types, lint (zero errors, retained warnings), the pinned secret scan, Electron types, the production-dependency audit (zero reported vulnerabilities), and 427 coordination-harness tests. A 31-command static subset had one workflow error-copy/catalog failure; its isolated repair now passes the full static suite and awaits actual-browser verification. None of these results replaces the remaining Linux, browser, production-build, release or live acceptance gates.
 
@@ -24,7 +24,7 @@ The five credited rows are A2 (workflow run-log helper), A3 (structured result l
 
 ## Tasks and dependency graph
 
-A checked task means its original scoped acceptance was met; some rows are foundational helpers or source surveys. An unchecked package may already contain implemented, tested or independently reviewed code.
+A checked task means its original scoped acceptance was met; some rows are foundational helpers or source surveys. An unchecked package may already contain implemented, tested or independently reviewed code. An `in_progress` task means unfinished scope; it does not imply a worker remains running while the session is paused.
 
 | Package | Task | State | Depends on |
 |---|---|---|---|
@@ -63,7 +63,7 @@ A checked task means its original scoped acceptance was met; some rows are found
 
 ## Immediate work and next steps
 
-1. Keep the application candidate frozen while completing full unit, security, type, production-build and actual browser gates. Preserve failed evidence and qualify repairs on their exact source.
+1. Establish usable qualification capacity, then keep the application candidate frozen while completing full unit, security, type, production-build and actual browser gates. The current Mac native/browser environment and shared-host disk pressure prevented required checks; repeating those unavailable prerequisites is not progress. Preserve failed evidence and qualify repairs on their exact source.
 2. Complete joined original-result recovery through the mounted handler and real PostgreSQL/PostgREST. Direct storage and formal disposable database rehearsal have passed; the joined suppressed-acknowledgement case and applicable browsers remain pending. Preserve one original attempt; do not rerun effects to obtain a result.
 3. Finish release routing and health verification. A running container, a successful HTTP response or a scheduled tick alone cannot prove safe release.
 4. Reconcile installed migrations with the exact phased release profile. Verify the actual migration role, rehearse on a faithful restored copy and never replay installed migrations.
@@ -85,7 +85,7 @@ This public handoff is readable without repository access. The implementation an
 
 Private repository: https://github.com/jtobkin/suprafx-platform
 Canonical working branch: `codex/agent-run-execution-20260928`
-Published checkpoint at this snapshot: `f49386c69eaeaece87f731ba1f378eb293035a4e` (a documentation/evidence checkpoint; verify the full remote SHA again when resuming).
+Published checkpoint at this snapshot: `d7cc12da42a3d50bb859c377da52002c4e0424e2` (a documentation/evidence checkpoint; verify the full remote SHA again when resuming).
 
 On a fresh computer with authorized access:
 
@@ -111,6 +111,8 @@ Read in order:
 6. `docs/agent-run/evidence/research-release-order-20261002/README.md` — schema-before-application release ordering.
 7. Referenced exact-source evidence and separate lane handoffs before composing branches.
 
+The repository pins Node **22.23.2** in `.nvmrc` and uses npm with `package-lock.json`. After reading repository instructions, use the current CI workflow's clean-install and generator sequence; the private handoff includes the exact commands. Browser qualification needs Chromium and its OS dependencies; native database qualification needs PostgreSQL 17 and PostgREST 14.18 with disposable test databases. A fresh machine will not inherit authenticated host access or securely configured provider/database secrets. The older setup shell script is not a substitute for current qualification instructions.
+
 ## Preserved parallel lanes
 
 These branches are pushed to the private repository. They are separate from the canonical branch unless the engineering handoff explicitly records composition. Some dependency commits overlap; inspect ancestry instead of merging every branch blindly.
@@ -125,6 +127,8 @@ These branches are pushed to the private repository. They are separate from the 
 | `agent-run-main-refresh-20261003` | `d871bcbd9f8543c1fbdafee48f5de3207cb19833` | Latest observed main reconciled in isolation; affected types and scoped tests passed, browser pending. |
 | `l12-backend-observer-20261002` | `5e45fe48da8db2dd778d7de70cccfa82e54f002e` | 14 actual socket checks passed; latest Docker rerun pending. |
 | `l12-web-candidate-observation-20261003` | `3dcba59ebfd58e9fde18c7cb333082cf565605ce` | 11 local checks passed; joined host and operator integration pending. |
+
+The queued joined headless test calls the mounted handler with real database transport but mocked authentication/model responses and a deliberately suppressed committed acknowledgement. It is not a real deployed client-disconnect or provider-readiness test. Those broader acceptance requirements remain separate.
 
 After a single-branch clone, fetch a lane explicitly before inspecting it. Example:
 
@@ -158,7 +162,7 @@ Production data, secrets, private backups and host-local test archives are not c
 
 All in-scope behavior is merged, deployed, activated where appropriate and independently verified live across its applicable paths. All 16 baseline behaviors pass. Preferences persist with history and next-turn readback; permissions remain separate; outcomes and recovery are truthful; each capability has real readiness evidence; backup restoration, monitoring and recovery work. No required implementation, release or acceptance dependency remains open.
 
-At the requested pause, the private handoff and this public snapshot will be updated with final source pins, completed work, unresolved failures and the next safe execution order.
+The requested pause is in effect. The final host queue did not run its pending native/browser checks because available disk stayed below the admission floor. Sources, failures, evidence and unmerged worktrees are preserved. Resume from the documented gates; do not treat paused tasks or staged tests as completed.
 
 ## Original task checklist
 
