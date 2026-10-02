@@ -1,6 +1,6 @@
 # SupraOS Universal Agent Completion Handoff
 
-Updated 2026-10-02T18:12:39Z. Work is active; a final pause checkpoint is being prepared. This is a status snapshot, not a live monitor.
+Updated 2026-10-02T18:41:20.870926+00:00. Work is active; a final pause checkpoint is being prepared. This is a status snapshot, not a live monitor.
 
 ## Goal
 
@@ -20,9 +20,11 @@ Additional checks on the frozen application passed: full application types, lint
 
 Code already covers substantial shared workflow context, preference/history persistence, onboarding, original-run recovery and release safeguards. The next milestone is a qualified integrated release, not another isolated feature count. Missing provider readiness, safe database writer exclusion and faithful restore still prevent an honest shipped-and-working claim.
 
+The five credited rows are A2 (workflow run-log helper), A3 (structured result labels), A4 (image validation), O0 (scope/contract grounding) and M0 (memory/latency trace). Their original acceptance is scoped to foundations or evidence; they are not five newly deployed universal capabilities. The deliberately dropped task is B2, the standalone Thinking step; iMessage is separately deferred. The 8.1% figure must not be presented as a production-readiness percentage.
+
 ## Tasks and dependency graph
 
-A checked task means accepted end to end. An unchecked package may already contain implemented, tested or independently reviewed code.
+A checked task means its original scoped acceptance was met; some rows are foundational helpers or source surveys. An unchecked package may already contain implemented, tested or independently reviewed code.
 
 | Package | Task | State | Depends on |
 |---|---|---|---|
@@ -62,7 +64,7 @@ A checked task means accepted end to end. An unchecked package may already conta
 ## Immediate work and next steps
 
 1. Keep the application candidate frozen while completing full unit, security, type, production-build and actual browser gates. Preserve failed evidence and qualify repairs on their exact source.
-2. Finish original-result recovery and its formal database checks. Preserve one original attempt through disconnects and ambiguous acknowledgements; do not rerun effects to obtain a result.
+2. Complete joined original-result recovery through the mounted handler and real PostgreSQL/PostgREST. Direct storage and formal disposable database rehearsal have passed; the joined suppressed-acknowledgement case and applicable browsers remain pending. Preserve one original attempt; do not rerun effects to obtain a result.
 3. Finish release routing and health verification. A running container, a successful HTTP response or a scheduled tick alone cannot prove safe release.
 4. Reconcile installed migrations with the exact phased release profile. Verify the actual migration role, rehearse on a faithful restored copy and never replay installed migrations.
 5. Qualify backup restoration and continuous exclusion of other database writers through the migration window. Automatic migration authorization is recorded; it does not substitute for these technical checks.
@@ -83,7 +85,7 @@ This public handoff is readable without repository access. The implementation an
 
 Private repository: https://github.com/jtobkin/suprafx-platform
 Canonical working branch: `codex/agent-run-execution-20260928`
-Published checkpoint at this snapshot: `ace9619f54` (a documentation/evidence checkpoint; verify the full remote SHA again when resuming).
+Published checkpoint at this snapshot: `f49386c69eaeaece87f731ba1f378eb293035a4e` (a documentation/evidence checkpoint; verify the full remote SHA again when resuming).
 
 On a fresh computer with authorized access:
 
@@ -108,6 +110,31 @@ Read in order:
 5. `docs/agent-run/BASELINE-BEHAVIORS.md` and `docs/agent-run/evidence/BASELINE-16-RELEASE-ACCEPTANCE.md` — original behavior acceptance.
 6. `docs/agent-run/evidence/research-release-order-20261002/README.md` — schema-before-application release ordering.
 7. Referenced exact-source evidence and separate lane handoffs before composing branches.
+
+## Preserved parallel lanes
+
+These branches are pushed to the private repository. They are separate from the canonical branch unless the engineering handoff explicitly records composition. Some dependency commits overlap; inspect ancestry instead of merging every branch blindly.
+
+| Branch (under `codex/`) | Exact checkpoint | Completed proof and remaining gate |
+|---|---|---|
+| `headless-result-20261002` | `80abed3e59a70e6e90468268f5ea14d3bf4c5e64` | Direct PostgreSQL result storage passed; SQL uninstalled. |
+| `headless-formal-20261003` | `d3c568f59ef35fab815b46379963eedc5633b07c` | Formal disposable PostgreSQL verification passed; SQL uninstalled. |
+| `headless-joined-postgrest-20261003` | `e28233c0130b61041dd0af6d986b4a4408751872` | Source reviewed; joined real-transport test awaits host capacity. |
+| `headless-integrated-provisional-20261003` | `50d41b1c792fc019906d4462b792ad3469122912` | 64 focused tests and affected types passed; native and two browser cases remain unrun. |
+| `workflow-config-plain-language-20261003` | `d0446150718c231faba318ed3ad9f88f11266805` | Static tests and types passed; actual component browser gate pending. |
+| `agent-run-main-refresh-20261003` | `d871bcbd9f8543c1fbdafee48f5de3207cb19833` | Latest observed main reconciled in isolation; affected types and scoped tests passed, browser pending. |
+| `l12-backend-observer-20261002` | `5e45fe48da8db2dd778d7de70cccfa82e54f002e` | 14 actual socket checks passed; latest Docker rerun pending. |
+| `l12-web-candidate-observation-20261003` | `3dcba59ebfd58e9fde18c7cb333082cf565605ce` | 11 local checks passed; joined host and operator integration pending. |
+
+After a single-branch clone, fetch a lane explicitly before inspecting it. Example:
+
+```sh
+git fetch origin refs/heads/codex/headless-integrated-provisional-20261003:refs/remotes/origin/codex/headless-integrated-provisional-20261003
+git worktree add --detach ../supraos-headless-review origin/codex/headless-integrated-provisional-20261003
+git -C ../supraos-headless-review rev-parse HEAD
+```
+
+Compare the result with the pin above and read its lane evidence. A passing local fixture does not authorize installation or establish live readiness.
 
 ## Code and data map
 
@@ -135,7 +162,7 @@ At the requested pause, the private handoff and this public snapshot will be upd
 
 ## Original task checklist
 
-This is the original62-task acceptance ledger. The32 packages above organize execution dependencies; they are not a second completion percentage. Blocked or pending rows may contain substantial implementation. Only done rows are accepted.
+This is the original 62-task acceptance ledger. The 32 packages above organize execution dependencies; they are not a second completion percentage. Blocked or pending rows may contain substantial implementation. Only done rows are accepted.
 
 | ID | Original task | Acceptance state |
 |---|---|---|
