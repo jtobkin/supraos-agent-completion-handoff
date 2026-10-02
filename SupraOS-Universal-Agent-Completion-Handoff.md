@@ -128,3 +128,72 @@ Production data, secrets, private backups and host-local test archives are not c
 All in-scope behavior is merged, deployed, activated where appropriate and independently verified live across its applicable paths. All 16 baseline behaviors pass. Preferences persist with history and next-turn readback; permissions remain separate; outcomes and recovery are truthful; each capability has real readiness evidence; backup restoration, monitoring and recovery work. No required implementation, release or acceptance dependency remains open.
 
 At the requested pause, the private handoff and this public snapshot will be updated with final source pins, completed work, unresolved failures and the next safe execution order.
+
+## Original task checklist
+
+This is the original62-task acceptance ledger. The32 packages above organize execution dependencies; they are not a second completion percentage. Blocked or pending rows may contain substantial implementation. Only done rows are accepted.
+
+| ID | Original task | Acceptance state |
+|---|---|---|
+| A1 | Shelf | blocked |
+| A2 | Use the workflow run log | done |
+| A3 | Result labels | done |
+| A4 | Picture check | done |
+| W1 | The spine is a System Workflow | blocked |
+| B1 | Run loads the shelf | blocked |
+| B2 | Thinking step | dropped |
+| B3 | Shared behavior text | blocked |
+| R1 | Tools, skills, and lessons on the picture | blocked |
+| B4 | A real screenshot is kept | blocked |
+| C1 | Learn a preference | blocked |
+| C2 | Claim gate | blocked |
+| C3 | Picture reaches Telegram | blocked |
+| C4 | Computer and handoff | blocked |
+| D1 | Pay tap | blocked |
+| D2 | Loose ends | blocked |
+| D3 | Busy or open day | blocked |
+| D4 | Private computer page | blocked |
+| E1 | Email follow-up | blocked |
+| E2 | Shop call | blocked |
+| E3 | Agent mailbox | blocked |
+| E4 | Friend agents | blocked |
+| F1 | Location | blocked |
+| F2 | Quiet morning | blocked |
+| F3 | Marks in the chat | blocked |
+| F4 | Screenshot proven in the recipe | blocked |
+| G1 | One run, both surfaces | blocked |
+| D0 | Retained spend presentation hook (discovered prerequisite) | blocked |
+| W0 | Canonical System graph and guarded compiler | blocked |
+| W2 | Buffered structured response before presentation | blocked |
+| Q1 | Repository guards and migration verification companions | in_progress |
+| Q2 | Reconcile current main and audit affected runtime boundaries | in_progress |
+| O0 | Ground follow-up scope and preference/memory contracts | done |
+| M0 | Trace SCM and working-memory latency | done |
+| O1 | Make onboarding owner-scoped and durably resumable | in_progress |
+| A5 | Preserve trusted runtime qualification and activation | blocked |
+| P1 | Unify preference updates and explicit scope precedence | blocked |
+| M1 | Wire topic skills and bounded memory orchestration | blocked |
+| O2 | Enforce main-admin setup rollout with existing authorization | blocked |
+| A6 | Per-owner capability readiness and verified activation | blocked |
+| O3 | Connect onboarding to real capability setup | blocked |
+| G2 | Guide can resume setup and update preferences | blocked |
+| G3 | Preference-aware proactive Guide follow-up | blocked |
+| S1 | Qualify supported chat and signal entry points | blocked |
+| X1 | Qualify real spending provider separately from simulation | blocked |
+| X2 | Provision and verify actual mailbox capability | blocked |
+| X3 | Verify phone and other enabled integrations | blocked |
+| M2 | Measure memory UX and recall correctness | blocked |
+| Q3 | Integrate follow-up lanes and audit all changed contracts | blocked |
+| L0 | Deploy audited disabled candidate for provider qualification | blocked |
+| L1 | Prepare final qualified activation and recovery release | blocked |
+| L2 | Activate qualified candidate and verify live configuration | blocked |
+| L3 | Prove live user journeys and recoverability | blocked |
+| L4 | Close shipped-and-working goal | blocked |
+| H1 | Prove append-only hash-chain coverage and latest-state linkage | blocked |
+| B5 | Implement and prove all 16 original baseline behaviors | blocked |
+| LP1 | Integrate official Link SDK and bounded provider contract | blocked |
+| LP2 | Connect each consumer Link wallet securely | blocked |
+| LP3 | Execute approved purchases with private credentials | blocked |
+| LP4 | Use native purchase grant cards and messaging links | blocked |
+| LP5 | Qualify Link end-to-end and consumer onboarding | blocked |
+| IM1 | Qualify iMessage after Telegram and chatbox release | blocked |
