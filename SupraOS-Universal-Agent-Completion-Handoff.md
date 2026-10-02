@@ -1,6 +1,6 @@
 # SupraOS Universal Agent Completion Handoff
 
-Updated 2026-10-02T17:44:00Z. Work is active; a final pause checkpoint is being prepared. This is a status snapshot, not a live monitor.
+Updated 2026-10-02T18:12:39Z. Work is active; a final pause checkpoint is being prepared. This is a status snapshot, not a live monitor.
 
 ## Goal
 
@@ -12,9 +12,13 @@ Orchestration must load current scoped preferences and relevant memory, skills a
 
 The full project is **not shipped or activated**. Acceptance is **5 of 62 tasks (8.1%)**, with **56 pending (90.3%)** and **1 deliberately dropped (1.6%)**. These measure accepted outcomes, not code written, effort spent or time remaining. Several earlier narrow repairs shipped separately; they do not establish completion of this project.
 
-The frozen application candidate is `1d84264f85d30c30039d31eb436817c17155d4b2`. Its application type check passed on application-equivalent source. Its full Mac unit run finished with 4,517 files passed, 142 failed and 16 skipped; 57,927 tests passed, 177 failed and 674 skipped. Failures are under classification, including browser launch and database environment limitations; this is not a passing gate. Linux qualification and the current production build remain pending. Earlier builds and tests do not qualify newer source.
+The frozen application candidate is `1d84264f85d30c30039d31eb436817c17155d4b2`. Its application type check passed on application-equivalent source. Its full Mac unit run finished with 4,517 files passed, 142 failed and 16 skipped; 57,927 tests passed, 177 failed and 674 skipped. Independent triage found 176 environment or derivative failures and one genuine catalog mismatch. The conservative catalog repair passed its focused suite and was integrated; the whole-run result remains RED. Linux qualification and the current production build remain pending. Earlier builds and tests do not qualify newer source.
 
-The separate headless original-result candidate passed its disposable PostgreSQL test after a test transaction fix. Its formal migration verification and conservative rollback rehearsal remain pending. The disposable release-routing fixture now passes its six strict checks; the health observer and full release sequence remain under qualification. Disposable tests are not production acceptance.
+The separate headless original-result candidate passed its disposable PostgreSQL test after a test transaction fix. Its formal migration verification and conservative rollback rehearsal also passed in disposable PostgreSQL; joined route/transport recovery remains under qualification. The disposable release-routing fixture now passes its six strict checks; the health observer and full release sequence remain under qualification. Disposable tests are not production acceptance.
+
+Additional checks on the frozen application passed: full application types, lint (zero errors, retained warnings), the pinned secret scan, Electron types, the production-dependency audit (zero reported vulnerabilities), and 427 coordination-harness tests. A 31-command static subset had one workflow error-copy/catalog failure; its isolated repair now passes the full static suite and awaits actual-browser verification. None of these results replaces the remaining Linux, browser, production-build, release or live acceptance gates.
+
+Code already covers substantial shared workflow context, preference/history persistence, onboarding, original-run recovery and release safeguards. The next milestone is a qualified integrated release, not another isolated feature count. Missing provider readiness, safe database writer exclusion and faithful restore still prevent an honest shipped-and-working claim.
 
 ## Tasks and dependency graph
 
@@ -79,7 +83,7 @@ This public handoff is readable without repository access. The implementation an
 
 Private repository: https://github.com/jtobkin/suprafx-platform
 Canonical working branch: `codex/agent-run-execution-20260928`
-Published checkpoint at this snapshot: `80da0a2d9f4e1959bf44ab4e5353e0d7402afda8` (verify the remote again when resuming).
+Published checkpoint at this snapshot: `ace9619f54` (a documentation/evidence checkpoint; verify the full remote SHA again when resuming).
 
 On a fresh computer with authorized access:
 
