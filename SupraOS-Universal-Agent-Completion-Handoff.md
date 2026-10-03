@@ -1,6 +1,6 @@
 # SupraOS Universal Agent Completion Handoff
 
-## Current plan — active execution, 2026-10-03 15:04 UTC
+## Current plan — active execution, 2026-10-03 15:23 UTC
 
 The owner resumed an eight-hour execution run at13:04UTC. Goals, all62 tasks and all16 baseline behaviors are unchanged. The independently reviewed [Faster Verified SupraOS Delivery plan](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) governs parallel lanes and final acceptance.
 
@@ -10,19 +10,21 @@ The owner resumed an eight-hour execution run at13:04UTC. Goals, all62 tasks and
 |---|---|---|
 | Prevent unsafe replay when reopening | Built, integrated, actual release-command/database tests17/17 and independent review passed | Production authority and qualified installation; root and implementation Sol |
 | Preserve original workflow pause identity | Built, integrated,98 scoped checks and8/8 database/transport tests, reviewed | Complete successor gates and live verification; root and review Sol |
-| Reliable qualification capacity | Scheduler security gates passed; build active. Reviewed successor waits for that run to finish; host rollout held | Coordinated host transition and frozen successor unit/build checks; root and host Sol |
+| Reliable qualification capacity | Old candidate gates/build passed; reviewed successor now has its own gates/build running. Host rollout held | Coordinated host transition and frozen successor unit/build checks; root and host Sol |
 | Backup capacity | Exact expansion/snapshot plan reviewed; approval requested | Approved effect, exact readback and fresh backup plan; host Sol |
 | Release authority and complete Coordinator | Partially integrated; writer/ingress authority and old-generation uncertainty open | Read-only authority inventory and qualified real caller; implementation Sol and root |
-| Faithful restore, schema, deployment and activation | Prior schema capture exposed a role-contract mismatch; reviewed consumer fix integrated and repaired read-only capture active | Faithful data restore, phased installation and exact candidate release |
+| Faithful restore, schema, deployment and activation | Prior schema capture exposed a role-contract mismatch; consumer fix integrated, repaired read-only capture and staged inputs verified; rehearsal pending | Faithful data restore, phased installation and exact candidate release |
 | All supported journeys and recovery | Pending final live acceptance | Independent chatbox, Telegram, background and System Workflow verification |
 
 The successor changes only demonstrated replay and workflow composition blockers over the previous candidate. The old full-unit run aborted on shared disk capacity; it remains an infrastructure abort. Full successor units/build have not passed. The frozen successor full-unit suite is now running. The heavy schema rehearsal waits for that suite because both share disk with managed CI; code integration, read-only capture and review continue in parallel. Schema-only capture and disposable tests do not establish faithful production restore or live acceptance.
 
-**New integration blocker made explicit:** merging the frozen candidate with current main exposed conflicts in 36 files. Their text is now resolved in an isolated working copy; combined types, actual database paths, independent review and browser checks remain open. Initial coordinator and held-delegation checks pass, but this is not a merge or release verdict. Old coordinator episodes are preserved, and uncertain delegation ends the turn without another specialist dispatch. The current frozen test run continues unchanged; its result does not automatically qualify this later composition.
+**Combined source is now frozen separately as `648c309d40`.** The 36 merge conflicts are resolved; original coordinator episodes remain held and uncertain delegation ends the turn without replay. Shared Telegram replies recheck owner binding before the first send and each retry. Focused Telegram checks71/71, terminal caller checks57/57 and role-consumer checks9/9 pass; independent scoped source review is complete. Combined types are running with adequate compiler heap after the earlier memory exhaustion; actual native, browser, full tests and build remain required. The older frozen full-unit run continues unchanged and cannot qualify these later bytes.
+
+The real release Coordinator remains blocked by missing all-origin ingress and continuous writer/no-reclaim authority. Review rejected adding another partial cutoff adapter that could only pass injected tests. Socket quiescence does not prove background tasks finished, and stopped processes do not prove business outcomes. The strict release refusal stays in place while actual prerequisites are resolved.
 
 Accepted tasks remain **5/62 (8.1%)**, **56 pending (90.3%)**, **1 dropped (1.6%)**. These are accepted-task counts, not code completion or effort. Full Agent Run remains **unshipped and inactive**. Deployment, activation, all-path live verification and tested recovery remain mandatory.
 
-The unchanged dashboard renderer retains its desktop/mobile/offline Chromium proof; only status data/prose changed. Private engineering checkpoint: `0dcd780e82`. Role-consumer repair: `5bcf11775d`. Frozen successor: `a3dd5f00c4`. The run remains active toward its21:04UTC checkpoint.
+The unchanged dashboard renderer retains its desktop/mobile/offline Chromium proof; only status data/prose changed. Combined source: `648c309d40` on the isolated main-composition branch. Role-consumer repair: `5bcf11775d`. Earlier frozen full-unit source: `a3dd5f00c4`. The run remains active toward its21:04UTC checkpoint.
 
 ## Historical checkpoints — superseded by the current plan above
 
