@@ -1,5 +1,18 @@
 # SupraOS Universal Agent Completion Handoff
 
+## Latest qualification update — 2026-10-03 17:54 UTC
+
+The frozen candidate **a9f9bdb50e** passes all **382 tests across the nine repaired files**, including real Chromium checks. Independent reviewers inspected desktop/mobile screenshots: uncertain work retains its original run and does not falsely show completion or invite duplicate delegation. Fourteen selected stream cases pass. This is scoped verification, not a full release pass.
+
+The first full-run attempt stopped on a screenshot-copy error before the complete suite began. That failure is preserved. The runner-only repair passed an actual Linux cross-filesystem test; the fresh run has now passed the repair phase again and started the complete suite. **Full-unit terminal results, production build, native/database and remaining browser gates are pending.**
+
+Seven already-archived non-Git exports were removed once after complete correspondence checks and independent terminal review. Git worktrees and shared dependencies remain preserved. The merged CI scheduler fix is now installed on the QA host and independently verified: exactly three files changed, the new process has a successful refresh, normal restart behavior is restored and the prior runtime is backed up. Two earlier safe refusals remain documented. No other CI job was cancelled. This closes a release prerequisite, not application deployment or reserved test capacity.
+
+Next delivery steps: finish the immutable whole-suite run; complete native11 and remaining integration/browser coverage; qualify the clean production build and17-packet schema; close actual release Coordinator, application-drain and writer/ingress authority gaps; qualify faithful restore; deploy, activate and independently verify all supported agent journeys with recovery. Production capacity approval remains pending.
+
+**Accepted tasks remain5/62 (8.1%),56 pending (90.3%),1 dropped (1.6%).** These are acceptance counts, not code completion or remaining effort. Full Agent Run remains unshipped and inactive. No production migration, deployment or activation occurred. Root and three Sol workers continue toward21:04UTC. Earlier checkpoints below are historical.
+
+
 ## Latest qualification update — 2026-10-03 17:19 UTC
 
 The frozen successor `a9f9bdb50e` contains independently reviewed repairs for all26 failures in the prior full run (59,436 passed,26 failed,231 skipped). Its exact source and browser/native test inputs are staged and independently verified. Scoped Money20, Telegram46, catalog39 and workflow13 non-browser cases pass. **The successor's full suite, build and Linux browser/native checks have not passed yet.**
