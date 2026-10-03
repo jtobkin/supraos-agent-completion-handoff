@@ -1,5 +1,9 @@
 # SupraOS Universal Agent Completion Handoff
 
+## Latest qualification update — 2026-10-03 16:22 UTC
+
+The offline schema-rehearsal dependency repair is now integrated and independently checked:41 scoped checks pass, and its pinned dependency copy is staged and verified. This closes preparation work; the17-packet schema rehearsal has not run. The frozen combined full unit suite continues, with intermediate Telegram and writer-catalog failures being diagnosed without cancelling it. Exact browser fixtures are saved on a separate evidence branch; browser/native execution still awaits resource admission. No new production deployment, migration, activation or accepted-task promotion occurred. Accepted tasks remain5/62 (8.1%),56 pending,1 dropped; these are not code-completion percentages.
+
 ## Current plan — active execution, 2026-10-03 16:10 UTC
 
 The owner resumed an eight-hour execution run at13:04UTC. Goals, all62 tasks and all16 baseline behaviors are unchanged. The independently reviewed [Faster Verified SupraOS Delivery plan](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) governs parallel lanes and final acceptance.
