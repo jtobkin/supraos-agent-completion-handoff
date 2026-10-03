@@ -1,6 +1,6 @@
 # SupraOS Universal Agent Completion Handoff
 
-## Current delivery checkpoint — 2026-10-03 09:48 UTC
+## Current delivery checkpoint — 2026-10-03 10:23 UTC
 
 The full project remains **unshipped and inactive**. **5/62 tasks are accepted (8.1%);56 remain pending (90.3%);1 is deliberately dropped (1.6%)**. These are accepted-task counts, not a code-completion or production-readiness estimate.
 
@@ -9,6 +9,8 @@ Frozen application/operator candidate **61fd43e427e321d31d63c9d67ba83d53275c2d5f
 Scoped delivery dependencies did close: joined real journal/filesystem owner-state checks pass3/3; disposable actual-role PostgreSQL090 reader checks pass6/6 with zero skips. Separate operator successor **701539dce43f2c317f45a0fbdf8a096007390229** wires cron retain/launch through the existing Coordinator aggregate and passes four independently repeated orderly-exit/SIGKILL recovery cases across distinct processes. Those use an injected durable effect log, not real Docker or a power-loss test. The operator and frozen application are now integrated into the canonical working branch at55eab412392a35ba6c0086cc9f8d68099c962941. Root and independent Sol verified the exact merge tree and unchanged frozen application/SQL/install/deploy bytes. The two canonical backup differences match previously reviewed source, with26 postcomposition tests passing. This is not a main merge, deployment or full qualification.
 
 The current immediate blocker is reliable shared CI capacity. Separate scheduler repair **f7b4ea0e2e52deb392b198b69662fdc070b2955e** adds conservative disk admission in the actual scheduler; focused checks and independent source review pass. It is not installed. The actual service permissions passed a read-only host probe. The narrow fresh-main successor is draft PR #6150 at78cf4843712ac79c0b8bfb3262b8765328907ee2, with93 focused tests and independent source review. A safe rollout that preserves running jobs and verified archival of inactive generated files are being prepared. The guard is not a quota or a reservation against unmanaged jobs. Do not lower floors or rerun solely because free space briefly rises.
+
+A generated-build-artifact archive now passes all214,163 member byte/metadata checks, with independent compressed-hash and complete-stream verification. A truncated earlier attempt is retained as failed. No host files have been removed at this checkpoint; fresh consumer checks and exact-path removal review remain required. This is artifact preservation, not production database recovery qualification. A disposable Linux test also verifies the scheduler request/state event witness (1/1, zero skips); the actual scheduler remains unchanged and its rollout executor still refuses effects pending full installation/recovery safeguards and an idle boundary.
 
 The full effectful Coordinator caller still needs complete backup/schema, health and final-writer providers. Continuous writer and all-origin ingress authority, faithful restore, phased migrations, inactive deployment, activation and live verification remain required. Production090 was absent at the08:22 readback. Public live version at09:25UTC was **e948dcdb5bd29bb22cacd0428afd04aacc70052f**, not our candidate. Approved backup attempt6d79 is consumed/refused; its lock is released and approval must not be replayed. A fresh attempt still lacks the required capacity and will need a specific approval of its concrete plan.
 
@@ -144,7 +146,7 @@ This public handoff is readable without repository access. The implementation an
 
 Private repository: https://github.com/jtobkin/suprafx-platform
 Canonical working branch: `codex/agent-run-execution-20260928`
-Published private checkpoint at this snapshot: `0197b17521` (documentation/evidence; verify the full remote SHA when resuming). The coherent application/operator candidate is separately frozen at `61fd43e427e321d31d63c9d67ba83d53275c2d5f` on `codex/agent-run-qualified-blockers-20261003`; it is not yet a qualified release. Later operator701539dce43f2c317f45a0fbdf8a096007390229 lives on `codex/agent-run-later-operator-successor-20261003`. The canonical branch now contains the frozen application and later operator work, but its tip is not the immutable qualification candidate; fetch the named candidate explicitly before qualification.
+Published private checkpoint at this snapshot: `bcc0f3be00` (documentation/evidence; verify the full remote SHA when resuming). The coherent application/operator candidate is separately frozen at `61fd43e427e321d31d63c9d67ba83d53275c2d5f` on `codex/agent-run-qualified-blockers-20261003`; it is not yet a qualified release. Later operator701539dce43f2c317f45a0fbdf8a096007390229 lives on `codex/agent-run-later-operator-successor-20261003`. The canonical branch now contains the frozen application and later operator work, but its tip is not the immutable qualification candidate; fetch the named candidate explicitly before qualification.
 
 On a fresh computer with authorized access:
 
