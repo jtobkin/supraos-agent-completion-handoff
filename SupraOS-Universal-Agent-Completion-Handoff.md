@@ -1,5 +1,15 @@
 # SupraOS Universal Agent Completion Handoff
 
+## Current delivery checkpoint — 2026-10-03 05:16 UTC
+
+Execution continues with three Sol workers and a coordinator. Reconciliation candidate **50066f36e5** now combines the project with observed main, is frozen on an isolated GitHub branch, and has passed independent source review. Review found and fixed two real defects: a saved reply could falsely finish without its submission outcome receipt, and late text could reappear after a discarded unsaved preview. The changed unit suites passed482 tests; the separate route/client suite passed280 with19 macOS Chromium-launch failures still requiring Linux verification. These are scoped results, not a new complete release qualification. Fresh dependency-lock installation and real mobile/desktop browser tests are being prepared.
+
+Supervisor cutoff source **12f5d83a** and disposable native fixture **bed8a609** are independently reviewed; actual process-tree proof is held by the build host's disk-space floor. Forward supervisor replacement and rollback are being integrated in the same delivery path.
+
+The owner-approved backup attempt **6d79** was consumed and refused by its under-lock database-activity guard before any snapshot helper, archive or restore. The lock is released; it must not be replayed. A subsequent production generation change also invalidated its pins. The next step is better bounded refusal evidence and a fresh qualified plan, rather than weakening the guard or claiming restore success.
+
+**Accepted tasks remain5/62 (8.1%), pending56/62 (90.3%), dropped1/62 (1.6%).** No new full-project deployment, activation or live acceptance is claimed. Finish candidate/browser qualification, supervisor forward/recovery, continuous writer exclusion, faithful restore and phased inactive release; then complete provider and baseline acceptance, activate and verify all supported journeys live. Older running/paused statements below are historical and superseded by this checkpoint.
+
 ## Execution resumed — 2026-10-03
 
 Owner resumed execution. Three existing Sol lanes are finishing one release path: Coordinator integration, release prerequisites, and independent verification. The frozen ae2f application has passed its full unit suite and production build. Current production reports main47b4826c4a; project PR5862 remains draft/conflicted. No new project deployment or acceptance is claimed.
