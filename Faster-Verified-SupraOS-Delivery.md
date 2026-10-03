@@ -1,0 +1,60 @@
+# Faster Verified SupraOS Delivery
+
+## Authority and scope
+
+Owner requested this execution correction after the progress sanity check on 2026-10-03. The goals, all 62 original tasks, all 16 baseline behaviors, permission boundaries, recovery requirements and final live acceptance are unchanged. This is the authoritative execution procedure on resume. Implementation, merges, host effects and deployment remain paused during this planning-only update. Updating this plan neither grants a new shared-lock window nor resumes a consumed attempt.
+
+Accepted-task counts remain 5/62 (8.1%), 56 pending (90.3%), one dropped (1.6%). There is no defensible code-completion percentage. The full application is unshipped and inactive. This document changes how existing work is delivered, not the definition of finished.
+
+## Sanity check: what will actually help
+
+| Proposal | Decision and correction | Evidence / expected benefit |
+|---|---|---|
+| Stabilize the check host | Adopt a narrowly scoped, coordinated source and resource window. Root must identify the host change owner and record the exact source, permitted changes, resource admission and expiry. Do not freeze both sites or all development by default. Until coordination is confirmed, call it unreserved. | Installed scheduler changed from 169e to 359c to f2e5 while qualification was underway. Stable relevant inputs avoid repeated composition. A fresh disk reading is not a reservation. |
+| Finish the scheduler fix | Finish the existing reviewed fix; cap the workstream at its safe installation, readback and resource behavior. It serves V01 qualification and is not a new general CI platform project. | Code6f9895, PR6153, has independent review and145 focused passes. Operational PR6154/a54e remains held. Cleanup and one-use condition proof are complete; do not recreate them. |
+| Resolve release blockers alongside tests | Make this mandatory. Do not place L10/L11/L12 behind the full build or fill every lane with CI fixes. Root owns the release decision and access escalation even while the host lane works. | Old web cannot produce the strict task census. Database writer-exclusion authority and faithful restore remain open; finishing CI alone cannot release the feature. |
+| Review larger transitions | Review one coherent, bounded transition and its failure/recovery behavior. Use a small primitive test only to settle a specific unresolved assumption, then integrate it immediately into that transition. | Several individually passing toys still do not qualify a real scheduler change or full Coordinator release. |
+| Reuse evidence | Reuse exact unchanged source/dependency/environment evidence with explicit scope. Rerun affected checks after a change, and retain required final candidate gates. Never describe a historical build as qualifying a newer source. | Repeating complete browser runs for status prose and redoing already proven primitives consumes the same scarce host needed for application qualification. |
+| Update reporting continuously | Record concise dependency/decision changes when they occur; publish one current checkpoint per completed transition, material blocker or pause. Preserve detailed receipts by link. | Repeated long chronological handoffs add work and obscure the current next action. Documentation must remain accurate without becoming a fourth engineering lane. |
+
+## Parallel ownership and work limits
+
+Root remains the integrator and release decision owner. At most three Sol workers are active: implementation/caller integration; host/release prerequisites; independent review and end-to-end verification. No worker may edit another lane's files. Use fewer workers for small planning-only changes.
+
+Keep two active delivery fronts: (A) unblock and finish exact application qualification; (B) close actual release authority and Coordinator integration. The reviewer follows both without blocking unrelated work. Each worker owns at most one implementation packet at a time. No new workstream, helper, cleanup or rewrite unless it names the blocked delivery node, actual production caller, integration owner, owned files and a true/false acceptance check. Scoped isolated worktrees for existing assignments are allowed to preserve single-file ownership. Integrate existing preserved work before opening unrelated work.
+
+During scheduler repair, root actively owns the release-front decision and access work. Once that transition closes, the implementation worker moves to the named Coordinator caller; the host worker runs the frozen application gates and prepares restore qualification. Long-running checks do not prevent independent implementation or review.
+
+## Concrete resume checklist and dependency order
+
+These are execution slices of the existing DAG, not extra accepted tasks. A checked prerequisite does not mark its parent capability complete.
+
+| Slice / existing nodes | Owner | Required inputs | Next action and proof of completion |
+|---|---|---|---|
+| A1 — stable qualification capacity (V01 prerequisite) | Root + host worker; independent reviewer | Current installed f2e5 inventory; code6f9895/PR6153; operational a54e/PR6154; preserved cleanup and condition receipts | Finish package review, include unchanged scope.mjs dependency, qualify the combined transition and queued-request preservation, obtain a coordinated idle/drain boundary, then perform only an admitted installation. Close with exact installed-source readback, queue/running-job continuity and observed resource admission. No real scheduler install has happened. |
+| A2 — frozen application qualification (V01) | Host worker; independent reviewer | A1 or another explicitly qualified, isolated resource path meeting unchanged floors | Complete exact61fd Linux units and production build, retain terminal results and review. Use existing native/browser receipts only within their recorded source scope. A resource or infrastructure abort is not a product verdict. Do not start another full run on a transient free-space reading alone. |
+| B1 — decide and prove the release boundary (L10/L12) | Root + implementation worker; independent reviewer | Existing strict Coordinator contract, actual deployed capabilities and conservative-cutoff design | Select one defensible path before more operator helpers. Strict task settlement needs a real task census; the deployed generation lacks it. A conservative cutoff is only admissible after independent review shows original unknowns retained, no unsafe replay, all-origin admission held, old processes excluded, direct writers continuously excluded and recovery supported. Record the contract mapping, real caller and acceptance cases; otherwise keep the existing refusal. |
+| B2 — concrete authority and restore readiness (L00/L10/L11) | Root + host worker | Can prepare now, independent of A2 | Produce the exact authenticated network-policy/endpoint coverage readback request, existing-role/writer inventory, current ledger/profile and production capacity plan. Distinguish code, evidence, access and approval gaps. Latest production free63,373,094,912bytes is below the85GiB floor; unreferenced image sizes do not prove safe reclaimability. Preserve archives and rollback dependencies. No new backup attempt until a fresh qualified plan and its specific shared-lock approval. |
+| B3 — integrate the actual release caller (L12) | Implementation worker; root integration owner | Independent caller/port composition may proceed now; B1 contract acceptance and B2 concrete authorities gate boundary-dependent effectful qualification | Mount the complete Coordinator graph with real admission, cutoff/drain, writer, backup/schema, health and recovery producers. Missing authority must refuse before effects. Provisional interface work can proceed where independent; completion requires the joined real path and independent review. |
+| J1 — join qualification and release proof (V00/L11) | Root + reviewer | A2, L00, L10, L12, faithful restore/rehearsal | Check exact candidate, installed ledger, applicable phased profile and tested recovery together. No repeated installed migrations or stale approval replay. |
+| J2 — ship and prove the full scope (L01→L02→L03→L04→L05, V02) | Root + all three lanes as needed | Existing DAG gates unchanged | Qualified merge and inactive deployment; provider and baseline gates; explicit activation; independently exercise chatbox, Telegram, background, delegation and System Workflows, failures/cancellation/uncertainty and recovery. Verify source/images/config and monitoring. Only then close the project. |
+
+Parallel rounds: A1, B1 and B2 preparation can proceed together; A2 follows safe capacity admission while B1/B2/B3 advance; J1 joins application and release evidence; J2 follows the unchanged release/activation DAG. B1 and B2 are immediate work, not chores postponed until after a green build. Operational admission follows prerequisites; read-only investigation and independent drafting need not be artificially serialized.
+
+## Stop repeating failed approaches
+
+- Before a long run: identify the exact input/source, expected output, real dependency it closes, scarce resource, owner and rollback/observation path.
+- After two attempts fail for the same environmental or orchestration cause, root records the cause and changes the approach before launching a third. This is a reassessment trigger, not permission to stop the project or reduce a guard.
+- Reassess an unresolved delivery dependency at the next checkpoint, no later than two hours of active work: what new fact was learned, why another step is justified, and whether a simpler existing mechanism meets the same criteria. The interval is a coordination target, not a promised completion time or an automatic timer.
+- A source change does not automatically restart every check. Identify affected dependencies, reuse unchanged scoped evidence, and run all required final gates. A changed launch environment does invalidate the environment-dependent proof.
+- Run browser checks when UI behavior or rendered-data behavior changes. For documentation-only prose, validate links/data and reference the unchanged renderer's existing browser proof with its exact scope; never claim a fresh snapshot was exercised when it was not. Any real UI change still needs independent browser verification.
+- Never add execution flags, ownership changes or permissions during a reviewed launch. A proposed change gets reviewed before execution; an unknown acknowledgment is observed on the same attempt, never blindly replayed.
+- Scope locks narrowly and release them at the recorded terminal boundary. Approval of one shared-lock attempt never authorizes another. Root/user pause instructions stop new work and reconcile existing operations safely.
+
+## Checkpoint and quality contract
+
+Every material checkpoint answers: usable capability advanced; delivery dependency closed; next blocker (code/evidence/access/approval); owner and proof; whether the active work is finishing the path. Report implemented, integrated, tested, independently reviewed, merged, deployed, activated and verified-live separately, with source/receipt references. A missing status is unknown, not green. PR6153/6154 are drafts; commit statuses are pending with no entries, and the token cannot read GitHub Checks. Local145-test proof is not a claim that remote checks passed.
+
+Track elapsed blocking time and failed infrastructure attempts to improve coordination, not to invent completion percentages. Prefer one authoritative current resume section and evidence links over a growing stack of contradictory “current” sections. The original62-task acceptance ledger is unchanged, and shipped completion still means every agreed behavior deployed, activated where required, independently verified live, with tested recovery.
+
+Independent planning review: Sol confirmed the delivery ordering and unchanged gates; its two ownership/parallelism clarifications are incorporated. This is a plan review, not runtime qualification.
