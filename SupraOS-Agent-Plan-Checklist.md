@@ -1,127 +1,161 @@
-# SupraOS Universal Agent Completion Handoff
+# SupraOS Agent Plan Checklist
 
-## Current checkpoint and how to use this document
+Checkpoint: 2026-10-03T18:55:44.453459+00:00. ACTIVE until owner-requested19:43UTC pause: qualify demonstrated repairs, preserve terminal evidence and prepare portable handoff.
 
-**Active checkpoint, 2026-10-03 19:01 UTC. The owner requested work until 19:43 UTC (03:43 HKT on October 4), followed by a pause and portable handoff.** Final terminal states and worker ownership will be reconciled at that deadline. This consolidated report supersedes older next-action lists; historical source-specific evidence keeps its original scope.
+[Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
-**The full Agent Run project remains unshipped and inactive. Accepted tasks:5/62(8.1%); pending:56/62(90.3%); deliberately dropped:1/62(1.6%).** These are accepted-task counts, not code-completion, effort or production-readiness estimates. Most rows already contain substantial code but remain blocked by integrated qualification, release prerequisites or live acceptance. No production application migration, deployment or activation occurred in this focus run. Global attention remains off; overall restoreVerified remains false.
+**5 of 62 tasks accepted (8.1%); 56 pending (90.3%); 1 deliberately dropped (1.6%).** This is task acceptance, not a percentage of code or effort. Full Agent Run remains unshipped and inactive; global attention is off and faithful restore is unqualified.
 
-- Public handoff, no login: https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md . Public task checklist: https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Agent-Plan-Checklist.md . This separate repository contains sanitized documentation only. The older chatgpt.site page is historical.
-- Private engineering repository: https://github.com/jtobkin/suprafx-platform . Canonical coordination branch: `codex/agent-run-execution-20260928`; draft project PR5862. **Application qualification uses a separate composed candidate branch; do not deploy the coordination branch by assumption.**
-- Current execution checklist: [EXECUTION-PLAN-20261001.md](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md); [32-package DAG, states and journal](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/execution-dashboard/progress.json); [interactive artifact](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/execution-dashboard/index.html).
-- Original acceptance ledger: [62 tasks](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/plan.json), [rendered PLAN](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/PLAN.md), [16 baseline acceptance](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/evidence/BASELINE-16-RELEASE-ACCEPTANCE.md), [all-path acceptance matrix](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PATH-ACCEPTANCE.md).
-- [Execution improvements](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-IMPROVEMENTS-20261003.md) governs delivery-path planning and proof reuse. Original goals and acceptance criteria remain unchanged.
-- Historical detail is preserved in Git, including the pre-consolidation handoff at `116c4b8b1970bf8dc4c55c146784e017eb7daefd`. Do not treat a past 'current', 'paused', host floor or next-action section as current authority.
+## Current delivery boundary
 
-## Goal and scope
+Frozen f74 source staged/independently read back clean. Exact G11 PASS; scoped unchanged9a2 static/types/ESLint/coordination checks PASS. Actual Promotion diagnosticr4c Chromium1/1PASS zero skips in6.49s with12verified phone/desktop screenshots and unchanged30s budget/productsource; r3 desktop missing-run stall remains unexplained, clean canonical reproducibility still required. Full f74 units launched once18:54UTC with independent source/tree/resource readback; terminal pending. Cleanbuild/native/schema/applicationdeploy/live gates open. Scheduler is installed on QA only.
 
-Make deterministic orchestration the default behavior of every supported SupraOS agent execution path: chatbox, Telegram, background work, delegation and System Workflows. Telegram is a communication channel; it must not own a separate behavior contract. iMessage is deferred.
+## How to read this checklist
 
-The exact contract is: “Deterministic orchestration loads current preferences and relevant memory, skills, and lessons; tool execution checks permissions and records its outcome. Preference changes must append their before/after history to the hash chain before updating active state, so the next turn sees the latest saved value.”
+An unchecked acceptance task may already have code and scoped tests. Implementation, actual caller integration, tests, independent review, merge, deployment, activation and live acceptance are different states. A package can have a passing local test and still be blocked from release. The 32 packages organize the original 62 tasks; they are not 32 additional tasks.
 
-This requires bounded context and SCM recall without stalling the UX; explicit preference scope/precedence and truthful persistence; orchestration-initiated tool, skill and lesson discovery; fresh permission checks before side effects; durable truthful outcomes and original-attempt recovery; append-only meaningful state history; resumable per-user onboarding; capability-by-capability readiness; and main-admin authorization for initial Guide setup. A preference never grants permission. Simulated purchases, stored mailbox names and configured credentials never prove readiness.
+## Dependency graph
 
-## What actually shipped, and what did not
+Edges govern accepted integration, not independent preparation. Resource and specific-effect approvals remain separate.
 
-| Item | Verified state | Boundary |
-|---|---|---|
-| Friend-channel security repair | Historical shipped repair PR5891/main61937ca124 | Independent narrow repair, not full Agent Run |
-| Other historical narrow repairs | PR6025 and PR6037 recorded merged | No fresh live qualification claimed in this handoff |
-| QA disk-admission scheduler PR6153 | Merged d35bdcbd37641648da3f2b6891289153cdda1ff2; exact runtime4a015f9 installed on QA, independently read back | Build/check infrastructure only; not production application deployment |
-| Universal Agent combined source | Frozen successor f74bb97818c755527154c8c1633024f525bd2cda; extensive scoped proofs | Full current-source suite, security, build, native/schema, deployment and live acceptance remain open |
-| Global attention and new SQL | Cutover off; phased profile and installed ledger must be re-read | No implicit activation or migration from code presence |
-| Backup/recovery | Coherent historical capture and many scoped checks | Overall restoreVerified=false; restored-copy/role/profile/writer-window qualification incomplete |
+```mermaid
+flowchart LR
+  R00["R00: Maintain the execution and effect census"]
+  R01["R01: Finish truthful delegation status"]
+  R02["R02: Complete bounded specialist context"]
+  R03["R03: Build exact handoff authority"]
+  R04["R04: Mount reviewed handoff and graph upgrade"]
+  R01 --> R04
+  R03 --> R04
+  R05["R05: Close remaining workflow and tool outcomes"]
+  R00 --> R05
+  R06["R06: Integrate the shared contract across every path"]
+  R01 --> R06
+  R02 --> R06
+  R04 --> R06
+  R05 --> R06
+  S01 --> R06
+  R00 --> R06
+  S01["S01: Finish original room lifecycle integration"]
+  N01["N01: Mount original reminder scanner safely"]
+  G01["G01: Complete six-source attention and recovery"]
+  G02["G02: Converge remaining attention producers"]
+  G01 --> G02
+  D01["D01: Qualify imported digest execution and writes"]
+  D02["D02: Finish digest downstream containment"]
+  D01 --> D02
+  H01["H01: Close state-history and writer coverage"]
+  P01["P01: Complete independent readiness and Guide qualification"]
+  P02["P02: Prepare and qualify Link credentials"]
+  P03["P03: Prepare and qualify Migadu mailbox"]
+  P04["P04: Qualify private computer publication and launch"]
+  P05["P05: Prepare remaining provider acceptance"]
+  V01["V01: Exact-source full qualification"]
+  V02["V02: Joined contract and baseline local acceptance"]
+  R06 --> V02
+  N01 --> V02
+  G02 --> V02
+  D02 --> V02
+  H01 --> V02
+  P01 --> V02
+  L00["L00: Reconcile installed ledger and phased profile"]
+  L10["L10: Finish continuous admission and drain proof"]
+  V00["V00: Qualify the included inactive release profile"]
+  V01 --> V00
+  L00 --> V00
+  L10 --> V00
+  L12 --> V00
+  L11["L11: Qualify faithful backup and restored copy"]
+  L00 --> L11
+  L12["L12: Implement the qualified live release coordinator"]
+  L00 --> L12
+  L10 --> L12
+  L01["L01: Deploy qualified inactive foundation"]
+  V00 --> L01
+  L11 --> L01
+  L02["L02: Complete provider acceptance after foundation"]
+  L01 --> L02
+  P02 --> L02
+  P03 --> L02
+  P04 --> L02
+  P05 --> L02
+  P01 --> L02
+  L03["L03: Activate qualified behavior and attention"]
+  L02 --> L03
+  V02 --> L03
+  L04["L04: Verify all live behaviors and recovery"]
+  L03 --> L04
+  L05["L05: Close shipped and working goal"]
+  L04 --> L05
+  Z01["Z01: Deferred iMessage"]
+```
 
-Latest retained public live-source observation names `8b6b3525a2d9db8b0b0409f5d0498aad4d76d523`, with response timestamp `2026-10-03T18:46:41.210Z`. The read-only public `/api/version` request through the QA host succeeded. This is a source stamp only, not authenticated behavior, running image/config equality or proof that the frozen Agent Run candidate is deployed. Main can advance independently.
+## Original acceptance checklist
 
-The five accepted rows remain A2 workflow run-log helper, A3 structured result labels, A4 image validation, O0 scope grounding and M0 memory/latency trace. B2 standalone Thinking is deliberately dropped. iMessage is separately deferred. O1 onboarding's old audit does not apply to changed completion-route source.
-
-## Progress during the latest focus run
-
-1. **Application failure diagnosis and bounded repairs:** retained the complete c44 Linux full-unit RED (59,436 passed/26failed/231skipped). Nine test/fixture repairs compose a9f9, without runtime/SQL permission changes. Exact repair run passed382/382 with25 Chromium launches and independently inspected held-state phone/desktop screenshots.
-2. **Preserved and repaired qualification infrastructure:** first a9f9 attempt failed before full tests/unit on EXDEV while moving screenshots across filesystems. The corrected runner copies exclusively, verifies identity/size/hash and preserves originals. Real cross-filesystem Linux smoke passed. Second a9f9 full suite reached terminal RED:59,465 passed/1failed/231skipped across4,713 passing/1failing/21skipped files. Sole failure was shallow outer-HEAD^ history in a test fixture. Reviewed51db repair uses a real disposable two-commit repository and preserves rejection assertions;71 scoped tests pass. Complete terminal receipt and172 published member hashes were independently verified.
-3. **Closed QA scheduler installation:** two pre-effect refusals were retained. Third bounded one-use installation succeeded after natural idle; exact three runtime files, normal service behavior, unchanged other inputs and no cancelled jobs were independently verified. Do not replay any of the three attempts.
-4. **Recovered qualification disk safely:** seven archived non-Git exports removed once after content correspondence and terminal review. All Git worktrees and dependency donors preserved. No blanket pruning or shared-image cleanup. Capacity remains a concrete gate.
-5. **Prepared clean build and checked production dependencies:** separate clean a9f9 source staged; build still held. Production lock-only npm audit reports zero vulnerabilities. Reviewed build evidence reader now hashes and parses the same bounded no-follow file bytes; six local refusal/success probes pass. This is launcher preparation, not a build pass.
-6. **Advanced the real release boundary dependency:** isolated v5 old-web ingress cutoff is wired into the tested Coordinator composite, with generation-bound UNKNOWN and strict downstream refusal; durable no-reclaim and writer-exclusion authorities remain missing. There is still no full production CLI/operator assembly. Native namespace checks prove only their actual origins; a local subset cannot establish all-origin production cutoff.
-7. **Repaired and exercised a genuine UI blocker:** whole-tree P3C found reset error/detail leakage on Memory Promotion. The narrow repair uses truthful generic guidance for both HTTP failure and malformed JSON. Diagnostic r4c exercised the actual page in Linux Chromium at390/1440:1/1 test passed in6.49seconds, zero skips,12 byte-verified screenshots independently reviewed by root and Sol. It changed logging only; application source, assertions and30-second limit were unchanged. The earlier clean r3 test stalled in desktop missing-run recovery; that unexplained reliability failure is retained, not declared fixed. Frozen f74 full qualification will exercise the clean canonical test again. Clean9a2 passes28 frozen static checks,12-file types, full ESLint(0errors/590warnings),427 coordination tests and3 type-output tests.
-
-8. **Closed a concrete secret-scan blocker:**105 findings were SHA256 source-file commitments in one historical stage receipt. Root and independent Sol reviewers verified105/105 against the declared Git blobs. Exact immutable commit/path/rule/line exceptions, not a broad allowlist, were added in f74bb. Gitleaks8.28.0 passes the exact ef86349dbda78e1d1e046dcd477dbe06f80f7e8a..f74bb97818c755527154c8c1633024f525bd2cda range; a synthetic credential control still fails as expected.
-
-9. **Started exact final-candidate verification:** the frozen f74 full-unit run launched once at18:54UTC, with independent source/tree and effective20GiB/200% resource readback. It uses the unchanged18GiB start/8GiB abort floors. Launch is not a pass; terminal verdict must be collected before any production-build or release claim.
-
-## Current source and ownership map
-
-| Purpose | Branch / checkpoint | Local location and remaining state |
-|---|---|---|
-| Canonical coordination, plans and release scripts | `codex/agent-run-main-reconciliation-20260930`, publication target `codex/agent-run-execution-20260928`; publication target shown here; final commit pin is recorded in the public publication receipt and session checkpoint | See private engineering handoff for original worktree location; preserve ownership and unmerged work. |
-| Base composed application source | `codex/agent-run-main-composition-20261003`; a9f9bdb50ee99878bdfdee67906492acdbc51157; tree df0a3d1fe40b3a1c499483ed56cf1a2815bd8d4d; composed main ef86349dbda78e1d1e046dcd477dbe06f80f7e8a | See private engineering handoff for original worktree location; preserve ownership and unmerged work. |
-| Demonstrated fixture/reset repairs | `codex/agent-run-check-fixture-20261004`, rooted at a9f9 | See private engineering handoff for original worktree location; preserve ownership and unmerged work. |
-| Ingress-cutoff dependency | `agent-run-ingress-netns-20261004` isolated worktree | B-owned; feat/agent-run-netns-ingress-cutoff-20261004 at7abf76ab8aaf43d9e2917df1371b417ca10d4c8b, including scoped browser reuse evidence and a hard-held future launcher repair; no production assembly claim |
-| Existing browser evidence lane | `codex/agent-run-main-browser-evidence-20261003` | Recoverability/gap-map commits already composed; c6d1f240eae35687bfe2923642b648678f19c465 preserves corrected MeetingPage overlay997a5784 plus diagnostic test overlaye0872cbf; separate from frozen candidate |
-| Scheduler operational evidence | `codex/box-ci-disk-rollout-f2e5-20261003`, be72456853 | See private engineering handoff for original worktree location; preserve ownership and unmerged work. |
-| Portable host qualification evidence | `codex/host-qualification-evidence-20261004`,3b515617e4c6fdbe3a7b985e7f49e065cd627628 | See private engineering handoff for original worktree location; preserve ownership and unmerged work. |
-| Money/SSE prior repair | `codex/agent-run-stream-money-fixtures-20261004`,99c185de56 | Integrated into a9f9; source lane unmerged, preserved |
-
-Previous c44 is c44ce05089d7abd885d3b09c1ba27db9168be108. Candidate history contains duplicated dependencies from preserved lanes; compare actual ancestry and file hashes before cherry-picking. Main updates are not an instruction to restart every qualifying candidate. Only demonstrated blockers enter the next frozen candidate.
-
-Historical branches remain indexed in SupraOS-Agent-Reliability-Release-Handoff.md, session-transfer-20260929/README.md and the older handoff. They include living-contract-provenance, agent-run-lc-source, Claude live-operator and CI-shell-parity/PR5893. Do not blindly merge them. The newer application composition may already contain their relevant commits.
-
-## Code map and structure
-
-
-| Area | Where to read | Responsibility / important boundary |
-|---|---|---|
-|Boot and architecture|`AGENTS.md`, `CONTEXT.md`, `docs/AI_BUILD_PROTOCOL.md`, `docs/PLATFORM_ARCHITECTURE.md`, `docs/DOC_MAINTENANCE.md`|Required orientation, reuse-first rules, flow map and same-change documentation.|
-|Agent Run core|`lib/agent-run/`|Runtime orchestration, preference shelf/history, context capture, claims, readiness, provider recipes and activation.|
-|Preference persistence|`lib/agent-run/shelf.ts`, `shelf-history.ts`, `owner-preferences.ts`, `owner-preference-scope.ts`, `learn.ts`|Scope/precedence, history before active state, truthful persistence/readback.|
-|Context/provenance|`lib/agent-run/context-provenance.ts`, `turn-context-capture.ts`, `load-context-receipts.ts`, `model-boundary.ts`|Bounded prepared context and permitted evidence records.|
-|System orchestration|`lib/vms/coordination/system-workflow-engine.ts`, `node-handlers.ts`, `factory-workflows.ts`, `workflow-model-preferences.ts`|Graph execution, handlers, saved factory definitions, bounded owner context.|
-|System identity/context|`lib/vms/coordination/system-workflow-context-identity.ts`, `system-workflow-model-audit.ts`|Verified owner/run/session/node coordinates; null System actor.|
-|System owner context|`lib/vms/coordination/system-workflow-owner-chat-scm.ts`, `system-workflow-owner-lessons.ts`, `workflow-model-preferences.ts`|Canonical owner-chat, skill pattern and lesson preparation; composed into the current candidate, with live qualification still required.|
-|Node/editor registry|`lib/vms/workflows/node-registry.ts`|Available node metadata must agree with actual executor capabilities.|
-|Canonical memory|`lib/vms/memory/` including `build-lesson-recall.ts`, `lesson-text.ts`, `task-vocabulary.ts`|Owner/global/domain filtering, decryption fallback, relevance, SCM budgets.|
-|Chatbox entry|`app/api/agent-chat/stream/route.ts` and shared conversation components|Actual user turn orchestration and presentation; inspect acceptance matrix for other entry points.|
-|Telegram/other paths|`docs/agent-run/EXECUTION-PATH-ACCEPTANCE.md`, `lib/integrations/telegram-agent-turn.ts`, `app/api/extensions/telegram/`, shared runtime|Map exact handlers before edits; Telegram is transport, not a second behavior engine.|
-|Onboarding|`lib/onboarding-draft.ts`, owner draft hook/page/StepRouter, `app/api/onboarding/complete/route.ts`|Owner CAS/resume, optional AI-connect, bounded display-only plan data and completion persistence.|
-|Saved run UI|`app/vms/memory/promotion/page.tsx`|Read back original run; retain hold on uncertainty; safe guidance.|
-|Computer UI|`components/vms/conversation-dock/AgentComputerView.tsx`|Truthful wake/refusal/unsent action state.|
-|Attention|`docs/agent-run/evidence/global-attention-plan/dag.json`, `docs/agent-run/evidence/global-attention-cutover-inventory/CHECKLIST.md`, relevant notification/readiness adapters|Six-source recovery, convergence and disabled cutover gates.|
-|Tests|`tests/unit/`, `tests/fixtures/`, `tests/qa/`|Unit, actual component/transport, native PostgreSQL and browser receipts are different scopes.|
-|Scratch database|`scripts/checks/scratch-postgres.mjs`|Disposable qualification only; final Docker server readiness.|
-|Release/backup|`scripts/qa/agent-run-standalone-backup.py`, production backup/roles helpers and release evidence/runbooks|Source-pinned capture, separately approved lock/run, exact outcome reconciliation.|
-|Migrations|`supabase/migrations/` and phased profile evidence|Follow current installed ledger/profile; never replay installed packets or include experimental SQL by inference.|
-
-Use `rg` against the exact checkpoint to locate symbols; line numbers move. The execution plan includes source paths for all 32 work packages. Read branch-specific handoffs before composition; dependency commits can be duplicated.
-
-
-Additional current paths:
-
-- `app/api/agent-execute/route.ts`, `lib/private-ai-workspaces/agent-submission.ts`, `headless-result.ts`: accepted headless original and result recovery.
-- `app/api/system-workflows/[id]/research-run/route.ts`: signed original Research readback; read-only builder is now conservatively cataloged as unresolved; E3 is not waived.
-- `lib/vms/workflows/execution-engine.ts`, its checkpoint helpers and workspace tools: generic workflow immutable dispatch authority from main. Distinguish this from `lib/vms/coordination/system-workflow-engine.ts`.
-- `docs/agent-run/evidence/headless-result-20261002/`: uninstalled candidate SQL on `codex/headless-result-20261002`, plus PRECONDITION/VERIFY/ROLLBACK on `codex/headless-formal-20261003`; not yet on the canonical coordination branch; relevant headless source is already composed into the application candidate. Compare ancestry before cherry-picking.
-- `scripts/qa/agent-run-web-candidate-observation.py` (on isolated `codex/l12-web-candidate-observation-20261003`, not canonical yet) and backend/router observation helpers: bounded passive release observations; follow branch README before composition.
-- `tests/integration/headless-result-postgres.test.ts`, `headless-result-formal-postgres.test.ts`: native SQL qualification in the composed application candidate; historical isolated branches remain available. The coordination branch alone is not the application source. Environment-gated skips are not passes.
-- `tests/unit/workflow-dispatch-authority.test.ts` (isolated `codex/agent-run-main-refresh-20261003`, not canonical yet): real browser assertions at 1440/390 as well as source/behavior tests.
-
-## Private evidence and access
-
-The private engineering handoff contains the complete host/source/receipt inventory, safe monitoring commands and exact attempt identities. Historical workstation folders, private logs, screenshots, database archives and credentials are not replicated by cloning. Obtain authorized repository and host access through normal sign-in; never paste secrets into chat. Source branches and committed evidence are portable through Git.
-
-## Release and external dependencies
-
-**L00 — exact profile/schema.** Prior bounded read-only snapshots checked installed prerequisites and inactive before-schema state, but separate snapshots do not establish one atomic release boundary. Recheck actual migration role/ACL, installed ledger, numbering and phase transitions. Never replay installed migrations or add experimental packets merely because they exist. `docs/agent-run/evidence/research-release-order-20261002/README.md` covers required schema-before-application ordering: ordinary editor/activation paths can reach uninstalled CAS even with feature flags disabled.
-
-**L10 — continuous writer exclusion.** Old direct database writers share the postgres role and can reconnect. A REST admission flag, NOLOGIN, one idle connection census or absence of recent effects does not prove exclusion for the full migration window. Actual network restrictions and process/ingress authority must be identified, then continuously verified. Owner reported restrictions enabled but current IPv4/IPv6 CIDRs and UTC readback are unknown. Claude was requested for this; a fresh read-only `claude auth status` at2026-10-03~18:25UTC still reports loggedIn:false in this session. Another Terminal/account login cannot be assumed accessible here. Do not claim Claude or Grok evidence that did not happen.
-
-**L11 — restore fidelity.** The helper matched 826/826 tables, rows/ledger and role/data authority, but the wrapper rejected an expression-catalog fingerprint. That archive covers public and supabase_migrations, excluding managed auth/storage/vault schemas; it was coherent but taken while application writers remained active, not a drained release-window or whole-cluster backup. Overall restoreVerified remains false; old statements that role fidelity itself still failed are superseded by this narrower diagnosis. Reviewed lossless expression framing is composed in `scripts/qa/agent-run-production-backup.py` and staged with `scripts/qa/agent-run-standalone-backup.py`. Read [current capture preparation and exact helper hashes](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/evidence/l11-next-capture-readiness-20261002/README.md) before preparing a successor; it distinguishes expired plans from a fresh authorized attempt. The old 75455 plan expired and must not be replayed. Last retained AWS space61.248 GiB was below 85 GiB admission; recheck. A fresh bounded source-pinned capture/plan and its concrete shared-lock approval are required. Prior lock approval was consumed; sites stay online while deployments wait. Standalone restore alone does not close migration-role and writer-drain rehearsal.
-
-**L12 — release coordination.** Retained reopen authority, journal ownership, lost ACK, contenders, schema transition, backend/cron/web observation and recovery must compose into one reviewed real operator. Current observers explicitly do not establish complete health or continuous writer exclusion. Qualify on restored-copy/native transport before production.
-
-**Owner authorization.** Automatic migrations were expressly approved on 2026-10-02. Do not ask again merely for routine qualified migration. This does not bypass current technical gates or grant an unbounded shared cross-project deployment lock.
-
-**Providers.** Link is settled; application and live Stripe account exist, but actual approved client configuration and Stripe-delivered credentials remain unverified. Partner-generated public `.asc` is not the provider secret. Callback `https://supraos.ai/api/vms/link-agent-wallet/callback`. Migadu/mail.supraos.ai is settled; subscription, securely installed credentials, authorized DNS and real delivery remain. Independent human browser-image publication reviewer/protected environment remains unresolved; initiating jtobkin self-review is insufficient. Never request secrets in chat, restart Privacy.com, make purchases, alter DNS or send consumer tests without their specific authorization.
+| Task | Acceptance item | Current state | Delivery packages |
+|---|---|---|---|
+| A1 | Shelf | blocked | H01 |
+| A2 | Use the workflow run log | done | R05 |
+| A3 | Result labels | done | V01 |
+| A4 | Picture check | done | V01 |
+| W1 | The spine is a System Workflow | blocked | R03, R04, R06 |
+| B1 | Run loads the shelf | blocked | R02, R06 |
+| B2 | Thinking step | dropped | documented ledger exception |
+| B3 | Shared behavior text | blocked | R02, R06 |
+| R1 | Tools, skills, and lessons on the picture | blocked | R02 |
+| B4 | A real screenshot is kept | blocked | P05, V02 |
+| C1 | Learn a preference | blocked | H01 |
+| C2 | Claim gate | blocked | R01, R05, H01 |
+| C3 | Picture reaches Telegram | blocked | P04, P05 |
+| C4 | Computer and handoff | blocked | R03, R04, P04 |
+| D1 | Pay tap | blocked | P02 |
+| D2 | Loose ends | blocked | S01, N01 |
+| D3 | Busy or open day | blocked | S01 |
+| D4 | Private computer page | blocked | P04 |
+| E1 | Email follow-up | blocked | P05 |
+| E2 | Shop call | blocked | P05 |
+| E3 | Agent mailbox | blocked | P03 |
+| E4 | Friend agents | blocked | P05 |
+| F1 | Location | blocked | P05 |
+| F2 | Quiet morning | blocked | S01, N01, G01, G02 |
+| F3 | Marks in the chat | blocked | R01, V02 |
+| F4 | Screenshot proven in the recipe | blocked | P04, P05, V02 |
+| G1 | One run, both surfaces | blocked | V02, L04 |
+| D0 | Retained spend presentation hook (discovered prerequisite) | blocked | P02 |
+| W0 | Canonical System graph and guarded compiler | blocked | R03, R04 |
+| W2 | Buffered structured response before presentation | blocked | R04, R06 |
+| Q1 | Repository guards and migration verification companions | in_progress | H01, V01, L00, V00 |
+| Q2 | Reconcile current main and audit affected runtime boundaries | in_progress | R01, R05, V01, V00 |
+| O0 | Ground follow-up scope and preference/memory contracts | done | R00 |
+| M0 | Trace SCM and working-memory latency | done | R00 |
+| O1 | Make onboarding owner-scoped and durably resumable | in_progress | P01 |
+| A5 | Preserve trusted runtime qualification and activation | blocked | R03, R04, L03 |
+| P1 | Unify preference updates and explicit scope precedence | blocked | R06, H01, P01 |
+| M1 | Wire topic skills and bounded memory orchestration | blocked | R02, D01, D02 |
+| O2 | Enforce main-admin setup rollout with existing authorization | blocked | P01 |
+| A6 | Per-owner capability readiness and verified activation | blocked | P01 |
+| O3 | Connect onboarding to real capability setup | blocked | P01 |
+| G2 | Guide can resume setup and update preferences | blocked | P01 |
+| G3 | Preference-aware proactive Guide follow-up | blocked | G01, G02, P01 |
+| S1 | Qualify supported chat and signal entry points | blocked | R00, R05, R06, S01 |
+| X1 | Qualify real spending provider separately from simulation | blocked | P02, L02 |
+| X2 | Provision and verify actual mailbox capability | blocked | P03, L02 |
+| X3 | Verify phone and other enabled integrations | blocked | P04, P05, L02 |
+| M2 | Measure memory UX and recall correctness | blocked | R02, R06, D01, D02, L04 |
+| Q3 | Integrate follow-up lanes and audit all changed contracts | blocked | V02, L02 |
+| L0 | Deploy audited disabled candidate for provider qualification | blocked | L00, L10, V00, L11, L12, L01 |
+| L1 | Prepare final qualified activation and recovery release | blocked | L00, L10, L11, L12, L03 |
+| L2 | Activate qualified candidate and verify live configuration | blocked | L03 |
+| L3 | Prove live user journeys and recoverability | blocked | L04 |
+| L4 | Close shipped-and-working goal | blocked | L05 |
+| H1 | Prove append-only hash-chain coverage and latest-state linkage | blocked | R00, R05, R06, S01, N01, G01, D01, D02, H01, L10 |
+| B5 | Implement and prove all 16 original baseline behaviors | blocked | G01, G02, D01, D02, V02, L04 |
+| LP1 | Integrate official Link SDK and bounded provider contract | blocked | P02 |
+| LP2 | Connect each consumer Link wallet securely | blocked | P02 |
+| LP3 | Execute approved purchases with private credentials | blocked | P02, P04 |
+| LP4 | Use native purchase grant cards and messaging links | blocked | P02 |
+| LP5 | Qualify Link end-to-end and consumer onboarding | blocked | P02, L02 |
+| IM1 | Qualify iMessage after Telegram and chatbox release | blocked | Z01 |
 
 ## Exact remaining packages
 
@@ -511,85 +545,10 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Evidence:** implemented see evidence; tested pending exact joined source; independently reviewed pending exact joined source; merged False; deployed False; live verified False.
 
-## Execution order and parallel-agent procedure
+## Finish means shipped and proven
 
-Use root plus **three GPT-6 Sol workers**, each with an isolated worktree or nonoverlapping owned files:
+All applicable chatbox, Telegram, background, delegation and System Workflow paths use current preferences, bounded context, permission checks, durable truthful outcomes and original-attempt recovery. History precedes active state. All 16 baseline behaviors, independent readiness, main-admin initial Guide setup, prescribed migrations, deployment, activation, live acceptance, monitoring and tested recovery are complete. A green build or inactive deployment alone is not completion.
 
-1. **Root integration owner:** maintain one candidate, review actual callers and dependencies, integrate only audited blocker fixes, keep the plan/handoff synchronized, and own final release decisions.
-2. **Implementation worker:** finish current ingress/operator and real caller integration. Every component names its production caller, integration owner and true/false acceptance test. A tested composite with no production constructor remains incomplete.
-3. **Qualification worker:** finish immutable whole-run terminal collection, exact-source browser/native/schema/build checks and resource/host prerequisites. It may prepare independent packets while a long run executes, but cannot mutate active inputs or cancel for unrelated changes.
-4. **Independent trailing reviewer:** review exact source and receipt hashes, challenge environment/proof claims, exercise real failures/unknowns/recovery, and audit integration. Source approval is never promoted to native/live proof.
+## Where the authoritative data lives
 
-Shortest remaining path: retain terminal full-unit evidence → review and integrate demonstrated fixture/UI blockers → freeze successor → exact final security/unit/build and missing real-browser/native/schema gates. In parallel, close actual all-origin ingress, continuous direct-writer exclusion, production operator assembly and faithful restored-copy rehearsal. Join these paths before qualified phased migrations and inactive deploy. Then authorized provider qualification, activation, all16 behaviors/all supported callers live, monitoring and tested recovery.
-
-Do not open unrelated improvement lanes. Keep only one heavy qualification admitted at a time where capacity requires it; preparation, source work and review stay parallel. No lost-ACK operation is blindly replayed. Unknown outcomes remain held and linked to the original attempt. Each checkpoint answers: which usable capability advanced; what delivery dependency closed; next blocker/owner/proof; whether we are finishing delivery or accumulating components.
-
-Missing code, missing evidence, missing access and missing specific approval are separate blocker types. Owner migration authorization persists, but does not waive technical gates or a new shared cross-project lock approval. Do not repeat pending capacity approval requests. Keep full scope: an inactive milestone is not project completion.
-
-## Starting from a brand-new computer
-
-If the private clone fails, sign in to the intended GitHub account using `gh auth login --hostname github.com --web` (or the normal GitHub browser flow), then have the owner grant that account access to jtobkin/suprafx-platform. Confirm `gh repo view jtobkin/suprafx-platform` succeeds. Do not paste credentials or private keys. Public documentation is available before private access is granted.
-
-
-No local memory, SSH identity, environment secrets, accounts or repository access should be assumed. Obtain private repository access through normal GitHub sign-in/owner invitation, never by pasting a token into chat. Read the public checklist first if access is missing.
-
-```sh
-git clone --branch codex/agent-run-execution-20260928 --single-branch https://github.com/jtobkin/suprafx-platform.git
-cd suprafx-platform
-git status --short
-git rev-parse HEAD
-git log -1 --oneline
-```
-
-To inspect an isolated branch after the single-branch clone, fetch its explicit remote-tracking ref without changing the canonical checkout. Example:
-
-```sh
-git fetch origin refs/heads/codex/agent-run-check-fixture-20261004:refs/remotes/origin/codex/agent-run-check-fixture-20261004
-git worktree add --detach ../supraos-agent-qualification f74bb97818c755527154c8c1633024f525bd2cda
-git -C ../supraos-agent-qualification rev-parse HEAD
-```
-
-The branch tip may contain a later documentation-only commit (3d952); the qualification checkout intentionally pins f74. Compare with the lane pin in this document. A detached inspection tree is not permission to bypass outstanding gates or overwrite another worker's source. Create an explicitly owned implementation branch when further changes are needed.
-
-Compare HEAD with the current published handoff commit rather than resetting to a historical pin. Fetch separate branches explicitly before composing them. If using an existing checkout, inspect status and process ownership first. Read in order: this handoff; AGENTS.md; CONTEXT.md and all required boot documents; PLAN.md/plan.json; EXECUTION-PLAN-20261001.md/progress.json; BASELINE-BEHAVIORS.md; BASELINE-16-RELEASE-ACCEPTANCE.md; EXECUTION-PATH-ACCEPTANCE.md; global-attention DAG and cutover inventory; session-transfer20260929 README; current release-order and lane evidence.
-
-### Repository-declared bootstrap and verification prerequisites
-
-The read-only setup survey found `.nvmrc` pins **Node 22.23.2**, while `package.json` permits `>=22.11 <23`. The root uses `package-lock.json` and npm; it does not declare a `packageManager` field. Install the pinned Node version through your normal trusted setup. If nvm is already installed, `nvm install` then `nvm use` reads the pin. Confirm `node --version` before dependency installation. Check `id -un` and available disk space as well: the historical Mac could not resolve uid501 and Chromium could not launch, which invalidated native/browser qualification there. Those are environment observations, not assumed defects on the new computer. If SSH fails, distinguish local user lookup from server authentication before changing anything; no new key rotation is requested by this handoff.
-
-The following commands come from repository/CI configuration; they are a fresh-machine recipe, **not a claim that a new clean install was executed during this checkpoint**:
-
-```sh
-npm ci --no-audit --no-fund
-node scripts/gen-docs-index.mjs
-node scripts/generate-vms-manifest.mjs
-node scripts/gen-migration-manifest.mjs
-node scripts/gen-dead-code-manifest.mjs
-npm run typecheck
-```
-
-The four generators prepare ignored test/type artifacts. Inspect `git status --short` afterward and retain any unexpected changes. Existing donor dependencies on the historical Mac do not count as a fresh install. Read the exact current `.github/workflows/security-gates.yml` and `.github/workflows/production-build.yml` before full qualification; their ratchets, source scope, resource limits and evidence capture matter. `npx vitest run tests/unit` and `npm run build` are broad, resource-intensive gates, not quick bootstrap checks. Do not run them on a small machine without admission and enough time to finish.
-
-Browser fidelity additionally uses `npm ci --prefix services/hedge-desk --no-audit --no-fund`, Chromium installed by `npx playwright install chromium`, and the required OS dependencies on Linux. The workflow invokes `npx playwright test --config=playwright.fidelity.config.ts` with a unique development-server port and `NEXT_PUBLIC_PLAN_GRAPH=1`. Use the exact affected test runner when qualifying isolated lanes, and retain actual 390/1440 browser evidence where required. Installing a browser does not establish that it can launch in this environment.
-
-Native lanes need PostgreSQL 17 binaries (`PG_BIN` containing `initdb`, `pg_ctl`, `psql`) and the exact PostgREST binary pinned by the lane (`TASK_POSTGREST_BIN`); do not silently replace a retained PostgREST13 fixture with14.18. Some fixtures also require `SUPRAOS_TEST_LOCAL_POSTGRES=1`. Read each lane's runner/config; use only an owned disposable database/socket, never a production DSN. The staged host runner/source/receipt hashes are in the host queue checkpoint. Its admission cutoff belongs to this paused session. After an explicit resume, establish a fresh bounded window, recheck source/HEAD, resource floors and scratch ownership, and retain new evidence under a distinct attempt path; never overwrite a prior receipt or reuse an expired production plan. Docker-backed tests additionally need the approved daemon/image and their own disk floor.
-
-`.env.local.example` documents configuration names. Obtain actual Supabase and server-side secrets only through approved secure configuration; do not copy them into chat or documentation. Signing/provider credentials, the actual migration role, installed-ledger readback, backup archives and authorized host access are separate prerequisites, not generated by npm. `scripts/setup.sh` mutates `.env.local` and contains an older Node>=18 check, so it is not an unattended qualification bootstrap for this source. Fresh infrastructure must be authenticated and inspected before any production command.
-
-Clean up only your own merged worktree after proving merged/current-main ancestry, clean status and no running process; use `git worktree remove` without force. Unmerged/dirty/active/other-agent folders must remain. No blanket worktree prune.
-
-## What Finished means, end to end
-
-Every required implementation is integrated into the actual deployed source; exact-source tests and independent reviews pass; correct schema/graph versions are installed in the prescribed order; eligible capabilities are activated with real per-owner readiness; and all applicable execution paths are independently exercised live after deployment. Monitoring, retained recovery and faithful backup restoration work. No required implementation, release or baseline gate remains open.
-
-The 16 original behaviors are: quiet morning; personal reply style; visible shopping; an approved real call; appropriate initiative; private in-chat computer handoff; one useful loose end; mail follow-up with ignored-thread suppression; friend sharing with both consents; an actual agent mailbox; exact authorized payment; trustworthy marks linked to durable evidence; useful bounded personal recall; honest stops; attention protection; and tone/length informed by real context. The baseline evidence matrix defines exact proofs.
-
-Across chatbox, Telegram, background, delegation and System Workflows, demonstrate current scoped preferences, bounded context, history-before-state, fresh permission-before-effect and truthful outcomes. Lost acknowledgements, restarts, retries, absent providers and revoked consent must not invent success or duplicate effects. A partial inactive release is a milestone, not project completion.
-
-## Suggested prompt for the next session
-
-> Resume the SupraOS Universal Agent project from this public handoff and its linked private checklist. Assume no local history, credentials or repository access. Obtain access through normal sign-in, fetch the canonical coordination branch and the explicitly named current application/repair branches, inspect status and running jobs before editing, and read all required boot documents. Preserve the complete scope and62-task ledger. Use root plus three GPT-6 Sol lanes for integrated implementation, release qualification, and independent review. Follow the current dependency order; preserve failed evidence, resource floors and original-attempt recovery. Keep code, tests, audit, merge, deploy, activation and live acceptance separate. Do not claim completion until all16 baselines and all supported paths are live-verified with tested recovery. Report actual current state and any concrete external access/approval gap, then execute the shortest path to a usable release.
-
-## Scheduled pause and current process ownership
-
-The session is still active at this checkpoint and will pause at19:43UTC. Full qualification unit `agent-f74-electron-full-unit-first-20261004` is running under its existing bounded timeout; root coordinates, the host Sol worker monitors, and the independent reviewer checks terminal evidence. No production application deployment or migration is in progress. Do not duplicate this unit or replay one-use launchers. The final pause checkpoint will replace this section with observed terminal/running state, worker ownership and exact publication pins.
+This public file is a sanitized snapshot of `docs/agent-run/execution-dashboard/progress.json` and `docs/agent-run/plan.json` on the private canonical coordination branch. The public handoff links the exact application candidate and separate evidence branches. The older chatgpt.site artifact is historical.
