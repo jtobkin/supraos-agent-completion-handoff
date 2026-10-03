@@ -1,5 +1,18 @@
 # SupraOS Universal Agent Completion Handoff
 
+## Active continuation — 2026-10-03 11:14 UTC
+
+The full project goal remains active. Root and three Sol workers are finishing CI capacity recovery and safe scheduler admission before returning to frozen-candidate qualification. No new release or acceptance is claimed:5/62 tasks accepted,56 pending,1 dropped.
+
+New verified progress: all261,926 members of seven archived source exports passed sequential local restoration and full restored-file hash/mode/symlink checks. Independent Sol review confirmed the evidence and scope. This is not simultaneous seven-root recovery, Linux-owner fidelity or restoration of their shared dependency donor. Host originals remain untouched.
+
+Current-state checks found an external scheduler update to main359c23dee55e (#6145), without the disk-admission fix. The old169e installation packet is obsolete and must not run. A successor disk patch composed against the actual installed source passes109 focused checks and independent source review; installation/recovery qualification is still pending. QA free space recovered naturally from6.74GiB to about16.45GiB as managed work cleaned up, still below the18GiB full-suite and30GiB build admission floors at that observation.
+
+The exact three-generated-root cleanup remains held. Root review caught upload-mode, privileged staging-parent and consumer-scope issues before any effect; repairs and independent review are in progress. Existing source worktrees and shared dependencies remain preserved. Browser verification of the updated checklist is moving to Linux after local Chromium/Chrome launch failures. No fresh UI pass is claimed yet.
+
+Private engineering checkpoint: **e1e6a08124ea2c5fae71541041579852562b84df**. The plan retains32 acyclic work packages, all62 original tasks, and the complete deployment/activation/live/recovery gates. Earlier checkpoint sections below retain their timestamped scope.
+
+
 ## Current delivery checkpoint — 2026-10-03 11:00 UTC
 
 The full project remains **unshipped and inactive**. **5/62 tasks are accepted (8.1%); 56 remain pending (90.3%); 1 is deliberately dropped (1.6%)**. These are accepted-task counts, not code-completion, effort or production-readiness estimates. This checkpoint closes the requested autonomous work window; it does not declare the project complete.
@@ -150,7 +163,7 @@ This public handoff is readable without repository access. The implementation an
 
 Private repository: https://github.com/jtobkin/suprafx-platform
 Canonical working branch: `codex/agent-run-execution-20260928`
-Published private checkpoint at this snapshot: `de3271a0828a86d18aa22e366f0bd86213cb9262` (documentation/evidence; verify the full remote SHA when resuming). The coherent application/operator candidate is separately frozen at `61fd43e427e321d31d63c9d67ba83d53275c2d5f` on `codex/agent-run-qualified-blockers-20261003`; it is not yet a qualified release. Later operator701539dce43f2c317f45a0fbdf8a096007390229 lives on `codex/agent-run-later-operator-successor-20261003`. The canonical branch now contains the frozen application and later operator work, but its tip is not the immutable qualification candidate; fetch the named candidate explicitly before qualification.
+Published private checkpoint at this snapshot: `e1e6a08124ea2c5fae71541041579852562b84df` (documentation/evidence; verify the full remote SHA when resuming). The coherent application/operator candidate is separately frozen at `61fd43e427e321d31d63c9d67ba83d53275c2d5f` on `codex/agent-run-qualified-blockers-20261003`; it is not yet a qualified release. Later operator701539dce43f2c317f45a0fbdf8a096007390229 lives on `codex/agent-run-later-operator-successor-20261003`. The canonical branch now contains the frozen application and later operator work, but its tip is not the immutable qualification candidate; fetch the named candidate explicitly before qualification.
 
 On a fresh computer with authorized access:
 
