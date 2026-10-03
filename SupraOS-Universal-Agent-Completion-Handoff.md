@@ -1,16 +1,20 @@
 # SupraOS Universal Agent Completion Handoff
 
-## Current delivery checkpoint — 2026-10-03 06:10 UTC
+## Current delivery checkpoint — 2026-10-03 07:51 UTC
 
-Execution continues with three Sol workers and a coordinator. The full Linux test run for frozen candidate **b5a4513bf8** finished with **58,892 passed,1 failed,189 skipped**. The sole failure was a missing line-number reference in the chat-memory skill. Reviewed successor **36eb5c0782** restores the reference to the actual production call; all7 focused checks pass. Application, install and test code are unchanged. The failed run remains recorded; exact successor qualification is next.
+Coherent application and operator candidate `03ac75c3a83615cc5505f34ce09614824980168f` is frozen, clean and pushed on `codex/agent-run-qualified-composition-20261003`. Independent composition review passed: all 130 application-only and 43 operator-only paths retain their reviewed blobs; the two overlapping files preserve application security/cache changes and add the required child-identity module. Root ran 61 focused tests successfully. This is integration and scoped verification, not a complete suite, build or deployment pass.
 
-Earlier scoped checks remain valid within their stated source boundaries:261 route tests;2 actual Linux browser fixtures at mobile/desktop widths; changed units482; changed types203; static and runtime dependency security checks. The browser fixtures exercise real HTTP/SSE and the React hook with mocked identity/history boundaries. They do not establish deployed product/provider acceptance. The production build is prepared, but host capacity is below its required start floor. Other projects and retained evidence remain untouched.
+The preceding application candidate36eb has two retained full-suite RED runs. The first had 11 Electron collection errors from the dependency environment. The corrected run passed58,892 tests, failed one migration test at its unchanged30second budget, and skipped189. All158 receipt hashes were independently verified. The failed test completed its synchronous assertions but exceeded the time budget; the slow phase is not yet established. An unchanged-source, same-Docker-backend targeted run is being prepared, followed by the complete03ac suite with one worker. No test timeout or resource floor is reduced. Earlier route261/browser2 evidence retains only its unchanged-source scope.
 
-The release lane repaired a recovery defect and a sequencing cycle: authenticated runner health requires database access, so an explicit new protocol checks it after a separately reviewed, recorded reopening. Existing protocol semantics remain preserved. The new protocol is unmounted and under independent review; transport health explicitly does not prove task execution or settle older uncertain outcomes. Runner admission remains a separate gate. Supervisor cutoff/forward source and a candidate-only image builder are reviewed; actual host qualification, all-origin admission control, continuous writer exclusion and recovery remain pending.
+Actual native child-process identity qualification now passes all7 checks at test fixture15d45d9, with unchanged production source57c5d1. Root verified all3 receipt hashes (manifest `ff1f8479bfe0ac7aa03a6a7b7dfeaa93e89b101b257fe4da661a2d52306899ac`). This proves actual process observations with synthetic Docker inventory, not the deployed Docker boundary or business settlement.
 
-Approved backup attempt **6d79** refused before creating a backup and released its shared lock. Its approval is consumed. The reviewed preflight repair is integrated, but a successor plan could not be captured because production free space was below its required floor. No new attempt or lock is active. A future prepared attempt requires its own specific shared-lock approval. Faithful role restoration remains unproved.
+The owner-preserving v4 callerd79eab5 and concrete host producer078a5bd are independently reviewed and composed into03ac. Host refusal tests11 and protocol tests8 pass. Native owner qualification now passes all6 tests with zero skips on unchanged078a after correcting only the private namespace harness. Root verified all4 receipt hashes (manifest `9f5443357518aab9f75f0b5bca6e0788d85554d9a4034b478cf2f27523a91036`). Both earlier setup refusals remain retained. The in-process proof confirms a distinct, nonshared mount namespace; owned scratch was removed. This is disposable filesystem proof, not live release authority. Joined real Journal/ForwardPort/host fixture successor649634a is prepared, not host-qualified. Real writer/090/owner-ingress and generation providers remain unmounted; shared HOME state may evolve, so pristine rollback is not implied.
 
-**Accepted tasks remain5/62 (8.1%), pending56/62 (90.3%), dropped1/62 (1.6%).** These are acceptance counts, not code-completion or effort percentages. The full project is unshipped and inactive; no live acceptance is claimed. Current private plan/handoff checkpoint: **76eea424b1**. Finish qualification and release prerequisites, then phased deployment, provider and baseline acceptance, activation, and independent live/recovery checks. All62 tasks and16 baseline behaviors remain in scope. Historical sections below do not override this checkpoint.
+Approved backup attempt6d79 was consumed and refused at preflight; no migration ran and the shared deployment lock was released. Do not replay it. Successor capture remains blocked by the unchanged AWS85GiB floor. Authenticated network-policy coverage, continuous writer exclusion, faithful restoration, actual-role rehearsal, final build and live acceptance remain open. Build and disposable Docker floors remain30GiB and35GiB respectively.
+
+Acceptance remains **5/62 (8.1%)**, pending **56/62 (90.3%)**, dropped **1/62 (1.6%)**. Full Agent Run is unshipped/inactive. These are accepted-task counts, not implementation or effort estimates. Root and three Sol workers are closing this same delivery path; older instructions below are historical and superseded by this checkpoint.
+
+Private engineering handoff and checklist checkpoint **d18a756947** is saved on GitHub. No new production acceptance is claimed.
 
 ## Execution resumed — 2026-10-03
 
@@ -113,7 +117,7 @@ A checked task means its original scoped acceptance was met; some rows are found
 | V01 | Exact-source full qualification | in_progress | None |
 | V02 | Joined contract and baseline local acceptance | blocked | R06, N01, G02, D02, H01, P01 |
 | L00 | Reconcile installed ledger and phased profile | in_progress | None |
-| L10 | Finish continuous admission and drain proof | ready | None |
+| L10 | Finish continuous admission and drain proof | in_progress | None |
 | V00 | Qualify the included inactive release profile | blocked | V01, L00, L10, L12 |
 | L11 | Qualify faithful backup and restored copy | external | L00 |
 | L12 | Implement the qualified live release coordinator | in_progress | L00, L10 |
@@ -126,13 +130,13 @@ A checked task means its original scoped acceptance was met; some rows are found
 
 ## Immediate work and next steps
 
-1. Establish usable qualification capacity, then keep the application candidate frozen while completing full unit, security, type, production-build and actual browser gates. The current Mac native/browser environment and shared-host disk pressure prevented required checks; repeating those unavailable prerequisites is not progress. Preserve failed evidence and qualify repairs on their exact source.
-2. Complete joined original-result recovery through the mounted handler and real PostgreSQL/PostgREST. Direct storage and formal disposable database rehearsal have passed; the joined suppressed-acknowledgement case and applicable browsers remain pending. Preserve one original attempt; do not rerun effects to obtain a result.
-3. Finish release routing and health verification. A running container, a successful HTTP response or a scheduled tick alone cannot prove safe release.
-4. Reconcile installed migrations with the exact phased release profile. Verify the actual migration role, rehearse on a faithful restored copy and never replay installed migrations.
-5. Qualify backup restoration and continuous exclusion of other database writers through the migration window. Automatic migration authorization is recorded; it does not substitute for these technical checks.
-6. Deploy the qualified inactive foundation; verify it independently, finish each provider readiness requirement, then activate only qualified behavior.
-7. Exercise all 16 baseline behaviors and all applicable execution paths live, including denied effects, interruption recovery, next-turn preference readback, memory latency and monitoring.
+1. Complete the unchanged migration-test diagnostic, then full-suite and production-build qualification on the coherent03ac candidate. Retain scoped browser evidence only where source is unchanged; do not replace broad gates with focused passes.
+2. Finish real owner-state native and joined durable-journal checks. Wire actual pinned Docker generation and preserved receipts into the named release operator. Missing continuous writer/ingress/090 authority must block effects before an original is recorded.
+3. Qualify complete application drain, continuous writer exclusion, transport health and recovery; socket inactivity alone is insufficient.
+4. Reconcile installed migrations with the exact phased profile, verify the actual migration role and rehearse on a faithful restored copy. Do not replay installed migrations.
+5. Prepare a fresh backup plan after capacity is available; its shared deployment lock needs a new specific approval. The consumed attempt must not run again.
+6. Deploy the qualified inactive foundation, verify it independently, complete provider readiness, and activate only after the full joined gates pass.
+7. Exercise all16 baseline behaviors and supported execution paths live, including denial, interruption, cancellation, uncertain outcomes, next-turn preference readback, memory latency and recovery.
 
 ## Parallel execution
 
@@ -148,7 +152,7 @@ This public handoff is readable without repository access. The implementation an
 
 Private repository: https://github.com/jtobkin/suprafx-platform
 Canonical working branch: `codex/agent-run-execution-20260928`
-Published checkpoint at this snapshot: `d7cc12da42a3d50bb859c377da52002c4e0424e2` (a documentation/evidence checkpoint; verify the full remote SHA again when resuming).
+Published private checkpoint at this snapshot: `d18a756947` (documentation/evidence; verify the full remote SHA when resuming). The coherent application/operator candidate is separately frozen at `03ac75c3a83615cc5505f34ce09614824980168f` on `codex/agent-run-qualified-composition-20261003`; it is not yet a qualified release.
 
 On a fresh computer with authorized access:
 
