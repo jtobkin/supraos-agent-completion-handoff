@@ -1,6 +1,6 @@
 # SupraOS Universal Agent Completion Handoff
 
-## Current plan — active execution, 2026-10-03 14:32 UTC
+## Current plan — active execution, 2026-10-03 15:04 UTC
 
 The owner resumed an eight-hour execution run at13:04UTC. Goals, all62 tasks and all16 baseline behaviors are unchanged. The independently reviewed [Faster Verified SupraOS Delivery plan](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) governs parallel lanes and final acceptance.
 
@@ -10,17 +10,19 @@ The owner resumed an eight-hour execution run at13:04UTC. Goals, all62 tasks and
 |---|---|---|
 | Prevent unsafe replay when reopening | Built, integrated, actual release-command/database tests17/17 and independent review passed | Production authority and qualified installation; root and implementation Sol |
 | Preserve original workflow pause identity | Built, integrated,98 scoped checks and8/8 database/transport tests, reviewed | Complete successor gates and live verification; root and review Sol |
-| Reliable qualification capacity | Scheduler repair tested/reviewed and queued for normal CI; shared-host rollout held | Coordinated host transition and frozen successor unit/build checks; root and host Sol |
+| Reliable qualification capacity | Scheduler security gates passed; build active. Reviewed successor waits for that run to finish; host rollout held | Coordinated host transition and frozen successor unit/build checks; root and host Sol |
 | Backup capacity | Exact expansion/snapshot plan reviewed; approval requested | Approved effect, exact readback and fresh backup plan; host Sol |
 | Release authority and complete Coordinator | Partially integrated; writer/ingress authority and old-generation uncertainty open | Read-only authority inventory and qualified real caller; implementation Sol and root |
-| Faithful restore, schema, deployment and activation | Fresh schema-only capture verified;17-packet isolated schema rehearsal next | Faithful data restore, phased installation and exact candidate release |
+| Faithful restore, schema, deployment and activation | Prior schema capture exposed a role-contract mismatch; reviewed consumer fix integrated and repaired read-only capture active | Faithful data restore, phased installation and exact candidate release |
 | All supported journeys and recovery | Pending final live acceptance | Independent chatbox, Telegram, background and System Workflow verification |
 
-The successor changes only demonstrated replay and workflow composition blockers over the previous candidate. The old full-unit run aborted on shared disk capacity; it remains an infrastructure abort. Full successor units/build have not passed. The heavy schema rehearsal precedes the full suite because both share disk with managed CI; code integration and review continue in parallel. Schema-only capture and disposable tests do not establish faithful production restore or live acceptance.
+The successor changes only demonstrated replay and workflow composition blockers over the previous candidate. The old full-unit run aborted on shared disk capacity; it remains an infrastructure abort. Full successor units/build have not passed. The frozen successor full-unit suite is now running. The heavy schema rehearsal waits for that suite because both share disk with managed CI; code integration, read-only capture and review continue in parallel. Schema-only capture and disposable tests do not establish faithful production restore or live acceptance.
+
+**New integration blocker made explicit:** merging the frozen candidate with current main exposed conflicts in 36 files. Their text is now resolved in an isolated working copy; combined types, actual database paths, independent review and browser checks remain open. Initial coordinator and held-delegation checks pass, but this is not a merge or release verdict. Old coordinator episodes are preserved, and uncertain delegation ends the turn without another specialist dispatch. The current frozen test run continues unchanged; its result does not automatically qualify this later composition.
 
 Accepted tasks remain **5/62 (8.1%)**, **56 pending (90.3%)**, **1 dropped (1.6%)**. These are accepted-task counts, not code completion or effort. Full Agent Run remains **unshipped and inactive**. Deployment, activation, all-path live verification and tested recovery remain mandatory.
 
-The unchanged dashboard renderer retains its desktop/mobile/offline Chromium proof; only status data/prose changed. Private engineering checkpoint: `d969cd9b3f`. Frozen successor: `a3dd5f00c4`. The run remains active toward its21:04UTC checkpoint.
+The unchanged dashboard renderer retains its desktop/mobile/offline Chromium proof; only status data/prose changed. Private engineering checkpoint: `0dcd780e82`. Role-consumer repair: `5bcf11775d`. Frozen successor: `a3dd5f00c4`. The run remains active toward its21:04UTC checkpoint.
 
 ## Historical checkpoints — superseded by the current plan above
 
