@@ -1,17 +1,23 @@
 # SupraOS Universal Agent Completion Handoff
 
-## Current plan — execution correction, 2026-10-03
+## Current plan — active execution, 2026-10-03 13:34 UTC
 
-The goals and acceptance criteria are unchanged. Implementation and deployment are paused; the owner authorized this planning-only improvement. The independently reviewed [Faster Verified SupraOS Delivery plan](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) is now the execution procedure on resume. It contains the concrete checklist, parallel owners, dependencies, closeout evidence and rules for reassessing repeated failures.
+The owner resumed an eight-hour execution run at13:04UTC. Goals, all62 tasks and all16 baseline behaviors are unchanged. The independently reviewed [Faster Verified SupraOS Delivery plan](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) governs the parallel lanes and final acceptance.
 
-- Advance application qualification and actual release authority in parallel. Do not put every lane behind CI repair.
-- Coordinate a narrow source/resource window for qualification; never assume capacity is reserved from a free-space sample.
-- Finish the existing scheduler transition, then use that capacity for frozen61fd units/build. Current code6f9895/PR6153 has independent review and145 focused passes; operational a54e/PR6154 is still held and uninstalled.
-- Root owns the release-boundary decision and access blockers. The old app has no complete task census; any conservative cutoff must preserve unknown originals, forbid unsafe replay, prove admission/writer exclusion and support recovery.
-- Reuse unchanged scoped evidence, retain all final gates, and review combined transitions. Two repeated infrastructure failures trigger reassessment before another attempt. Isolated worktrees and independent caller integration remain allowed.
-- Keep one current checkpoint and link detailed evidence. Accepted-task counts remain5/62 (8.1%),56 pending (90.3%),1 dropped (1.6%); full Agent Run remains unshipped/inactive.
+**A real release blocker was fixed:** reopening runner admission could allow a failed job to execute again. The old-source PostgreSQL regression reproduced that replay. The corrected source now refuses reopening until pending work has an explicit terminal disposition; concurrent writes and altered-trigger detection passed independent native checks. This repair is integrated on the working branch. Its actual release-command qualification is next, using a fresh read-only schema capture. Nothing has been installed in production by this step.
 
-Verified at pause: archived-generated cleanup and the isolated start-condition test passed independent review; the569a checklist passed real desktop/mobile/offline Chromium. No real scheduler installation, full Agent Run deployment or activation occurred. Production backup capacity remains below85GiB, and the previous backup approval is consumed. Private engineering checkpoint: `755720f46f`.
+| Delivery dependency | Current state | Next proof / owner |
+|---|---|---|
+| Prevent unsafe replay when reopening | Built, integrated, focused native tests and independent review passed | Actual release command through TypeScript and PostgreSQL; implementation Sol |
+| Reliable qualification capacity | Scheduler repair tested/reviewed; real rollout remains held | Coordinated shared-host transition and complete frozen-candidate unit/build checks; root and host Sol |
+| Backup capacity | Concrete disk expansion and snapshot plan independently reviewed; approval requested | Approved effect, exact volume/filesystem readback, fresh backup plan; host Sol |
+| Release authority and complete Coordinator | Partially integrated; real writer/ingress authority and old-generation uncertainty remain open | Qualified actual caller and continuous exclusion evidence; root and implementation Sol |
+| Faithful restore, schema, deployment and activation | Pending; previous backup approval consumed | New qualified attempt, phased installation, exact candidate release |
+| All supported journeys and recovery | Pending final live acceptance | Independent chatbox, Telegram, background and System Workflow verification; review Sol |
+
+Accepted tasks remain **5/62 (8.1%)**, **56 pending (90.3%)**, **1 dropped (1.6%)**. These are accepted-task counts, not code completion or effort. Full Agent Run remains **unshipped and inactive**. No completed component substitutes for the deployment, activation, all-path live and recovery gates.
+
+The unchanged dashboard renderer retains its desktop/mobile/offline Chromium proof; this checkpoint updates status data and prose, not UI behavior. Private engineering checkpoint: `1a34747fe4`. The native replay proof is retained at `d2b505df03`, with behavior source `a287dc631d`.
 
 ## Historical checkpoints — superseded by the current plan above
 
