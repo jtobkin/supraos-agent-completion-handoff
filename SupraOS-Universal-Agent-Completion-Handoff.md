@@ -26,14 +26,14 @@ The five credited rows are A2 (workflow run-log helper), A3 (structured result l
 
 Finish and integrate existing work before opening unrelated lanes. Each task needs a named production caller, integration owner, boolean acceptance check and exclusive file ownership. Report implemented, integrated, tested, reviewed, merged, deployed and live-verified separately.
 
-1. Close existing exact-source browser/native checks. Generic Workflow authority passed 41/41 browser cases and was composed into the working branch; the provisional headless browser cases remain pending.
-2. Compose the complete reviewed headless chain and editor repair, preserve unresolved writer hazards, then freeze one candidate. Only demonstrated blocker fixes enter qualification.
+1. Close existing exact-source browser/native checks. Generic Workflow authority passed 41/41 browser cases and was composed into the working branch; the two selected provisional headless browser cases now passed (48 other cases filtered, not a full-file pass).
+2. The reviewed main refresh, complete headless chain and editor repair are composed and frozen as `c2c8f937e5536284e9eef1172a68065b8b07463d`. Both unresolved writer hazards remain recorded. Independent composition review found no merge-specific defect. Only demonstrated blocker fixes enter qualification.
 3. Independently verify the composed source, real execution paths, full Linux suite and production build.
 4. In parallel, establish actual writer exclusion and prepare faithful restore and release coordination. Separate missing code, evidence, access and approval. Preparation can proceed while access is investigated; final release admission cannot bypass writer exclusion.
 5. Complete included-profile qualification and initial inactive deployment. Provider acceptance and the joined baseline must pass before activation.
 6. Independently verify live behavior and tested recovery across all supported paths. Preserve all 16 baseline behaviors and the full 62-task scope.
 
-No new accepted task, production migration, deployment or activation is claimed in this update. Receipt-scoped passes close evidence dependencies only. The next integration blocker is the remaining headless browser evidence; the release blockers remain actual writer exclusion, migration-role/profile proof, faithful restore and joined coordination.
+No new accepted task, production migration, deployment or activation is claimed in this update. Receipt-scoped passes close evidence dependencies only. The next gate is combined qualification of the frozen candidate. The headless SQL still needs numbered release-profile wiring before schema-before-application deployment; this blocker repair is isolated from the frozen candidate. Other release blockers remain actual writer exclusion, migration-role/profile proof, faithful restore and joined coordination.
 
 ## Tasks and dependency graph
 
