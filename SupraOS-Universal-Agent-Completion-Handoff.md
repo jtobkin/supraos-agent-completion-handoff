@@ -1,6 +1,6 @@
 # SupraOS Universal Agent Completion Handoff
 
-Updated 2026-10-02T19:37:48.736480+00:00. **The session is paused at the owner’s request.** All workers are checkpointed; no owned qualification job remains active. This is a status snapshot, not a live monitor.
+Updated 2026-10-03T00:38:10.240985+00:00. **Execution has resumed.** Three Sol lanes support one delivery path: caller integration, release prerequisites, and independent qualification. This is a status snapshot, not a live monitor.
 
 ## Goal
 
@@ -14,13 +14,26 @@ The full project is **not shipped or activated**. Acceptance is **5 of 62 tasks 
 
 The frozen application candidate is `1d84264f85d30c30039d31eb436817c17155d4b2`. Its application type check passed on application-equivalent source. Its full Mac unit run finished with 4,517 files passed, 142 failed and 16 skipped; 57,927 tests passed, 177 failed and 674 skipped. Independent triage found 176 environment or derivative failures and one genuine catalog mismatch. The conservative catalog repair passed its focused suite and was integrated; the whole-run result remains RED. Linux qualification and the current production build remain pending. Earlier builds and tests do not qualify newer source.
 
-The separate headless original-result candidate passed its disposable PostgreSQL test after a test transaction fix. Its formal migration verification and conservative rollback rehearsal also passed in disposable PostgreSQL; joined route/transport recovery remains under qualification. An earlier release-routing fixture passed six disposable Docker checks; its newer HTTP transport passed 14 actual socket checks but still needs a fresh Docker rerun. The full release sequence remains under qualification. Disposable tests are not production acceptance.
+The separate headless original-result candidate passed its disposable PostgreSQL test after a test transaction fix. Its formal migration verification and conservative rollback rehearsal also passed in disposable PostgreSQL; the mounted-handler/real PostgreSQL/PostgREST recovery test now passed 1/1 (external/auth/model boundaries mocked; not deployed HTTP disconnect proof). An earlier release-routing fixture passed six disposable Docker checks; its newer HTTP transport passed 14 actual socket checks and its exact successor now passed six disposable Docker checks. The full release sequence remains under qualification. Disposable tests are not production acceptance.
 
-Additional checks on the frozen application passed: full application types, lint (zero errors, retained warnings), the pinned secret scan, Electron types, the production-dependency audit (zero reported vulnerabilities), and 427 coordination-harness tests. A 31-command static subset had one workflow error-copy/catalog failure; its isolated repair now passes the full static suite and awaits actual-browser verification. None of these results replaces the remaining Linux, browser, production-build, release or live acceptance gates.
+Additional checks on the frozen application passed: full application types, lint (zero errors, retained warnings), the pinned secret scan, Electron types, the production-dependency audit (zero reported vulnerabilities), and 427 coordination-harness tests. A 31-command static subset had one workflow error-copy/catalog failure; its isolated repair now passes the full static suite and passed actual Chromium verification: four cases with mobile and desktop screenshots. None of these results replaces the remaining Linux, browser, production-build, release or live acceptance gates.
 
 Code already covers substantial shared workflow context, preference/history persistence, onboarding, original-run recovery and release safeguards. The next milestone is a qualified integrated release, not another isolated feature count. Missing provider readiness, safe database writer exclusion and faithful restore still prevent an honest shipped-and-working claim.
 
 The five credited rows are A2 (workflow run-log helper), A3 (structured result labels), A4 (image validation), O0 (scope/contract grounding) and M0 (memory/latency trace). Their original acceptance is scoped to foundations or evidence; they are not five newly deployed universal capabilities. The deliberately dropped task is B2, the standalone Thinking step; iMessage is separately deferred. The 8.1% figure must not be presented as a production-readiness percentage.
+
+## Current delivery path
+
+Finish and integrate existing work before opening unrelated lanes. Each task needs a named production caller, integration owner, boolean acceptance check and exclusive file ownership. Report implemented, integrated, tested, reviewed, merged, deployed and live-verified separately.
+
+1. Close existing exact-source browser/native checks. Generic Workflow authority passed 41/41 browser cases and was composed into the working branch; the provisional headless browser cases remain pending.
+2. Compose the complete reviewed headless chain and editor repair, preserve unresolved writer hazards, then freeze one candidate. Only demonstrated blocker fixes enter qualification.
+3. Independently verify the composed source, real execution paths, full Linux suite and production build.
+4. In parallel, establish actual writer exclusion and prepare faithful restore and release coordination. Separate missing code, evidence, access and approval. Preparation can proceed while access is investigated; final release admission cannot bypass writer exclusion.
+5. Complete included-profile qualification and initial inactive deployment. Provider acceptance and the joined baseline must pass before activation.
+6. Independently verify live behavior and tested recovery across all supported paths. Preserve all 16 baseline behaviors and the full 62-task scope.
+
+No new accepted task, production migration, deployment or activation is claimed in this update. Receipt-scoped passes close evidence dependencies only. The next integration blocker is the remaining headless browser evidence; the release blockers remain actual writer exclusion, migration-role/profile proof, faithful restore and joined coordination.
 
 ## Tasks and dependency graph
 
