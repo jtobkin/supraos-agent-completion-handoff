@@ -150,7 +150,7 @@ This public handoff is readable without repository access. The implementation an
 
 Private repository: https://github.com/jtobkin/suprafx-platform
 Canonical working branch: `codex/agent-run-execution-20260928`
-Published private checkpoint at this snapshot: `bcc0f3be00` (documentation/evidence; verify the full remote SHA when resuming). The coherent application/operator candidate is separately frozen at `61fd43e427e321d31d63c9d67ba83d53275c2d5f` on `codex/agent-run-qualified-blockers-20261003`; it is not yet a qualified release. Later operator701539dce43f2c317f45a0fbdf8a096007390229 lives on `codex/agent-run-later-operator-successor-20261003`. The canonical branch now contains the frozen application and later operator work, but its tip is not the immutable qualification candidate; fetch the named candidate explicitly before qualification.
+Published private checkpoint at this snapshot: `de3271a0828a86d18aa22e366f0bd86213cb9262` (documentation/evidence; verify the full remote SHA when resuming). The coherent application/operator candidate is separately frozen at `61fd43e427e321d31d63c9d67ba83d53275c2d5f` on `codex/agent-run-qualified-blockers-20261003`; it is not yet a qualified release. Later operator701539dce43f2c317f45a0fbdf8a096007390229 lives on `codex/agent-run-later-operator-successor-20261003`. The canonical branch now contains the frozen application and later operator work, but its tip is not the immutable qualification candidate; fetch the named candidate explicitly before qualification.
 
 On a fresh computer with authorized access:
 
