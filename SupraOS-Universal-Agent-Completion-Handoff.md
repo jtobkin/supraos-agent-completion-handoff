@@ -4,14 +4,11 @@
 
 The full project remains unshipped and inactive. Accepted outcomes remain **5/62 (8.1%)**; this does not measure code completion or effort.
 
-Frozen candidate `c2c8f937e5` passes full application types, static gates, scoped combined native checks (10/10), and scoped browser cases (47 passed; 48 additional cases filtered). Browser fixtures do not establish production readability or live provider behavior. The full Linux unit run is still active with three interim failures; its final result and production build remain pending.
+Frozen candidate `c2c8f937e5` finished its Linux unit run: **58,741 passed, 4 failed, 189 skipped**. This is a failed qualification, not release acceptance. The failures are two permission-test fixture bindings, a stale plain-language exception count, and missing writer-catalog entries. Reviewed fixes for the first three are integrated at `8d3ae49ecf`; all 38 related tests pass. The catalog repair remains in the separately reviewed migration-profile lane, without weakening safety checks.
 
-Two permission-test fixture failures were reproduced and repaired without changing production code or weakening assertions. Repair `ba09880bec` passes31 related tests and independent review. The separate migration-profile successor `97b3c98558` passes109 affected tests and source review; hosted packet and complete operator-readback qualification remain required. These repairs are not deployed.
+The first profile native test exposed a PostgreSQL fixture setup error before migration execution. A reviewed repair uses a separate bootstrap administrator and the required non-superuser operator; its native rerun remains pending. The clean production build is running. Prior scoped native/browser/type/static passes retain their original limits and do not prove live readiness.
 
-Next: finish the immutable candidate run, retain failures, qualify and compose only demonstrated blocker repairs, then complete deployment prerequisites and live acceptance. Writer exclusion and faithful restoration remain open. A fresh shared deployment-lock backup attempt is prepared but awaits specific approval. All original scope and16 baseline behaviors remain required.
-
-
-Updated 2026-10-03T00:38:10.240985+00:00. **Execution has resumed.** Three Sol lanes support one delivery path: caller integration, release prerequisites, and independent qualification. This is a status snapshot, not a live monitor.
+Next: finish the build, qualify the corrected PostgreSQL fixture, integrate the profile, and verify the combined successor before release. Continuous writer exclusion, faithful restoration and live acceptance remain open. A fresh shared-lock backup attempt is prepared but awaits specific approval. All original scope and 16 baseline behaviors remain required.
 
 ## Goal
 
