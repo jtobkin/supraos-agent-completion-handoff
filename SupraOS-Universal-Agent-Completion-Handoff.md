@@ -1,6 +1,6 @@
 # SupraOS Universal Agent Completion Handoff
 
-## Current plan — active execution, 2026-10-03 15:23 UTC
+## Current plan — active execution, 2026-10-03 15:44 UTC
 
 The owner resumed an eight-hour execution run at13:04UTC. Goals, all62 tasks and all16 baseline behaviors are unchanged. The independently reviewed [Faster Verified SupraOS Delivery plan](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) governs parallel lanes and final acceptance.
 
@@ -16,9 +16,9 @@ The owner resumed an eight-hour execution run at13:04UTC. Goals, all62 tasks and
 | Faithful restore, schema, deployment and activation | Prior schema capture exposed a role-contract mismatch; consumer fix integrated, repaired read-only capture and staged inputs verified; rehearsal pending | Faithful data restore, phased installation and exact candidate release |
 | All supported journeys and recovery | Pending final live acceptance | Independent chatbox, Telegram, background and System Workflow verification |
 
-The successor changes only demonstrated replay and workflow composition blockers over the previous candidate. The old full-unit run aborted on shared disk capacity; it remains an infrastructure abort. Full successor units/build have not passed. The frozen successor full-unit suite is now running. The heavy schema rehearsal waits for that suite because both share disk with managed CI; code integration, read-only capture and review continue in parallel. Schema-only capture and disposable tests do not establish faithful production restore or live acceptance.
+The earlier frozen successor full-unit run has finished: **58,901 passed, one failed,197 skipped**; terminal receipt audit is pending. The Research failure was reproduced and its stale saved-identity fixture corrected, with two negative identity cases added;16/16 scoped tests pass on the combined candidate. The retained older run remains RED. Schema-only capture and disposable tests do not establish faithful production restore or live acceptance.
 
-**Combined source is now frozen separately as `648c309d40`.** The 36 merge conflicts are resolved; original coordinator episodes remain held and uncertain delegation ends the turn without replay. Shared Telegram replies recheck owner binding before the first send and each retry. Focused Telegram checks71/71, terminal caller checks57/57 and role-consumer checks9/9 pass; independent scoped source review is complete. Combined types are running with adequate compiler heap after the earlier memory exhaustion; actual native, browser, full tests and build remain required. The older frozen full-unit run continues unchanged and cannot qualify these later bytes.
+**Combined source is frozen as `c44ce05089`.** The36 merge conflicts are resolved; original coordinator episodes remain held and uncertain delegation ends the turn without replay. Shared Telegram replies recheck owner binding before the first send and each retry. Focused Telegram checks71/71, terminal caller checks57/57 and role-consumer checks9/9 pass; independent scoped review is complete. The broad TypeScript gate now passes **3,565 files**. Exact combined native, browser, full tests and production build remain required. The older full-unit result cannot qualify these later bytes. Three Sol workers own integration/browser, host/schema/native qualification, and independent review. Build-launch review additionally required terminal unit state and empty cgroups before another heavy job; that guard is repaired and independently tested.
 
 The real release Coordinator remains blocked by missing all-origin ingress and continuous writer/no-reclaim authority. Review rejected adding another partial cutoff adapter that could only pass injected tests. Socket quiescence does not prove background tasks finished, and stopped processes do not prove business outcomes. The strict release refusal stays in place while actual prerequisites are resolved.
 
