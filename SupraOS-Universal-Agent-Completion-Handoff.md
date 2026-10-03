@@ -1,5 +1,17 @@
 # SupraOS Universal Agent Completion Handoff
 
+## Current checkpoint — 2026-10-03 18:32 UTC
+
+The owner requested continued work until19:43UTC, then a full pause and a consolidated portable handoff. This supersedes the earlier21:04UTC target.
+
+The full a9f9 Linux unit run finished:59,465passed,1failed,231skipped. The single failure is a test assuming parent Git history exists in a shallow checkout; reviewed repair51db20e8d7 passes71tests on Node22. Successor9a2ef77bc2 also repairs raw error leakage on the Memory Promotion reset path. Its frozen28-command static subset and12-file types pass; real390/1440 Chromium verification is running. Final successor whole-suite/build/native/schema and release proof remain open.
+
+The isolated ingress prototype preserves unknown original work and a downstream stop. Its native experiment blocks IPv4/IPv6 loopback and an existing connection in a disposable namespace; the outer resource observer failed, and that failure remains retained. This is not proof of all production traffic or database-writer exclusion. Complete production operator construction remains missing.
+
+QA scheduler installation is independently verified; the full Agent Run application remains unshipped and inactive. Acceptance remains5/62(8.1%),56pending(90.3%),1dropped(1.6%). These count accepted tasks, not code completion or effort. No production application migration, deployment or activation occurred.
+
+Private coordination checkpoint:0e04e72a81 on the canonical working branch. The final handoff will consolidate current source locations, per-lane evidence, remaining dependencies and new-account access steps. Older sections below retain historical observations and do not supersede this checkpoint.
+
 ## Latest qualification update — 2026-10-03 17:54 UTC
 
 The frozen candidate **a9f9bdb50e** passes all **382 tests across the nine repaired files**, including real Chromium checks. Independent reviewers inspected desktop/mobile screenshots: uncertain work retains its original run and does not falsely show completion or invite duplicate delegation. Fourteen selected stream cases pass. This is scoped verification, not a full release pass.
