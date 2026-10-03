@@ -1,5 +1,21 @@
 # SupraOS Universal Agent Completion Handoff
 
+## Current plan — execution correction, 2026-10-03
+
+The goals and acceptance criteria are unchanged. Implementation and deployment are paused; the owner authorized this planning-only improvement. The independently reviewed [Faster Verified SupraOS Delivery plan](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) is now the execution procedure on resume. It contains the concrete checklist, parallel owners, dependencies, closeout evidence and rules for reassessing repeated failures.
+
+- Advance application qualification and actual release authority in parallel. Do not put every lane behind CI repair.
+- Coordinate a narrow source/resource window for qualification; never assume capacity is reserved from a free-space sample.
+- Finish the existing scheduler transition, then use that capacity for frozen61fd units/build. Current code6f9895/PR6153 has independent review and145 focused passes; operational a54e/PR6154 is still held and uninstalled.
+- Root owns the release-boundary decision and access blockers. The old app has no complete task census; any conservative cutoff must preserve unknown originals, forbid unsafe replay, prove admission/writer exclusion and support recovery.
+- Reuse unchanged scoped evidence, retain all final gates, and review combined transitions. Two repeated infrastructure failures trigger reassessment before another attempt. Isolated worktrees and independent caller integration remain allowed.
+- Keep one current checkpoint and link detailed evidence. Accepted-task counts remain5/62 (8.1%),56 pending (90.3%),1 dropped (1.6%); full Agent Run remains unshipped/inactive.
+
+Verified at pause: archived-generated cleanup and the isolated start-condition test passed independent review; the569a checklist passed real desktop/mobile/offline Chromium. No real scheduler installation, full Agent Run deployment or activation occurred. Production backup capacity remains below85GiB, and the previous backup approval is consumed. Private engineering checkpoint: `755720f46f`.
+
+## Historical checkpoints — superseded by the current plan above
+
+
 ## Current delivery checkpoint — 2026-10-03 11:37 UTC
 
 Three exact archived generated directories on the QA host were removed successfully after complete post-quarantine verification. The cleanup exited successfully; source directories, worktrees, shared dependencies and recovery archives remain preserved. The latest readback was about18.6GiB free; concurrent jobs make this a timestamped observation, not reserved capacity. Independent final receipt review is underway.
