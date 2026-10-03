@@ -2,13 +2,15 @@
 
 ## Latest qualification checkpoint — 2026-10-03
 
-The full project remains unshipped and inactive. Accepted outcomes remain **5/62 (8.1%)**; this does not measure code completion or effort.
+The full project remains unshipped and inactive. Accepted outcomes remain **5/62 (8.1%)**; this measures accepted tasks, not code completion or effort.
 
-Frozen candidate `c2c8f937e5` finished its Linux unit run: **58,741 passed, 4 failed, 189 skipped**. This is a failed qualification, not release acceptance. The failures are two permission-test fixture bindings, a stale plain-language exception count, and missing writer-catalog entries. Reviewed fixes for the first three are integrated at `8d3ae49ecf`; all 38 related tests pass. The catalog repair remains in the separately reviewed migration-profile lane, without weakening safety checks.
+The reviewed headless release profile is integrated. Combined checks passed **65 unit tests and109 Python tests**. Corrected native packet/readback qualification passed **2/2**, including clean source checks and scratch cleanup. Exact current-candidate preference-history tests passed **8/8** against real PostgreSQL/PostgREST. These scoped passes do not establish live provider readiness.
 
-The repaired profile packet test now passes **1/1** using a genuine non-superuser operator. Its separate installed-state readback test exposed a pgvector parameter initialization issue during baseline restore; a reviewed fixture-only repair awaits native execution. The clean production build is still running. Exact current-candidate preference-history tests passed **8/8, zero skipped**, against real PostgreSQL/PostgREST, independently verified. These cover history-before-state, next-turn readback and failure/recovery boundaries; simulated Telegram calls do not prove live provider readiness. Original failed and skipped results remain preserved.
+The c2-derived production build passed. Prebuild generated four CSS selectors in one tracked generated file; its output hash is retained for final image provenance. The original Linux whole-unit result remains **58,741 passed,4 failed,189 skipped**; all four failure causes have reviewed repairs, but this does not retroactively turn that historical run green.
 
-Next: finish the build, qualify the corrected PostgreSQL fixture, integrate the profile, and verify the combined successor before release. Continuous writer exclusion, faithful restoration and live acceptance remain open. A fresh shared-lock backup attempt is prepared but awaits specific approval. All original scope and 16 baseline behaviors remain required.
+The next concrete release dependency is schema for ordinary System Workflow editor and activation callers. Six required RPCs are absent from the fresh production catalog. Their provisional numbered release packets passed source review and45 focused checks; combined native qualification is next. Their rollback scripts refuse populated workflows/history, so production recovery must preserve state through a qualified forward repair.
+
+Production web generation changed independently, making the prepared backup plan stale. It must be refreshed and revalidated before any approved attempt. Continuous writer exclusion, faithful restoration, qualified deployment and live acceptance remain open. No new production migration, deployment or activation occurred in this work.
 
 ## Goal
 
