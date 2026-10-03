@@ -1,8 +1,12 @@
 # SupraOS Universal Agent Completion Handoff
 
-## Latest qualification update — 2026-10-03 16:22 UTC
+## Latest qualification update — 2026-10-03 16:52 UTC
 
-The offline schema-rehearsal dependency repair is now integrated and independently checked:41 scoped checks pass, and its pinned dependency copy is staged and verified. This closes preparation work; the17-packet schema rehearsal has not run. The frozen combined full unit suite continues, with intermediate Telegram and writer-catalog failures being diagnosed without cancelling it. Exact browser fixtures are saved on a separate evidence branch; browser/native execution still awaits resource admission. No new production deployment, migration, activation or accepted-task promotion occurred. Accepted tasks remain5/62 (8.1%),56 pending,1 dropped; these are not code-completion percentages.
+The complete candidate test run finished: **59,436 passed,26 failed,231 skipped**. Independent review verified all164 retained evidence hashes. Every failure was traced to nine test/helper/fixture files; reviewed repairs are integrated into one frozen successor, `a9f9bdb50e`. They preserve current owner checks and original-run recovery behavior. Scoped Money20, Telegram46, catalog39 and workflow13 non-browser cases pass; successor Linux browser and complete gates remain pending.
+
+The CI scheduler improvement merged through PR6153, but is not installed yet. Four narrowly scoped QA directory-owner repairs passed independent readback without restarting services. QA disk remains below the browser/native/schema start floor; the host lane is identifying safe cleanup of this session's idle, reproducible stages. No other agent's data will be removed and no safety floor is lowered.
+
+**The full Agent Run project remains unshipped and inactive.** No production migration, deployment, activation or accepted-task promotion occurred. Accepted tasks remain **5/62 (8.1%)**,56 pending,1 dropped. This is an acceptance count, not an estimate of code completion or hours remaining. Next: repaired-path Linux verification, complete successor unit/build/native gates, schema and faithful restore, production writer exclusion, qualified release and live acceptance. The earlier checkpoints below retain their historical observation dates.
 
 ## Current plan — active execution, 2026-10-03 16:10 UTC
 
