@@ -8,9 +8,11 @@ The reviewed headless release profile is integrated. Combined checks passed **65
 
 The c2-derived production build passed. Prebuild generated four CSS selectors in one tracked generated file; its output hash is retained for final image provenance. The original Linux whole-unit result remains **58,741 passed,4 failed,189 skipped**; all four failure causes have reviewed repairs, but this does not retroactively turn that historical run green.
 
-The next concrete release dependency is schema for ordinary System Workflow editor and activation callers. Six required RPCs are absent from the fresh production catalog. Their provisional numbered release packets passed source review and45 focused checks; combined native qualification is next. Their rollback scripts refuse populated workflows/history, so production recovery must preserve state through a qualified forward repair.
+The six editor/activation RPC release prerequisites are now integrated into the inactive release profile. Their exact combined native PostgreSQL test passed1/1, including non-superuser canonical apply, ledger/VERIFY, transactional rollback and retained-state refusal checks. All110 affected Python checks passed. The RPCs remain absent from the observed production catalog; no installation is claimed. Populated-state downgrade remains refused; actual-role restored-copy and state-preserving recovery qualification are still required.
 
-Production web generation changed independently, making the prepared backup plan stale. It must be refreshed and revalidated before any approved attempt. Continuous writer exclusion, faithful restoration, qualified deployment and live acceptance remain open. No new production migration, deployment or activation occurred in this work.
+A fresh backup plan was captured and independently reviewed after the production generation changed. It awaits specific shared deployment-lock approval, expires2026-10-03 at06:09:14UTC and has not run. Both sites remain online during the proposed attempt; new deployments would wait for its bounded lock window. Continuous direct-writer exclusion remains unresolved.
+
+The REST-close coordinator adapter has passed independent source review. Its actual database/REST test is being corrected to force a genuinely uncertain reply, then independently qualified before integration. It never redispatches an unknown close. This closes one release dependency only; it does not establish a production writer fence. No new production migration, deployment or activation occurred.
 
 ## Goal
 
