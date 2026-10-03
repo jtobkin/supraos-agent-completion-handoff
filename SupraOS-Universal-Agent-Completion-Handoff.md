@@ -1,22 +1,18 @@
 # SupraOS Universal Agent Completion Handoff
 
-## Current delivery checkpoint — 2026-10-03 08:42 UTC
+## Current delivery checkpoint — 2026-10-03 09:38 UTC
 
-Frozen coherent application/operator candidate **61fd43e427e321d31d63c9d67ba83d53275c2d5f** is pushed and independently source-reviewed. It combines the reviewed application with the owner-preserving operator and guarded owner-state preflight. Root local checks include137 operator checks,5 owner-entry checks,29 Agent profile checks, and32 Money checks with1 environment skip. These are scoped implementation/integration results, not production acceptance.
+The full project remains **unshipped and inactive**. **5/62 tasks are accepted (8.1%);56 remain pending (90.3%);1 is deliberately dropped (1.6%)**. These are accepted-task counts, not a code-completion or production-readiness estimate.
 
-**Joined owner-state native qualification now passes3/3.** Test sourcefe330bd2eb differs from61fd solely by the joined test file. The real disposable journal, forward port and owner filesystem host preserve state, read saved outcomes and refuse unsafe replay after lost acknowledgments. Root and independent Sol review verified all3 receipt hashes and clean process/scratch termination. Earlier failed fixtures are retained. This reconstructs objects within one process; actual process-crash recovery, real external holds and live release authority remain pending. Separate native child identity7/7 and owner filesystem6/6 passes remain scoped evidence.
+Frozen application/operator candidate **61fd43e427e321d31d63c9d67ba83d53275c2d5f** is on `codex/agent-run-qualified-blockers-20261003`. Its complete Linux unit run started09:03 and aborted09:27UTC when shared CI disk fell below the unchanged8GiB safety floor. Four generators passed, but there is no terminal suite verdict. Root and independent Sol verified115 retained evidence files. This is an infrastructure abort, not a full-suite pass or a product-test failure. Build and joined native checks remain unlaunched. Historical successful candidates do not qualify newer source.
 
-The previously timed-out real Docker/PostgreSQL migration test passes unchanged4/4 in7.51seconds. Its wrapper incorrectly parsed ANSI output and remains RED; a reviewed offline verifier records only the scoped test pass. The broad predecessor suite still records58,892 passes,1 failure and189 skips. Exact61fd full-suite source/dependencies are staged. Launch awaits measured resource availability amid other CI jobs; the18GiB start floor, existing test timeouts and one-worker recipe are unchanged. Final build needs30GiB; disposable Docker qualification needs35GiB. No newer full-suite/build pass is claimed.
+Scoped delivery dependencies did close: joined real journal/filesystem owner-state checks pass3/3; disposable actual-role PostgreSQL090 reader checks pass6/6 with zero skips. Separate operator successor **701539dce43f2c317f45a0fbdf8a096007390229** wires cron retain/launch through the existing Coordinator aggregate and passes four independently repeated orderly-exit/SIGKILL recovery cases across distinct processes. Those use an injected durable effect log, not real Docker or a power-loss test. The operator is source-reviewed and composition-checked but not merged or deployed.
 
-Production read-only catalog inventory at08:22:15UTC proves the090 admission functions and migration ledger are absent. The actual operator role is non-superuser postgres with LOGIN/BYPASSRLS; read-only rollback and connection close were verified. The separately reviewed090 read adapter41da and boundary caller045cd still need actual PostgreSQL qualification and effectful Coordinator integration. They cannot substitute for continuous writer exclusion or all-origin owner ingress. The full project remains **unshipped and inactive**.
+The current immediate blocker is reliable shared CI capacity. Separate scheduler repair **f7b4ea0e2e52deb392b198b69662fdc070b2955e** adds conservative disk admission in the actual scheduler; focused checks and independent source review pass. It is not installed. Service permissions and a rollout that preserves running jobs are being checked. The guard is not a quota or a reservation against unmanaged jobs. Do not lower floors or rerun solely because free space briefly rises.
 
-The exact08:11 checklist snapshot passed real Chromium mobile390/desktop1440 HTTP checks and390 offline checks:32 work packages,62 tasks, no page errors. The08:42 checklist changes status data only; all32 dependencies remain acyclic and cover all62 tasks. Browser behavior evidence is carried from unchanged UI bytes, not claimed as a new exact-snapshot run.
+The full effectful Coordinator caller still needs complete backup/schema, health and final-writer providers. Continuous writer and all-origin ingress authority, faithful restore, phased migrations, inactive deployment, activation and live verification remain required. Production090 was absent at the08:22 readback. Public live version at09:25UTC was **e948dcdb5bd29bb22cacd0428afd04aacc70052f**, not our candidate. Approved backup attempt6d79 is consumed/refused; its lock is released and approval must not be replayed. A fresh attempt still lacks the required capacity and will need a specific approval of its concrete plan.
 
-Backup attempt6d79 is consumed/refused; its shared lock was released and no migration ran. Do not replay that approval. A fresh faithful-restore qualification still needs adequate production capacity and a newly reviewed, specifically approved attempt. Network-policy coverage, continuous writer/ingress exclusion, faithful restore, phased schema, final build, deployment, activation, all16 baseline behaviors and live recovery remain required.
-
-Acceptance remains **5/62 (8.1%)**, pending **56/62 (90.3%)**, deliberately dropped **1/62 (1.6%)**. These count accepted tasks, not code completion, effort or production readiness. The current milestone closes a scoped recovery dependency; it does not narrow the full universal-agent goal.
-
-Private engineering handoff/checklist checkpoint **752a437c18** contains current source locations and retained native/catalog evidence. Root and three Sol workers continue implementation/integration, host qualification and independent verification on this same delivery path. Historical sections below are superseded for next actions.
+The exact08:11 checklist snapshot passed Chromium mobile/desktop and offline checks. Current edits change status data only;32 packages remain acyclic and cover62 tasks. No new exact-snapshot browser pass is claimed. Root and three Sol workers continue on this same delivery path. Earlier chronological sections below are historical; current next actions are listed later in this document.
 
 ## Execution resumed — 2026-10-03
 
@@ -68,11 +64,7 @@ Orchestration must load current scoped preferences and relevant memory, skills a
 
 The full project is **not shipped or activated**. Acceptance is **5 of 62 tasks (8.1%)**, with **56 pending (90.3%)** and **1 deliberately dropped (1.6%)**. These measure accepted outcomes, not code written, effort spent or time remaining. Several earlier narrow repairs shipped separately; they do not establish completion of this project.
 
-Historical qualification below concerns earlier application candidate `1d84264f85d30c30039d31eb436817c17155d4b2`; subsequent c2-derived repairs are now composed in frozen ae2f2cd803; the latest checkpoint above is authoritative. Its application type check passed on application-equivalent source. Its full Mac unit run finished with 4,517 files passed, 142 failed and 16 skipped; 57,927 tests passed, 177 failed and 674 skipped. Independent triage found 176 environment or derivative failures and one genuine catalog mismatch. The conservative catalog repair passed its focused suite and was integrated; the whole-run result remains RED. That historical status is superseded by the latest checkpoint above: the c2 build passed, successor ae2f whole-unit qualification passed, and exact ae2f production build has passed. Earlier builds and tests do not qualify newer source.
-
-The separate headless original-result candidate passed its disposable PostgreSQL test after a test transaction fix. Its formal migration verification and conservative rollback rehearsal also passed in disposable PostgreSQL; the mounted-handler/real PostgreSQL/PostgREST recovery test now passed 1/1 (external/auth/model boundaries mocked; not deployed HTTP disconnect proof). An earlier release-routing fixture passed six disposable Docker checks; its newer HTTP transport passed 14 actual socket checks and its exact successor now passed six disposable Docker checks. The full release sequence remains under qualification. Disposable tests are not production acceptance.
-
-Additional checks on the frozen application passed: full application types, lint (zero errors, retained warnings), the pinned secret scan, Electron types, the production-dependency audit (zero reported vulnerabilities), and 427 coordination-harness tests. A 31-command static subset had one workflow error-copy/catalog failure; its isolated repair now passes the full static suite and passed actual Chromium verification: four cases with mobile and desktop screenshots. None of these results replaces the remaining Linux, browser, production-build, release or live acceptance gates.
+The current frozen source is61fd, whose full-suite result is incomplete after the disk-floor abort. Earlier candidates passed broader tests and builds, and current unchanged-source scoped results are retained with exact source limits. None of these removes the outstanding full-candidate, recovery, deployment or live gates.
 
 Code already covers substantial shared workflow context, preference/history persistence, onboarding, original-run recovery and release safeguards. The next milestone is a qualified integrated release, not another isolated feature count. Missing provider readiness, safe database writer exclusion and faithful restore still prevent an honest shipped-and-working claim.
 
@@ -82,14 +74,12 @@ The five credited rows are A2 (workflow run-log helper), A3 (structured result l
 
 Finish and integrate existing work before opening unrelated lanes. Each task needs a named production caller, integration owner, boolean acceptance check and exclusive file ownership. Report implemented, integrated, tested, reviewed, merged, deployed and live-verified separately.
 
-1. Close existing exact-source browser/native checks. Generic Workflow authority passed 41/41 browser cases and was composed into the working branch; the two selected provisional headless browser cases now passed (48 other cases filtered, not a full-file pass).
-2. The reviewed main refresh, complete headless chain and editor repair are composed and originally frozen as `c2c8f937e5536284e9eef1172a68065b8b07463d`, then advanced only through blocker repairs to current frozen ae2f. Both unresolved writer hazards remain recorded. Independent composition review found no merge-specific defect. Only demonstrated blocker fixes enter qualification.
-3. Independently verify the composed source, real execution paths, full Linux suite and production build.
-4. In parallel, establish actual writer exclusion and prepare faithful restore and release coordination. Separate missing code, evidence, access and approval. Preparation can proceed while access is investigated; final release admission cannot bypass writer exclusion.
-5. Complete included-profile qualification and initial inactive deployment. Provider acceptance and the joined baseline must pass before activation.
-6. Independently verify live behavior and tested recovery across all supported paths. Preserve all 16 baseline behaviors and the full 62-task scope.
-
-No new accepted task, production migration, deployment or activation is claimed in this update. Receipt-scoped passes close evidence dependencies only. The next gate is combined qualification of the frozen candidate. Headless/editor SQL profile wiring is composed, but those migrations remain uninstalled; actual-role/profile and recovery qualification are still required before schema-before-application deployment. Other release blockers remain actual writer exclusion, migration-role/profile proof, faithful restore and joined coordination.
+1. Deliver the narrow reviewed scheduler repair safely, preserving active jobs; establish coordinated qualification capacity.
+2. Finish exact61fd full units, production build and joined native evidence. Keep the application frozen and preserve all original failures.
+3. Integrate the reviewed operator successor only with explicit source/evidence boundaries. Complete the actual effectful Coordinator caller and continuous writer/ingress authorities.
+4. Qualify faithful restore and the exact phased schema under the actual migration role; installed SQL must precede ordinary application callers that require it even while activation is off.
+5. Deploy the qualified inactive foundation, complete provider and joined baseline acceptance, then activate.
+6. Independently verify all supported paths live and test recovery. Preserve the complete62-task/16-baseline scope.
 
 ## Tasks and dependency graph
 
@@ -132,8 +122,8 @@ A checked task means its original scoped acceptance was met; some rows are found
 
 ## Immediate work and next steps
 
-1. Complete the unchanged migration-test diagnostic, then full-suite and production-build qualification on the coherent03ac candidate. Retain scoped browser evidence only where source is unchanged; do not replace broad gates with focused passes.
-2. Finish real owner-state native and joined durable-journal checks. Wire actual pinned Docker generation and preserved receipts into the named release operator. Missing continuous writer/ingress/090 authority must block effects before an original is recorded.
+1. Finish source-reviewed scheduler admission rollout and coordinated shared capacity; rerun exact61fd full-suite and production-build qualification without weakening limits.
+2. Retain the3/3 joined owner and6/6 native090 proofs; complete queued canonical preflight→actual PostgreSQL qualification and exact operator composition. Missing continuous writer/ingress/090 authority must block effects before an original is recorded.
 3. Qualify complete application drain, continuous writer exclusion, transport health and recovery; socket inactivity alone is insufficient.
 4. Reconcile installed migrations with the exact phased profile, verify the actual migration role and rehearse on a faithful restored copy. Do not replay installed migrations.
 5. Prepare a fresh backup plan after capacity is available; its shared deployment lock needs a new specific approval. The consumed attempt must not run again.
@@ -154,7 +144,7 @@ This public handoff is readable without repository access. The implementation an
 
 Private repository: https://github.com/jtobkin/suprafx-platform
 Canonical working branch: `codex/agent-run-execution-20260928`
-Published private checkpoint at this snapshot: `d18a756947` (documentation/evidence; verify the full remote SHA when resuming). The coherent application/operator candidate is separately frozen at `03ac75c3a83615cc5505f34ce09614824980168f` on `codex/agent-run-qualified-composition-20261003`; it is not yet a qualified release.
+Published private checkpoint at this snapshot: `264f6a22fc` (documentation/evidence; verify the full remote SHA when resuming). The coherent application/operator candidate is separately frozen at `61fd43e427e321d31d63c9d67ba83d53275c2d5f` on `codex/agent-run-qualified-blockers-20261003`; it is not yet a qualified release. Later operator701539dce43f2c317f45a0fbdf8a096007390229 lives on `codex/agent-run-later-operator-successor-20261003`. The canonical documentation branch tip is not the frozen candidate; fetch the named candidate explicitly before qualification.
 
 On a fresh computer with authorized access:
 
