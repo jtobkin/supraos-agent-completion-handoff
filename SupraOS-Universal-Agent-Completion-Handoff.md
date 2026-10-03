@@ -1,12 +1,12 @@
 # SupraOS Universal Agent Completion Handoff
 
-## Latest qualification update — 2026-10-03 16:52 UTC
+## Latest qualification update — 2026-10-03 17:19 UTC
 
-The complete candidate test run finished: **59,436 passed,26 failed,231 skipped**. Independent review verified all164 retained evidence hashes. Every failure was traced to nine test/helper/fixture files; reviewed repairs are integrated into one frozen successor, `a9f9bdb50e`. They preserve current owner checks and original-run recovery behavior. Scoped Money20, Telegram46, catalog39 and workflow13 non-browser cases pass; successor Linux browser and complete gates remain pending.
+The frozen successor `a9f9bdb50e` contains independently reviewed repairs for all26 failures in the prior full run (59,436 passed,26 failed,231 skipped). Its exact source and browser/native test inputs are staged and independently verified. Scoped Money20, Telegram46, catalog39 and workflow13 non-browser cases pass. **The successor's full suite, build and Linux browser/native checks have not passed yet.**
 
-The CI scheduler improvement merged through PR6153, but is not installed yet. Four narrowly scoped QA directory-owner repairs passed independent readback without restarting services. QA disk remains below the browser/native/schema start floor; the host lane is identifying safe cleanup of this session's idle, reproducible stages. No other agent's data will be removed and no safety floor is lowered.
+The merged CI scheduler improvement is still uninstalled. Its first installation attempt safely refused before any service change. A narrow checkpoint-wait repair now passes18 checks and independent review; a new attempt is staged and waiting for the current CI build to finish naturally. We are also verifying cleanup of seven already-archived exports to recover test capacity. Other agents' work, retained donors and resource limits remain protected.
 
-**The full Agent Run project remains unshipped and inactive.** No production migration, deployment, activation or accepted-task promotion occurred. Accepted tasks remain **5/62 (8.1%)**,56 pending,1 dropped. This is an acceptance count, not an estimate of code completion or hours remaining. Next: repaired-path Linux verification, complete successor unit/build/native gates, schema and faithful restore, production writer exclusion, qualified release and live acceptance. The earlier checkpoints below retain their historical observation dates.
+The engineering plan and its individual qualification, backup and release-coordinator checklist entries were updated at checkpoint `a255ef7f7b`. Faithful restore, schema rehearsal, production writer/ingress authority, full Coordinator integration and qualified release/live recovery remain open. **The full Agent Run project is unshipped and inactive:5/62 tasks accepted (8.1%),56 pending,1 dropped.** This is an acceptance count, not code completion or an hours estimate. No production migration, deployment or activation occurred. Execution continues toward the requested eight-hour checkpoint at21:04UTC.
 
 ## Current plan — active execution, 2026-10-03 16:10 UTC
 
