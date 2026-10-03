@@ -2,7 +2,9 @@
 
 ## Current checkpoint and how to use this document
 
-**Active checkpoint, 2026-10-03 19:01 UTC. The owner requested work until 19:43 UTC (03:43 HKT on October 4), followed by a pause and portable handoff.** Final terminal states and worker ownership will be reconciled at that deadline. This consolidated report supersedes older next-action lists; historical source-specific evidence keeps its original scope.
+**Paused at the owner-requested 90-minute deadline, 2026-10-03 19:43 UTC (03:43 HKT October 4).** New implementation and qualification launches stopped. Only safe evidence collection and documentation publication wrap-up remains. This report supersedes older next-action lists; historical evidence keeps its original scope.
+
+Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.
 
 **The full Agent Run project remains unshipped and inactive. Accepted tasks:5/62(8.1%); pending:56/62(90.3%); deliberately dropped:1/62(1.6%).** These are accepted-task counts, not code-completion, effort or production-readiness estimates. Most rows already contain substantial code but remain blocked by integrated qualification, release prerequisites or live acceptance. No production application migration, deployment or activation occurred in this focus run. Global attention remains off; overall restoreVerified remains false.
 
@@ -28,15 +30,19 @@ This requires bounded context and SCM recall without stalling the UX; explicit p
 | Friend-channel security repair | Historical shipped repair PR5891/main61937ca124 | Independent narrow repair, not full Agent Run |
 | Other historical narrow repairs | PR6025 and PR6037 recorded merged | No fresh live qualification claimed in this handoff |
 | QA disk-admission scheduler PR6153 | Merged d35bdcbd37641648da3f2b6891289153cdda1ff2; exact runtime4a015f9 installed on QA, independently read back | Build/check infrastructure only; not production application deployment |
-| Universal Agent combined source | Frozen successor f74bb97818c755527154c8c1633024f525bd2cda; extensive scoped proofs | Full current-source suite, security, build, native/schema, deployment and live acceptance remain open |
+| Universal Agent combined source | Frozen successor f74bb97818c755527154c8c1633024f525bd2cda; extensive scoped proofs | Full-unit suite independently passed on QA; remaining security/build/native/schema, deployment and live acceptance remain open |
 | Global attention and new SQL | Cutover off; phased profile and installed ledger must be re-read | No implicit activation or migration from code presence |
 | Backup/recovery | Coherent historical capture and many scoped checks | Overall restoreVerified=false; restored-copy/role/profile/writer-window qualification incomplete |
+
+A fresh GitHub PR readback at 2026-10-03 19:31:16 UTC showed PR5862 **open, draft, unmerged and conflicted** (`mergeable:false`, `mergeable_state:dirty`), with coordination head `6f466ab8eaf6a346475b4dad44d1f978ae1e5bd1`. This PR does not point to the frozen f74 application candidate. Its API-reported base SHA is metadata for that PR, not a substitute for freshly reading `refs/heads/main`. A later merge/release proposal must use the actually composed, qualified application source; the coordination PR is not a deployable shortcut. No merge was attempted.
 
 Latest retained public live-source observation names `8b6b3525a2d9db8b0b0409f5d0498aad4d76d523`, with response timestamp `2026-10-03T18:46:41.210Z`. The read-only public `/api/version` request through the QA host succeeded. This is a source stamp only, not authenticated behavior, running image/config equality or proof that the frozen Agent Run candidate is deployed. Main can advance independently.
 
 The five accepted rows remain A2 workflow run-log helper, A3 structured result labels, A4 image validation, O0 scope grounding and M0 memory/latency trace. B2 standalone Thinking is deliberately dropped. iMessage is separately deferred. O1 onboarding's old audit does not apply to changed completion-route source.
 
-## Progress during the latest focus run
+The older handoff's 41/62 locally complete figure used a different milestone: local implementation and audit. It must not be compared directly with the current 5/62 accepted-task count or presented as a regression in code written. Track implementation, integration, tests, independent review, merge, deployment, activation and live verification separately; do not estimate remaining hours from either percentage.
+
+## Recent qualification history
 
 1. **Application failure diagnosis and bounded repairs:** retained the complete c44 Linux full-unit RED (59,436 passed/26failed/231skipped). Nine test/fixture repairs compose a9f9, without runtime/SQL permission changes. Exact repair run passed382/382 with25 Chromium launches and independently inspected held-state phone/desktop screenshots.
 2. **Preserved and repaired qualification infrastructure:** first a9f9 attempt failed before full tests/unit on EXDEV while moving screenshots across filesystems. The corrected runner copies exclusively, verifies identity/size/hash and preserves originals. Real cross-filesystem Linux smoke passed. Second a9f9 full suite reached terminal RED:59,465 passed/1failed/231skipped across4,713 passing/1failing/21skipped files. Sole failure was shallow outer-HEAD^ history in a test fixture. Reviewed51db repair uses a real disposable two-commit repository and preserves rejection assertions;71 scoped tests pass. Complete terminal receipt and172 published member hashes were independently verified.
@@ -44,23 +50,29 @@ The five accepted rows remain A2 workflow run-log helper, A3 structured result l
 4. **Recovered qualification disk safely:** seven archived non-Git exports removed once after content correspondence and terminal review. All Git worktrees and dependency donors preserved. No blanket pruning or shared-image cleanup. Capacity remains a concrete gate.
 5. **Prepared clean build and checked production dependencies:** separate clean a9f9 source staged; build still held. Production lock-only npm audit reports zero vulnerabilities. Reviewed build evidence reader now hashes and parses the same bounded no-follow file bytes; six local refusal/success probes pass. This is launcher preparation, not a build pass.
 6. **Advanced the real release boundary dependency:** isolated v5 old-web ingress cutoff is wired into the tested Coordinator composite, with generation-bound UNKNOWN and strict downstream refusal; durable no-reclaim and writer-exclusion authorities remain missing. There is still no full production CLI/operator assembly. Native namespace checks prove only their actual origins; a local subset cannot establish all-origin production cutoff.
-7. **Repaired and exercised a genuine UI blocker:** whole-tree P3C found reset error/detail leakage on Memory Promotion. The narrow repair uses truthful generic guidance for both HTTP failure and malformed JSON. Diagnostic r4c exercised the actual page in Linux Chromium at390/1440:1/1 test passed in6.49seconds, zero skips,12 byte-verified screenshots independently reviewed by root and Sol. It changed logging only; application source, assertions and30-second limit were unchanged. The earlier clean r3 test stalled in desktop missing-run recovery; that unexplained reliability failure is retained, not declared fixed. Frozen f74 full qualification will exercise the clean canonical test again. Clean9a2 passes28 frozen static checks,12-file types, full ESLint(0errors/590warnings),427 coordination tests and3 type-output tests.
+7. **Repaired and exercised a genuine UI blocker:** whole-tree P3C found reset error/detail leakage on Memory Promotion. The narrow repair uses truthful generic guidance for both HTTP failure and malformed JSON. Diagnostic r4c exercised the actual page in Linux Chromium at390/1440:1/1 test passed in6.49seconds, zero skips,12 byte-verified screenshots independently reviewed by root and Sol. It changed logging only; application source, assertions and30-second limit were unchanged. The earlier clean r3 test stalled in desktop missing-run recovery; that unexplained reliability failure is retained, not declared fixed. The active frozen f74 full suite later reported the clean canonical browser file PASS (1 test, 3,586 ms at the 19:26 UTC log readback), without instrumentation or a changed budget. The later independently verified terminal seal confirms this canonical pass; the earlier r3 stall remains unexplained. Clean9a2 passes28 frozen static checks,12-file types, full ESLint(0errors/590warnings),427 coordination tests and3 type-output tests.
 
 8. **Closed a concrete secret-scan blocker:**105 findings were SHA256 source-file commitments in one historical stage receipt. Root and independent Sol reviewers verified105/105 against the declared Git blobs. Exact immutable commit/path/rule/line exceptions, not a broad allowlist, were added in f74bb. Gitleaks8.28.0 passes the exact ef86349dbda78e1d1e046dcd477dbe06f80f7e8a..f74bb97818c755527154c8c1633024f525bd2cda range; a synthetic credential control still fails as expected.
 
-9. **Started exact final-candidate verification:** the frozen f74 full-unit run launched once at18:54UTC, with independent source/tree and effective20GiB/200% resource readback. It uses the unchanged18GiB start/8GiB abort floors. Launch is not a pass; terminal verdict must be collected before any production-build or release claim.
+9. **Started exact final-candidate verification:** the frozen f74 full-unit run launched once at18:54UTC, with independent source/tree and effective20GiB/200% resource readback. It uses the unchanged18GiB start/8GiB abort floors. The run subsequently reached exit0:59,466passed/0failed/231skipped. Independent Sol rehashed all174published members and separately read the final counts from that same tests.log. This closes the full-unit gate only; production build and release remain open.
+
+## This 90-minute focus window
+
+The current owner-requested window began at 18:12:50 UTC on October 3 and ends at 19:42:50 UTC. Earlier suite runs, scheduler installation and disk cleanup above are retained qualification history, not work newly completed inside this window. This window froze f74, closed the exact historical-hash Gitleaks blocker, independently verified the diagnostic Promotion browser run, launched the immutable full-unit successor, reviewed future launcher defects, prepared a source-only held build successor and prepared the portable handoff. The final checkpoint records its independently verified terminal PASS. No original acceptance task or production capability was newly declared complete.
+
+Dependency triage at 19:02:54 UTC found two affected development dependencies in the exact f74 root lock (`http-cache-semantics@4.2.0` and `braces@3.0.3`), with no patched version listed in the advisories. The existing G6 gate audits root production dependencies only, so these are retained development-tool risks rather than evidence of a G6 failure. The reported hedge-desk `fast-uri` alert is outside f74's resolved `3.1.8` vulnerable range. This is neither an all-dependency security clearance nor an installed-package inventory. Independent Sol review checked exact locks and policy. Read the [source-pinned triage](https://github.com/jtobkin/suprafx-platform/blob/9ec13958fd7c04486a3aa9ddee65e7b0b786fa25/docs/agent-run/evidence/f74-dependabot-lock-triage-20261004/README.md); do not mutate the frozen candidate or introduce speculative overrides.
 
 ## Current source and ownership map
 
 | Purpose | Branch / checkpoint | Local location and remaining state |
 |---|---|---|
-| Canonical coordination, plans and release scripts | `codex/agent-run-main-reconciliation-20260930`, publication target `codex/agent-run-execution-20260928`; publication target shown here; final commit pin is recorded in the public publication receipt and session checkpoint | See private engineering handoff for original worktree location; preserve ownership and unmerged work. |
-| Base composed application source | `codex/agent-run-main-composition-20261003`; a9f9bdb50ee99878bdfdee67906492acdbc51157; tree df0a3d1fe40b3a1c499483ed56cf1a2815bd8d4d; composed main ef86349dbda78e1d1e046dcd477dbe06f80f7e8a | See private engineering handoff for original worktree location; preserve ownership and unmerged work. |
-| Demonstrated fixture/reset repairs | `codex/agent-run-check-fixture-20261004`, rooted at a9f9 | See private engineering handoff for original worktree location; preserve ownership and unmerged work. |
-| Ingress-cutoff dependency | `agent-run-ingress-netns-20261004` isolated worktree | B-owned; feat/agent-run-netns-ingress-cutoff-20261004 at7abf76ab8aaf43d9e2917df1371b417ca10d4c8b, including scoped browser reuse evidence and a hard-held future launcher repair; no production assembly claim |
+| Canonical coordination, plans and release scripts | `codex/agent-run-main-reconciliation-20260930`, publication target `codex/agent-run-execution-20260928`; publication target shown here; final commit pin is recorded in the public publication receipt and session checkpoint | the original private worktree (see engineering handoff) |
+| Base composed application source | `codex/agent-run-main-composition-20261003`; a9f9bdb50ee99878bdfdee67906492acdbc51157; tree df0a3d1fe40b3a1c499483ed56cf1a2815bd8d4d; composed main ef86349dbda78e1d1e046dcd477dbe06f80f7e8a | Separate base checkout; B-owned MeetingPage overlay is outside this application commit but preserved on browser evidence branch c6d1f240; keep it separate |
+| Demonstrated fixture/reset repairs | `codex/agent-run-check-fixture-20261004`, rooted at a9f9 | Separate root-owned candidate checkout; frozen f74bb97818c755527154c8c1633024f525bd2cda; tree9cbec0b05d90f546029011e53d5b0f7a28b2a5da; fixture51db, UI9a2 and exact G11 receipts. Branch tip3d9520bb4575320dfda42a8d315a6b58da9ac830 adds only a later G11 evidence clarification; qualification remains pinned to f74. Final browser/whole-suite status below |
+| Ingress-cutoff and future qualification drafts | `feat/agent-run-netns-ingress-cutoff-20261004`; d9d4d54f40da3f3f1f08b1ac784aec9f559b5fe3 | B-owned isolated worktree `agent-run-ingress-netns-20261004`; includes ingress prototype, browser reuse, reviewed advisory triage and hard-held future full-unit/build launchers. No production operator assembly or build result |
 | Existing browser evidence lane | `codex/agent-run-main-browser-evidence-20261003` | Recoverability/gap-map commits already composed; c6d1f240eae35687bfe2923642b648678f19c465 preserves corrected MeetingPage overlay997a5784 plus diagnostic test overlaye0872cbf; separate from frozen candidate |
-| Scheduler operational evidence | `codex/box-ci-disk-rollout-f2e5-20261003`, be72456853 | See private engineering handoff for original worktree location; preserve ownership and unmerged work. |
-| Portable host qualification evidence | `codex/host-qualification-evidence-20261004`,3b515617e4c6fdbe3a7b985e7f49e065cd627628 | See private engineering handoff for original worktree location; preserve ownership and unmerged work. |
+| Scheduler operational evidence | `codex/box-ci-disk-rollout-f2e5-20261003`, be72456853 | the original private worktree (see engineering handoff); PR6154 draft/unmerged; installed runtime comes from separate mergedPR6153 |
+| Portable host qualification evidence | `codex/host-qualification-evidence-20261004`,f72f4860f21dc92c8fad6d5775bc375684533ce6 | the original private worktree (see engineering handoff); scripts, browser receipts/12synthetic screenshots and current full-run monitoring in `docs/agent-run/evidence/host-qualification-20261004/` |
 | Money/SSE prior repair | `codex/agent-run-stream-money-fixtures-20261004`,99c185de56 | Integrated into a9f9; source lane unmerged, preserved |
 
 Previous c44 is c44ce05089d7abd885d3b09c1ba27db9168be108. Candidate history contains duplicated dependencies from preserved lanes; compare actual ancestry and file hashes before cherry-picking. Main updates are not an instruction to restart every qualifying candidate. Only demonstrated blockers enter the next frozen candidate.
@@ -122,6 +134,25 @@ The private engineering handoff contains the complete host/source/receipt invent
 **Owner authorization.** Automatic migrations were expressly approved on 2026-10-02. Do not ask again merely for routine qualified migration. This does not bypass current technical gates or grant an unbounded shared cross-project deployment lock.
 
 **Providers.** Link is settled; application and live Stripe account exist, but actual approved client configuration and Stripe-delivered credentials remain unverified. Partner-generated public `.asc` is not the provider secret. Callback `https://supraos.ai/api/vms/link-agent-wallet/callback`. Migadu/mail.supraos.ai is settled; subscription, securely installed credentials, authorized DNS and real delivery remain. Independent human browser-image publication reviewer/protected environment remains unresolved; initiating jtobkin self-review is insufficient. Never request secrets in chat, restart Privacy.com, make purchases, alter DNS or send consumer tests without their specific authorization.
+
+## Immediate blockers by type and next owner
+
+This table is a resume order, not a reduced definition of finished. The full 32-package graph and original 62-task acceptance ledger follow it.
+
+| Delivery dependency | Type | Next owner | Proof that closes this dependency |
+|---|---|---|---|
+| Frozen f74 full-unit verdict | Evidence | Qualification worker, independent reviewer | Original unit terminal, exact report/log/member hashes and independent result review; retain all failures/skips |
+| Exact f74 clean production build | Code/setup, capacity and evidence | Qualification worker, root integration | Fresh clean source with repaired launcher layout, current required admission/gates, successful terminal build and source-bound review; never launch the obsolete a9f9 draft |
+| Remaining actual browser/native and 17-packet schema proof | Evidence and host capacity | Qualification worker | Real required paths and role-bound forward/rollback/reapply/invariants under unchanged resource floors; skipped environment gates do not pass |
+| Continuous writer exclusion and old-web cutoff | Code, access and evidence | Implementation worker, authorized operator | Real production constructor/callers, actual network-policy readback, all-origin admission/drain proof through the complete migration interval |
+| Faithful restored-copy rehearsal | Capacity approval and evidence | Release operator, independent reviewer | Fresh concrete source-pinned plan, sufficient disk, specific shared-lock authority, complete role/catalog/data fidelity and tested recovery; earlier consumed approvals never replay |
+| Joined release operator | Code/integration and evidence | Root with implementation worker | Same original journal coordinates ingress, writer barrier, schema transition, backend/web observations and retained reopen/unknown recovery; qualify restored-copy transport before production |
+| Provider readiness and browser publication | External configuration and specific authorization | Authorized provider/admin owners | Actual approved Link configuration, secure credentials and authorized qualification; Migadu subscription/DNS/delivery; eligible independent publication review |
+| Deployment, activation, all paths and all 16 baseline behaviors | Integrated release/live evidence | Root, operator and independent verifier | Qualified phased release, actual configuration/source readback, authenticated live cases, monitoring and recovery; no task acceptance based on code presence |
+
+QA and production capacity are separate dependencies. The QA readback near 19:00 UTC was 32,574,349,312 free bytes (about 30.34 GiB): the active full suite was admitted under its 18 GiB start floor, but a fresh build stage requires 31 GiB, a build launch 30 GiB, and the broad native/schema packets 35 GiB. Recheck before any new admission and never lower a floor. The last retained AWS production readback was about 61.25 GiB against an 85 GiB backup floor; the pending AWS volume proposal does not increase the Hetzner QA disk.
+
+The existing [production capacity proposal](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/evidence/pending-production-capacity-20261004/README.md) is now preserved in the private repository with its exact source/receipt hashes, rather than only on the original Mac. It proposes AWS gp3 300→364 GiB plus a recovery snapshot; its specific owner approval remains pending. Do not send the request again or assume it approved. Copying this dormant packet did not execute it or authorize any infrastructure change. A default-branch dependency alert is not automatically a failed frozen-source gate; use the source-specific advisory note and the actual policy. Conversely a production-only audit does not certify all dependencies.
 
 ## Exact remaining packages
 
@@ -359,13 +390,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** a9f9r2 terminalRED59465PASS/1FAIL/231SKIP retained; sole history-fixture fixed in frozenf74. Final exact G11PASS plus negativecontrol; unchanged9a2 scoped71tests/12types/28static/ESLint0errors590warnings/427coordination/3type-outputPASS. Diagnosticr4c actualPromotionChromium1/1PASS6.49s/12screenshots under unchanged30s; retain r3 stall unexplained. f74 fullunits launched18:54UTC on exact clean source; terminal verdict pending. Cleanbuild not launched. Native/schema/release/live gates separate.
+**Remaining:** Preserve terminal archive, then use fresh exact-f74 protected donor and reviewed held build packet; recheck capacity. Complete remaining candidate security/build/native/schema gates and release prerequisites; no deployment or live acceptance yet.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
 **Source:** `scripts/ci/box-ci/merge-if-green.sh`, `tests/native-qualification/`.
 
-**Evidence:** implemented Frozen a9f9 superseded for next qualification by reviewed isolated9a2ef77bc2 on codex/agent-run-check-fixture-20261004 after demonstrated blockers. Application not merged/deployed. QA scheduler6153 installed and independently read back.; tested scoped security/static/types/units and diagnostic actualUI PASS; clean fullcandidate qualification pending; independently reviewed Independent Sol verified exact a9f9 source, repair report/screenshots, corrected r2 launch and real cross-device smoke. Whole-candidate terminal/native/build proof still pending.; merged False; deployed False; live verified False.
+**Evidence:** implemented Frozen f74bb978 contains reviewed fixture51db, truthful reset UI9a2 and exact G11 fingerprint exceptions. Later3d952 is evidence-only. Application remains unmerged/undeployed. QA scheduler6153 installation is separately closed.; tested Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
 
 ### V02 — Joined contract and baseline local acceptance
 
@@ -395,7 +426,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root infrastructure coordination; Claude access unavailable in current session. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Reviewed ingress-v5 partial composite on feat/agent-run-netns-ingress-cutoff-20261004 atf10f79b/a40fd implements generation-levelUNKNOWN/no-reclaim and strict downstream refusal. Isolated native toy scope only; actual all-origin packet source, complete tenancy, direct-writer exclusion and production operator construction remain missing. Production090/100 absent at last read; ordered pair only after qualified prerequisites.
+**Remaining:** Reviewed ingress-v5 partial composite on feat/agent-run-netns-ingress-cutoff-20261004 (prototype sourcef10f79b/a40fd; preserved at branch tipd9d4d54) implements generation-levelUNKNOWN/no-reclaim and strict downstream refusal. Isolated native toy scope only; actual all-origin packet source, complete tenancy, direct-writer exclusion and production operator construction remain missing. Production090/100 absent at last read; ordered pair only after qualified prerequisites.
 
 **Acceptance:** Actual isolated host/PostgREST lab, continuous hold/drain/recovery, old-worker and late-effects negatives; no unknown operation discarded.
 
@@ -407,13 +438,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root coordination. **State:** blocked. **Dependencies:** V01, L00, L10, L12.
 
-**Remaining:** Finish frozenf74 fullunits and exact cleanbuild; r4c actualUI scopedPASS but clean canonical test reproducibility remains open after r3 stall. Native11 retains35GiB floor. Independently reviewed scoped reuse:15 unchanged corebrowser suites and14streamselected checks (13Chromium/1server-only), fullstream262PASS. Fiveintegration+MeetingPage,17packet actual-role schema and faithful restore remain.
+**Remaining:** Preserve terminal archive, then use fresh exact-f74 protected donor and reviewed held build packet; recheck capacity. Complete remaining candidate security/build/native/schema gates and release prerequisites; no deployment or live acceptance yet.
 
 **Acceptance:** Exact included-source full checks, actual UI/native where relevant, profile-specific independent audit and tested recovery. No schema or safety gate is waived for phased release.
 
 **Source:** `scripts/qa/agent-run-release-profile.py`, `docs/agent-run/EXECUTION-PATH-ACCEPTANCE.md`.
 
-**Evidence:** implemented partial; tested a9f9 exact nine-file repairs382/382 PASS,25 Chromium launch log rows; independent desktop/mobile screenshots show original run retained and UNCONFIRMED.14 selected stream cases pass (13 browser). First full attempt RED on EXDEV screenshot transfer before full tests/unit; fixed exact helper Linux cross-device smoke PASS. Fresh r2 full suite running; no whole pass. Corrected MeetingPage overlay18file types PASS; untracked overlay is outside a9f9 commit.; independently reviewed Independent Sol reviewed exact a9f9 source,382-case report, selected stream source/rows and original screenshots; r2 stage/launcher and cross-device smoke clear. Full terminal/native/build/schema audits pending.; merged False; deployed False; live verified False.
+**Evidence:** implemented partial; tested Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
 
 ### L11 — Qualify faithful backup and restored copy
 
@@ -513,14 +544,14 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ## Execution order and parallel-agent procedure
 
-Use root plus **three GPT-6 Sol workers**, each with an isolated worktree or nonoverlapping owned files:
+Use root plus **three GPT-6 Sol workers**, each with an isolated worktree or nonoverlapping owned files. Package owner labels below preserve historical assignments; a new session must assign current workers explicitly and must not assume old agent IDs or processes still exist:
 
 1. **Root integration owner:** maintain one candidate, review actual callers and dependencies, integrate only audited blocker fixes, keep the plan/handoff synchronized, and own final release decisions.
 2. **Implementation worker:** finish current ingress/operator and real caller integration. Every component names its production caller, integration owner and true/false acceptance test. A tested composite with no production constructor remains incomplete.
 3. **Qualification worker:** finish immutable whole-run terminal collection, exact-source browser/native/schema/build checks and resource/host prerequisites. It may prepare independent packets while a long run executes, but cannot mutate active inputs or cancel for unrelated changes.
 4. **Independent trailing reviewer:** review exact source and receipt hashes, challenge environment/proof claims, exercise real failures/unknowns/recovery, and audit integration. Source approval is never promoted to native/live proof.
 
-Shortest remaining path: retain terminal full-unit evidence → review and integrate demonstrated fixture/UI blockers → freeze successor → exact final security/unit/build and missing real-browser/native/schema gates. In parallel, close actual all-origin ingress, continuous direct-writer exclusion, production operator assembly and faithful restored-copy rehearsal. Join these paths before qualified phased migrations and inactive deploy. Then authorized provider qualification, activation, all16 behaviors/all supported callers live, monitoring and tested recovery.
+Shortest remaining path: preserve the independently verified frozen f74 full-unit PASS and finish its original read-only local archive transfer → prepare a fresh exact-f74 build donor and independently reviewed bounded launch → finish remaining security/build and real-browser/native/schema gates. The fixture/reset repairs are already integrated in f74; do not repeat that composition or chase the later evidence-only branch tip. In parallel, close actual all-origin ingress, continuous direct-writer exclusion, production operator assembly and faithful restored-copy rehearsal. Join these paths before qualified phased migrations and inactive deploy. Then authorized provider qualification, activation, all16 behaviors/all supported callers live, monitoring and tested recovery.
 
 Do not open unrelated improvement lanes. Keep only one heavy qualification admitted at a time where capacity requires it; preparation, source work and review stay parallel. No lost-ACK operation is blindly replayed. Unknown outcomes remain held and linked to the original attempt. Each checkpoint answers: which usable capability advanced; what delivery dependency closed; next blocker/owner/proof; whether we are finishing delivery or accumulating components.
 
@@ -578,6 +609,24 @@ Native lanes need PostgreSQL 17 binaries (`PG_BIN` containing `initdb`, `pg_ctl`
 
 Clean up only your own merged worktree after proving merged/current-main ancestry, clean status and no running process; use `git worktree remove` without force. Unmerged/dirty/active/other-agent folders must remain. No blanket worktree prune.
 
+## Keeping the plan, checklist and handoff synchronized
+
+Edit the canonical handoff narrative, `docs/agent-run/plan.json` acceptance ledger and `docs/agent-run/execution-dashboard/progress.json` delivery graph at the same checkpoint. Preserve historical journal entries; replace stale current-state summaries rather than adding contradictory next-action lists. The graph's package ownership labels must be reassigned explicitly when a new session starts.
+
+Regenerate the private plan/artifact and sanitized public documents with the repository-owned tools:
+
+```sh
+python3 docs/agent-run/execution-dashboard/render.py
+python3 docs/agent-run/render-plan.py
+python3 docs/agent-run/render-public-handoff.py --update-private --output-dir ../supraos-agent-public-docs
+git diff --check
+git status --short
+```
+
+The third command reads this canonical handoff, refreshes its generated package section, and writes exactly four public Markdown files to the explicit output directory: the handoff, checklist, execution procedure and README. It has no network or publication effect, refuses the private repository root as its output directory, validates task counts against the original ledger and rejects known private-host/credential markers before writing public output. Its marker check supplements human review; it is not a general secret scanner. Update the narrative checkpoint and release metadata before rendering; the tool cannot infer deployment from code.
+
+Review all diffs and public content. Commit the private documents to the canonical coordination branch using an explicit non-force refspec. In a separately authenticated checkout of `jtobkin/supraos-agent-completion-handoff`, inspect existing status, copy only the four reviewed generated files, commit and push normally. Preserve others' edits. Finally fetch the public files without authentication and compare bytes/commit pins, then record the private/public checkpoint pair. The original workstation's QA publisher is a historical convenience, not a dependency for a new account. Public documentation access does not grant private source or infrastructure access.
+
 ## What Finished means, end to end
 
 Every required implementation is integrated into the actual deployed source; exact-source tests and independent reviews pass; correct schema/graph versions are installed in the prescribed order; eligible capabilities are activated with real per-owner readiness; and all applicable execution paths are independently exercised live after deployment. Monitoring, retained recovery and faithful backup restoration work. No required implementation, release or baseline gate remains open.
@@ -592,4 +641,6 @@ Across chatbox, Telegram, background, delegation and System Workflows, demonstra
 
 ## Scheduled pause and current process ownership
 
-The session is still active at this checkpoint and will pause at19:43UTC. Full qualification unit `agent-f74-electron-full-unit-first-20261004` is running under its existing bounded timeout; root coordinates, the host Sol worker monitors, and the independent reviewer checks terminal evidence. No production application deployment or migration is in progress. Do not duplicate this unit or replay one-use launchers. The final pause checkpoint will replace this section with observed terminal/running state, worker ownership and exact publication pins.
+New work stopped at19:43UTC as requested. The f74 full-unit service is terminal: after.exit=0, gate=0, fullStarted=true, install inputs unchanged; independent audit verified174members and no running main process/cgroup. Its transient unit later unloaded; the seal and prior identity, not disappearance alone, establish the result. No production migration, deployment or activation is in progress.
+
+The only surviving work at the last observation is the original read-only local evidence transfer, owned by the host worker. Its detailed PID, paths and monitoring instructions are in the private evidence inventory. It must not be duplicated. Published private evidence commit f72f4860f21dc92c8fad6d5775bc375684533ce6 already preserves the terminal summary and independent remote audit. If the local copy is still pending on resume, inspect its existing process and final receipt; missing local archive completion does not erase the independently verified QA result, but must not be called a completed transfer. All implementation lanes are paused; preserve their unmerged worktrees.

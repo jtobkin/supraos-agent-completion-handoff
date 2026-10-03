@@ -1,14 +1,14 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-03T18:55:44.453459+00:00. ACTIVE until owner-requested19:43UTC pause: qualify demonstrated repairs, preserve terminal evidence and prepare portable handoff.
+Checkpoint: 2026-10-03T19:43:00Z. PAUSED after owner-requested90-minute window; evidence and portable handoff preserved.
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
-**5 of 62 tasks accepted (8.1%); 56 pending (90.3%); 1 deliberately dropped (1.6%).** This is task acceptance, not a percentage of code or effort. Full Agent Run remains unshipped and inactive; global attention is off and faithful restore is unqualified.
+**5 of 62 tasks accepted (8.1%); 56 pending (90.3%); 1 deliberately dropped (1.6%).** This is task acceptance, not a percentage of code or effort. Full Agent Run: unshipped; inactive; global attention cutover: 0; restoreVerified: false.
 
 ## Current delivery boundary
 
-Frozen f74 source staged/independently read back clean. Exact G11 PASS; scoped unchanged9a2 static/types/ESLint/coordination checks PASS. Actual Promotion diagnosticr4c Chromium1/1PASS zero skips in6.49s with12verified phone/desktop screenshots and unchanged30s budget/productsource; r3 desktop missing-run stall remains unexplained, clean canonical reproducibility still required. Full f74 units launched once18:54UTC with independent source/tree/resource readback; terminal pending. Cleanbuild/native/schema/applicationdeploy/live gates open. Scheduler is installed on QA only.
+Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.
 
 ## How to read this checklist
 
@@ -393,13 +393,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** a9f9r2 terminalRED59465PASS/1FAIL/231SKIP retained; sole history-fixture fixed in frozenf74. Final exact G11PASS plus negativecontrol; unchanged9a2 scoped71tests/12types/28static/ESLint0errors590warnings/427coordination/3type-outputPASS. Diagnosticr4c actualPromotionChromium1/1PASS6.49s/12screenshots under unchanged30s; retain r3 stall unexplained. f74 fullunits launched18:54UTC on exact clean source; terminal verdict pending. Cleanbuild not launched. Native/schema/release/live gates separate.
+**Remaining:** Preserve terminal archive, then use fresh exact-f74 protected donor and reviewed held build packet; recheck capacity. Complete remaining candidate security/build/native/schema gates and release prerequisites; no deployment or live acceptance yet.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
 **Source:** `scripts/ci/box-ci/merge-if-green.sh`, `tests/native-qualification/`.
 
-**Evidence:** implemented Frozen a9f9 superseded for next qualification by reviewed isolated9a2ef77bc2 on codex/agent-run-check-fixture-20261004 after demonstrated blockers. Application not merged/deployed. QA scheduler6153 installed and independently read back.; tested scoped security/static/types/units and diagnostic actualUI PASS; clean fullcandidate qualification pending; independently reviewed Independent Sol verified exact a9f9 source, repair report/screenshots, corrected r2 launch and real cross-device smoke. Whole-candidate terminal/native/build proof still pending.; merged False; deployed False; live verified False.
+**Evidence:** implemented Frozen f74bb978 contains reviewed fixture51db, truthful reset UI9a2 and exact G11 fingerprint exceptions. Later3d952 is evidence-only. Application remains unmerged/undeployed. QA scheduler6153 installation is separately closed.; tested Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
 
 ### V02 — Joined contract and baseline local acceptance
 
@@ -429,7 +429,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root infrastructure coordination; Claude access unavailable in current session. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Reviewed ingress-v5 partial composite on feat/agent-run-netns-ingress-cutoff-20261004 atf10f79b/a40fd implements generation-levelUNKNOWN/no-reclaim and strict downstream refusal. Isolated native toy scope only; actual all-origin packet source, complete tenancy, direct-writer exclusion and production operator construction remain missing. Production090/100 absent at last read; ordered pair only after qualified prerequisites.
+**Remaining:** Reviewed ingress-v5 partial composite on feat/agent-run-netns-ingress-cutoff-20261004 (prototype sourcef10f79b/a40fd; preserved at branch tipd9d4d54) implements generation-levelUNKNOWN/no-reclaim and strict downstream refusal. Isolated native toy scope only; actual all-origin packet source, complete tenancy, direct-writer exclusion and production operator construction remain missing. Production090/100 absent at last read; ordered pair only after qualified prerequisites.
 
 **Acceptance:** Actual isolated host/PostgREST lab, continuous hold/drain/recovery, old-worker and late-effects negatives; no unknown operation discarded.
 
@@ -441,13 +441,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root coordination. **State:** blocked. **Dependencies:** V01, L00, L10, L12.
 
-**Remaining:** Finish frozenf74 fullunits and exact cleanbuild; r4c actualUI scopedPASS but clean canonical test reproducibility remains open after r3 stall. Native11 retains35GiB floor. Independently reviewed scoped reuse:15 unchanged corebrowser suites and14streamselected checks (13Chromium/1server-only), fullstream262PASS. Fiveintegration+MeetingPage,17packet actual-role schema and faithful restore remain.
+**Remaining:** Preserve terminal archive, then use fresh exact-f74 protected donor and reviewed held build packet; recheck capacity. Complete remaining candidate security/build/native/schema gates and release prerequisites; no deployment or live acceptance yet.
 
 **Acceptance:** Exact included-source full checks, actual UI/native where relevant, profile-specific independent audit and tested recovery. No schema or safety gate is waived for phased release.
 
 **Source:** `scripts/qa/agent-run-release-profile.py`, `docs/agent-run/EXECUTION-PATH-ACCEPTANCE.md`.
 
-**Evidence:** implemented partial; tested a9f9 exact nine-file repairs382/382 PASS,25 Chromium launch log rows; independent desktop/mobile screenshots show original run retained and UNCONFIRMED.14 selected stream cases pass (13 browser). First full attempt RED on EXDEV screenshot transfer before full tests/unit; fixed exact helper Linux cross-device smoke PASS. Fresh r2 full suite running; no whole pass. Corrected MeetingPage overlay18file types PASS; untracked overlay is outside a9f9 commit.; independently reviewed Independent Sol reviewed exact a9f9 source,382-case report, selected stream source/rows and original screenshots; r2 stage/launcher and cross-device smoke clear. Full terminal/native/build/schema audits pending.; merged False; deployed False; live verified False.
+**Evidence:** implemented partial; tested Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
 
 ### L11 — Qualify faithful backup and restored copy
 
