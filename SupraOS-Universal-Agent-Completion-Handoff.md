@@ -1,25 +1,26 @@
 # SupraOS Universal Agent Completion Handoff
 
-## Current plan — active execution, 2026-10-03 14:06 UTC
+## Current plan — active execution, 2026-10-03 14:32 UTC
 
-The owner resumed an eight-hour execution run at13:04UTC. Goals, all62 tasks and all16 baseline behaviors are unchanged. The independently reviewed [Faster Verified SupraOS Delivery plan](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) governs the parallel lanes and final acceptance.
+The owner resumed an eight-hour execution run at13:04UTC. Goals, all62 tasks and all16 baseline behaviors are unchanged. The independently reviewed [Faster Verified SupraOS Delivery plan](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) governs parallel lanes and final acceptance.
 
-**A real release blocker was fixed:** reopening runner admission could allow a failed job to execute again. The old-source PostgreSQL regression reproduced that replay. The corrected source now refuses reopening until pending work has an explicit terminal disposition; concurrent writes and altered-trigger detection passed independent native checks. This repair is integrated on the working branch. Its actual release-command qualification is next. The fresh read-only schema capture has completed and independently passed its source, archive, rollback and cleanup checks; this is not a data restore. Nothing has been installed in production by this step.
+**Two delivery dependencies now pass and are integrated.** The real release command through TypeScript and disposable PostgreSQL passes17/17 checks: unsafe reopening stays refused, the original uncertain outcome is retained, and retry does not repeat the effect. The workflow pause repair passes8/8 real PostgreSQL/PostgREST cases,98 focused checks and independent review: retries preserve the original session and run-bound checkpoint. Both are integrated into frozen successor `a3dd5f00c4`; neither is deployed.
 
 | Delivery dependency | Current state | Next proof / owner |
 |---|---|---|
-| Prevent unsafe replay when reopening | Built, integrated, focused native tests and independent review passed | Actual release command through TypeScript and PostgreSQL; implementation Sol |
-| Reliable qualification capacity | Scheduler repair tested/reviewed and now queued for normal CI; real rollout remains held | Coordinated shared-host transition and complete frozen-candidate unit/build checks; root and host Sol |
-| Backup capacity | Concrete disk expansion and snapshot plan independently reviewed; approval requested | Approved effect, exact volume/filesystem readback, fresh backup plan; host Sol |
-| Release authority and complete Coordinator | Partially integrated; real writer/ingress authority and old-generation uncertainty remain open | Qualified actual caller and continuous exclusion evidence; root and implementation Sol |
-| Faithful restore, schema, deployment and activation | Pending; previous backup approval consumed | New qualified attempt, phased installation, exact candidate release |
-| All supported journeys and recovery | Pending final live acceptance | Independent chatbox, Telegram, background and System Workflow verification; review Sol |
+| Prevent unsafe replay when reopening | Built, integrated, actual release-command/database tests17/17 and independent review passed | Production authority and qualified installation; root and implementation Sol |
+| Preserve original workflow pause identity | Built, integrated,98 scoped checks and8/8 database/transport tests, reviewed | Complete successor gates and live verification; root and review Sol |
+| Reliable qualification capacity | Scheduler repair tested/reviewed and queued for normal CI; shared-host rollout held | Coordinated host transition and frozen successor unit/build checks; root and host Sol |
+| Backup capacity | Exact expansion/snapshot plan reviewed; approval requested | Approved effect, exact readback and fresh backup plan; host Sol |
+| Release authority and complete Coordinator | Partially integrated; writer/ingress authority and old-generation uncertainty open | Read-only authority inventory and qualified real caller; implementation Sol and root |
+| Faithful restore, schema, deployment and activation | Fresh schema-only capture verified;17-packet isolated schema rehearsal next | Faithful data restore, phased installation and exact candidate release |
+| All supported journeys and recovery | Pending final live acceptance | Independent chatbox, Telegram, background and System Workflow verification |
 
-A separate composition regression was reproduced: the older candidate could report a paused workflow using a replacement session after the original checkpoint disappeared. The repair preserves the original session and run-bound checkpoint. It has passed98 focused checks and independent source review; real PostgreSQL/PostgREST qualification is underway. This protects already-shipped main-branch behavior when the full candidate is composed. It is not yet integrated or deployed.
+The successor changes only demonstrated replay and workflow composition blockers over the previous candidate. The old full-unit run aborted on shared disk capacity; it remains an infrastructure abort. Full successor units/build have not passed. The heavy schema rehearsal precedes the full suite because both share disk with managed CI; code integration and review continue in parallel. Schema-only capture and disposable tests do not establish faithful production restore or live acceptance.
 
-Accepted tasks remain **5/62 (8.1%)**, **56 pending (90.3%)**, **1 dropped (1.6%)**. These are accepted-task counts, not code completion or effort. Full Agent Run remains **unshipped and inactive**. No completed component substitutes for the deployment, activation, all-path live and recovery gates.
+Accepted tasks remain **5/62 (8.1%)**, **56 pending (90.3%)**, **1 dropped (1.6%)**. These are accepted-task counts, not code completion or effort. Full Agent Run remains **unshipped and inactive**. Deployment, activation, all-path live verification and tested recovery remain mandatory.
 
-The unchanged dashboard renderer retains its desktop/mobile/offline Chromium proof; this checkpoint updates status data and prose, not UI behavior. Private engineering checkpoint: `8dd203a4b3`. The native replay proof is retained at `d2b505df03`, with behavior source `a287dc631d`.
+The unchanged dashboard renderer retains its desktop/mobile/offline Chromium proof; only status data/prose changed. Private engineering checkpoint: `d969cd9b3f`. Frozen successor: `a3dd5f00c4`. The run remains active toward its21:04UTC checkpoint.
 
 ## Historical checkpoints — superseded by the current plan above
 
