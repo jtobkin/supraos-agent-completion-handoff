@@ -1,5 +1,16 @@
 # SupraOS Universal Agent Completion Handoff
 
+## Current delivery checkpoint — 2026-10-03 11:37 UTC
+
+Three exact archived generated directories on the QA host were removed successfully after complete post-quarantine verification. The cleanup exited successfully; source directories, worktrees, shared dependencies and recovery archives remain preserved. The latest readback was about18.6GiB free; concurrent jobs make this a timestamped observation, not reserved capacity. Independent final receipt review is underway.
+
+The scheduler disk guard is not installed. Its current-source implementation and guarded rollout are being qualified. Review also found that failed GitHub refresh could admit an obsolete queued check after restart; a narrow repair is receiving actual caller integration tests. Browser verification of the updated checklist is queued behind fresh resource admission.
+
+The full application remains unshipped and inactive. Frozen candidate61fd still needs complete unit/build gates, complete release Coordinator integration and authorities, faithful backup/restore, qualified phased migrations, deployment, activation and independent live acceptance across chatbox, Telegram, background and System Workflows. Accepted tasks remain **5/62 (8.1%)**, **56 pending (90.3%)**, **1 dropped (1.6%)**. These measure accepted tasks, not code completion or effort. Private engineering checkpoint: `737752528d`.
+
+Earlier checkpoints below are historical; this section supersedes their immediate cleanup status. The consumed backup attempt approval cannot be replayed.
+
+
 ## Active continuation — 2026-10-03 11:14 UTC
 
 The full project goal remains active. Root and three Sol workers are finishing CI capacity recovery and safe scheduler admission before returning to frozen-candidate qualification. No new release or acceptance is claimed:5/62 tasks accepted,56 pending,1 dropped.
