@@ -408,13 +408,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Exact30875 security checks started07:51 after shared batch conflict; separate build queued. Settings1/1 and stream264/264 controlled browser checks independently passed. Native/schema/recovery and live acceptance remain.
+**Remaining:** Review and qualify two demonstrated CI blocker repairs, rerun current-source security gate then production build. Native/schema/recovery and live acceptance remain.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
 **Source:** `scripts/ci/box-ci/merge-if-green.sh`, `tests/native-qualification/`.
 
-**Evidence:** implemented Frozen30875 runtime PR6168; exact source/tree pinned. Further operator QA source is separately isolated until integrated and qualified.; tested Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
+**Evidence:** implemented Frozen30875 runtime PR6168; exact source/tree pinned. Further operator QA source is separately isolated until integrated and qualified.; tested 30875 CI merged test0468590:59,748 passed252 skipped, one suite failed during server-only import; scoped types OOM at6144MiB. Build notrun. Local minimalfixture repair51/51; diagnostic formatter3/3. Earlier59466 full PASS is predecessor-only.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
 
 ### V02 — Joined contract and baseline local acceptance
 
@@ -444,7 +444,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** Sol B native caller/PG integration; Sol C host/image; root staging; Sol A independent audits. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Schema capture staged and independently verified629de452. Exactee969 Git transfer running. PG/PostgREST adapter and actual supervisor/cron/gatekeeper sources still require assembly and native proof. No production writer-exclusion claim.
+**Remaining:** Exactsource donor import failed strict Git closure. Separate10object repair with restored original shallow boundary underreview. Capture and narrow HBA staged/audited. PG adapter fixes from Grok underreview; actualwriters and native proof pending.
 
 **Acceptance:** Actual isolated host/PostgREST lab, continuous hold/drain/recovery, old-worker and late-effects negatives; no unknown operation discarded.
 
