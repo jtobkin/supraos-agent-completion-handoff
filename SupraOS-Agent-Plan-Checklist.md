@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-04T09:20:49.777977+00:00. Active: Settings and stream scoped qualification closed; managed CI and native operator remain..
+Checkpoint: 2026-10-04T09:49:06.286208+00:00. Active: Settings and stream scoped qualification closed; managed CI and native operator remain..
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-04T09:20:49.777977+00:00. Active: Settings and stream scoped
 
 ## Current delivery boundary
 
-Full project unshipped/inactive. Current458f6 build independently PASS; units59763PASS252SKIP/typesPASS; securityRED on unchanged PostgreSQL timeout. r2 private daemonfailed missinghosttools inPATH, independentlyreconciled no ready/PID0/shared unchanged. Native/recovery/live gates remain.
+Full project unshipped/inactive. First458f6 buildPASS, units59763PASS252SKIP/typesPASS; unchanged isolated PG2/2PASS, actual managed retry pending. Native daemon no-ready attempt contained; coherent firewall-counter correction pending. Fresh recovery plan held by AWS72<85GiB and specific lock approval.
 
 ## How to read this checklist
 
@@ -393,7 +393,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Diagnose unchanged PostgreSQL integration180s timeout; complete exact-source security qualification without weakening deadlines. Build already independently PASS; native/schema/recovery release gates remain.
+**Remaining:** Finish managed retry batch0000e, independently audit exact source/gates/build; isolated unchanged PG2/2PASS135.22s is diagnostic only. Native/schema/recovery gates remain.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
@@ -429,7 +429,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** Sol B native caller/PG integration; Sol C host/image; root staging; Sol A independent audits. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** r2daemon reconciledfailed before ready because toolPATH omittedsbin. Review narrow successor, then actual loads/probe/network/apps/PG/REST baseline. Static controllers/source/capture/HBA are independently reviewed/staged; strategies context copy active. Actualwriters andjoinednativeproof remain.
+**Remaining:** Correct volatile nft counters in all pinned readiness producers/consumers, qualify fresh private daemon, then actual loads/probe/network/apps/PG/REST. Strategies context77,962members independently sealed; no image build. Actual writers and joined native proof remain.
 
 **Acceptance:** Actual isolated host/PostgREST lab, continuous hold/drain/recovery, old-worker and late-effects negatives; no unknown operation discarded.
 
@@ -453,7 +453,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root release coordination. **State:** external. **Dependencies:** L00.
 
-**Remaining:** Attempt809db848 planbfba9604 expired05:56:02UTC without specific approval; no shared lock or backup run. Successor requires fresh capture/review and exact shared-lock approval. Faithful rows/ledger/roles/catalog restoration and actual-role migration rehearsal remain; no consumed attempt replay.
+**Remaining:** Fresh dfd40ff4/15756ae4 captured09:37:42 expires13:37:42. AWS72.07GiB below85GiB start floor; investigate exact safe capacity remediation. Independent plan audit and specific shared-lock approval required before run. No backup/lock/migration.
 
 **Acceptance:** Fresh coherent rows/ledger/roles/catalog match, snapshot/lock cleanup and exact packet rehearsal; prior approval consumed. No lock/migration implied by this plan. Restored-copy migration/ACL rehearsal under the actual migration role joins L00/V00; synthetic superuser/NOLOGIN fixtures do not prove production authority.
 
