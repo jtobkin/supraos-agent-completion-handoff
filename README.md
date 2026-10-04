@@ -6,4 +6,4 @@ These project documents are public and readable without signing in. Application 
 - [Plan and task checklist](SupraOS-Agent-Plan-Checklist.md): all 62 acceptance tasks and the 32-package dependency graph.
 - [Execution procedure](Faster-Verified-SupraOS-Delivery.md): coordinated implementation, qualification and independent review.
 
-Current checkpoint: 2026-10-03T19:43:00Z. PAUSED after owner-requested90-minute window; evidence and portable handoff preserved. Full Agent Run: unshipped; inactive; global attention cutover: 0; restoreVerified: false. 5 of 62 tasks accepted (8.1%); 56 pending (90.3%); 1 deliberately dropped (1.6%).
+Current checkpoint: 2026-10-04T01:27:48.400583+00:00. ACTIVE: preserve f74 full-unit PASS; qualify clean build and complete release-coordinator integration. Full Agent Run: unshipped; inactive; global attention cutover: 0; restoreVerified: false. 5 of 62 tasks accepted (8.1%); 56 pending (90.3%); 1 deliberately dropped (1.6%).
