@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-04T04:10:39.252277+00:00. Active: audited schema expectation; reviewed canonical-rehearsal blocker repair; browser and mounted-operator qualification..
+Checkpoint: 2026-10-04T04:36:30.314482+00:00. Active: audited schema expectation; reviewed canonical-rehearsal blocker repair; browser and mounted-operator qualification..
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-04T04:10:39.252277+00:00. Active: audited schema expectation
 
 ## Current delivery boundary
 
-Current a88d/PR6168 remains unshipped. Scoped composition85/85, independent40/40, Settings unit6/6, isolated privacy33/33 and workflow/owner278/278 passed. Exact a88d private schema expect independently passed17 apply/rollback/reapply packets, nine baseline checks and five invariants; canonical executor stopped before DB creation on an ordering-only dependency inventory mismatch. QA-only aef5497 fixes that verified defect;13helper and29profile tests pass independently. Fresh exact-source rehearsal pending. Chromium r2 failed30s reload after initial save; diagnostic r3 completed two reloads but hit90s test timeout; finer unchanged-budget diagnostic preparing. Local types interrupted under memory pressure, not passed. Managed security/build batch00002 queued. Historical f74 full-suite59,466PASS retains predecessor-only scope. Recovery, writer/operator authority, deployment, activation and live acceptance remain open.
+04:36 UTC: aef5497 schema-only canonical rehearsal independently PASS: 17 packets, 51 zero-exit apply/rollback/reapply results with exact expected catalog checks; nine baseline checks. Sealed 76 members; original a88d dependency-order RED retained. No production rows, writer admission or faithful restore qualification. Reviewed ordering/profile repair and real main merge blocker composed into c60e3f8827 and pushed to runtime PR6168. Writer catalog passes 2,381 rows and 69 tests; E3 remains RED. Previous a88d CI ended before testing because of merge conflict; new candidate awaiting managed checks. Settings r4 diagnostic RED on reload2 after 30s; targeted unchanged-budget lifecycle diagnostic preparing. Native actual caller and recovery remain open; no accepted-task promotion.
 
 ## How to read this checklist
 
@@ -393,7 +393,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Current a88d/PR6168 remains unshipped. Scoped composition85/85, independent40/40, Settings unit6/6, isolated privacy33/33 and workflow/owner278/278 passed. Exact a88d private schema expect independently passed17 apply/rollback/reapply packets, nine baseline checks and five invariants; canonical migration-executor rehearsal is running. Chromium r2 failed30s reload after initial save; unchanged-budget diagnostic pending. Local types interrupted under memory pressure, not passed. Managed security/build batch00002 queued. Historical f74 full-suite59,466PASS retains predecessor-only scope. Recovery, writer/operator authority, deployment, activation and live acceptance remain open.
+**Remaining:** c60e3f8827 now queued after reviewed main-conflict repair; final managed production build/security/types and browser reliability remain. Full59,466 PASS belongs only to historicalf74; no successor full-pass claim.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
@@ -447,7 +447,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Source:** `scripts/qa/agent-run-release-profile.py`, `docs/agent-run/EXECUTION-PATH-ACCEPTANCE.md`.
 
-**Evidence:** implemented partial; tested Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
+**Evidence:** implemented partial; tested aef5497 private schema-only canonical rehearsal independently PASS17 packets/51 results+catalog checks/9 baseline checks. Production-data restore and exact final-source qualification remain distinct.; independently reviewed Independent Sol expect f7a5cddf and canonical43eb18bc; sealed76members, terminalexit0, empty cgroup/private containers. Original a88d RED retained.; merged False; deployed False; live verified False.
 
 ### L11 — Qualify faithful backup and restored copy
 
