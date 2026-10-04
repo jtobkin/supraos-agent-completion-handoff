@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-04T22:03:06.015986+00:00. Active five-hour delivery window18:57:07–23:57:07UTC October4; then pause and publish detailed handoff/checklist. Frozen a9ab remains release-held..
+Checkpoint: 2026-10-04T23:30:43.900525+00:00. paused; owned runtimes independently stopped; handoff publication closeout.
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-04T22:03:06.015986+00:00. Active five-hour delivery window18
 
 ## Current delivery boundary
 
-Frozen application a9ab/PR6168 passed managed unit, Chromium, PostgreSQL and production-build checks. Native/schema/recovery qualification is still in progress. Backup capacity and writer-policy authority remain blocked. No full-project deployment or activation; five original tasks accepted. See the handoff for exact source and evidence boundaries.
+Frozen application a9ab/PR6168 passed managed unit, Chromium, PostgreSQL and production-build checks. Native/schema/recovery qualification remains pending; runtime work is paused after independently verified shutdown. Backup capacity and writer-policy authority remain blocked. No full-project deployment or activation; five original tasks accepted. See the handoff for exact source and evidence boundaries.
 
 ## How to read this checklist
 
@@ -427,15 +427,15 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L10 — Finish continuous admission and drain proof
 
-**Owner:** Sol C guest foundation/effects; Sol B application integration; root database/runner; Sol A independent audit. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
+**Owner:** Codex C guest foundation/effects; Codex B application integration; root database/runner; Codex A independent audit (replacement workers after Sol capacity errors). **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Private daemon READY independently verified; next qualify private network, five image loads, probe and actual five-phase application, then PG/schema/runner and native cutoff/recovery. Full guest ends around23:55UTC; safe checkpoint23:42. Preserve all spent UNKNOWN attempts. Production writer exclusion remains separate.
+**Remaining:** First qualify fresh-generation recovery of preserved guest, then execute five app/proxy phases, PG/schema/operator/runner cutoff and recovery. All app/PG/operator effects remain unexecuted. Production writer exclusion remains separate.
 
 **Acceptance:** Actual isolated host/PostgREST lab, continuous hold/drain/recovery, old-worker and late-effects negatives; no unknown operation discarded.
 
 **Source:** `scripts/qa/agent-run-release-host.py`, `scripts/qa/money-release-operator.py`.
 
-**Evidence:** implemented Current isolated full guest and exact2ff source are installed and independently read back. Signed Docker and private daemon are running in the guest. Seed/capture/HBA, context and operator fixture are staged. Historical source and failures remain indexed in the handoff.; tested Actual isolated smoke and full guest readiness, exact Git/blob census, offline archive census, Docker install/readback, private daemon isolation/API/default-daemon/firewall checks, and source/input stages passed. Application/database/runner/operator/recovery tests remain pending.; independently reviewed Independent Sol: full guest8786853a, Gitfcc8c664, Docker344dd3c7, private daemon3b8cc009 + firewall843d4399, seed8d3e33b6, HBA31a6ead0, operator fixture426ae19c. These establish prerequisites only.; merged False; deployed False; live verified False.
+**Evidence:** implemented Exact2ff native source, signed Docker, private network/fiveimages/tags/probe were installed and verified in the isolated guest. Root and B callers are preserved. The guest and private daemon are now stopped with data preserved; a reviewed copied-disk resume adapter is still missing.; tested Actual isolated smoke and full guest readiness, exact Git/blob census, offline archive census, Docker install/readback, private daemon isolation/API/default-daemon/firewall checks, and source/input stages passed. Application/database/runner/operator/recovery tests remain pending. Actual private network and four-image load now independently passed; all four IDs inspected, zero containers, phase/current firewall unchanged. Fifth image independently passed; inventory exactly five full IDs, zero containers, firewall unchanged. Actual Traefik/Node tags and probe build/projection independently pass. Native daemon and fullVM shutdown independently passed; no app/PG/runner/operator effect was launched.; independently reviewed Independent Sol: full guest8786853a, Gitfcc8c664, Docker344dd3c7, private daemon3b8cc009 + firewall843d4399, seed8d3e33b6, HBA31a6ead0, operator fixture426ae19c. These establish prerequisites only. Network0c1be2a9 and four-image8fa03f03 independently passed. Fifth image dcba8d2e and probe context edbe2242 independently passed. Tags3f755284/54bdf4bc, probea2e99832 and projectionc4178617. Native stop0e83c986 and VMstopf0235234; scoped immediate firewall equality, with earlier host Fail2ban set delta recorded.; merged False; deployed False; live verified False.
 
 ### V00 — Qualify the included inactive release profile
 
