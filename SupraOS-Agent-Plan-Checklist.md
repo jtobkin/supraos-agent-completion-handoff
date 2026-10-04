@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-04T02:40:58.812546+00:00. Active: frozen a88d runtime PR6168 qualification; exact backup approval pending; three Sol delivery lanes..
+Checkpoint: 2026-10-04T04:10:39.252277+00:00. Active: audited schema expectation; reviewed canonical-rehearsal blocker repair; browser and mounted-operator qualification..
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-04T02:40:58.812546+00:00. Active: frozen a88d runtime PR6168
 
 ## Current delivery boundary
 
-Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.
+Current a88d/PR6168 remains unshipped. Scoped composition85/85, independent40/40, Settings unit6/6, isolated privacy33/33 and workflow/owner278/278 passed. Exact a88d private schema expect independently passed17 apply/rollback/reapply packets, nine baseline checks and five invariants; canonical executor stopped before DB creation on an ordering-only dependency inventory mismatch. QA-only aef5497 fixes that verified defect;13helper and29profile tests pass independently. Fresh exact-source rehearsal pending. Chromium r2 failed30s reload after initial save; diagnostic r3 completed two reloads but hit90s test timeout; finer unchanged-budget diagnostic preparing. Local types interrupted under memory pressure, not passed. Managed security/build batch00002 queued. Historical f74 full-suite59,466PASS retains predecessor-only scope. Recovery, writer/operator authority, deployment, activation and live acceptance remain open.
 
 ## How to read this checklist
 
@@ -393,7 +393,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Managed exact-head contexts and types pending. Broad29-file attempt timeout420s retained; isolated timing33/33 and updated Settings6/6 pass unchanged budgets. Mac Chromium initialization error141; QA browser pending. Native/schema/recovery/live remain.
+**Remaining:** Current a88d/PR6168 remains unshipped. Scoped composition85/85, independent40/40, Settings unit6/6, isolated privacy33/33 and workflow/owner278/278 passed. Exact a88d private schema expect independently passed17 apply/rollback/reapply packets, nine baseline checks and five invariants; canonical migration-executor rehearsal is running. Chromium r2 failed30s reload after initial save; unchanged-budget diagnostic pending. Local types interrupted under memory pressure, not passed. Managed security/build batch00002 queued. Historical f74 full-suite59,466PASS retains predecessor-only scope. Recovery, writer/operator authority, deployment, activation and live acceptance remain open.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
