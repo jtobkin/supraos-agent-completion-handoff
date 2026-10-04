@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-04T05:09:31.853298+00:00. Active: qualify frozen runtime candidate, repair monitored operator caller, verify Settings on repaired test host..
+Checkpoint: 2026-10-04T05:36:42.550498+00:00. Active: qualify frozen runtime candidate, repair monitored operator caller, verify Settings on repaired test host..
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-04T05:09:31.853298+00:00. Active: qualify frozen runtime can
 
 ## Current delivery boundary
 
-05:12 UTC: runtime30875a02 composes actual main cb3f1a conflict fixes preserving context provenance and timing fallback; independent source review clear. 423 tests passed;19 local Chromium launch failures retained (macOS bootstrap_check_in), so no whole-run PASS. Both managed contexts queued at05:05. Settings r6 proves test-host thread exhaustion: pids peak/max128, seven denied admissions and seven Chromium pthread_create failures; reviewed r7 changes only bounded TasksMax512, original source/assertions/timeouts unchanged. Native assembly found process-local continuity cannot survive separate Money step processes; implementing one monitored coordinate-cutoff-run plus durable crash refusal. Schema-only aef5 PASS retained; no production deployment, activation or accepted-task promotion.
+Canonical30875 Settings browser independentlyPASS: tracked one-test file, zero skips,6.881s,390px image inspected,139 peakthreads/zero denials under bounded512 cap. Hostresourcecause of historicalr6 RED proven; no testbudget/assertion change. Exact264-case stream source packet staged and independentlyGit-matched; launch pendingfinalreview. Writerinventory2381rowsPASS butE3readinessRED6390 unresolved/unguardedrows. Managedbuild/securityqueued05:34UTC. Nativecaller monitorlifetime repair and isolatedlab assembly progressing; no deployment/activation/taskpromotion.
 
 ## How to read this checklist
 
@@ -393,7 +393,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** c60e3f8827 now queued after reviewed main-conflict repair; final managed production build/security/types and browser reliability remain. Full59,466 PASS belongs only to historicalf74; no successor full-pass claim.
+**Remaining:** Canonical30875Settings1/1 realChromiumPASS independentlyverified. Exact264-case stream packetstaged; managedbuild/securitystillqueued05:34. Finalcandidatebroadtypes/security/native/recoveryremain; historicalf74fullsuiteonly.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
@@ -429,7 +429,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root infrastructure coordination; Claude access unavailable in current session. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Reviewed ingress-v5 partial composite on feat/agent-run-netns-ingress-cutoff-20261004 (prototype sourcef10f79b/a40fd; preserved at branch tipd9d4d54) implements generation-levelUNKNOWN/no-reclaim and strict downstream refusal. Isolated native toy scope only; actual all-origin packet source, complete tenancy, direct-writer exclusion and production operator construction remain missing. Production090/100 absent at last read; ordered pair only after qualified prerequisites.
+**Remaining:** Actual QA six-origin packet producer binds pinned private daemon/image, proxy generation and receipt-bound inbox0711. Source independently reviewed; native daemon/image/lab/caller packet proof remains pending. Production writer coverage/network controls are not established by isolated lab.
 
 **Acceptance:** Actual isolated host/PostgREST lab, continuous hold/drain/recovery, old-worker and late-effects negatives; no unknown operation discarded.
 
@@ -441,7 +441,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root coordination. **State:** blocked. **Dependencies:** V01, L00, L10, L12.
 
-**Remaining:** Preserve terminal archive, then use fresh exact-f74 protected donor and reviewed held build packet; recheck capacity. Complete remaining candidate security/build/native/schema gates and release prerequisites; no deployment or live acceptance yet.
+**Remaining:** Qualify frozen30875 candidate through managed production build/security/types plus exact Linux browser and native gates. Preserve aef5 schema-only PASS with explicit source scope; no newsource blanketinheritance. Recovery and operator prerequisites remain before deployment.
 
 **Acceptance:** Exact included-source full checks, actual UI/native where relevant, profile-specific independent audit and tested recovery. No schema or safety gate is waived for phased release.
 
@@ -465,7 +465,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** Sol release-coordinator lane. **State:** in_progress. **Dependencies:** L00, L10.
 
-**Remaining:** Full production CLI/operator construction of Coordinator and BarrierBoundFirstThreePorts still absent. v5 partial composite is tested, not production-mounted. Missing actual all-origin ingress/drain or qualified conservative unknown retention, continuous writers, backup/schema/health/final-writer providers and joined recovery. See live-coordinator-mount-gap and isolated l10-netns-ingress-v5 evidence; no positive default authority.
+**Remaining:** Money arm and monitored coordinate-cutoff-run production caller integration is under test. Confirmed process-local monitor defect repaired WIP by retaining one live run process; crash/unknown never auto-replayed. Exact native isolated fullprefix/lost-ACK and private inbox mount proof pending. Writer/reopen/forward remain explicitrefusals; full releaseprovider construction still open.
 
 **Acceptance:** Native lost-ack/contender/stale-generation/stop/schema-COMMIT/launch/health tests and independent source audit. A running container or REST-only barrier cannot establish complete writer exclusion. Production use additionally requires fresh backup/profile/authorization.
 

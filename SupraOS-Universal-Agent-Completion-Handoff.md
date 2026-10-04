@@ -8,7 +8,7 @@ Owner authorized eight hours from01:28:29UTC through09:28:29UTC, then pause/hand
 
 **Closed schema dependency:** exact aef5497 private expectation and canonical helper rehearsals independently passed17 packets across51 apply/rollback/reapply steps, all catalog agreement checks and nine baseline checks. The canonical76-member evidence archive is locally sealed and independently audited. [Source, receipts and limitations](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/evidence/schema-aef5-20261004/README.md). Original a88d ordering-only RED is preserved. This is schema-only historical-capture evidence, not restored production data or writer/release admission; later main composition does not inherit an exact-source PASS automatically.
 
-**Other verification:** historical f74 full-unit59,466PASS/0FAIL/231SKIP remains exact-predecessor evidence. Settings r6 independently proved test-host thread exhaustion:128-task limit reached, seven denied thread admissions and seven Chromium pthread_create failures. Reviewed r7 raises only bounded host TasksMax to512; source, assertions and30s/90s budgets remain unchanged. Terminal verification is pending. Native assembly exposed a real caller defect: the live Docker event/inotify monitor cannot survive separate step processes. The implementation lane is adding one monitored coordinate-cutoff-run process, separate arm, and durable crash/unknown refusal. Full private lab/inbox mounting, six-origin packets and lost-ACK evidence remain open. Writer/reopen/forward remain refused; no full release authority exists.
+**Other verification:** exact30875 canonical Settings browser passed1/1 with zero pending cases in6.881seconds; root and independent Sol inspected the390px screenshot and verified terminal/source/evidence hashes. [Scoped evidence and limitations](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/evidence/settings-browser-30875-20261004/README.md). Prior r6 failure proved the test-host128-thread cap was exhausted; the reviewed bounded512 cap admitted139threads with zero denied admissions. No test assertion or timeout changed. The264-case current-source stream packet is staged for Linux to resolve localMac browser-launch failures. Nativecaller work repairs the confirmed process-local monitor lifetime across steps, using one monitored run plus durable unknown refusal. An initially suspected post-stop validation issue was disproven by the full coordinator trace; no bypass was added. Full private lab, actual seven-step/lost-ACK proof, writer/reopen/forward and complete release qualification remain open. Historical f74 full-unit59,466PASS/0FAIL/231SKIP remains predecessor-only evidence.
 
 **Recovery:** fresh production free space120.7GiB exceeded the85GiB admission floor at01:43:32UTC. New capture-only plan809db848/SHA bfba9604 completed at01:56:02UTC, expires05:56:02UTC; exact plan/run packet independently reviewed. Specific shared-lock approval was requested; no backup run, lock acquisition, migration or activation occurred. See [reviewed attempt](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/evidence/backup-attempt-809db848-20261004/README.md). The earlier capacity proposal is historical unless fresh admission fails again.
 
@@ -402,7 +402,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** c60e3f8827 now queued after reviewed main-conflict repair; final managed production build/security/types and browser reliability remain. Full59,466 PASS belongs only to historicalf74; no successor full-pass claim.
+**Remaining:** Canonical30875Settings1/1 realChromiumPASS independentlyverified. Exact264-case stream packetstaged; managedbuild/securitystillqueued05:34. Finalcandidatebroadtypes/security/native/recoveryremain; historicalf74fullsuiteonly.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
@@ -438,7 +438,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root infrastructure coordination; Claude access unavailable in current session. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Reviewed ingress-v5 partial composite on feat/agent-run-netns-ingress-cutoff-20261004 (prototype sourcef10f79b/a40fd; preserved at branch tipd9d4d54) implements generation-levelUNKNOWN/no-reclaim and strict downstream refusal. Isolated native toy scope only; actual all-origin packet source, complete tenancy, direct-writer exclusion and production operator construction remain missing. Production090/100 absent at last read; ordered pair only after qualified prerequisites.
+**Remaining:** Actual QA six-origin packet producer binds pinned private daemon/image, proxy generation and receipt-bound inbox0711. Source independently reviewed; native daemon/image/lab/caller packet proof remains pending. Production writer coverage/network controls are not established by isolated lab.
 
 **Acceptance:** Actual isolated host/PostgREST lab, continuous hold/drain/recovery, old-worker and late-effects negatives; no unknown operation discarded.
 
@@ -450,7 +450,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root coordination. **State:** blocked. **Dependencies:** V01, L00, L10, L12.
 
-**Remaining:** Preserve terminal archive, then use fresh exact-f74 protected donor and reviewed held build packet; recheck capacity. Complete remaining candidate security/build/native/schema gates and release prerequisites; no deployment or live acceptance yet.
+**Remaining:** Qualify frozen30875 candidate through managed production build/security/types plus exact Linux browser and native gates. Preserve aef5 schema-only PASS with explicit source scope; no newsource blanketinheritance. Recovery and operator prerequisites remain before deployment.
 
 **Acceptance:** Exact included-source full checks, actual UI/native where relevant, profile-specific independent audit and tested recovery. No schema or safety gate is waived for phased release.
 
@@ -474,7 +474,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** Sol release-coordinator lane. **State:** in_progress. **Dependencies:** L00, L10.
 
-**Remaining:** Full production CLI/operator construction of Coordinator and BarrierBoundFirstThreePorts still absent. v5 partial composite is tested, not production-mounted. Missing actual all-origin ingress/drain or qualified conservative unknown retention, continuous writers, backup/schema/health/final-writer providers and joined recovery. See live-coordinator-mount-gap and isolated l10-netns-ingress-v5 evidence; no positive default authority.
+**Remaining:** Money arm and monitored coordinate-cutoff-run production caller integration is under test. Confirmed process-local monitor defect repaired WIP by retaining one live run process; crash/unknown never auto-replayed. Exact native isolated fullprefix/lost-ACK and private inbox mount proof pending. Writer/reopen/forward remain explicitrefusals; full releaseprovider construction still open.
 
 **Acceptance:** Native lost-ack/contender/stale-generation/stop/schema-COMMIT/launch/health tests and independent source audit. A running container or REST-only barrier cannot establish complete writer exclusion. Production use additionally requires fresh backup/profile/authorization.
 
