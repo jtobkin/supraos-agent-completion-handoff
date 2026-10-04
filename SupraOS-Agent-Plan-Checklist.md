@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-04T11:51:00Z. Active: managed application checks green; native/schema/recovery qualification remains..
+Checkpoint: 2026-10-04T12:10:05.501164+00:00. Active: managed application checks green; native/schema/recovery qualification remains..
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-04T11:51:00Z. Active: managed application checks green; nati
 
 ## Current delivery boundary
 
-11:51 UTC: PR6168/f0da has both managed contexts green: security51steps (59,804 units/0failed/252skip,PG2/2,Chromium45/45) and production build7steps on testmerge d32f505/main7ec9. Grok33/35 independently reviewed terminal evidence. Native final sourcef7dad/tree4348 is pushed, three proven audit defects repaired and Sol-tested; Grok37 narrow fix review PASS. Host source input stage independently sealed, import/exchange pending. Mac disk restored5.3GiB by removing only two owned reconstructable terminal model clones. AWS cache-only cleanup recovered25.79GB/free85.3GiB; newest backup49c5/3240 captured11:37 expires15:37, current-readonly check refused database activity, counters under readback. No backup approval/run/lock; no native network/images/app/PG effects.
+12:11UTC: Managed application contexts remain green on their separately recorded tested sources. Socket contract blocker repaired and pushed3c442/tree4d8b: builder now matches the host docker group while retaining root owner,0660 and exact live identity. f7dad full source import/exchange passed, but network stopped before host packet/intent/effect because actual gid988 contradicted expectedgid0. Independent no-effect census retained; fresh3c442 source exchange and r7 one-use transport precede network/images/probe→apps→PG/REST. r4 expires~12:56:50UTC. Backup49c5/3240 capture11:37 and Grok38 static review passed, but no approval/run/lock. Readback first found one long transaction; later source_not_healthy_generation during another deployment.12:05 health shows new healthy app/cron containers started12:03 and only67,403,169,792Bfree(~62.8GiB), below unchanged85GiB floor. Plan is stale. Capacity plus fresh current capture/review and specific shared-lock approval remain prerequisites; do not rerun old plans or repeat cache intents.
 
 ## How to read this checklist
 
@@ -429,13 +429,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** Sol B native caller/PG integration; Sol C host/image; root staging; Sol A independent audits. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Finish coherent phase-local firewall repair and source exchange, then private network/images/probe→actual apps→PG/REST. Grok found repeated read-only observation and delayed post-effect snapshot defects; Sol fixes are source-reviewed, final f7dad/tree4348 pushed; input stage sealed, import/exchange pending. r4 daemon is idle, bounded lifetime ends around12:56:50UTC. Actual continuous writer/all-origin proof remains.
+**Remaining:** Socket contract blocker repaired and pushed3c442/tree4d8b: builder now matches the host docker group while retaining root owner,0660 and exact live identity. f7dad full source import/exchange passed, but network stopped before host packet/intent/effect because actual gid988 contradicted expectedgid0. Independent no-effect census retained; fresh3c442 source exchange and r7 one-use transport precede network/images/probe→apps→PG/REST. r4 expires~12:56:50UTC.
 
 **Acceptance:** Actual isolated host/PostgREST lab, continuous hold/drain/recovery, old-worker and late-effects negatives; no unknown operation discarded.
 
 **Source:** `scripts/qa/agent-run-release-host.py`, `scripts/qa/money-release-operator.py`.
 
-**Evidence:** implemented Same-window Money coordinator caller plus actual ingress hooks before/after effects. Phase-local full structural host firewall comparison replaces invalid lifetime equality; immutable startup/identity evidence preserved. No rule/set exclusions. No private network/image/app/PG effect yet.; tested child identity7/7, owner filesystem6/6, joined journal/port/host3/3 native; external authorities synthetic; actual process restart remains pending; isolated0906/6 and canonicalbcc0 actualPG17 preflight1/1, zero skips. Cron orderly/SIGKILL4/4 uses injected effect log; real Docker/live owner replacement remains pending.; independently reviewed Sol independently confirms three Grok33 findings and narrow repairs; producer16/16, ingress12/12, firewall3/3 scoped tests PASS. Real repeat observations now read-only and repeatable, durable effect snapshots retained. Source-only until sealed host run.; merged False; deployed False; live verified False.
+**Evidence:** implemented Same-window Money coordinator caller plus actual ingress hooks before/after effects. Phase-local full structural host firewall comparison replaces invalid lifetime equality; immutable startup/identity evidence preserved. No rule/set exclusions. No private network/image/app/PG effect yet.; tested child identity7/7, owner filesystem6/6, joined journal/port/host3/3 native; external authorities synthetic; actual process restart remains pending; isolated0906/6 and canonicalbcc0 actualPG17 preflight1/1, zero skips. Cron orderly/SIGKILL4/4 uses injected effect log; real Docker/live owner replacement remains pending.; independently reviewed Sol independently confirms three Grok33 findings and narrow repairs; producer16/16, ingress12/12, firewall3/3 scoped tests PASS. Real repeat observations now read-only and repeatable, durable effect snapshots retained. Source-only until sealed host run. Socket mismatch independently reproduced read-only, narrow3c442 repair reviewed;2/2 socket contract tests and focused suites pass. Native effects still absent.; merged False; deployed False; live verified False.
 
 ### V00 — Qualify the included inactive release profile
 
@@ -453,13 +453,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root release coordination. **State:** external. **Dependencies:** L00.
 
-**Remaining:** Current49c5fd79/3240f2e3 captured11:37:32, expires15:37:32UTC. Last cleanup free85.3GiB; fresh readback refused database activity, bounded counters pending. Exact plan/transport review running; specific shared-lock approval missing. Prior90ec/dfd40 plans drifted and never ran. No backup/lock.
+**Remaining:** Backup49c5/3240 capture11:37 and Grok38 static review passed, but no approval/run/lock. Readback first found one long transaction; later source_not_healthy_generation during another deployment.12:05 health shows new healthy app/cron containers started12:03 and only67,403,169,792Bfree(~62.8GiB), below unchanged85GiB floor. Plan is stale. Capacity plus fresh current capture/review and specific shared-lock approval remain prerequisites; do not rerun old plans or repeat cache intents.
 
 **Acceptance:** Fresh coherent rows/ledger/roles/catalog match, snapshot/lock cleanup and exact packet rehearsal; prior approval consumed. No lock/migration implied by this plan. Restored-copy migration/ACL rehearsal under the actual migration role joins L00/V00; synthetic superuser/NOLOGIN fixtures do not prove production authority.
 
 **Source:** `scripts/qa/agent-run-production-backup.py`, `docs/agent-run/evidence/backup-prior-reconciliation-20260930/STAGING-AND-CAPTURE.md`.
 
-**Evidence:** implemented Reviewed dfdc wrapper/helper closure staged privately on AWS with exact source pins; capture-only plan completed with read-only database transaction. No lock or backup acquired; no migration/activation.; tested Root and independent Sol reviewed unchanged guards;26 focused tests pass. Consumed attempt6d79 refused before helper/archive, lock released. Fresh restore remains unproved.; independently reviewed Exact current launch/source pins independently Grok32 reviewed after Grok30 transport review; root preserves static review and readonly preflight. Grok34 cleared exact12-ID private mutable regular cache cleanup. No restoration result or lock authority inferred.; merged False; deployed False; live verified False.
+**Evidence:** implemented Reviewed dfdc wrapper/helper closure staged privately on AWS with exact source pins; capture-only plan completed with read-only database transaction. No lock or backup acquired; no migration/activation.; tested Root and independent Sol reviewed unchanged guards;26 focused tests pass. Consumed attempt6d79 refused before helper/archive, lock released. Fresh restore remains unproved.; independently reviewed Grok38 static49c5 binding PASS_WITH_SCOPE; root independently rehashed plan/launcher. Grok39 correctly distinguishes preflight READ ONLY from server policy. Host generation/capacity subsequently changed; no current release admission or restoration result.; merged False; deployed False; live verified False.
 
 ### L12 — Implement the qualified live release coordinator
 
