@@ -67,3 +67,7 @@ Every material checkpoint answers: usable capability advanced; delivery dependen
 Track elapsed blocking time and failed infrastructure attempts to improve coordination, not to invent completion percentages. Prefer one authoritative current resume section and evidence links over a growing stack of contradictory “current” sections. The original62-task acceptance ledger is unchanged, and shipped completion still means every agreed behavior deployed, activated where required, independently verified live, with tested recovery.
 
 Independent planning review: Sol confirmed the delivery ordering and unchanged gates; its two ownership/parallelism clarifications are incorporated. This is a plan review, not runtime qualification.
+
+## Apply review boundaries to the actual contract
+
+For the reviewed app-phase launcher, the checked source itself verifies the protected packet, exact prior receipts, current private daemon, image identities and resources before its one-use effect intent. There is no separate stage-audit input in that contract. After root and the independent reviewer confirmed this in the actual caller, subsequent deterministic packet staging and one phase may form one bounded transition, followed by independent packet-and-terminal review before advancing. Keep required source audits and all effect-time guards. Where a contract explicitly requires a prior independent receipt, preserve that gate; this rule does not waive it. Avoid inserting duplicate manual barriers that add no required evidence.
