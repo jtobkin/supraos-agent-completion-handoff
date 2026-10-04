@@ -408,7 +408,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Current30875 required managed security/build contexts remain queued07:28. Settings1/1 and stream264/264 controlled browser checks independently pass. Native/schema/recovery and live acceptance remain; historicalf74 fullsuite does not qualify newer source.
+**Remaining:** Exact30875 security checks started07:51 after shared batch conflict; separate build queued. Settings1/1 and stream264/264 controlled browser checks independently passed. Native/schema/recovery and live acceptance remain.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
@@ -444,7 +444,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** Sol B native caller/PG integration; Sol C host/image; root staging; Sol A independent audits. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Final QA DB contract source; exact Git/capture stage; PG/PostgREST baseline then090/100 proof; actual historical strategies image; remaining truthful cron/gatekeeper role sources; isolated daemon/load/network/app assembly; joined seven-step and lost-ACK proof.
+**Remaining:** Schema capture staged and independently verified629de452. Exactee969 Git transfer running. PG/PostgREST adapter and actual supervisor/cron/gatekeeper sources still require assembly and native proof. No production writer-exclusion claim.
 
 **Acceptance:** Actual isolated host/PostgREST lab, continuous hold/drain/recovery, old-worker and late-effects negatives; no unknown operation discarded.
 
