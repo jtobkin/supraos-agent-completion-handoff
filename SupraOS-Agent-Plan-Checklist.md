@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-04T20:19:58.994338+00:00. Active five-hour delivery window18:57:07–23:57:07UTC October4; then pause and publish detailed handoff/checklist. Frozen a9ab remains release-held..
+Checkpoint: 2026-10-04T21:02:46.083413+00:00. Active five-hour delivery window18:57:07–23:57:07UTC October4; then pause and publish detailed handoff/checklist. Frozen a9ab remains release-held..
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-04T20:19:58.994338+00:00. Active five-hour delivery window18
 
 ## Current delivery boundary
 
-Frozen a9ab/PR6168 managed security51steps/build7steps independently PASS on recorded7c25/main9ee:59,870unitPASS/0failed/252skip,PG2/2,Chromium45/45. Managed macOS job did not run. Subsequent local exact-a9ab Darwin verification passed30native tests and officialNode refusal, independently checked; donor dependencies mean this is not a clean hosted job. Two hosted-runner disk/swap build steps skipped by design. Nativea2ea/R6 image-loadUNKNOWN retained and daemon stopped; isolated guest preparation, installed-role schema, recovery, release coordinator, required hosted policy and live gates remain. No deployment/activation; accepted5/62. Current native update: Full18GiB/70GiB isolated guest independently READY audit8786853a; inner native directory layout independently PASS8a2d91fe. Root exact2ff source pack reconstruction and C offline image transfer are in progress. No Docker/app/PG/runner/operator phase accepted; application candidate and5/62 acceptance unchanged.
+Frozen a9ab/PR6168 managed security51steps/build7steps independently PASS on recorded7c25/main9ee:59,870unitPASS/0failed/252skip,PG2/2,Chromium45/45. Managed macOS job did not run. Subsequent local exact-a9ab Darwin verification passed30native tests and officialNode refusal, independently checked; donor dependencies mean this is not a clean hosted job. Two hosted-runner disk/swap build steps skipped by design. Nativea2ea/R6 image-loadUNKNOWN retained and daemon stopped; isolated guest preparation, installed-role schema, recovery, release coordinator, required hosted policy and live gates remain. No deployment/activation; accepted5/62. Current native update: Exact native2ff guest checkout independently PASS fcc8: strict fsck, clean HEAD/tree,33538 tracked files and34 CODE pins. Five image archive censuses PASS c173/d8e5; seed/schema input transfer PASS219e and staging source PASSa3a2. Signed Docker package transfer ACK awaits independent readback. No Docker/app/PG/runner/operator acceptance yet; full project inactive, accepted5/62 unchanged.
 
 ## How to read this checklist
 
