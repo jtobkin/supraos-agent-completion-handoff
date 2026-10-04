@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-04T09:02:09.337779+00:00. Active: Settings and stream scoped qualification closed; managed CI and native operator remain..
+Checkpoint: 2026-10-04T09:20:49.777977+00:00. Active: Settings and stream scoped qualification closed; managed CI and native operator remain..
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-04T09:02:09.337779+00:00. Active: Settings and stream scoped
 
 ## Current delivery boundary
 
-Full project unshipped/inactive. Current458f6 managed production build PASS7steps; independent terminal audit pending, security still running. Exact private rehearsal Git source independently qualified; no native/DB effect or live acceptance yet.
+Full project unshipped/inactive. Current458f6 build independently PASS; units59763PASS252SKIP/typesPASS; securityRED on unchanged PostgreSQL timeout. r2 private daemonfailed missinghosttools inPATH, independentlyreconciled no ready/PID0/shared unchanged. Native/recovery/live gates remain.
 
 ## How to read this checklist
 
@@ -393,13 +393,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Finish458f6 security and independent build/terminal review, then native/schema/recovery and release gates.
+**Remaining:** Diagnose unchanged PostgreSQL integration180s timeout; complete exact-source security qualification without weakening deadlines. Build already independently PASS; native/schema/recovery release gates remain.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
 **Source:** `scripts/ci/box-ci/merge-if-green.sh`, `tests/native-qualification/`.
 
-**Evidence:** implemented Frozen458f6 runtime PR6168; test-fixture/CI-memory blocker repairs only, no production runtime change.; tested 30875 CI merged test0468590:59,748 passed252 skipped, one suite failed during server-only import; scoped types OOM at6144MiB. Build notrun. Local minimalfixture repair51/51; diagnostic formatter3/3. Earlier59466 full PASS is predecessor-only. Successor458f6 security/build observed active08:58:43; no broad pass yet. New09:01 read: production build PASS7steps920s on testmerge1bb12f77; independent audit pending.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
+**Evidence:** implemented Frozen458f6 runtime PR6168; test-fixture/CI-memory blocker repairs only, no production runtime change.; tested Current458f6:59763unitPASS252skip, changedtypesPASS119s, productionbuildPASS7steps920s. SecurityRED: one integrationtest180s timeout(actual212.6s); prior samefixture139.1sPASS. Independent full-log audits sealed.; independently reviewed Exact managed build PASS independently audited e7ddfc6b; security RED independently audited7f0abfaa. No broadrelease approval.; merged False; deployed False; live verified False.
 
 ### V02 — Joined contract and baseline local acceptance
 
@@ -429,7 +429,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** Sol B native caller/PG integration; Sol C host/image; root staging; Sol A independent audits. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Exact Git/capture/HBA/seed/networkhelper/Traefikcontext are staged and independently sealed. Finish bounded context copy, daemon/load/probe, network/app phases and actual PG/REST baseline; actual writers and joined native proof remain.
+**Remaining:** r2daemon reconciledfailed before ready because toolPATH omittedsbin. Review narrow successor, then actual loads/probe/network/apps/PG/REST baseline. Static controllers/source/capture/HBA are independently reviewed/staged; strategies context copy active. Actualwriters andjoinednativeproof remain.
 
 **Acceptance:** Actual isolated host/PostgREST lab, continuous hold/drain/recovery, old-worker and late-effects negatives; no unknown operation discarded.
 
