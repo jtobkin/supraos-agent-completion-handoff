@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-04T16:17:58.573663+00:00. Pause closeout for the two-hour delivery window; final documentation publication only. Current a9ab managed security/build independently PASS; private R6 stopped with image-load UNKNOWN preserved.
+Checkpoint: 2026-10-04T17:43:20.407342+00:00. Active owner-authorized resume: resolve native isolation and production recovery prerequisites in parallel, preserving frozen a9ab managed qualification.
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-04T16:17:58.573663+00:00. Pause closeout for the two-hour de
 
 ## Current delivery boundary
 
-Current frozen a9ab/PR6168 managed security51steps and production build7steps independently PASS on recorded synthetic merge7c25b6d7 with exact main9ee959. Units59,870PASS/0failed/252skipped; PostgreSQL2/2; real Chromium45/45. macOS Native Land not run; build skips two hosted-runner infrastructure steps. Nativea2ea/R6 load UNKNOWN retained, own daemon stopped; schema/recovery/operator/release/live gates remain. No project deployment/activation; accepted5/62 unchanged.
+Frozen a9ab/PR6168 managed security51steps/build7steps independently PASS on recorded7c25/main9ee:59,870unitPASS/0failed/252skip,PG2/2,Chromium45/45. Managed macOS job did not run. Subsequent local exact-a9ab Darwin verification passed30native tests and officialNode refusal, independently checked; donor dependencies mean this is not a clean hosted job. Two hosted-runner disk/swap build steps skipped by design. Nativea2ea/R6 image-loadUNKNOWN retained and daemon stopped; isolated guest preparation, installed-role schema, recovery, release coordinator, required hosted policy and live gates remain. No deployment/activation; accepted5/62.
 
 ## How to read this checklist
 
@@ -393,13 +393,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Current Linux managed security and build are closed for their exact recorded source. Complete macOS/native where applicable, joined schema/contract/recovery and final release provenance; do not merge/deploy until release gates close. Original synthetic commit was unavailable at evidence capture; retain exact input reconstruction and its limitation separately from log source attestations.
+**Remaining:** Linux managed security/build and subsequent scoped macOS contract checks passed for their exact source. Complete joined native/schema/recovery and final release provenance; establish required hosted-check policy. Existing donor dependencies mean local macOS proof is not a clean hosted job. Original synthetic commit unavailable; reconstructed tree is distinct evidence.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
 **Source:** `scripts/ci/box-ci/merge-if-green.sh`, `tests/native-qualification/`.
 
-**Evidence:** implemented Reviewed main-conflict repair6cb + evidencea9ab now frozen on PR6168 via verified fast-forward fromf0da. Native QA is separate; automatic merge disabled and release hold retained.; tested Current a9ab managed:59,870 unitsPASS/0failed/252skip; PG2/2; Chromium45/45;51 security steps and7 production build steps success on recorded7c25/main9ee. Prior scoped6cb77tests/151types/bundle alsoPASS. macOS Native Land unrun; two hosted-runner disk/swap build steps skipped by design.; independently reviewed Independent Sol audit e9123f5637144f565a5c519a8af8e02b1c3b6c35f1e199e910349f3cf1cb270a directly reads host spec/result and hashes host/local logs24eefde6/744fb758. Both contexts same recorded source inputs and successful terminal. Scope does not include native/schema/recovery/live.; merged False; deployed False; live verified False.
+**Evidence:** implemented Reviewed main-conflict repair6cb + evidencea9ab now frozen on PR6168 via verified fast-forward fromf0da. Native QA is separate; automatic merge disabled and release hold retained.; tested Current a9ab managed:59,870 unitsPASS/0failed/252skip; PG2/2; Chromium45/45;51 security steps and7 production build steps success on recorded7c25/main9ee. Prior scoped6cb77tests/151types/bundle alsoPASS. macOS Native Land unrun; two hosted-runner disk/swap build steps skipped by design. Resume exact-a9ab local Darwin: HomebrewNode22.23.2/uv1.52.1 two required files30/30PASS; officialNode22.23.2/uv1.51.0 refusalPASS (no child). Initial wrong-build path RED preserved; no assertion changes.; independently reviewed Independent Sol audit e9123f5637144f565a5c519a8af8e02b1c3b6c35f1e199e910349f3cf1cb270a directly reads host spec/result and hashes host/local logs24eefde6/744fb758. Both contexts same recorded source inputs and successful terminal. Scope does not include native/schema/recovery/live. Independent Sol directly matches four source SHA to a9ab, unit log, official archive manifest/binary and refusal log. Local donor-dependency scope only; hosted-check policy/native release remains open.; merged False; deployed False; live verified False.
 
 ### V02 — Joined contract and baseline local acceptance
 
@@ -427,9 +427,9 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L10 — Finish continuous admission and drain proof
 
-**Owner:** Sol B native caller/PG integration; Sol C host/image; root staging; Sol A independent audits. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
+**Owner:** Sol B native isolation/callers; Sol A independent verification. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Native a2ea/tree6cab source exchange independently passed1cc4a950; old3c442 preserved. R6 network independently passedbffb0ba0. Four-image load returned UNKNOWN_NO_REPLAY: four exact IDs present, zero containers, no positive result; normalized host nft lost two structural raw/PREROUTING rules during effect, independent RED0a2a8a60. No fifth/tag/probe/app/PG/runner effect admitted. Repeating on shared host without controlling all Docker writers is not a qualified recovery. Existing source/packet repairs continue held; PG seed-r8/runner-r7 and held gatekeeper are portable on evidencefc60f7c234; fresh-clone source-only checks passed. Read-only shared-QA survey found no gate covering all Docker writers; stopping box-ci alone cannot establish a quiet window. A genuinely isolated host or specifically approved enforceable all-writer drain is needed before a new generation. R6 private runtime is now independently stopped (auditbaf934): own PID0, processes/runtime/socket absent; shared generation and full stop firewall pair unchanged. Source/data and all UNKNOWN evidence preserved. Context-v2 and seed-r8 inert stage seals pass; no application/database effect.
+**Remaining:** Native a2ea/tree6cab source exchange independently passed1cc4a950; old3c442 preserved. R6 network independently passedbffb0ba0. Four-image load returned UNKNOWN_NO_REPLAY: four exact IDs present, zero containers, no positive result; normalized host nft lost two structural raw/PREROUTING rules during effect, independent RED0a2a8a60. No fifth/tag/probe/app/PG/runner effect admitted. Repeating on shared host without controlling all Docker writers is not a qualified recovery. Existing source/packet repairs continue held; PG seed-r8/runner-r7 and held gatekeeper are portable on evidencefc60f7c234; fresh-clone source-only checks passed. Read-only shared-QA survey found no gate covering all Docker writers; stopping box-ci alone cannot establish a quiet window. A genuinely isolated host or specifically approved enforceable all-writer drain is needed before a new generation. R6 private runtime is now independently stopped (auditbaf934): own PID0, processes/runtime/socket absent; shared generation and full stop firewall pair unchanged. Source/data and all UNKNOWN evidence preserved. Context-v2 and seed-r8 inert stage seals pass; no application/database effect. Resumed after owner instruction: evaluate resource-bounded KVM isolation with user-mode networking; guest/tool/image preparation and independent smoke remain unqualified. No old intent replay.
 
 **Acceptance:** Actual isolated host/PostgREST lab, continuous hold/drain/recovery, old-worker and late-effects negatives; no unknown operation discarded.
 
@@ -451,9 +451,9 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L11 — Qualify faithful backup and restored copy
 
-**Owner:** root release coordination. **State:** external. **Dependencies:** L00.
+**Owner:** Sol C recovery prerequisites; root release coordination; Sol A independent audit. **State:** external. **Dependencies:** L00.
 
-**Remaining:** 15:38:06UTC read-only AWS observation: app/cron running with zero restarts after another main deployment;61,270,511,616B free (~57.1GiB), below unchanged85GiB floor. Production capacity proposal remains pending; backup49c5 stale/unrun. Fresh capacity/source/policy readback, plan review and specific shared-lock approval required. No backup/lock/project deployment/migration/activation.
+**Remaining:** Read-only AWS17:24:40UTC:63,777,255,424bytes available, below unchanged85GiB by27,490,799,616bytes. Volume remains300GiB, no current modification/snapshot. Existing capacity approval remains pending; Claude auth false and actual Supabase policy/CIDRs unknown. Backup49c5 stale/unrun; fresh reviewed plan and specific shared-lock authority required. No lock/backup/production mutation.
 
 **Acceptance:** Fresh coherent rows/ledger/roles/catalog match, snapshot/lock cleanup and exact packet rehearsal; prior approval consumed. No lock/migration implied by this plan. Restored-copy migration/ACL rehearsal under the actual migration role joins L00/V00; synthetic superuser/NOLOGIN fixtures do not prove production authority.
 
@@ -463,7 +463,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L12 — Implement the qualified live release coordinator
 
-**Owner:** Sol release-coordinator lane. **State:** in_progress. **Dependencies:** L00, L10.
+**Owner:** Root operator integration, Sol B actual native caller, Sol A independent audit. **State:** in_progress. **Dependencies:** L00, L10.
 
 **Remaining:** Native a2ea/tree6cab source exchange independently passed1cc4a950; old3c442 preserved. R6 network independently passedbffb0ba0. Four-image load returned UNKNOWN_NO_REPLAY: four exact IDs present, zero containers, no positive result; normalized host nft lost two structural raw/PREROUTING rules during effect, independent RED0a2a8a60. No fifth/tag/probe/app/PG/runner effect admitted. Repeating on shared host without controlling all Docker writers is not a qualified recovery. Existing source/packet repairs continue held; PG seed-r8/runner-r7 and held gatekeeper are portable on evidencefc60f7c234; fresh-clone source-only checks passed. Read-only shared-QA survey found no gate covering all Docker writers; stopping box-ci alone cannot establish a quiet window. A genuinely isolated host or specifically approved enforceable all-writer drain is needed before a new generation. R6 private runtime is now independently stopped (auditbaf934): own PID0, processes/runtime/socket absent; shared generation and full stop firewall pair unchanged. Source/data and all UNKNOWN evidence preserved. Context-v2 and seed-r8 inert stage seals pass; no application/database effect.
 

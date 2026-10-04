@@ -6,4 +6,4 @@ These project documents are public and readable without signing in. Application 
 - [Plan and task checklist](SupraOS-Agent-Plan-Checklist.md): all 62 acceptance tasks and the 32-package dependency graph.
 - [Execution procedure](Faster-Verified-SupraOS-Delivery.md): coordinated implementation, qualification and independent review.
 
-Current checkpoint: 2026-10-04T16:17:58.573663+00:00. Pause closeout for the two-hour delivery window; final documentation publication only. Current a9ab managed security/build independently PASS; private R6 stopped with image-load UNKNOWN preserved. Full Agent Run: unshipped; inactive; global attention cutover: 0; restoreVerified: false. 5 of 62 tasks accepted (8.1%); 56 pending (90.3%); 1 deliberately dropped (1.6%).
+Current checkpoint: 2026-10-04T17:43:20.407342+00:00. Active owner-authorized resume: resolve native isolation and production recovery prerequisites in parallel, preserving frozen a9ab managed qualification. Full Agent Run: unshipped; inactive; global attention cutover: 0; restoreVerified: false. 5 of 62 tasks accepted (8.1%); 56 pending (90.3%); 1 deliberately dropped (1.6%).
