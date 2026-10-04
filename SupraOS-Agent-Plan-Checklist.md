@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-04T05:36:42.550498+00:00. Active: qualify frozen runtime candidate, repair monitored operator caller, verify Settings on repaired test host..
+Checkpoint: 2026-10-04T05:59:50.009256+00:00. Active: qualify frozen runtime; close native daemon isolation blocker before operator lab..
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-04T05:36:42.550498+00:00. Active: qualify frozen runtime can
 
 ## Current delivery boundary
 
-Canonical30875 Settings browser independentlyPASS: tracked one-test file, zero skips,6.881s,390px image inspected,139 peakthreads/zero denials under bounded512 cap. Hostresourcecause of historicalr6 RED proven; no testbudget/assertion change. Exact264-case stream source packet staged and independentlyGit-matched; launch pendingfinalreview. Writerinventory2381rowsPASS butE3readinessRED6390 unresolved/unguardedrows. Managedbuild/securityqueued05:34UTC. Nativecaller monitorlifetime repair and isolatedlab assembly progressing; no deployment/activation/taskpromotion.
+Canonical SettingsPASS retained. Stream first run245/264PASS;19 failures trace to missing archive dependencies. Exact70Gitfiles added, r2stagecomplete; same264tests pendingrerun. Operatorcaller source2e5f192012 pushed/reviewed. PrivateDocker attempt exposed sharedcontainerd imagevisibility and is UNKNOWN_NO_REPLAY; no dependent native effects. Backupplanexpired05:56 withoutapproval; no lock/run. Managed30875build/securityqueued05:56. Acceptance unchanged.
 
 ## How to read this checklist
 
