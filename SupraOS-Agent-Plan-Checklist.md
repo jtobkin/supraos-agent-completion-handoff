@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-04T07:07:11.837424+00:00. Active: Settings and stream scoped qualification closed; managed CI and native operator remain..
+Checkpoint: 2026-10-04T07:39:00.388233+00:00. Active: Settings and stream scoped qualification closed; managed CI and native operator remain..
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-04T07:07:11.837424+00:00. Active: Settings and stream scoped
 
 ## Current delivery boundary
 
-Exact30875 stream264/264PASS0pending, independent5cdee86e,46copiedmembers/38PNG/4JSON,67.776s,135peakthreads/0denials. Settings1/1PASS remains. Same source/tests; missingarchive closure fixed. Controlledfixture browser scope only. ManagedCI batched0000c queued06:06. First private daemon stopped/audited; dedicatedcontainerd successor26c2924 source clearstageonly. Real quiescenceproducer/native lab still pending. No taskpromotion/deploy/activation.
+Exact30875 Settings1/1 and stream264/264 scoped real Chromium checks independently verified; controlled fixtures only. ManagedCI batch0000c still queued07:28. Quiescence pre-effect defect fixed in reviewed source. QA database-name blocker under repair. No full deployment/activation or accepted-task promotion.
 
 ## How to read this checklist
 
@@ -393,13 +393,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Canonical30875Settings1/1 realChromiumPASS independentlyverified. Exact264-case stream packetstaged; managedbuild/securitystillqueued05:34. Finalcandidatebroadtypes/security/native/recoveryremain; historicalf74fullsuiteonly.
+**Remaining:** Current30875 required managed security/build contexts remain queued07:28. Settings1/1 and stream264/264 controlled browser checks independently pass. Native/schema/recovery and live acceptance remain; historicalf74 fullsuite does not qualify newer source.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
 **Source:** `scripts/ci/box-ci/merge-if-green.sh`, `tests/native-qualification/`.
 
-**Evidence:** implemented Frozen a88d is audited fixture-only repair atop663c current-main composition. Production source unchanged from663c; strict projected reads and canonical preference precedence retained.; tested Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
+**Evidence:** implemented Frozen30875 runtime PR6168; exact source/tree pinned. Further operator QA source is separately isolated until integrated and qualified.; tested Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
 
 ### V02 — Joined contract and baseline local acceptance
 
@@ -427,15 +427,15 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L10 — Finish continuous admission and drain proof
 
-**Owner:** root infrastructure coordination; Claude access unavailable in current session. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
+**Owner:** Sol B native caller/PG integration; Sol C host/image; root staging; Sol A independent audits. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Actual QA six-origin packet producer binds pinned private daemon/image, proxy generation and receipt-bound inbox0711. Source independently reviewed; native daemon/image/lab/caller packet proof remains pending. Production writer coverage/network controls are not established by isolated lab.
+**Remaining:** Final QA DB contract source; exact Git/capture stage; PG/PostgREST baseline then090/100 proof; actual historical strategies image; remaining truthful cron/gatekeeper role sources; isolated daemon/load/network/app assembly; joined seven-step and lost-ACK proof.
 
 **Acceptance:** Actual isolated host/PostgREST lab, continuous hold/drain/recovery, old-worker and late-effects negatives; no unknown operation discarded.
 
 **Source:** `scripts/qa/agent-run-release-host.py`, `scripts/qa/money-release-operator.py`.
 
-**Evidence:** implemented Reviewed v4 producer/caller and child identity composed in61fd. Named fixture-gated canonical owner-state preflight wires durable receipt and exact Docker generation; absent live authorities refuse before originals.; tested child identity7/7, owner filesystem6/6, joined journal/port/host3/3 native; external authorities synthetic; actual process restart remains pending; isolated0906/6 and canonicalbcc0 actualPG17 preflight1/1, zero skips. Cron orderly/SIGKILL4/4 uses injected effect log; real Docker/live owner replacement remains pending.; independently reviewed Independent producer/caller/61fd exact composition clear. Native evidence retained within disposable/synthetic predecessor scope.; merged False; deployed False; live verified False.
+**Evidence:** implemented Named Money coordinate-cutoff-run caller holds same coordinator/window through prefix. Reviewed fdce46e9 adds actual read-only companion/runner preflight before REST/cron effects; d550 app phases source only.; tested child identity7/7, owner filesystem6/6, joined journal/port/host3/3 native; external authorities synthetic; actual process restart remains pending; isolated0906/6 and canonicalbcc0 actualPG17 preflight1/1, zero skips. Cron orderly/SIGKILL4/4 uses injected effect log; real Docker/live owner replacement remains pending.; independently reviewed Independent producer/caller/61fd exact composition clear. Native evidence retained within disposable/synthetic predecessor scope.; merged False; deployed False; live verified False.
 
 ### V00 — Qualify the included inactive release profile
 
@@ -453,7 +453,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root release coordination. **State:** external. **Dependencies:** L00.
 
-**Remaining:** Fresh809db848 plan bfba9604 captured01:56:02UTC/expires05:56:02UTC, exact private readback and independent plan/run source review pass. Specific owner shared-lock approval requested; no backup run. Fresh120.7GiB observation clears earlier capacity blocker, subject to effect-time checks. Faithful restored roles/catalog/data and actual-role rehearsal remain; never replay consumed originals.
+**Remaining:** Attempt809db848 planbfba9604 expired05:56:02UTC without specific approval; no shared lock or backup run. Successor requires fresh capture/review and exact shared-lock approval. Faithful rows/ledger/roles/catalog restoration and actual-role migration rehearsal remain; no consumed attempt replay.
 
 **Acceptance:** Fresh coherent rows/ledger/roles/catalog match, snapshot/lock cleanup and exact packet rehearsal; prior approval consumed. No lock/migration implied by this plan. Restored-copy migration/ACL rehearsal under the actual migration role joins L00/V00; synthetic superuser/NOLOGIN fixtures do not prove production authority.
 
