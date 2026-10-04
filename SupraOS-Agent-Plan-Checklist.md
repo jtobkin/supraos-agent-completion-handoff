@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-04T04:36:30.314482+00:00. Active: audited schema expectation; reviewed canonical-rehearsal blocker repair; browser and mounted-operator qualification..
+Checkpoint: 2026-10-04T05:09:31.853298+00:00. Active: qualify frozen runtime candidate, repair monitored operator caller, verify Settings on repaired test host..
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-04T04:36:30.314482+00:00. Active: audited schema expectation
 
 ## Current delivery boundary
 
-04:36 UTC: aef5497 schema-only canonical rehearsal independently PASS: 17 packets, 51 zero-exit apply/rollback/reapply results with exact expected catalog checks; nine baseline checks. Sealed 76 members; original a88d dependency-order RED retained. No production rows, writer admission or faithful restore qualification. Reviewed ordering/profile repair and real main merge blocker composed into c60e3f8827 and pushed to runtime PR6168. Writer catalog passes 2,381 rows and 69 tests; E3 remains RED. Previous a88d CI ended before testing because of merge conflict; new candidate awaiting managed checks. Settings r4 diagnostic RED on reload2 after 30s; targeted unchanged-budget lifecycle diagnostic preparing. Native actual caller and recovery remain open; no accepted-task promotion.
+05:12 UTC: runtime30875a02 composes actual main cb3f1a conflict fixes preserving context provenance and timing fallback; independent source review clear. 423 tests passed;19 local Chromium launch failures retained (macOS bootstrap_check_in), so no whole-run PASS. Both managed contexts queued at05:05. Settings r6 proves test-host thread exhaustion: pids peak/max128, seven denied admissions and seven Chromium pthread_create failures; reviewed r7 changes only bounded TasksMax512, original source/assertions/timeouts unchanged. Native assembly found process-local continuity cannot survive separate Money step processes; implementing one monitored coordinate-cutoff-run plus durable crash refusal. Schema-only aef5 PASS retained; no production deployment, activation or accepted-task promotion.
 
 ## How to read this checklist
 
