@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-04T11:24:00Z. Active: Settings and stream scoped qualification closed; managed CI and native operator remain..
+Checkpoint: 2026-10-04T11:51:00Z. Active: managed application checks green; native/schema/recovery qualification remains..
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-04T11:24:00Z. Active: Settings and stream scoped qualificati
 
 ## Current delivery boundary
 
-11:24 UTC: f0da security terminal PASS, 51 steps; unit 59,804 passed/252 skipped/zero failed, PostgreSQL 2/2 and real browser fidelity 45/45. Raw log transferred/hash verified; Grok independent evidence review running. Production build running. Native coherent phase-local repair d3bf4f657e committed and Sol source-reviewed; host source exchange pending, no network/images/PG effects. Recovery current plan90ec held on disk capacity below85GiB; exact12-ID old private mutable regular cache preflight passes, source review pending, no cleanup execution or backup approval/run/lock.
+11:51 UTC: PR6168/f0da has both managed contexts green: security51steps (59,804 units/0failed/252skip,PG2/2,Chromium45/45) and production build7steps on testmerge d32f505/main7ec9. Grok33/35 independently reviewed terminal evidence. Native final sourcef7dad/tree4348 is pushed, three proven audit defects repaired and Sol-tested; Grok37 narrow fix review PASS. Host source input stage independently sealed, import/exchange pending. Mac disk restored5.3GiB by removing only two owned reconstructable terminal model clones. AWS cache-only cleanup recovered25.79GB/free85.3GiB; newest backup49c5/3240 captured11:37 expires15:37, current-readonly check refused database activity, counters under readback. No backup approval/run/lock; no native network/images/app/PG effects.
 
 ## How to read this checklist
 
@@ -393,13 +393,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Finish managed retry batch0000e, independently audit exact source/gates/build; isolated unchanged PG2/2PASS135.22s is diagnostic only. Native/schema/recovery gates remain.
+**Remaining:** Managed security and production-build contexts are now green on PR head f0da. Preserve exact distinct tested sources and independent terminal evidence. Remaining native/macOS where applicable, schema, joined contract and recovery gates are open; final merge/deploy source must be reconciled without restarting unaffected proof.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
 **Source:** `scripts/ci/box-ci/merge-if-green.sh`, `tests/native-qualification/`.
 
-**Evidence:** implemented Frozen458f6 runtime PR6168; test-fixture/CI-memory blocker repairs only, no production runtime change.; tested Current458f6:59763unitPASS252skip, changedtypesPASS119s, productionbuildPASS7steps920s. SecurityRED: one integrationtest180s timeout(actual212.6s); prior samefixture139.1sPASS. Independent full-log audits sealed.; independently reviewed Exact managed build PASS independently audited e7ddfc6b; security RED independently audited7f0abfaa. No broadrelease approval.; merged False; deployed False; live verified False.
+**Evidence:** implemented Frozen application f0da37f753/PR6168; narrow fixture race repair15bb and demonstrated main catalog conflict resolution. Auto-merge disabled, release hold remains.; tested Security f0da/mainbd3c:51 steps PASS,59,804 units PASS/0failed/252skip,PG2/2,Chromium45/45. Production build:7steps PASS838s on testmerge d32f505645/main7ec9. The two checks used different main snapshots; both GitHub contexts are success on the same PR head. macOS Native Land not run.; independently reviewed Independent Grok33 security and Grok35 build evidence PASS_WITH_SCOPE; root transferred/rehashed complete logs. Source-specific SHA/line receipts retained. No broad release/live approval.; merged False; deployed False; live verified False.
 
 ### V02 — Joined contract and baseline local acceptance
 
@@ -429,13 +429,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** Sol B native caller/PG integration; Sol C host/image; root staging; Sol A independent audits. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Correct volatile nft counters in all pinned readiness producers/consumers, qualify fresh private daemon, then actual loads/probe/network/apps/PG/REST. Strategies context77,962members independently sealed; no image build. Actual writers and joined native proof remain.
+**Remaining:** Finish coherent phase-local firewall repair and source exchange, then private network/images/probe→actual apps→PG/REST. Grok found repeated read-only observation and delayed post-effect snapshot defects; Sol fixes are source-reviewed, final f7dad/tree4348 pushed; input stage sealed, import/exchange pending. r4 daemon is idle, bounded lifetime ends around12:56:50UTC. Actual continuous writer/all-origin proof remains.
 
 **Acceptance:** Actual isolated host/PostgREST lab, continuous hold/drain/recovery, old-worker and late-effects negatives; no unknown operation discarded.
 
 **Source:** `scripts/qa/agent-run-release-host.py`, `scripts/qa/money-release-operator.py`.
 
-**Evidence:** implemented Named Money coordinate-cutoff-run caller holds same coordinator/window through prefix. Reviewed fdce46e9 adds actual read-only companion/runner preflight before REST/cron effects; d550 app phases source only.; tested child identity7/7, owner filesystem6/6, joined journal/port/host3/3 native; external authorities synthetic; actual process restart remains pending; isolated0906/6 and canonicalbcc0 actualPG17 preflight1/1, zero skips. Cron orderly/SIGKILL4/4 uses injected effect log; real Docker/live owner replacement remains pending.; independently reviewed Independent producer/caller/61fd exact composition clear. Native evidence retained within disposable/synthetic predecessor scope.; merged False; deployed False; live verified False.
+**Evidence:** implemented Same-window Money coordinator caller plus actual ingress hooks before/after effects. Phase-local full structural host firewall comparison replaces invalid lifetime equality; immutable startup/identity evidence preserved. No rule/set exclusions. No private network/image/app/PG effect yet.; tested child identity7/7, owner filesystem6/6, joined journal/port/host3/3 native; external authorities synthetic; actual process restart remains pending; isolated0906/6 and canonicalbcc0 actualPG17 preflight1/1, zero skips. Cron orderly/SIGKILL4/4 uses injected effect log; real Docker/live owner replacement remains pending.; independently reviewed Sol independently confirms three Grok33 findings and narrow repairs; producer16/16, ingress12/12, firewall3/3 scoped tests PASS. Real repeat observations now read-only and repeatable, durable effect snapshots retained. Source-only until sealed host run.; merged False; deployed False; live verified False.
 
 ### V00 — Qualify the included inactive release profile
 
@@ -453,13 +453,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root release coordination. **State:** external. **Dependencies:** L00.
 
-**Remaining:** Fresh dfd40ff4/15756ae4 captured09:37:42 expires13:37:42. AWS72.07GiB below85GiB start floor; investigate exact safe capacity remediation. Independent plan audit and specific shared-lock approval required before run. No backup/lock/migration.
+**Remaining:** Current49c5fd79/3240f2e3 captured11:37:32, expires15:37:32UTC. Last cleanup free85.3GiB; fresh readback refused database activity, bounded counters pending. Exact plan/transport review running; specific shared-lock approval missing. Prior90ec/dfd40 plans drifted and never ran. No backup/lock.
 
 **Acceptance:** Fresh coherent rows/ledger/roles/catalog match, snapshot/lock cleanup and exact packet rehearsal; prior approval consumed. No lock/migration implied by this plan. Restored-copy migration/ACL rehearsal under the actual migration role joins L00/V00; synthetic superuser/NOLOGIN fixtures do not prove production authority.
 
 **Source:** `scripts/qa/agent-run-production-backup.py`, `docs/agent-run/evidence/backup-prior-reconciliation-20260930/STAGING-AND-CAPTURE.md`.
 
-**Evidence:** implemented Reviewed dfdc wrapper/helper closure staged privately on AWS with exact source pins; capture-only plan completed with read-only database transaction. No lock or backup acquired; no migration/activation.; tested Root and independent Sol reviewed unchanged guards;26 focused tests pass. Consumed attempt6d79 refused before helper/archive, lock released. Fresh restore remains unproved.; independently reviewed Independent Sol reviewed exact preparation/transport/plan/run packet; audit a4caad9600fc2c9ba3f4eb3edb98520f988d0b42addbdea05ad8793ca298da49. Source clear for exact approval request only; no run or restore evidence.; merged False; deployed False; live verified False.
+**Evidence:** implemented Reviewed dfdc wrapper/helper closure staged privately on AWS with exact source pins; capture-only plan completed with read-only database transaction. No lock or backup acquired; no migration/activation.; tested Root and independent Sol reviewed unchanged guards;26 focused tests pass. Consumed attempt6d79 refused before helper/archive, lock released. Fresh restore remains unproved.; independently reviewed Exact current launch/source pins independently Grok32 reviewed after Grok30 transport review; root preserves static review and readonly preflight. Grok34 cleared exact12-ID private mutable regular cache cleanup. No restoration result or lock authority inferred.; merged False; deployed False; live verified False.
 
 ### L12 — Implement the qualified live release coordinator
 
