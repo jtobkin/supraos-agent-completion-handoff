@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-04T02:28:01.934864+00:00. Active: frozen current-main composition663c / runtimePR6168 managed qualification; exact backup approval pending; three Sol delivery lanes..
+Checkpoint: 2026-10-04T02:40:58.812546+00:00. Active: frozen a88d runtime PR6168 qualification; exact backup approval pending; three Sol delivery lanes..
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -393,13 +393,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Managed required contexts on runtimePR6168 currenthead; root broad changed-path tests/types running. Mac Chromium could not initialize(error141); bounded QA Settings browser pending. Native/schema/recovery and live gates remain. c2c manualbuild never launched; f74 fullunit predecessor-only.
+**Remaining:** Managed exact-head contexts and types pending. Broad29-file attempt timeout420s retained; isolated timing33/33 and updated Settings6/6 pass unchanged budgets. Mac Chromium initialization error141; QA browser pending. Native/schema/recovery/live remain.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
 **Source:** `scripts/ci/box-ci/merge-if-green.sh`, `tests/native-qualification/`.
 
-**Evidence:** implemented Frozen663c composes reviewedc2c withpinnedmain45153; preserves mandatory owner/off-device privacy+digest exclusion and strict projected preference reads.85focused localchecks and40independent checks pass; exact conflict-resolution audit clear.; tested Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
+**Evidence:** implemented Frozen a88d is audited fixture-only repair atop663c current-main composition. Production source unchanged from663c; strict projected reads and canonical preference precedence retained.; tested Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
 
 ### V02 — Joined contract and baseline local acceptance
 
