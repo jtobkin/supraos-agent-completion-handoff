@@ -408,13 +408,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Review and qualify two demonstrated CI blocker repairs, rerun current-source security gate then production build. Native/schema/recovery and live acceptance remain.
+**Remaining:** Finish458f6 security and independent build/terminal review, then native/schema/recovery and release gates.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
 **Source:** `scripts/ci/box-ci/merge-if-green.sh`, `tests/native-qualification/`.
 
-**Evidence:** implemented Frozen30875 runtime PR6168; exact source/tree pinned. Further operator QA source is separately isolated until integrated and qualified.; tested 30875 CI merged test0468590:59,748 passed252 skipped, one suite failed during server-only import; scoped types OOM at6144MiB. Build notrun. Local minimalfixture repair51/51; diagnostic formatter3/3. Earlier59466 full PASS is predecessor-only.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
+**Evidence:** implemented Frozen458f6 runtime PR6168; test-fixture/CI-memory blocker repairs only, no production runtime change.; tested 30875 CI merged test0468590:59,748 passed252 skipped, one suite failed during server-only import; scoped types OOM at6144MiB. Build notrun. Local minimalfixture repair51/51; diagnostic formatter3/3. Earlier59466 full PASS is predecessor-only. Successor458f6 security/build observed active08:58:43; no broad pass yet. New09:01 read: production build PASS7steps920s on testmerge1bb12f77; independent audit pending.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
 
 ### V02 — Joined contract and baseline local acceptance
 
@@ -444,7 +444,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** Sol B native caller/PG integration; Sol C host/image; root staging; Sol A independent audits. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Exactsource donor import failed strict Git closure. Separate10object repair with restored original shallow boundary underreview. Capture and narrow HBA staged/audited. PG adapter fixes from Grok underreview; actualwriters and native proof pending.
+**Remaining:** Exact Git/capture/HBA/seed/networkhelper/Traefikcontext are staged and independently sealed. Finish bounded context copy, daemon/load/probe, network/app phases and actual PG/REST baseline; actual writers and joined native proof remain.
 
 **Acceptance:** Actual isolated host/PostgREST lab, continuous hold/drain/recovery, old-worker and late-effects negatives; no unknown operation discarded.
 
