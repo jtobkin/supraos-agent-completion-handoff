@@ -1,14 +1,18 @@
 # SupraOS Universal Agent Completion Handoff
 
-## Resume update — 2026-10-04T01:27:48.400583+00:00
+## Active resume — 2026-10-04
 
-The full-project goal is active again. Root plus three Sol workers now own clean f74 build qualification, L10/L12 production caller integration and independent review. The previous90-minute pause below is a historical checkpoint. Local evidence collection completed: the sealed receipt and all180 recorded files were verified with zero hash mismatches; the earlier pending-transfer statements are superseded. Evidence: [resume archive verification](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/evidence/resume-build-release-20261004/local-archive-verification.json). No new production or acceptance claim follows.
+Owner authorized eight hours from01:28:29UTC through09:28:29UTC, then pause/handoff. Root coordinates three Sol lanes around the same delivery path: candidate integration/qualification, actual release-operator/packet-source integration, and independent trailing review. Existing goals and all62 acceptance tasks are unchanged.
 
-**Current build source:** `c2c88ac686de9f0d114521d5473b65152cd3546e` on `codex/agent-run-schema-build-successor-20261004`, tree `f291423cbc88aeaa5d817ea30ecdd4b5e3a012a5`. Three reviewed QA files correct a demonstrated schema-profile mismatch and provide offline rehearsal dependencies;56focused Python tests and all3source profiles pass, with independent exact-source review. Application, SQL and install inputs are unchanged. Full-unit59466PASS remains exactf74 evidence; build/native/schema qualification of the successor is not yet claimed. [Successor evidence](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-schema-build-successor-20261004/docs/agent-run/evidence/schema-build-successor-20261004/README.md).
+**Current runtime candidate:** `663c41d91d53cfb3ffca09e205e50737e2cb1010`, tree `5ffb71f82a80893bda003f19d9a793739d207c5b`, branch `codex/agent-run-release-composition-20261004`, [qualification PR6168](https://github.com/jtobkin/suprafx-platform/pull/6168). It composes reviewedc2c with pinnedmain45153 to resolve actual privacy/preference merge conflicts.85focused local tests and40independent tests pass; independent exact conflict-resolution audit is clear. Broader checks and required managed security/build contexts remain pending. Mac Chromium could not initialize(error141); QA Playwright verification is being prepared. CI alone cannot authorize merge: native/schema/recovery/writer/operator gates remain.
 
-## Current checkpoint and how to use this document
+**Closed preparation dependencies:** f74 full-unit evidence is now locally sealed:180recorded files and174published members independently verified. Reviewedc2c repairs the schema helper profile/offline closure (56Python checks,81/84/94source inventories); its manual build was staged but never launched. All predecessor test receipts keep their exact source scope. Coordination documentation stays onPR5862 so updates do not continually reset runtimePR6168 qualification.
 
-**Paused at the owner-requested 90-minute deadline, 2026-10-03 19:43 UTC (03:43 HKT October 4).** New implementation and qualification launches stopped. Only safe evidence collection and documentation publication wrap-up remains. This report supersedes older next-action lists; historical evidence keeps its original scope.
+**Recovery:** fresh production free space120.7GiB exceeded the85GiB admission floor at01:43:32UTC. New capture-only plan809db848/SHA bfba9604 completed at01:56:02UTC, expires05:56:02UTC; exact plan/run packet independently reviewed. Specific shared-lock approval was requested; no backup run, lock acquisition, migration or activation occurred. See [reviewed attempt](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/evidence/backup-attempt-809db848-20261004/README.md). The earlier capacity proposal is historical unless fresh admission fails again.
+
+## Historical pause checkpoint and document navigation
+
+**Historical: paused at the owner-requested 90-minute deadline, 2026-10-03 19:43 UTC (03:43 HKT October 4).** New implementation and qualification launches stopped. Only safe evidence collection and documentation publication wrap-up remains. This report supersedes older next-action lists; historical evidence keeps its original scope.
 
 Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.
 
@@ -36,7 +40,7 @@ This requires bounded context and SCM recall without stalling the UX; explicit p
 | Friend-channel security repair | Historical shipped repair PR5891/main61937ca124 | Independent narrow repair, not full Agent Run |
 | Other historical narrow repairs | PR6025 and PR6037 recorded merged | No fresh live qualification claimed in this handoff |
 | QA disk-admission scheduler PR6153 | Merged d35bdcbd37641648da3f2b6891289153cdda1ff2; exact runtime4a015f9 installed on QA, independently read back | Build/check infrastructure only; not production application deployment |
-| Universal Agent combined source | Frozen successor f74bb97818c755527154c8c1633024f525bd2cda; extensive scoped proofs | Full-unit suite independently passed on QA; remaining security/build/native/schema, deployment and live acceptance remain open |
+| Universal Agent combined source | Current663c runtimePR6168; f74 full-unit predecessor evidence retained | Current-head managed CI, browser/native/schema/recovery, deployment and live acceptance remain open |
 | Global attention and new SQL | Cutover off; phased profile and installed ledger must be re-read | No implicit activation or migration from code presence |
 | Backup/recovery | Coherent historical capture and many scoped checks | Overall restoreVerified=false; restored-copy/role/profile/writer-window qualification incomplete |
 
@@ -396,13 +400,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Qualify clean c2c production build using reviewed concrete packet and fresh capacity. Exact successor security/native/schema and required final gates remain; retain f74 fullunit evidence within scope.
+**Remaining:** Managed required contexts on runtimePR6168 currenthead; root broad changed-path tests/types running. Mac Chromium could not initialize(error141); bounded QA Settings browser pending. Native/schema/recovery and live gates remain. c2c manualbuild never launched; f74 fullunit predecessor-only.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
 **Source:** `scripts/ci/box-ci/merge-if-green.sh`, `tests/native-qualification/`.
 
-**Evidence:** implemented c2c schema-tool successor composes reviewed27df/9db to correct demonstrated release-profile mismatch and offline rehearsal dependencies;56Python testsPASS,3profiles hashPASS, independent3blob source audit clear. No application/SQL/installinput delta.; tested Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
+**Evidence:** implemented Frozen663c composes reviewedc2c withpinnedmain45153; preserves mandatory owner/off-device privacy+digest exclusion and strict projected preference reads.85focused localchecks and40independent checks pass; exact conflict-resolution audit clear.; tested Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
 
 ### V02 — Joined contract and baseline local acceptance
 
@@ -456,13 +460,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root release coordination. **State:** external. **Dependencies:** L00.
 
-**Remaining:** FreshAWS01:43:32UTC120.7GiB exceeds85GiB admission at observation; no resize required now. Prepare reviewed current-source capture-only plan, then exact shared-lock approval. Faithful roles/catalog/data restore and actual-role rehearsal remain; old attempts never replay.
+**Remaining:** Fresh809db848 plan bfba9604 captured01:56:02UTC/expires05:56:02UTC, exact private readback and independent plan/run source review pass. Specific owner shared-lock approval requested; no backup run. Fresh120.7GiB observation clears earlier capacity blocker, subject to effect-time checks. Faithful restored roles/catalog/data and actual-role rehearsal remain; never replay consumed originals.
 
 **Acceptance:** Fresh coherent rows/ledger/roles/catalog match, snapshot/lock cleanup and exact packet rehearsal; prior approval consumed. No lock/migration implied by this plan. Restored-copy migration/ACL rehearsal under the actual migration role joins L00/V00; synthetic superuser/NOLOGIN fixtures do not prove production authority.
 
 **Source:** `scripts/qa/agent-run-production-backup.py`, `docs/agent-run/evidence/backup-prior-reconciliation-20260930/STAGING-AND-CAPTURE.md`.
 
-**Evidence:** implemented Canonical2689 integrates reviewed refusal diagnostics16ec and bounded preflight39f23: at most3 full read-only observations,10second gaps within unchanged180second deadline. No helper or consumed original replay. New source staging/plan preparation pending.; tested Root and independent Sol reviewed unchanged guards;26 focused tests pass. Consumed attempt6d79 refused before helper/archive, lock released. Fresh restore remains unproved.; independently reviewed Independent exact-source review clears16ec/39f23. Future source-pinned plan requires fresh generation/limit review and separate specific shared-lock approval.; merged False; deployed False; live verified False.
+**Evidence:** implemented Reviewed dfdc wrapper/helper closure staged privately on AWS with exact source pins; capture-only plan completed with read-only database transaction. No lock or backup acquired; no migration/activation.; tested Root and independent Sol reviewed unchanged guards;26 focused tests pass. Consumed attempt6d79 refused before helper/archive, lock released. Fresh restore remains unproved.; independently reviewed Independent Sol reviewed exact preparation/transport/plan/run packet; audit a4caad9600fc2c9ba3f4eb3edb98520f988d0b42addbdea05ad8793ca298da49. Source clear for exact approval request only; no run or restore evidence.; merged False; deployed False; live verified False.
 
 ### L12 — Implement the qualified live release coordinator
 
