@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-04T05:59:50.009256+00:00. Active: qualify frozen runtime; close native daemon isolation blocker before operator lab..
+Checkpoint: 2026-10-04T06:12:13.922863+00:00. Active: Settings and stream scoped qualification closed; managed CI and native operator remain..
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-04T05:59:50.009256+00:00. Active: qualify frozen runtime; cl
 
 ## Current delivery boundary
 
-Canonical SettingsPASS retained. Stream first run245/264PASS;19 failures trace to missing archive dependencies. Exact70Gitfiles added, r2stagecomplete; same264tests pendingrerun. Operatorcaller source2e5f192012 pushed/reviewed. PrivateDocker attempt exposed sharedcontainerd imagevisibility and is UNKNOWN_NO_REPLAY; no dependent native effects. Backupplanexpired05:56 withoutapproval; no lock/run. Managed30875build/securityqueued05:56. Acceptance unchanged.
+Exact30875 stream264/264PASS0pending, independent5cdee86e,46copiedmembers/38PNG/4JSON,67.776s,135peakthreads/0denials. Settings1/1PASS remains. Same source/tests; missingarchive closure fixed. Controlledfixture browser scope only. ManagedCI batched0000c queued06:06. First private daemon stopped/audited; dedicatedcontainerd successor26c2924 source clearstageonly. Real quiescenceproducer/native lab still pending. No taskpromotion/deploy/activation.
 
 ## How to read this checklist
 
