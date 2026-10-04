@@ -4,6 +4,8 @@
 
 The full-project goal is active again. Root plus three Sol workers now own clean f74 build qualification, L10/L12 production caller integration and independent review. The previous90-minute pause below is a historical checkpoint. Local evidence collection completed: the sealed receipt and all180 recorded files were verified with zero hash mismatches; the earlier pending-transfer statements are superseded. Evidence: [resume archive verification](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/evidence/resume-build-release-20261004/local-archive-verification.json). No new production or acceptance claim follows.
 
+**Current build source:** `c2c88ac686de9f0d114521d5473b65152cd3546e` on `codex/agent-run-schema-build-successor-20261004`, tree `f291423cbc88aeaa5d817ea30ecdd4b5e3a012a5`. Three reviewed QA files correct a demonstrated schema-profile mismatch and provide offline rehearsal dependencies;56focused Python tests and all3source profiles pass, with independent exact-source review. Application, SQL and install inputs are unchanged. Full-unit59466PASS remains exactf74 evidence; build/native/schema qualification of the successor is not yet claimed. [Successor evidence](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-schema-build-successor-20261004/docs/agent-run/evidence/schema-build-successor-20261004/README.md).
+
 ## Current checkpoint and how to use this document
 
 **Paused at the owner-requested 90-minute deadline, 2026-10-03 19:43 UTC (03:43 HKT October 4).** New implementation and qualification launches stopped. Only safe evidence collection and documentation publication wrap-up remains. This report supersedes older next-action lists; historical evidence keeps its original scope.
@@ -394,13 +396,13 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root integration/qualification, Sol A independent review. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** Preserve terminal archive, then use fresh exact-f74 protected donor and reviewed held build packet; recheck capacity. Complete remaining candidate security/build/native/schema gates and release prerequisites; no deployment or live acceptance yet.
+**Remaining:** Qualify clean c2c production build using reviewed concrete packet and fresh capacity. Exact successor security/native/schema and required final gates remain; retain f74 fullunit evidence within scope.
 
 **Acceptance:** Current required contexts green plus independent exact-source Sol review and actual UI; older full build cannot qualify new source.
 
 **Source:** `scripts/ci/box-ci/merge-if-green.sh`, `tests/native-qualification/`.
 
-**Evidence:** implemented Frozen f74bb978 contains reviewed fixture51db, truthful reset UI9a2 and exact G11 fingerprint exceptions. Later3d952 is evidence-only. Application remains unmerged/undeployed. QA scheduler6153 installation is separately closed.; tested Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
+**Evidence:** implemented c2c schema-tool successor composes reviewed27df/9db to correct demonstrated release-profile mismatch and offline rehearsal dependencies;56Python testsPASS,3profiles hashPASS, independent3blob source audit clear. No application/SQL/installinput delta.; tested Frozen f74 full-unit QA PASS: 59,466 passed, 0 failed, 231 skipped; 4,714 files passed and 21 skipped. Independent Sol verified all174 published members and source/tree/terminal exit0/gate0; receipt b58e2d0d207e67c4337e197c1f15549a671e654128dfbeaa2fbaaf35549a568a. Canonical Promotion browser passed under original30s. Skips remain unverified; generated screenshot changes mean the used test checkout is not a clean build donor. Production build, remaining security/native/schema/recovery, migration, deployment, activation and live acceptance remain open.; independently reviewed Independent Sol source/G11/scoped/browser audits retained; full-unit QA174member seal verified atf74. No production build/native/schema/live approval.; merged False; deployed False; live verified False.
 
 ### V02 — Joined contract and baseline local acceptance
 
@@ -454,7 +456,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 **Owner:** root release coordination. **State:** external. **Dependencies:** L00.
 
-**Remaining:** Role-v3 same-snapshot read-only schema/23-role/26-membership capture verified; corrected9db rehearsal source and byte-pinned offline pg closure staged. Schema-only capture is not data restore. Faithful role/catalog restore, actual-role rehearsal and85GiB production floor remain open; capacity approval pending. Prior shared-lock attempt consumed; next concrete attempt needs its own specific lock approval.
+**Remaining:** FreshAWS01:43:32UTC120.7GiB exceeds85GiB admission at observation; no resize required now. Prepare reviewed current-source capture-only plan, then exact shared-lock approval. Faithful roles/catalog/data restore and actual-role rehearsal remain; old attempts never replay.
 
 **Acceptance:** Fresh coherent rows/ledger/roles/catalog match, snapshot/lock cleanup and exact packet rehearsal; prior approval consumed. No lock/migration implied by this plan. Restored-copy migration/ACL rehearsal under the actual migration role joins L00/V00; synthetic superuser/NOLOGIN fixtures do not prove production authority.
 
