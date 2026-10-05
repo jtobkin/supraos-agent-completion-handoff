@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-05T02:12:12.568564+00:00. paused by owner; handoff published, owned native/VM cleanup not yet proven complete.
+Checkpoint: 2026-10-05T02:14:58.924055+00:00. paused; native shutdown independently verified, isolated VM stop not submitted.
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-05T02:12:12.568564+00:00. paused by owner; handoff published
 
 ## Current delivery boundary
 
-Owner paused and requested immediate handoff. Frozen a9ab/PR6168 remains unmerged and unshipped with retained managed passes. Current native prerequisites and probe build independently verified; projection source staged only, zero app/PG/operator install/bind/caller/cutoff effects. Fixture/common staging occurred. Last proven native/VM state is RUNNING; only bounded owned cleanup is allowed, see private FINAL-RUNTIME-STATE.json. No production backup run, shared lock, migration or activation. Fresh plan25418/5ff14ca expires2026-10-05T05:56:29Z; source review passed but owner approval is absent. Acceptance remains5/62.
+Owner paused. Native stop returned STOPPED_ONLY (receipt ac5bae2b): unit inactive/not-found/PID0, no containers, unchanged default daemon and stop firewall. Independent post-stop verification PASSED (audit3fbf290b): native process/socket/runtime/cgroup absent, default daemon and firewall unchanged. VM stop was not submitted; isolated VM c remains running under its finite lease ending2026-10-05T08:18:58Z. All new implementation, qualification and VM preparation are paused. Frozen a9ab/PR6168 remains unmerged/unshipped with retained managed passes. Zero app/PG/operator install/bind/caller/cutoff effects; fixture/common inputs staged. No production backup run, shared lock, migration or activation. Fresh plan25418/5ff14ca expires2026-10-05T05:56:29Z; owner approval absent. Accepted5/62.
 
 ## How to read this checklist
 
