@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-05T01:41:23.299604+00:00. active eight-hour delivery run; first milestone native application/database/operator/recovery rehearsal.
+Checkpoint: 2026-10-05T02:12:12.568564+00:00. paused by owner; handoff published, owned native/VM cleanup not yet proven complete.
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -8,7 +8,7 @@ Checkpoint: 2026-10-05T01:41:23.299604+00:00. active eight-hour delivery run; fi
 
 ## Current delivery boundary
 
-Frozen application a9ab/PR6168 retains passing managed unit, Chromium, PostgreSQL and production-build evidence. Fresh isolated VM, exact source/image reuse and private daemon independently verified. Actual six-hour native lease ends07:38:38UTC; stepwise full effect/transport plus1800s native cleanup and300s VM stop reserves remain mandatory. Schema-only inputs have independently passed runtime verification; image/application, PG/REST, operator and recovery phases remain in progress or pending. No production effects or acceptance increase. Production capacity passes its observed floor but is not reserved; writer-policy authority and faithful restore remain open.
+Owner paused and requested immediate handoff. Frozen a9ab/PR6168 remains unmerged and unshipped with retained managed passes. Current native prerequisites and probe build independently verified; projection source staged only, zero app/PG/operator install/bind/caller/cutoff effects. Fixture/common staging occurred. Last proven native/VM state is RUNNING; only bounded owned cleanup is allowed, see private FINAL-RUNTIME-STATE.json. No production backup run, shared lock, migration or activation. Fresh plan25418/5ff14ca expires2026-10-05T05:56:29Z; source review passed but owner approval is absent. Acceptance remains5/62.
 
 ## How to read this checklist
 
@@ -175,7 +175,7 @@ The immediate dependency path is: inspect preserved state → qualify a fresh-ge
 
 ### Five mandatory execution techniques
 
-1. **Reuse a resumable qualification environment.** Finish the missing copied-disk resume adapter once; bind preserved disk/source hashes and independent stop evidence to fresh VM/native identities. Verify actual readiness before using it. Do not rebuild or retransfer verified unchanged donors by default. Stopped-generation receipts are historical evidence, never live authority. Never restart a spent unit or replay an uncertain effect.
+1. **Reuse a resumable qualification environment.** Reuse the reviewed copied-disk resume adapter; bind preserved disk/source hashes and independent stop evidence to fresh VM/native identities. Repair it only for a demonstrated gap. Verify actual readiness before using it. Do not rebuild or retransfer verified unchanged donors by default. Stopped-generation receipts are historical evidence, never live authority. Never restart a spent unit or replay an uncertain effect.
 2. **Run the complete qualification path early.** Before unrelated polishing, attempt the earliest complete transition whose prerequisites are satisfied. Budget setup, full existing execution bounds, independent observation, failure recovery, shutdown and publication. Before each effect, require its complete execution/transport/owned-child termination bound plus independently checked recovery and shutdown reserves to fit the current operation, parent environment and owner deadlines. Do not confuse this safety admission with a guarantee that every future phase will consume its maximum timeout and still finish in the same session. Record a decision deadline; do not spend the whole window on preparations and discover too late that the real test cannot fit. Do not shorten tests, timeouts or safety checks to fit.
 3. **Give parallel lanes completion targets on the same path.** Staff integration, release prerequisites and independent verification. Each lane closes a specific dependency with named evidence. Additional workers are justified only by a nonconflicting task directly unblocking that path. Do not maximize worker count or open unrelated improvements.
 4. **Maintain one canonical record and generate its views.** Record concise state/decision/evidence changes when they occur. Generate the checklist and dashboard from canonical JSON, and embed this standing procedure in plans and handoffs. Write the detailed narrative once per completed transition, material blocker, explicit owner request or pause. Do not repeatedly rewrite chronology or rerun expensive application checks for documentation-only changes.
@@ -222,7 +222,7 @@ Consult the latest handoff for current pins. These are the retained checkpoint i
 | QA disk scheduler PR6153/runtime4a015f9 | Scoped installation/readback is complete. | New evidence shows a defect. Free disk is not reserved capacity; retain per-run admission. |
 | Shared preference/history, grants, outcome, onboarding and provider code | Use named package code locations and existing stores/routes. Finish integration and evidence gaps. | A recorded missing behavior requires change. Do not introduce parallel stores, duplicate timers, substitute provider proposals or another behavior engine for Telegram. |
 
-The stopped guest is not ready to execute. The current launcher creates a fresh overlay and cannot safely resume the preserved disk. The resume adapter is a real missing implementation item. Preserve old intents/UNKNOWN outcomes; inspect actual state and reconcile the original attempt instead of replaying it.
+A stopped guest is not ready to execute. The copied-disk resume adapter is implemented and a fresh generation has passed independent readiness checks; consult current state for its stop status. After shutdown, those readiness receipts are historical and do not authorize new effects. Reuse this adapter rather than rebuilding it. Old generation receipts cannot authorize new effects. Preserve old intents/UNKNOWN outcomes; inspect actual state and reconcile the original attempt instead of replaying it.
 
 ### Complete package execution map
 
@@ -252,9 +252,9 @@ Every original package remains required except explicitly deferred Z01. The deta
 | V01 | Frozen candidate and retained managed/macOS evidence | Missing native/schema/recovery, applicable hosted policy and final source provenance. |
 | V02 | Local fixtures, baseline matrix and path inventory | Combined acceptance across all16 behaviors and supported paths; blocked cases remain visible. |
 | L00 | Installed-ledger collectors and phased profiles | Fresh production roles/ledger, actual-role restored rehearsal and safe schema-before-app ordering. |
-| L10 | Verified isolated prerequisites and stopped guest | Resume adapter, real app/DB/runner continuous admission/drain and recovery proof. |
+| L10 | Verified isolated prerequisites and implemented copied-disk resume adapter | Current-generation real app/DB/runner continuous admission/drain and recovery proof. |
 | V00 | Exact application and partial profile evidence | Join application/native/schema/exclusion/recovery into one qualified inactive-release profile. |
-| L11 | Backup/restore tools, reviewed repairs and old evidence | Capacity and writer authority, fresh plan/approval, faithful data/ledger/role/catalog restore. |
+| L11 | Backup/restore tools, reviewed repairs and old evidence | Fresh current standalone plan/approval and faithful data/ledger/role/catalog restore; join writer authority separately for full release. |
 | L12 | Operator/controller adapters and reviewed fixtures | Real prepare/install/cutoff/backend-web observation, lost-ACK/competition/recovery qualification. |
 | L01 | Qualified release tools; never deploy coordination branch by assumption | Merge/deploy the qualified inactive foundation and verify actual AWS image/source/schema/health. |
 | L02 | Provider acceptance plans and independent readiness model | Authorized deployed provider tests and failure/recovery proof. |
@@ -275,7 +275,9 @@ After the same blocker recurs twice without closing a dependency, stop repeating
 
 ### External prerequisites and authority
 
-At the retained checkpoint, production capacity is below the unchanged85GiB floor; the existing volume-expansion request remains unresolved. Current writer-policy/CIDR and endpoint coverage remain unknown. These observations must be refreshed before effects; old values are not current authority. Read-only inventory does not prove continuous writer exclusion. Network restrictions alone do not establish coverage of REST/Auth/Storage and every writer.
+Production capacity exceeded the unchanged85GiB floor at the2026-10-05T00:57:16Z observation; it is not reserved and must be rechecked before an attempt. Earlier low-disk snapshots do not justify repeating expansion work. Current writer-policy/CIDR and endpoint coverage remain unknown. Read-only inventory does not prove continuous writer exclusion. Network restrictions alone do not establish coverage of REST/Auth/Storage and every writer.
+
+Do not serialize standalone backup preparation behind an unrelated access gate. The standalone capture path validates source/helper pins, known prior operations, container/database identity and read-only activity; it does not consume Supabase management-policy readback. A standalone backup-only run additionally needs the fresh reviewed plan, current capacity and specific shared-lock approval. The full release coordinator still requires continuous writer exclusion and heldWriters evidence. Preserve that distinction in the DAG: parallel preparation is permitted, joined release acceptance is not relaxed.
 
 Prepare a fresh backup plan only after its inputs are valid; obtain the specific shared-lock approval required by its cross-project impact. Existing blanket migration authorization does not waive qualification or revive stale plans. No production effects follow from this documentation revision.
 
@@ -569,15 +571,15 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L10 — Finish continuous admission and drain proof
 
-**Owner:** Codex C guest foundation/effects; Codex B application integration; root database/runner; Codex A independent audit (replacement workers after Sol capacity errors). **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
+**Owner:** Native integration worker: app/network; root: database/runner; release worker: operator/recovery; independent review worker. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
-**Remaining:** First qualify fresh-generation recovery of preserved guest, then execute five app/proxy phases, PG/schema/operator/runner cutoff and recovery. All app/PG/operator effects remain unexecuted. Production writer exclusion remains separate.
+**Remaining:** Resume only with fresh exact identities after current owned shutdown. Complete five real app/proxy phases, PG/schema/PostgREST, operator/runner continuous admission and drain, cutoff and recovery; zero app phases completed in this window. Retain independently verified prerequisites as historical evidence, not live authority.
 
 **Acceptance:** Actual isolated host/PostgREST lab, continuous hold/drain/recovery, old-worker and late-effects negatives; no unknown operation discarded.
 
 **Source:** `scripts/qa/agent-run-release-host.py`, `scripts/qa/money-release-operator.py`.
 
-**Evidence:** implemented Exact2ff native source, signed Docker, private network/fiveimages/tags/probe were installed and verified in the isolated guest. Root and B callers are preserved. The guest and private daemon are now stopped with data preserved; a reviewed copied-disk resume adapter is still missing.; tested Actual isolated smoke and full guest readiness, exact Git/blob census, offline archive census, Docker install/readback, private daemon isolation/API/default-daemon/firewall checks, and source/input stages passed. Application/database/runner/operator/recovery tests remain pending. Actual private network and four-image load now independently passed; all four IDs inspected, zero containers, phase/current firewall unchanged. Fifth image independently passed; inventory exactly five full IDs, zero containers, firewall unchanged. Actual Traefik/Node tags and probe build/projection independently pass. Native daemon and fullVM shutdown independently passed; no app/PG/runner/operator effect was launched.; independently reviewed Independent Sol: full guest8786853a, Gitfcc8c664, Docker344dd3c7, private daemon3b8cc009 + firewall843d4399, seed8d3e33b6, HBA31a6ead0, operator fixture426ae19c. These establish prerequisites only. Network0c1be2a9 and four-image8fa03f03 independently passed. Fifth image dcba8d2e and probe context edbe2242 independently passed. Tags3f755284/54bdf4bc, probea2e99832 and projectionc4178617. Native stop0e83c986 and VMstopf0235234; scoped immediate firewall equality, with earlier host Fail2ban set delta recorded.; merged False; deployed False; live verified False.
+**Evidence:** implemented Copied-disk resume adapter implemented; fresh VM/native source/images/network/common/probe build independently verified. Probe projection source staged only; first app packet pair local only. Zero app/PG or operator install/bind/caller/cutoff effects; fixture/common inputs were staged. Owner paused; final owned shutdown evidence in pause inventory.; tested Historical stopped donor generation: Actual isolated smoke and full guest readiness, exact Git/blob census, offline archive census, Docker install/readback, private daemon isolation/API/default-daemon/firewall checks, and source/input stages passed. Application/database/runner/operator/recovery tests remain pending. Actual private network and four-image load now independently passed; all four IDs inspected, zero containers, phase/current firewall unchanged. Fifth image independently passed; inventory exactly five full IDs, zero containers, firewall unchanged. Actual Traefik/Node tags and probe build/projection independently pass. Native daemon and fullVM shutdown independently passed; no app/PG/runner/operator effect was launched.; independently reviewed Historical stopped donor generation: Independent Sol: full guest8786853a, Gitfcc8c664, Docker344dd3c7, private daemon3b8cc009 + firewall843d4399, seed8d3e33b6, HBA31a6ead0, operator fixture426ae19c. These establish prerequisites only. Network0c1be2a9 and four-image8fa03f03 independently passed. Fifth image dcba8d2e and probe context edbe2242 independently passed. Tags3f755284/54bdf4bc, probea2e99832 and projectionc4178617. Native stop0e83c986 and VMstopf0235234; scoped immediate firewall equality, with earlier host Fail2ban set delta recorded.; merged False; deployed False; live verified False.
 
 ### V00 — Qualify the included inactive release profile
 
@@ -593,21 +595,21 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L11 — Qualify faithful backup and restored copy
 
-**Owner:** Sol C recovery prerequisites; root release coordination; Sol A independent audit. **State:** external. **Dependencies:** L00.
+**Owner:** Root backup preparation/authority; independent reviewer; release lane for joined prerequisites. **State:** external. **Dependencies:** L00.
 
-**Remaining:** AWS read-only21:45:56UTC:62,912,188,416bytes free, short28,355,866,624bytes of the unchanged85GiB floor; volume300GiB. Existing expansion approval pending. Claude unauthenticated here; current Supabase writer policy/CIDRs unknown. Fresh reviewed backup plan and specific shared-lock approval required; historical49c5 stale/unrun.
+**Remaining:** Fresh capture25418/plan5ff14ca is preserved, expires2026-10-05T05:56:29Z, not run or approved. On resume recheck expiry/source/container/capacity; refresh if changed. Obtain this plan's specific shared-lock approval, run once and prove rows/ledger/roles/catalog fidelity. Full release independently requires continuous writer authority.
 
 **Acceptance:** Fresh coherent rows/ledger/roles/catalog match, snapshot/lock cleanup and exact packet rehearsal; prior approval consumed. No lock/migration implied by this plan. Restored-copy migration/ACL rehearsal under the actual migration role joins L00/V00; synthetic superuser/NOLOGIN fixtures do not prove production authority.
 
 **Source:** `scripts/qa/agent-run-production-backup.py`, `docs/agent-run/evidence/backup-prior-reconciliation-20260930/STAGING-AND-CAPTURE.md`.
 
-**Evidence:** implemented Reviewed dfdc wrapper/helper closure staged privately on AWS with exact source pins; capture-only plan completed with read-only database transaction. No lock or backup acquired; no migration/activation.; tested Root and independent Sol reviewed unchanged guards;26 focused tests pass. Consumed attempt6d79 refused before helper/archive, lock released. Fresh restore remains unproved.; independently reviewed Grok38 static49c5 binding PASS_WITH_SCOPE; root independently rehashed plan/launcher. Grok39 correctly distinguishes preflight READ ONLY from server policy. Host generation/capacity subsequently changed; no current release admission or restoration result.; merged False; deployed False; live verified False.
+**Evidence:** implemented Fresh exact-source capture and separately read-back plan25418 saved; completed independent launch/plan source review PASS_WITH_SCOPE. Specific owner approval absent; no lock/backup/migration/activation ran.; tested Root and independent Sol reviewed unchanged guards;26 focused tests pass. Consumed attempt6d79 refused before helper/archive, lock released. Fresh restore remains unproved.; independently reviewed Grok38 static49c5 binding PASS_WITH_SCOPE; root independently rehashed plan/launcher. Grok39 correctly distinguishes preflight READ ONLY from server policy. Host generation/capacity subsequently changed; no current release admission or restoration result.; merged False; deployed False; live verified False.
 
 ### L12 — Implement the qualified live release coordinator
 
 **Owner:** Root operator integration, Sol B actual native caller, Sol A independent audit. **State:** in_progress. **Dependencies:** L00, L10.
 
-**Remaining:** Real operator fixture is independently staged. Catalog collector corrected to prove installed prerequisites present and17 pending migrations absent. Actual prepare/install and separate QA-marker callers are source-reviewed or under review, awaiting real PG/bootstrap and app/REST descriptor receipts. Then qualify native cutoff, lost acknowledgements, competing operations and recovery before production use.
+**Remaining:** Reviewed operator lifecycle/recovery sources pushed4a2ec5a;36 local tests pass, no runtime effect. Complete actual prepare/install, runner/companions, seven-step cutoff, terminal/final-ACK recovery and cleanup. Resolve contender launch-receipt timing without delaying baseline; a missed overlap is unproven.
 
 **Acceptance:** Native lost-ack/contender/stale-generation/stop/schema-COMMIT/launch/health tests and independent source audit. A running container or REST-only barrier cannot establish complete writer exclusion. Production use additionally requires fresh backup/profile/authorization.
 

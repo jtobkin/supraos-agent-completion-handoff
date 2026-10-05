@@ -16,7 +16,7 @@ The immediate dependency path is: inspect preserved state → qualify a fresh-ge
 
 ## Five mandatory execution techniques
 
-1. **Reuse a resumable qualification environment.** Finish the missing copied-disk resume adapter once; bind preserved disk/source hashes and independent stop evidence to fresh VM/native identities. Verify actual readiness before using it. Do not rebuild or retransfer verified unchanged donors by default. Stopped-generation receipts are historical evidence, never live authority. Never restart a spent unit or replay an uncertain effect.
+1. **Reuse a resumable qualification environment.** Reuse the reviewed copied-disk resume adapter; bind preserved disk/source hashes and independent stop evidence to fresh VM/native identities. Repair it only for a demonstrated gap. Verify actual readiness before using it. Do not rebuild or retransfer verified unchanged donors by default. Stopped-generation receipts are historical evidence, never live authority. Never restart a spent unit or replay an uncertain effect.
 2. **Run the complete qualification path early.** Before unrelated polishing, attempt the earliest complete transition whose prerequisites are satisfied. Budget setup, full existing execution bounds, independent observation, failure recovery, shutdown and publication. Before each effect, require its complete execution/transport/owned-child termination bound plus independently checked recovery and shutdown reserves to fit the current operation, parent environment and owner deadlines. Do not confuse this safety admission with a guarantee that every future phase will consume its maximum timeout and still finish in the same session. Record a decision deadline; do not spend the whole window on preparations and discover too late that the real test cannot fit. Do not shorten tests, timeouts or safety checks to fit.
 3. **Give parallel lanes completion targets on the same path.** Staff integration, release prerequisites and independent verification. Each lane closes a specific dependency with named evidence. Additional workers are justified only by a nonconflicting task directly unblocking that path. Do not maximize worker count or open unrelated improvements.
 4. **Maintain one canonical record and generate its views.** Record concise state/decision/evidence changes when they occur. Generate the checklist and dashboard from canonical JSON, and embed this standing procedure in plans and handoffs. Write the detailed narrative once per completed transition, material blocker, explicit owner request or pause. Do not repeatedly rewrite chronology or rerun expensive application checks for documentation-only changes.
@@ -63,7 +63,7 @@ Consult the latest handoff for current pins. These are the retained checkpoint i
 | QA disk scheduler PR6153/runtime4a015f9 | Scoped installation/readback is complete. | New evidence shows a defect. Free disk is not reserved capacity; retain per-run admission. |
 | Shared preference/history, grants, outcome, onboarding and provider code | Use named package code locations and existing stores/routes. Finish integration and evidence gaps. | A recorded missing behavior requires change. Do not introduce parallel stores, duplicate timers, substitute provider proposals or another behavior engine for Telegram. |
 
-The stopped guest is not ready to execute. The current launcher creates a fresh overlay and cannot safely resume the preserved disk. The resume adapter is a real missing implementation item. Preserve old intents/UNKNOWN outcomes; inspect actual state and reconcile the original attempt instead of replaying it.
+A stopped guest is not ready to execute. The copied-disk resume adapter is implemented and a fresh generation has passed independent readiness checks; consult current state for its stop status. After shutdown, those readiness receipts are historical and do not authorize new effects. Reuse this adapter rather than rebuilding it. Old generation receipts cannot authorize new effects. Preserve old intents/UNKNOWN outcomes; inspect actual state and reconcile the original attempt instead of replaying it.
 
 ## Complete package execution map
 
@@ -93,9 +93,9 @@ Every original package remains required except explicitly deferred Z01. The deta
 | V01 | Frozen candidate and retained managed/macOS evidence | Missing native/schema/recovery, applicable hosted policy and final source provenance. |
 | V02 | Local fixtures, baseline matrix and path inventory | Combined acceptance across all16 behaviors and supported paths; blocked cases remain visible. |
 | L00 | Installed-ledger collectors and phased profiles | Fresh production roles/ledger, actual-role restored rehearsal and safe schema-before-app ordering. |
-| L10 | Verified isolated prerequisites and stopped guest | Resume adapter, real app/DB/runner continuous admission/drain and recovery proof. |
+| L10 | Verified isolated prerequisites and implemented copied-disk resume adapter | Current-generation real app/DB/runner continuous admission/drain and recovery proof. |
 | V00 | Exact application and partial profile evidence | Join application/native/schema/exclusion/recovery into one qualified inactive-release profile. |
-| L11 | Backup/restore tools, reviewed repairs and old evidence | Capacity and writer authority, fresh plan/approval, faithful data/ledger/role/catalog restore. |
+| L11 | Backup/restore tools, reviewed repairs and old evidence | Fresh current standalone plan/approval and faithful data/ledger/role/catalog restore; join writer authority separately for full release. |
 | L12 | Operator/controller adapters and reviewed fixtures | Real prepare/install/cutoff/backend-web observation, lost-ACK/competition/recovery qualification. |
 | L01 | Qualified release tools; never deploy coordination branch by assumption | Merge/deploy the qualified inactive foundation and verify actual AWS image/source/schema/health. |
 | L02 | Provider acceptance plans and independent readiness model | Authorized deployed provider tests and failure/recovery proof. |
@@ -116,7 +116,9 @@ After the same blocker recurs twice without closing a dependency, stop repeating
 
 ## External prerequisites and authority
 
-At the retained checkpoint, production capacity is below the unchanged85GiB floor; the existing volume-expansion request remains unresolved. Current writer-policy/CIDR and endpoint coverage remain unknown. These observations must be refreshed before effects; old values are not current authority. Read-only inventory does not prove continuous writer exclusion. Network restrictions alone do not establish coverage of REST/Auth/Storage and every writer.
+Production capacity exceeded the unchanged85GiB floor at the2026-10-05T00:57:16Z observation; it is not reserved and must be rechecked before an attempt. Earlier low-disk snapshots do not justify repeating expansion work. Current writer-policy/CIDR and endpoint coverage remain unknown. Read-only inventory does not prove continuous writer exclusion. Network restrictions alone do not establish coverage of REST/Auth/Storage and every writer.
+
+Do not serialize standalone backup preparation behind an unrelated access gate. The standalone capture path validates source/helper pins, known prior operations, container/database identity and read-only activity; it does not consume Supabase management-policy readback. A standalone backup-only run additionally needs the fresh reviewed plan, current capacity and specific shared-lock approval. The full release coordinator still requires continuous writer exclusion and heldWriters evidence. Preserve that distinction in the DAG: parallel preparation is permitted, joined release acceptance is not relaxed.
 
 Prepare a fresh backup plan only after its inputs are valid; obtain the specific shared-lock approval required by its cross-project impact. Existing blanket migration authorization does not waive qualification or revive stale plans. No production effects follow from this documentation revision.
 
