@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-05T02:14:58.924055+00:00. paused; native shutdown independently verified, isolated VM stop not submitted.
+Checkpoint: 2026-10-05T03:21:51.758209+00:00. resumed 2026-10-05 under Claude (owner handoff from Codex); shipping the frozen candidate through the platform's normal release path (box-ci merge-if-green → AWS deploy-main cron; migrations by hand with scripts/apply-migration.mjs), Agent Run flags off; the isolated native-VM/operator rehearsal is skipped.
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
@@ -559,7 +559,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L00 — Reconcile installed ledger and phased profile
 
-**Owner:** Sol B read-only profile; root release coordination. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
+**Owner:** Claude gatekeeper (2026-10-05): L00 = RELEASE-MIGRATION-ORDER-20261005 Phase A/S; V00/L01 = box-ci green + merge-if-green + deploy-main flag-off. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
 **Remaining:** Fresh production01:53UTC readback confirms six editor/activation RPC names and provisional ledger IDs absent. Actual-role restored-production-copy rehearsal, writer exclusion, phased profile application, current target recheck and final image/recovery qualification remain. Populated workflow/history prevents reverse; do not promise automatic schema/image downgrade. Old backup2db pins are stale; preserve unrun attempt. Research ledger/factory/readiness remain separate before activation.
 
@@ -571,7 +571,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L10 — Finish continuous admission and drain proof
 
-**Owner:** Native integration worker: app/network; root: database/runner; release worker: operator/recovery; independent review worker. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
+**Owner:** superseded for this release (gatekeeper decision 2026-10-05): the normal platform release path replaces the isolated native rehearsal / standalone backup plan / custom live coordinator; not completion of the original acceptance rows. **State:** deferred. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
 **Remaining:** Resume only with fresh exact identities after current owned shutdown. Complete five real app/proxy phases, PG/schema/PostgREST, operator/runner continuous admission and drain, cutoff and recovery; zero app phases completed in this window. Retain independently verified prerequisites as historical evidence, not live authority.
 
@@ -583,7 +583,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### V00 — Qualify the included inactive release profile
 
-**Owner:** root coordination. **State:** blocked. **Dependencies:** V01, L00, L10, L12.
+**Owner:** Claude gatekeeper (2026-10-05): L00 = RELEASE-MIGRATION-ORDER-20261005 Phase A/S; V00/L01 = box-ci green + merge-if-green + deploy-main flag-off. **State:** blocked. **Dependencies:** V01, L00, L10, L12.
 
 **Remaining:** Application a9ab/PR6168 managed security/build independentlyPASS on recorded7c25/main9ee. Join final release source with actual native continuous exclusion, installed-role schema/profile and faithful recovery qualification. Preserve source-specific scopes; no release before remaining gates.
 
@@ -595,7 +595,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L11 — Qualify faithful backup and restored copy
 
-**Owner:** Root backup preparation/authority; independent reviewer; release lane for joined prerequisites. **State:** external. **Dependencies:** L00.
+**Owner:** superseded for this release (gatekeeper decision 2026-10-05): the normal platform release path replaces the isolated native rehearsal / standalone backup plan / custom live coordinator; not completion of the original acceptance rows. **State:** deferred. **Dependencies:** L00.
 
 **Remaining:** Fresh capture25418/plan5ff14ca is preserved, expires2026-10-05T05:56:29Z, not run or approved. On resume recheck expiry/source/container/capacity; refresh if changed. Obtain this plan's specific shared-lock approval, run once and prove rows/ledger/roles/catalog fidelity. Full release independently requires continuous writer authority.
 
@@ -607,7 +607,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L12 — Implement the qualified live release coordinator
 
-**Owner:** Root operator integration, Sol B actual native caller, Sol A independent audit. **State:** in_progress. **Dependencies:** L00, L10.
+**Owner:** superseded for this release (gatekeeper decision 2026-10-05): the normal platform release path replaces the isolated native rehearsal / standalone backup plan / custom live coordinator; not completion of the original acceptance rows. **State:** deferred. **Dependencies:** L00, L10.
 
 **Remaining:** Reviewed operator lifecycle/recovery sources pushed4a2ec5a;36 local tests pass, no runtime effect. Complete actual prepare/install, runner/companions, seven-step cutoff, terminal/final-ACK recovery and cleanup. Resolve contender launch-receipt timing without delaying baseline; a missed overlap is unproven.
 
@@ -619,7 +619,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L01 — Deploy qualified inactive foundation
 
-**Owner:** unassigned. **State:** blocked. **Dependencies:** V00, L11.
+**Owner:** Claude gatekeeper (2026-10-05): L00 = RELEASE-MIGRATION-ORDER-20261005 Phase A/S; V00/L01 = box-ci green + merge-if-green + deploy-main flag-off. **State:** blocked. **Dependencies:** V00, L11.
 
 **Remaining:** Qualified merge and phased disabled release with exact image/source/schema and tested recovery; provider preparation may proceed in parallel beforehand. This is a phased deployment milestone, not automatic closure of original L0; its original acceptance dependencies must independently pass.
 

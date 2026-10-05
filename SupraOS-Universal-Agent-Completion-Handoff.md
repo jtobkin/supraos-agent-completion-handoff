@@ -1,5 +1,22 @@
 # SupraOS Universal Agent Completion Handoff
 
+## Current checkpoint — October 5, 2026: Claude takeover and the normal release path
+
+**Supersedes the pause section below (kept as history).** At the owner's request Claude (Fable 5.1, Claude Code) took over coordination from Codex at about 02:30 UTC. The owner ruled in that session: production database reads are approved; the isolated native-VM rehearsal is Claude's call; external accounts (Stripe/Link credentials, Migadu mailbox and DNS, an independent browser-image reviewer) are coordinated with the owner when the time is right; and "drive this project end to end to completion … without me".
+
+**Decision.** The isolated native-VM rehearsal, the custom live release coordinator and the standalone backup plan (25418d44, expired 05:56 UTC, never run) are **skipped for this release**. The frozen candidate ships through the platform's normal path: merge current `main` into it, install the additive database packets first, merge PR 6168 through `scripts/ci/box-ci/merge-if-green.sh`, let the AWS `deploy-main.sh` cron deploy it with the Agent Run flags off, then install the three switch packets, then fix the flag-on blockers, then activate for allowlisted owners. Accepted tasks remain **5/62**; nothing below is accepted on the strength of this plan.
+
+**Verified state (gatekeeper, ~02:45–03:40 UTC).** PR 6168 (`a9ab52fe`) is open, both box-ci statuses success (Oct 4), and it conflicts with `main` in eight small files. The production migration ledger contains none of the candidate's 29 forward packets. Live container flags: `TOPIC_ROUTING=on`, `PRIVATE_AI_COMPUTER=1`, `PRIVATE_AI_BROWSER_COMPUTER=1`, `D3_OWNER_SCHEMA=1`; `AGENT_RUN_RUNTIME` and `AGENT_RUN_QUALIFIED_CONTRACT` unset, so the runtime is off. The QA VM (`agent-cutoff-kvm-full-4b5dfe5f`) was still running at 02:25 UTC under its lease ending 08:18:58 UTC and is left alone. No production write has happened in this session.
+
+**Findings from three review lanes (files under the gatekeeper's lanes; summarised in `docs/agent-run/RELEASE-MIGRATION-ORDER-20261005.md`).**
+- The flags guard almost nothing: every tool dispatch selects `vms_tool_grants.is_inherited`, every notification delivery reads the shelf, the System workflows tab calls the editor CAS, and a 15-minute cron calls the `_v2` embedding functions. So **Phase A (16 packets) must be installed before the new container starts**: 190001, 190000, 230000, 231000 (brief index lock on `vms_hash_chain`), 000000, 010001 (edited: legacy REVOKE removed), 020000 (VERIFY edited), 030000, 040000, 050000, 060000, 160000, 200000, 20261003010000, 20261003020000, 20261003021000. **Phase S right after `live:`**: new 20260929010002 (the REVOKE) → 080000 → 20261001000000. **Skipped**: 070000, 090000, 100000, 110000–150000, 170000–190000.
+- Before the flags go on: any signed-in user could activate Agent Run (no owner check) → owner allowlist; Research V1 workflows would be refused → legacy fallback; the "Run saved Research" panel reads schema no migration creates → hidden; the duplicate-number ratchet fails on `_PRECONDITION` files → fixed; the new `guide-setup-followup` cron would post to all enrolled owners → limited to allowlisted owners.
+- A live safety gap on `main` unrelated to the candidate: `phone_call_dispatch` is not in `ALWAYS_APPROVAL`, so proactive autonomy could dial without approval → hotfix PR on `main`.
+
+**Blocker.** The Claude Code permission layer denied applying migrations to production from the gatekeeper session (and removing stale restore scratch on the host). The owner has been asked to add an allow rule for `node scripts/apply-migration.mjs*`; until then no packet is installed.
+
+**Lanes.** merge-main (in progress), schema-plan (done), flag-off-review (done), phase2-map (done), phone-call hotfix on main (in progress), release-blockers (queued behind the merge), docs (this checkpoint).
+
 ## Current owner-requested pause — October 5, 2026
 
 **The owner ended the active run early and requested this fresh-session handoff. Implementation is paused.** The earlier authorization through08:53:11UTC is superseded by this pause; it is not authority for background work to continue. Only reconciliation, owned test-runtime shutdown, evidence preservation and document publication continued during closeout. The final runtime record below must be read before any new execution.
@@ -749,7 +766,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L00 — Reconcile installed ledger and phased profile
 
-**Owner:** Sol B read-only profile; root release coordination. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
+**Owner:** Claude gatekeeper (2026-10-05): L00 = RELEASE-MIGRATION-ORDER-20261005 Phase A/S; V00/L01 = box-ci green + merge-if-green + deploy-main flag-off. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
 **Remaining:** Fresh production01:53UTC readback confirms six editor/activation RPC names and provisional ledger IDs absent. Actual-role restored-production-copy rehearsal, writer exclusion, phased profile application, current target recheck and final image/recovery qualification remain. Populated workflow/history prevents reverse; do not promise automatic schema/image downgrade. Old backup2db pins are stale; preserve unrun attempt. Research ledger/factory/readiness remain separate before activation.
 
@@ -761,7 +778,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L10 — Finish continuous admission and drain proof
 
-**Owner:** Native integration worker: app/network; root: database/runner; release worker: operator/recovery; independent review worker. **State:** in_progress. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
+**Owner:** superseded for this release (gatekeeper decision 2026-10-05): the normal platform release path replaces the isolated native rehearsal / standalone backup plan / custom live coordinator; not completion of the original acceptance rows. **State:** deferred. **Dependencies:** none for independent drafting; actual resource/authority gates still apply.
 
 **Remaining:** Resume only with fresh exact identities after current owned shutdown. Complete five real app/proxy phases, PG/schema/PostgREST, operator/runner continuous admission and drain, cutoff and recovery; zero app phases completed in this window. Retain independently verified prerequisites as historical evidence, not live authority.
 
@@ -773,7 +790,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### V00 — Qualify the included inactive release profile
 
-**Owner:** root coordination. **State:** blocked. **Dependencies:** V01, L00, L10, L12.
+**Owner:** Claude gatekeeper (2026-10-05): L00 = RELEASE-MIGRATION-ORDER-20261005 Phase A/S; V00/L01 = box-ci green + merge-if-green + deploy-main flag-off. **State:** blocked. **Dependencies:** V01, L00, L10, L12.
 
 **Remaining:** Application a9ab/PR6168 managed security/build independentlyPASS on recorded7c25/main9ee. Join final release source with actual native continuous exclusion, installed-role schema/profile and faithful recovery qualification. Preserve source-specific scopes; no release before remaining gates.
 
@@ -785,7 +802,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L11 — Qualify faithful backup and restored copy
 
-**Owner:** Root backup preparation/authority; independent reviewer; release lane for joined prerequisites. **State:** external. **Dependencies:** L00.
+**Owner:** superseded for this release (gatekeeper decision 2026-10-05): the normal platform release path replaces the isolated native rehearsal / standalone backup plan / custom live coordinator; not completion of the original acceptance rows. **State:** deferred. **Dependencies:** L00.
 
 **Remaining:** Fresh capture25418/plan5ff14ca is preserved, expires2026-10-05T05:56:29Z, not run or approved. On resume recheck expiry/source/container/capacity; refresh if changed. Obtain this plan's specific shared-lock approval, run once and prove rows/ledger/roles/catalog fidelity. Full release independently requires continuous writer authority.
 
@@ -797,7 +814,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L12 — Implement the qualified live release coordinator
 
-**Owner:** Root operator integration, Sol B actual native caller, Sol A independent audit. **State:** in_progress. **Dependencies:** L00, L10.
+**Owner:** superseded for this release (gatekeeper decision 2026-10-05): the normal platform release path replaces the isolated native rehearsal / standalone backup plan / custom live coordinator; not completion of the original acceptance rows. **State:** deferred. **Dependencies:** L00, L10.
 
 **Remaining:** Reviewed operator lifecycle/recovery sources pushed4a2ec5a;36 local tests pass, no runtime effect. Complete actual prepare/install, runner/companions, seven-step cutoff, terminal/final-ACK recovery and cleanup. Resolve contender launch-receipt timing without delaying baseline; a missed overlap is unproven.
 
@@ -809,7 +826,7 @@ The 32 delivery packages below map to the original 62 acceptance tasks. This dep
 
 ### L01 — Deploy qualified inactive foundation
 
-**Owner:** unassigned. **State:** blocked. **Dependencies:** V00, L11.
+**Owner:** Claude gatekeeper (2026-10-05): L00 = RELEASE-MIGRATION-ORDER-20261005 Phase A/S; V00/L01 = box-ci green + merge-if-green + deploy-main flag-off. **State:** blocked. **Dependencies:** V00, L11.
 
 **Remaining:** Qualified merge and phased disabled release with exact image/source/schema and tested recovery; provider preparation may proceed in parallel beforehand. This is a phased deployment milestone, not automatic closure of original L0; its original acceptance dependencies must independently pass.
 
