@@ -1,6 +1,6 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-05T04:49:12.274875+00:00. PAUSED 2026-10-05 ~04:50Z by the owner for a fresh-session handoff. Candidate merged with main and pushed as PR #6168 head 38fadb1fb1 (box-ci pending); release-blockers lane items 1–3 pushed (6773c4d5dc); phone-call hotfix #6194 live; Phase A migrations NOT installed (permission layer blocked; owner allow rule needed). Normal release path; native rehearsal skipped..
+Checkpoint: 2026-10-05T05:03:01.042464+00:00. PAUSED 2026-10-05 ~04:50Z by the owner for a fresh-session handoff. Candidate merged with main and pushed as PR #6168 head 38fadb1fb1 (box-ci ERROR: conflicts with main again — re-merge required); release-blockers lane items 1–3 pushed (6773c4d5dc); phone-call hotfix #6194 live; Phase A migrations NOT installed (permission layer blocked; owner allow rule needed). Normal release path; native rehearsal skipped..
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
