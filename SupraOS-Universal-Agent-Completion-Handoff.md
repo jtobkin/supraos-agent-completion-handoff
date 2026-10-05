@@ -1,6 +1,195 @@
 # SupraOS Universal Agent Completion Handoff
 
+## PAUSED — October 5, 2026 ~08:45 UTC: full handoff for a fresh session on a new computer
+
+**Read this section first. It supersedes the "RESUMED — October 5, 2026" section and the earlier "PAUSED — October 5, 2026 ~04:50 UTC" section below; both stay as history.** The owner paused the project and asked for a complete handoff for a fresh session on a new computer. Every fact here was verified first-hand by the coordinator (Claude Code). A fresh agent needs only normal GitHub sign-in (`gh auth login --hostname github.com --web`) with access to `jtobkin/suprafx-platform`, plus this document; production steps also need the owner's permissions (§1, §7). **No secret is in this document. Accepted tasks remain 5/62.**
+
+### 1. What is true right now (verified by the coordinator, not inferred)
+
+| Item | State |
+|---|---|
+| Release PR #6168 | **NOT merged.** Branch `codex/agent-run-release-composition-20261004`, head **`9a0624083f`** = candidate + release blockers + main `e2093866c1`. The local mirror of the PR head is branch `claude/agent-run-release-merge-main-20261005`. |
+| How the head was built | Round 4 `0283900b4b` → release-blockers merge `47e9cb2839` → `757049d372` (allowlist test fix) → round 5 `b890669566` onto main `55a12f0da9`, including W7 #6196, 26 files → `78de40e546` (two W7 suites stub `server-only`) → round 6 `2c47fa263f` onto `e2093866c1` (regenerated `config/cron-inventory.json`) → `9a0624083f` (the timezone-seed miner test supplies the plain-read evidence required since #6172). |
+| box-ci history | BOTH statuses were green on `78de40e546` at 07:44 UTC, but main had moved one minute earlier (#6172), so it could not merge. On `9a0624083f`: security-gates = success; production-build = error "the PR conflicts with main", because #6059 merged (main `a2e04e9a42`) after the coordinator lifted the merge hold for the pause. |
+| Conflict now | Exactly one file: `tests/fixtures/private-ai-recovery-writer-catalog.json`. It is generated: resolve by three-way union, then `node scripts/check-private-ai-recovery-writers.mjs --add-uncataloged` → `--normalize` → `--check`. Never hand-merge it. |
+| Auto-merge | The coordinator had an auto-merge watcher armed and **disarmed it at the pause. Nothing will merge by itself.** |
+| Production database | **Phase A installed and proven** (16 packets, ledger 715 → 731, old-site guard true; unchanged from the RESUMED section). **Phase S NOT installed.** |
+| Site | Live on `55a12f0da`, health 200, at 06:24 UTC (last observed by the coordinator). Main has since advanced to `a2e04e9a42` (not observed live by the coordinator). |
+| Agent Run | Flags and owner allowlist **NOT set**; the runtime is off. |
+| Phone-call hotfix #6194 | Merged and deployed; **live proof still owed.** |
+| Peer reports (not this project's work) | A peer session reported the chat runner's warm Claude path failing since a 06:52 UTC runner restart (slow replies), and a W7 defect (a Mission Control plan's final task cannot settle) with a hotfix in progress. Neither is caused by this project; both are the peers' work. |
+| Accepted tasks | **5/62 unchanged.** |
+
+**Separate states for this session's work.** Implemented, tested and independently reviewed: the lanes in §5, each at the state written there. Merged: nothing from this session, except the phone-call hotfix (#6194, merged and deployed, live proof owed). Installed: Phase A (database only). Deployed: nothing from the candidate. Activated: nothing. Live-verified: nothing.
+
+### 2. The decision and why (unchanged)
+
+The candidate ships through the platform's normal path: our own box-ci checks on cc-box, merged only through `scripts/ci/box-ci/merge-if-green.sh` (never `gh pr merge --auto`), deployed by the AWS `deploy-main.sh` minute cron, with the Agent Run flags off and schema first. The native-VM rehearsal, custom release operator and standalone backup are skipped for this release (see the earlier PAUSED section §2).
+
+### 3. Documents a fresh session must read
+
+- This section.
+- **`docs/agent-run/evidence/claude-resume-20261005/NEXT-WAVE-SCOPE.md`** — scope to completion, the next lanes, the 13 owner decisions and the production live-check list (§5A/5B/5C).
+- The three review documents under `docs/agent-run/evidence/claude-takeover-20261005/`: **`FLAG-OFF-REVIEW.md`**, **`PHASE2-MAP.md`**, **`RELEASE-MIGRATION-ORDER-20261005.md`** (§3 holds the one read-only proof query per packet).
+- Lane reports: `docs/agent-run/evidence/claude-resume-20261005/LANE-REPORT-<lane>.md`, and each lane branch's own `LANE-REPORT.md`.
+- Lane rules for new workers: `docs/agent-run/evidence/claude-resume-20261005/briefs/COMMON.md` and `briefs/agent-run-wave2-COMMON.md`.
+
+### 4. Migration state
+
+- **Phase A — installed and proven (16):** `20260927190001`, `20260928190000`, `20260928230000`, `20260928231000`, `20260929000000`, `20260929010001`, `20260929020000`, `20260929030000`, `20260929040000`, `20260929050000`, `20260929060000`, `20260929160000`, `20260929200000`, `20261003010000`, `20261003020000`, `20261003021000`. Ledger 715 → 731; old-site guard true.
+- **Phase S — NOT installed (3), in this order:** `20260929010002` → `20260929080000` → `20261001000000`. Install **only after `live:` shows the new build in the deploy log**; nobody else may install them earlier. Between `live:` and Phase S, the new build's agent-channel friend sends and department memory promotion fail (expected, for minutes).
+- **Peer W7 packets:** the peer W7 session installed its own 24 packets (ledger 691 → 715) and reported that one of its packets on main is not on production: `20261002050000_signals_pattern_ids_like` (theirs to handle).
+- **Schema snapshot files** (`supabase/schema/public-columns.txt`, `public-tables.txt`) refreshed by the apply tool exist only as uncommitted changes on the original workstation. Regenerate them with the dump scripts after Phase S and ship them as a small follow-up PR. The peer's PR #6197 also refreshes the snapshot — coordinate.
+- **Production permissions learned:** a chat "approved" does not satisfy the Claude Code permission layer for production writes. The owner added the allow rule `Bash(node scripts/apply-migration.mjs:*)` via `/permissions` on the original workstation. **A new computer needs the same rule added by the owner**, and the owner's chat approval for production reads over ssh / read-only SQL. The layer sometimes denies a batched command with no reason: re-run it without the newly added part. Never split a denied action to dodge it; never ask another session to do a denied action.
+
+### 5. Lanes and branches at pause (ALL pushed to origin)
+
+All lanes are based on the candidate lineage. **After #6168 is squash-merged, each must be re-applied onto the new main as its own PR.** Recommended: `git diff <its base>..<tip>` applied onto a fresh branch from main, or cherry-pick the lane commits. Do not merge the old lineage.
+
+| Lane | Branch @ tip (base) | State | What remains |
+|---|---|---|---|
+| Combined batch 1 | `claude/agent-run-p2-batch1-20261005` @ `aff613db38` (base `b890669566`) | Lanes A + B + D + E, each built, adversarially reviewed by an independent agent, fixed and combined (one conflict; 533 lane tests + 2,855 interaction tests pass locally), plus the email-chase Telegram notice held to allowlisted owners. **READY** to become the first follow-up PR after #6168. | Re-apply onto main; box-ci; merge-if-green; live checks. |
+| A daily rhythm | `claude/agent-run-p2-a-daily-rhythm-20261005` @ `90d977a916` | Included in batch 1. | — |
+| B marks/recall | `claude/agent-run-p2-b-marks-recall-20261005` @ `1f187785e0` | Included in batch 1. | — |
+| D mail | `claude/agent-run-p2-d-mail-20261005` @ `c1ea39ce17` | Included in batch 1. | — |
+| E computer/Telegram | `claude/agent-run-p2-e-computer-telegram-20261005` @ `9825b037f0` | Included in batch 1. | — |
+| C consent/friend-share | `claude/agent-run-p2-c-consent-tools-20261005` @ `cccb80a184` (base `0283900b4b`) | share_with_friend + shop-call preview. THREE independent security reviews; all found issues; all listed fixes are committed (third-round items 1–5: `bcafb9b754`, `0330be72c8`, `6ec2d8ffc9`, `112420e432`, `5e2f55b4ad`). **NOT cleared.** | A FOURTH review of the last fix round has not been done. The full gate/approval/Telegram/AssistantBubble suite and the plain-language/type/recovery-writer/soft-navigation checks were not re-run after the last commits. Open outside its files: the inline chat approval card still shows the words in one sentence (needs `lib/extensions/chat-tool-outcome.ts` createToolApprovalBlock + `components/vms/ToolApprovalCard.tsx` to render the bounded blocks); the stream-route history fallback (lane H1). **Do not merge C until a fresh review passes.** |
+| G marks wiring + Telegram honesty | `claude/agent-run-p2-g-marks-wiring-20261005` @ `805a1671e2` (base `aff613db38`) | G1 recipe marks reach the screen — done, tested (`dfc704594c`; 59 unit tests, Chromium, 17 mutations). G2 Telegram "Not confirmed"/recall line — footer part done and tested; Telegram spend-decision part written but **UNTESTED** (WIP `8f6ae8e136`; `telegram-spend-tap.test.ts` browser case timed out once, cause unproven). | G3 Allow-once continuation to Telegram NOT started (plan in its LANE-REPORT.md). Type check not completed. Needs review before merge. |
+| H chat route | `claude/agent-run-p2-h-chat-route-20261005` @ `61a41c1e55` (base `aff613db38`), ONE WIP commit, pushed | H1 history-fallback hardening (applies to every owner: when the saved-history read answers or fails, the model gets saved rows plus this turn only; route lines 1443–1463; normal threads byte-identical by test); H2 deferred/done/dismissed loose ends hidden from the model (new single rule `looseEndsOfferable`); H3 `routing.preferences_unavailable` saved and shown in the recall cue — built, 34 new tests pass. H4 NOT built by design (no server-written "proposal pending" state exists; needs one in `execute-node.ts`). | 5–6 red tests (the lane reported 5 failed but named 6) in the 96-suite batch are unexplained (1 known pre-existing continuity-sanitize; 2 Chromium timeouts; 2 in agent-run-g1 "Saved agent context unavailable" — check these first, they touch H2/H3 code; 1 room-huddle-backup-lane-engine) — each needs a solo re-run with and without the branch. 17 planned mutation checks not run (plan in its LANE-REPORT.md). Type/plain-language/recovery-writer/soft-navigation checks not run. Commits not split per item. Still open in the route, not fixed: if resolving the conversation fails, the client history is used whole; ScopedAgentsPage puts visible rows into its own system prompt; with sessions off or a non-UUID agent, saved notices reach the model from the store. **This lane changes the main chat path for every owner: independent adversarial review is mandatory before merge.** |
+| I release hygiene | `claude/agent-run-p2-i-release-hygiene-20261005` @ `2f61b223e0` (base `78de40e546`) | I1 shared migration-companion helper (`d508cc21ba`) done. I3 guide-setup cron test replaced under `tests/unit` (`ccab7b1412`) done — finding: box-ci runs only `tests/unit`, so none of the 60 files in `tests/api` run in CI. I4 marks browser script repaired and wired (`ab9f6739b5`) done. I2 release-profile phases HALF-done (WIP `f0077b91f7`). | I2: three Python test files still expect old counts; two suites have undiagnosed errors to check on the start commit first; it also added 160000 and 200000 to the profile so the before-merge phase matches the 16 installed packets — confirm. I5 release-state doc and I6 cron-route audit NOT started. |
+| N1 status + switch | `claude/agent-run-p2-n1-status-switch-20261005` @ `4b0491ab99` (base `aff613db38`) | Non-allowlisted owners no longer get an Agent Run row or switch; readiness route + status card for allowlisted owners; tests pass incl. Chromium. Findings: every save of the Agent Run workflow through the normal path switches Agent Run off (migration `20261003020000` lines 139–142) and the owner was told nothing — the card now says so; `ensureAgentRunWorkflow` permanently switches Agent Run off if `AGENT_RUN_QUALIFIED_CONTRACT` changes or `SUPABASE_SERVICE_ROLE_KEY` is rotated (owner must flip the switch again) — operator caution; `tests/integration/agent-run-activation-browser.test.ts:34` is stale on base. | Mutation checks and type check NOT done (WIP). **PRIORITY: without N1, when #6168 goes live every non-listed owner sees an Agent Run switch that refuses them.** |
+| N2 email readiness | `claude/agent-run-p2-n2-email-readiness-20261005` @ `cde911d3c9` | Investigation only (report committed), no code. Finding: for "unassigned" or "more than one" Email Agent assignment there is no screen where an owner can fix it. | Owner/product decision. |
+| N3 live-check kit | `claude/agent-run-p2-n3-live-check-kit-20261005` @ `3cdaf52b98` | DONE and tested (72 tests incl. local PostgreSQL; 28 mutations): `scripts/qa/agent-run-live-check.mjs` read-only live check + `docs/agent-run/LIVE-CHECK.md`. Warning: with `OWNER_DB_URL` unset it reads the approved `.env.local` = production (read-only). | Type check not run. |
+| N6 loose-ends view | `claude/agent-run-p2-n6-loose-ends-view-20261005` @ `817920309a` (WIP) | Read-only route done and tested (13 tests). | Screen component written but untested; no browser test, no mutation table. |
+| N4 morning in Telegram · N5 routine quiet hours · N7 handoff card in web chat | not started, no branch pushed | Briefs in NEXT-WAVE-SCOPE.md §3. N5 needs owner decisions 3–5. | Everything. |
+| Earlier lanes (history) | release blockers `claude/agent-run-release-blockers-20261005` @ `0662bfeca7` (merged into the PR); schema plan / flag-off review / phase-2 map (documents under `docs/agent-run/evidence/claude-takeover-20261005/`) | Done. | — |
+
+### 6. Exact next steps, in order (a fresh session starts at step 0)
+
+0. Sign in to GitHub; clone `jtobkin/suprafx-platform`; fetch the branches in §5 plus `codex/agent-run-execution-20260928` (this record) and `codex/agent-run-release-composition-20261004` (PR #6168 head). Read this section, `NEXT-WAVE-SCOPE.md` and the three review documents. Get the owner's allow rule `Bash(node scripts/apply-migration.mjs:*)` and the owner's read approval on the new computer.
+1. Ask all peer sessions (if any exist on that computer; otherwise tell the owner to pause other windows) to hold merges. **Ask EVERY other session BEFORE the final re-merge and keep the hold until #6168 is merged** — seven sessions honoured it this time, and the PR still lost a green run to a one-minute race.
+2. Merge current main into the PR branch (round 7: expect the catalog fixture `tests/fixtures/private-ai-recovery-writer-catalog.json` — three-way union, then `--add-uncataloged` → `--normalize` → `--check`, never hand-merge; check for new conflicts). Run the affected tests. Push fast-forward only. Reminders: any test that sets `AGENT_RUN_RUNTIME` to "on" must stub `AGENT_RUN_OWNER_ALLOWLIST`; tests that import the tool registry need `vi.mock("server-only", () => ({}))`.
+3. Wait for both box-ci statuses (box-ci takes ~10 min of gates + ~30 min of build). Merge only via `scripts/ci/box-ci/merge-if-green.sh 6168`. Watch the deploy log for `live:`.
+4. Install **Phase S** (3 packets) immediately, each proven; run the ledger readback (19 rows) — with `scripts/qa/agent-run-live-check.mjs` once N3 is merged, or the queries in RELEASE-MIGRATION-ORDER §3. Then tell the other sessions "merges open".
+5. The five production click-throughs + the phone-call hotfix proof (NEXT-WAVE-SCOPE §5A), signed in, in a real browser.
+6. Follow-up PRs in this order, each re-applied onto main, box-ci green, merge-if-green, then its live checks: **N1** (finish mutation checks first) → **batch 1** → **N3** → **G** (finish G2/G3, review) → **H** (review) → **I** (finish I2, I5, I6) → **N6** (finish) → **C** (only after a clean fourth security review; it installs nothing new — it uses packet 080000 from Phase S).
+7. Then, with the owner: set `AGENT_RUN_RUNTIME=on`, `AGENT_RUN_QUALIFIED_CONTRACT=agent-run-20260928-v1`, `AGENT_RUN_OWNER_ALLOWLIST=<owner wallet>` on the web and cron containers (`TOPIC_ROUTING` is already on). The owner activates at `/vms/workspace?tab=system`. Run the NEXT-WAVE-SCOPE §5B checks.
+8. Next wave N2, N4, N5, N7 with 3–4 parallel workers (the original workstation saturated at ~9 workers, load average 76 — keep to what the machine carries). Each lane: owned files, tests with mutation checks, **independent adversarial review BEFORE merge** (today every single lane had real defects found by its reviewer), live proof.
+9. Keep the record and publish after each material step: edit `progress.json`/`plan.json`, run `python3 docs/agent-run/execution-dashboard/render.py`, `python3 docs/agent-run/render-plan.py`, `python3 docs/agent-run/render-public-handoff.py --update-private --output-dir ../agent-run-public-docs`; commit to the coordination branch; copy the four public files to `jtobkin/supraos-agent-completion-handoff`; verify the anonymous bytes.
+
+### 7. What the owner must supply or decide
+
+**Before production steps on the new computer:** the allow rule `Bash(node scripts/apply-migration.mjs:*)` (added by the owner via `/permissions`), and chat approval for production reads over ssh / read-only SQL.
+
+**The 13 open owner decisions** (NEXT-WAVE-SCOPE §4; the coordinator's recommendation after the arrow):
+
+1. Which wallets go on the Agent Run allowlist? → the owner's only.
+2. Should owners not on the list see the Agent Run switch at all? → no, hide it (N1).
+3. Should scheduled routines that message you wait until quiet hours end? → yes; allowlisted owners first; "Run now" never waits.
+4. If the quiet-hours settings can't be read, should routines still send? → yes.
+5. Allow a routine to be marked "may interrupt quiet hours"? → yes, off by default.
+6. After you hand the computer back, should the agent carry on by itself? → no; you reply "continue".
+7. Telegram stop notices and Allow-once reports go to every Telegram user, not only the allowlist? → yes (already chosen; confirm).
+8. Who is the independent reviewer for the browser image? → name a second GitHub person (pictures, handoff and purchases wait on this).
+9. Buy a Twilio number and a media host for shop calls now? → wait until chat and Telegram are proven.
+10. Subscribe to Migadu and set DNS for mail.supraos.ai? → yes when ready; Revoke is permanent for that agent.
+11. Real payments: Link test mode first, real money only after one reviewed test purchase? → yes.
+12. Keep "exactly one Email Agent assignment" for email review? → keep it, and show it on screen (N2).
+13. Friend sharing: the friend's notice carries none of the shared words (they read them on the Agent Channels page)? → keep this (security).
+
+**Externals unchanged:** Stripe/Link, Migadu + DNS, image reviewer, Twilio/media host. Nothing to buy, no DNS change, no consumer test message without the owner's specific say-so.
+
+### 8. Hosts and tools (access by normal sign-in only)
+
+- **AWS production host:** user ubuntu; the `deploy-main.sh` cron deploys main every minute; the deploy log `deploy-main.log` in that user's home shows `live: <sha>`; `docker ps`. Access details are in the private engineering handoff (section "Data, evidence and host locations") and the owner's memory repo.
+- **QA/build host cc-box:** runs box-ci (the `show` command and `journalctl -u box-ci`; paths in `scripts/ci/box-ci/README.md`). Its address is in the private engineering handoff and the owner's memory repo, never in public documents.
+- **Migration tool:** `scripts/apply-migration.mjs` (reads `OWNER_DB_URL` from the environment or an approved `.env.local`); `node scripts/apply-migration.mjs --dir=supabase/migrations --name=<basename>`, one packet at a time; prove each in `pg_catalog` with the RELEASE-MIGRATION-ORDER §3 query — never trust the tool's own ✅.
+- **Merge tool:** `scripts/ci/box-ci/merge-if-green.sh <PR>` only.
+- **Node:** 22.23.2. Lanes on the original workstation borrowed one shared `node_modules` by symlink, in which `server-only`, `imapflow`, `mailparser`, `twilio`, `@stripe/link-sdk`, `valibot` and `viem` were missing; those local test failures were artefacts, and box-ci's `npm ci` is clean.
+
+### 9. Prompt for the next session
+
+> Resume the SupraOS Universal Agent project from the handoff section "PAUSED — October 5, 2026 ~08:45 UTC" (public copy: jtobkin/supraos-agent-completion-handoff; private copy: branch `codex/agent-run-execution-20260928` of jtobkin/suprafx-platform). You are on a new computer; assume no local memory, credentials or running agents. Sign in to GitHub normally; fetch the record branch, the PR #6168 head `codex/agent-run-release-composition-20261004`, and every lane branch in §5. Read §1–§9, `docs/agent-run/evidence/claude-resume-20261005/NEXT-WAVE-SCOPE.md` and the three review documents under `docs/agent-run/evidence/claude-takeover-20261005/`. Then do §6 in order: (0) ask the owner to add the allow rule `Bash(node scripts/apply-migration.mjs:*)` on this computer and to approve production reads; (1) ask every other session (or the owner, for other windows) to hold merges before the final re-merge, and keep the hold until #6168 is merged; (2) merge current main into the PR branch (round 7 — resolve the generated catalog fixture by three-way union then `--add-uncataloged` → `--normalize` → `--check`; check for new conflicts), run the affected tests, push fast-forward only; (3) wait for both box-ci statuses and merge only via `scripts/ci/box-ci/merge-if-green.sh 6168`, then watch the deploy log for `live:`; (4) install Phase S (`20260929010002` → `20260929080000` → `20261001000000`) immediately, each proven, run the 19-row ledger readback, then say "merges open"; (5) do the five production click-throughs and the phone-call hotfix proof, signed in, in a real browser; (6) ship the follow-up PRs in order N1 → batch 1 → N3 → G → H → I → N6 → C, each re-applied onto the new main as its own PR, box-ci green, merge-if-green, then its live checks — C only after a clean fourth security review; (7) with the owner, set the three Agent Run variables on the web and cron containers, let the owner activate, run the §5B checks; (8) run the next wave N2, N4, N5, N7 with 3–4 parallel workers; (9) keep the record. Standing rules: report implemented, tested, reviewed, merged, deployed, activated and live-verified separately; accepted stays 5/62 until a row is proven live; ask the owner only for purchases, DNS, consumer test messages, a shared deployment lock, the allow rule / production approvals, or a genuine product/security decision; never work around a permission denial; merge only via merge-if-green.sh; independent adversarial review before every merge; keep progress.json, plan.json and the handoff current with the three renderers and publish the four public files after each material step.
+
+## RESUMED — October 5, 2026 ~05:05–07:30 UTC
+
+*History: superseded by the "PAUSED — October 5, 2026 ~08:45 UTC" section above.*
+
+**Read this section first. It supersedes the "PAUSED — October 5, 2026" section directly below, which stays as history.** Every fact here was verified first-hand by the coordinator (Claude Code). Implemented, tested, reviewed, merged, installed, deployed and live-verified are reported separately. **Accepted tasks remain 5/62.**
+
+### 1. Owner instructions this session (given directly in chat to the coordinator)
+
+- Resume the project end to end with parallel agents.
+- "drive this project forward for the next 4 hrs".
+- "automerge and automigrate as needed".
+- The owner added the Claude Code allow rule `Bash(node scripts/apply-migration.mjs:*)`. This clears the permission blocker recorded in the PAUSED section §4.
+
+### 2. PR #6168 — the candidate (NOT merged yet)
+
+| Step | Result |
+|---|---|
+| Merge round 4 | `0283900b4b` (main `7a10b7a3fc`). Fixed a silent clash: the cloud chat runner now reports `warm_delta` for a resumed Codex thread. |
+| Release-blockers lane finished and merged into the PR branch → `47e9cb2839` | Item 4 `2e66571f0b`, item 5 `bd3734e17d`, item 6 `0662bfeca7`: packets 010001/020000 made additive; new packet `20260929010002`; the duplicate-number ratchet skips `_PRECONDITION`; the guide-setup-followup cron is held to allowlisted owners. |
+| box-ci failure 1 | 7 tests in agent-run-morning-routine failed (the test lacked the owner allowlist) → fixed `757049d372`. |
+| Peer PR #6196 (W7) | Merged first, by agreement → main `55a12f0da9`. |
+| Merge round 5 | `b890669566`: 26 conflict files resolved by hand; 5 hidden clashes fixed. |
+| box-ci failure 2 | 2 W7 test files could not load `server-only`; 61,141 tests passed → fixed `78de40e546`. |
+| Now | box-ci running at time of writing. **Not merged.** |
+
+### 3. Production database — Phase A installed
+
+All 16 Phase A packets were installed 06:13–06:25 UTC, each proven by a separate read-only catalog query:
+
+`20260927190001`, `20260928190000`, `20260928230000`, `20260928231000`, `20260929000000`, `20260929010001`, `20260929020000`, `20260929030000`, `20260929040000`, `20260929050000`, `20260929060000`, `20260929160000`, `20260929200000`, `20261003010000`, `20261003020000`, `20261003021000`.
+
+- Migration ledger 715 → 731 rows (the W7 peer had taken it 691 → 715).
+- The old-site guard query returned true.
+- The site is live on `55a12f0da` (main; the candidate is not deployed), health 200 (deploy log 06:24 UTC).
+- **Phase S is NOT installed** (`20260929010002` → `20260929080000` → `20261001000000`). It waits for the new build to be live.
+- The schema snapshot files refreshed by the migration tool are not committed anywhere yet.
+
+### 4. Phase-2 lanes built today (none merged, none live)
+
+Lanes A, B, C, D and E were each adversarially reviewed by an independent agent and fixed.
+
+| Lane | Branch | Tip | State |
+|---|---|---|---|
+| A daily rhythm | `claude/agent-run-p2-a-daily-rhythm-20261005` | `90d977a916` | Built, reviewed, fixed. The routine quiet-hours item was **reverted** after review showed it would drop scheduled messages for all owners; it is now an owner decision. |
+| B marks/recall | `claude/agent-run-p2-b-marks-recall-20261005` | `4843206b48` | Built, reviewed, fixed. |
+| D mail | `claude/agent-run-p2-d-mail-20261005` | `c1ea39ce17` | Built, reviewed, fixed. |
+| E computer/Telegram | `claude/agent-run-p2-e-computer-telegram-20261005` | `9825b037f0` | Built, reviewed, fixed. |
+| Combined batch 1 | `claude/agent-run-p2-batch1-20261005` | `aff613db38` | A+B+D+E plus the email-chase Telegram notice held to allowlisted owners. Pushed. |
+| C consent/friend-share | `claude/agent-run-p2-c-consent-tools-20261005` | — | Two security reviews found blockers: the approval card could differ from the sent text; the recipient was not bound; cross-owner text could reach the friend's model; invisible characters. Three fix rounds done; third review running. **NOT cleared to merge.** |
+| G mark wiring + Telegram honesty | — | — | Started ~07:30 UTC. |
+| H chat route items | — | — | Started ~07:30 UTC. |
+| I release hygiene | — | — | Started ~07:30 UTC. |
+| Scoping pass | — | — | Started ~07:30 UTC. |
+
+Lane reports (private record only): `docs/agent-run/evidence/claude-resume-20261005/LANE-REPORT-<lane>.md` for merge-main, release-blockers, p2-a-daily-rhythm, p2-b-marks-recall, p2-c-consent-tools, p2-d-mail, p2-e-computer-telegram and p2-batch1.
+
+### 5. Not verified / still owed
+
+- Any browser check on production.
+- The five production click-through checks (PAUSED §6 step 4).
+- The phone-call hotfix live proof (PAUSED §6 step 5).
+- A full type check outside CI.
+- Phase S.
+- Flags and owner allowlist: not set. The Agent Run runtime stays off.
+- Accepted tasks: 5/62.
+
+### 6. Open owner decisions
+
+- Routine quiet-hours semantics (lane A).
+- Friend-share notice content (lane C).
+- Externals unchanged: Stripe/Link, Migadu + DNS, image reviewer, Twilio/media host.
+
+### 7. Where the PAUSED §6 order stands
+
+Step 0 (re-merge) and step 2 (Phase A with proofs) are done. Step 1: the release-blockers lane is reported finished (items 4–6 as listed in §2) and is merged into the PR branch; item 7 was report-only and its findings are in `LANE-REPORT-release-blockers.md`. Step 3 (both box-ci statuses green on the PR head, then `scripts/ci/box-ci/merge-if-green.sh 6168`) is in progress. Steps 4–8 remain as written.
+
 ## PAUSED — October 5, 2026 ~04:50 UTC: full handoff for a fresh session on a new computer
+
+*History: superseded by the "PAUSED — October 5, 2026 ~08:45 UTC" and "RESUMED — October 5, 2026" sections above.*
 
 **Read this section first; it supersedes every section below it.** The owner paused the Claude session at 04:46 UTC and asked for a complete handoff. Nothing is broken; the work is mid-flight and every artifact is pushed or listed here. A fresh session needs only normal GitHub sign-in (`gh auth login --hostname github.com --web`) with access to `jtobkin/suprafx-platform`, plus the two SSH hosts named below if it will operate production. **No secret is in this document.**
 
@@ -36,15 +225,15 @@ Codex's critical path (isolated native-VM rehearsal → custom live release coor
 - **How:** from a checkout containing the edited files, `node scripts/apply-migration.mjs --dir=supabase/migrations --name=<basename>` one at a time; prove each in `pg_catalog` with the query in RELEASE-MIGRATION-ORDER §3 — never trust the tool's own ✅ (it once recorded a rolled-back migration). Run the "old-site guard" query from §3 after Phase A. Known trap: ROLLBACK scripts leave the ledger row behind.
 - **Blocker met this session:** the Claude Code auto-mode permission layer classified `node scripts/apply-migration.mjs` against production as *Production Deploy* and denied it (also denied writing an apply script and removing stale restore scratch containers on the host). **The owner must either add a Bash allow rule for `node scripts/apply-migration.mjs*` (Claude Code `/permissions`) or run the Phase A commands personally.** No workaround was attempted.
 
-### 5. Lanes, branches, worktrees (all on the Mac `Joshuas-MacBook-Pro-2` under `~/lanes/`, briefs in `~/lanes/_briefs/`; everything that matters is pushed or copied into this repo)
+### 5. Lanes, branches, worktrees (all on the original workstation under a private workstation or host path (see engineering handoff), briefs in a private workstation or host path (see engineering handoff); everything that matters is pushed or copied into this repo)
 
 | Lane | Branch / location | State |
 |---|---|---|
-| merge-main | `claude/agent-run-release-merge-main-20261005` → pushed as PR #6168 head `38fadb1fb1`. Worktree `~/lanes/agent-run-merge-main`. | DONE (3 rounds). Reviewed semantic fix in `app/api/agent-chat/stream/route.ts` (~line 976): legacy `/vms/chats` threads are exempt from the receipt-callback check only. Test fixes: subscription harness flag rename, readiness mock, chat-route-wiring, backup-request body, tool-approval-resume stand-in. **Not verified:** full typecheck vs main (OOM locally), Docker DB path, browser. One pre-existing failing test on the frozen candidate: chat-route-wiring "sanitizes the continuity block". Lane report: `docs/agent-run/evidence/claude-takeover-20261005/LANE-REPORT-merge-main.md`. |
-| release-blockers | `claude/agent-run-release-blockers-20261005` from `cc3be125a4`. Worktree `~/lanes/agent-run-release-blockers`. **Pushed at pause** (see commit list in its LANE-REPORT). | **Pushed; head `6773c4d5dc`.** Committed: B1 owner allowlist `AGENT_RUN_OWNER_ALLOWLIST` (`4df7948e00`; helper `lib/agent-run/owner-allowlist.ts`; unset → everyone refused; also checked at run time and shown as "unavailable" in the setup panel), B2 Research V1 legacy fallback (`c057a76333`; probe `lib/vms/coordination/research-original-ledger-probe.ts`), item 3 hide dead Research panel + 409 before select (`6773c4d5dc`; Chromium test at 390/1440). 17 mutation checks all red-then-green. **Not started:** 4 (010001/020000 edits + new 010002 packet), 5 (`_PRECONDITION` ratchet), 6 (guide-setup-followup allowlist — matters before the new container deploys), 7 (other unflagged crons). Report: `docs/agent-run/evidence/claude-takeover-20261005/LANE-REPORT-release-blockers.md`. **Must be merged into the PR branch (or stacked as its own PR after #6168) before the flags are turned on; items 4–5 are needed before Phase A/merge.** |
-| schema-plan / flag-off-review / phase2-map | read-only lanes, DONE; outputs copied into `docs/agent-run/evidence/claude-takeover-20261005/`. Worktrees `~/lanes/agent-run-schema-plan`, `~/lanes/agent-run-a9ab-review` can be removed by their owner once the copies are confirmed. | DONE |
+| merge-main | `claude/agent-run-release-merge-main-20261005` → pushed as PR #6168 head `38fadb1fb1`. Worktree a private workstation or host path (see engineering handoff). | DONE (3 rounds). Reviewed semantic fix in `app/api/agent-chat/stream/route.ts` (~line 976): legacy `/vms/chats` threads are exempt from the receipt-callback check only. Test fixes: subscription harness flag rename, readiness mock, chat-route-wiring, backup-request body, tool-approval-resume stand-in. **Not verified:** full typecheck vs main (OOM locally), Docker DB path, browser. One pre-existing failing test on the frozen candidate: chat-route-wiring "sanitizes the continuity block". Lane report: `docs/agent-run/evidence/claude-takeover-20261005/LANE-REPORT-merge-main.md`. |
+| release-blockers | `claude/agent-run-release-blockers-20261005` from `cc3be125a4`. Worktree a private workstation or host path (see engineering handoff). **Pushed at pause** (see commit list in its LANE-REPORT). | **Pushed; head `6773c4d5dc`.** Committed: B1 owner allowlist `AGENT_RUN_OWNER_ALLOWLIST` (`4df7948e00`; helper `lib/agent-run/owner-allowlist.ts`; unset → everyone refused; also checked at run time and shown as "unavailable" in the setup panel), B2 Research V1 legacy fallback (`c057a76333`; probe `lib/vms/coordination/research-original-ledger-probe.ts`), item 3 hide dead Research panel + 409 before select (`6773c4d5dc`; Chromium test at 390/1440). 17 mutation checks all red-then-green. **Not started:** 4 (010001/020000 edits + new 010002 packet), 5 (`_PRECONDITION` ratchet), 6 (guide-setup-followup allowlist — matters before the new container deploys), 7 (other unflagged crons). Report: `docs/agent-run/evidence/claude-takeover-20261005/LANE-REPORT-release-blockers.md`. **Must be merged into the PR branch (or stacked as its own PR after #6168) before the flags are turned on; items 4–5 are needed before Phase A/merge.** |
+| schema-plan / flag-off-review / phase2-map | read-only lanes, DONE; outputs copied into `docs/agent-run/evidence/claude-takeover-20261005/`. Worktrees a private workstation or host path (see engineering handoff), a private workstation or host path (see engineering handoff) can be removed by their owner once the copies are confirmed. | DONE |
 | phone-call hotfix | PR #6194 MERGED, live; lane folder removed. | DONE, live proof owed |
-| docs | `~/lanes/agent-run-docs` on the coordination branch; this document. | this commit |
+| docs | a private workstation or host path (see engineering handoff) on the coordination branch; this document. | this commit |
 
 Peer sessions on the same Mac were merging to main several times per hour; a 7,000-file PR re-conflicts on every main move. **Before the final push + merge of #6168, ask the other sessions to hold merges for ~90 minutes** (done once at ~06:20 local; re-ask when resuming).
 
@@ -53,7 +242,7 @@ Peer sessions on the same Mac were merging to main several times per hour; a 7,0
 0. Sign in; clone/fetch; read §1–§5 and the three review docs; `gh pr view 6168`; `git fetch origin main` and `git merge-tree --write-tree --name-only origin/main <PR head>` — if it conflicts, do one more merge round (same rules as the merge lane: by hand, per file, regenerate generated files with their scripts, catalog via `--add-uncataloged → --normalize → --check`, re-pin skill citations with `repin-skill-citations.mjs --write`), push to `codex/agent-run-release-composition-20261004` (fast-forward only, never force).
 1. Finish the release-blockers lane (items 3–7), merge its branch into the PR branch, push. Confirm `node scripts/checks/duplicate-migration-numbers.mjs` passes.
 2. Install **Phase A** on production (owner allow rule or owner-run). Prove each packet; run the old-site guard query.
-3. Wait for both `box-ci/*` statuses = success on the PR head; `scripts/ci/box-ci/merge-if-green.sh 6168`. Watch `~/deploy-main.log` on the AWS host for `live: <sha>`.
+3. Wait for both `box-ci/*` statuses = success on the PR head; `scripts/ci/box-ci/merge-if-green.sh 6168`. Watch a private workstation or host path (see engineering handoff) on the AWS host for `live: <sha>`.
 4. Immediately install **Phase S** (3 packets). Then click through on production: a tool call in chat, a notification, the System workflows tab, an email-review save, `/vms/chats` reply. Run the ledger readback (expect 19 new rows).
 5. Prove the phone-call hotfix live: with Proactive autonomy ask the agent to place a call → approval card "This places a real phone call…"; nothing dials until Approve; decline it. (A chat turn asking the CEO agent to call +1 500 555 0001 was left "Waiting for your desktop AI…" at pause — the owner's chat routes to the desktop runner; retry when it is up, or use an agent on the cloud path.)
 6. Flag-on for the owner only: set `AGENT_RUN_RUNTIME=on`, `AGENT_RUN_QUALIFIED_CONTRACT=agent-run-20260928-v1`, `AGENT_RUN_OWNER_ALLOWLIST=<owner wallet>` on the AWS `supraos` and `supraos-cron` containers (`TOPIC_ROUTING` is already on); the owner activates at `/vms/workspace?tab=system`; readiness row shows `active`; first Telegram reply carries a mark footer.
@@ -66,7 +255,7 @@ Stripe/Link credentials and approved client configuration (purchases, P02); Miga
 
 ### 8. Hosts and tools (access by normal sign-in only)
 
-AWS production host `ssh supraos` (user ubuntu; `deploy-main.sh` cron, `docker ps`, `~/deploy-main.log`); QA/build host cc-box as root (address in the private engineering handoff and the owner's memory repo; never in public documents) (cc-box: the box-ci `show` command and `journalctl -u box-ci`; paths in `scripts/ci/box-ci/README.md`); migration tool `scripts/apply-migration.mjs` (reads `OWNER_DB_URL` from env or an approved `.env.local`); Node 22.23.2 (on the original Mac at `~/.nvm/versions/node/v22.23.2/bin`, no `nvm.sh`); lanes borrow `~/suprafx-platform/node_modules` by symlink — `@stripe/link-sdk`, `imapflow`, `mailparser`, `twilio`, `server-only` are missing there (candidate-only dependencies), so one changed-types error and a few test failures are local artefacts; box-ci's `npm ci` is clean.
+AWS production host `ssh supraos` (user ubuntu; `deploy-main.sh` cron, `docker ps`, a private workstation or host path (see engineering handoff)); QA/build host cc-box as root (address in the private engineering handoff and the owner's memory repo; never in public documents) (cc-box: the box-ci `show` command and `journalctl -u box-ci`; paths in `scripts/ci/box-ci/README.md`); migration tool `scripts/apply-migration.mjs` (reads `OWNER_DB_URL` from env or an approved `.env.local`); Node 22.23.2 (on the original Mac at a private workstation or host path (see engineering handoff), no `nvm.sh`); lanes borrow a private workstation or host path (see engineering handoff) by symlink — `@stripe/link-sdk`, `imapflow`, `mailparser`, `twilio`, `server-only` are missing there (candidate-only dependencies), so one changed-types error and a few test failures are local artefacts; box-ci's `npm ci` is clean.
 
 ### 9. Prompt for the next session
 

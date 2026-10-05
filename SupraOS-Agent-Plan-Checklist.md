@@ -1,14 +1,51 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-05T05:03:01.042464+00:00. PAUSED 2026-10-05 ~04:50Z by the owner for a fresh-session handoff. Candidate merged with main and pushed as PR #6168 head 38fadb1fb1 (box-ci ERROR: conflicts with main again — re-merge required); release-blockers lane items 1–3 pushed (6773c4d5dc); phone-call hotfix #6194 live; Phase A migrations NOT installed (permission layer blocked; owner allow rule needed). Normal release path; native rehearsal skipped..
+Checkpoint: 2026-10-05T08:44:22+00:00. PAUSED 2026-10-05 ~08:45Z by the owner for a fresh-session handoff on a new computer. PR #6168 NOT merged (head 9a0624083f; one generated conflict file after #6059; auto-merge watcher disarmed). Phase A installed and proven on production; Phase S NOT installed. Flags and allowlist not set. Phase-2 lanes pushed, none merged (batch 1 ready; N1 priority; C not cleared). Accepted 5/62.
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
 **5 of 62 tasks accepted (8.1%); 56 pending (90.3%); 1 deliberately dropped (1.6%).** This is task acceptance, not a percentage of code or effort. Full Agent Run: unshipped; inactive; global attention cutover: 0; restoreVerified: false.
 
+## State at pause — October 5, 2026 ~08:45 UTC
+
+**Installed:** Production database: Phase A (16 packets) installed and proven (ledger 715 → 731; old-site guard true). Phase S (20260929010002 → 20260929080000 → 20261001000000) NOT installed. Merged and deployed from this session: only the phone-call hotfix #6194 (live proof owed). Agent Run flags and allowlist not set.
+
+**Not merged:** Release PR #6168 (head 9a0624083f; one generated conflict file after #6059). Every Phase-2 lane: batch 1 (A+B+D+E, ready), C (not cleared), G, H, I, N1 (priority), N2, N3 (done), N6; N4/N5/N7 not started.
+
+**Next steps, in order:**
+
+0. Sign in, clone, fetch the branches; read the handoff PAUSED ~08:45 UTC section, NEXT-WAVE-SCOPE.md and the three review documents; get the owner's allow rule Bash(node scripts/apply-migration.mjs:*) and read approval on the new computer.
+1. Ask all peer sessions (or the owner, for other windows) to hold merges; keep the hold until #6168 is merged.
+2. Merge current main into the PR branch (round 7: expect the generated catalog fixture; check for new conflicts), run the affected tests, push fast-forward only.
+3. Wait for both box-ci statuses; merge only via merge-if-green.sh 6168; watch the deploy log for live:.
+4. Install Phase S (3 packets) immediately, each proven; ledger readback (19 rows); say "merges open".
+5. Five production click-throughs + phone-call hotfix proof, signed in, in a real browser.
+6. Follow-up PRs, each re-applied onto main: N1 → batch 1 → N3 → G → H → I → N6 → C (C only after a clean fourth security review).
+7. With the owner: set AGENT_RUN_RUNTIME, AGENT_RUN_QUALIFIED_CONTRACT and AGENT_RUN_OWNER_ALLOWLIST on the web and cron containers; owner activates; run the §5B checks.
+8. Next wave N2, N4, N5, N7 with 3-4 parallel workers; independent adversarial review before every merge.
+9. Keep the record and publish after each material step.
+
+**Open owner decisions:**
+
+1. Which wallets go on the Agent Run allowlist (recommended: the owner's only)
+2. Hide the Agent Run switch from owners not on the list (recommended: yes)
+3. Scheduled routines wait until quiet hours end (recommended: yes; allowlisted owners first; Run now never waits)
+4. If quiet-hours settings can't be read, routines still send (recommended: yes)
+5. Allow a routine to be marked "may interrupt quiet hours" (recommended: yes, off by default)
+6. After the computer is handed back, the agent carries on by itself (recommended: no; the owner replies "continue")
+7. Telegram stop notices and Allow-once reports go to every Telegram user (recommended: yes; already chosen, confirm)
+8. Name the independent reviewer for the browser image
+9. Buy a Twilio number and media host for shop calls now (recommended: wait until chat and Telegram are proven)
+10. Subscribe to Migadu and set DNS for mail.supraos.ai (recommended: yes when ready; Revoke is permanent for that agent)
+11. Real payments: Link test mode first, real money after one reviewed test purchase (recommended: yes)
+12. Keep "exactly one Email Agent assignment" for email review, and show it (recommended: keep)
+13. Friend's notice carries none of the shared words (recommended: keep, for security)
+
+**Externals:** Unchanged: Stripe/Link, Migadu + DNS, image reviewer, Twilio/media host.
+
 ## Current delivery boundary
 
-Owner paused. Native stop returned STOPPED_ONLY (receipt ac5bae2b): unit inactive/not-found/PID0, no containers, unchanged default daemon and stop firewall. Independent post-stop verification PASSED (audit3fbf290b): native process/socket/runtime/cgroup absent, default daemon and firewall unchanged. VM stop was not submitted; isolated VM c remains running under its finite lease ending2026-10-05T08:18:58Z. All new implementation, qualification and VM preparation are paused. Frozen a9ab/PR6168 remains unmerged/unshipped with retained managed passes. Zero app/PG/operator install/bind/caller/cutoff effects; fixture/common inputs staged. No production backup run, shared lock, migration or activation. Fresh plan25418/5ff14ca expires2026-10-05T05:56:29Z; owner approval absent. Accepted5/62.
+Paused 2026-10-05 ~08:45 UTC. Production database: Phase A (16 packets) installed and proven; ledger 715→731; old-site guard true. Phase S (20260929010002 → 20260929080000 → 20261001000000) NOT installed; only after live: shows the new build. PR #6168 NOT merged (head 9a0624083f; box-ci production-build error: conflicts with main after #6059; one generated conflict file). Agent Run flags and owner allowlist not set (runtime off). Nothing from this session is merged except the phone-call hotfix #6194 (deployed; live proof owed). Phase-2 lanes pushed, none merged. Accepted 5/62.
 
 ## How to read this checklist
 
