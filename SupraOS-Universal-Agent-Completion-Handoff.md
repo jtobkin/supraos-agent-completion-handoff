@@ -1,6 +1,110 @@
 # SupraOS Universal Agent Completion Handoff
 
+## STATE — October 6, 2026 ~12:40 UTC: Agent Run on for the owner, six more merged, seven reviewed and queued
+
+**Read this section first. It supersedes every section below it; the older sections stay as history.** PR states below were verified on GitHub (`gh pr view N --json state,mergeCommit`) by the record-keeper; the live build was read from production `/api/version` at 12:25 UTC. Migration installs, the Agent Run switch and the live chat test come from the gatekeeper's report and were not re-checked by the record-keeper. **No secret is in this document. Accepted tasks remain 5/62 formally** — nothing new was proven live in this update.
+
+### 1. What is true right now
+
+**Agent Run is ON for the owner** (allowlisted). Owners who are not on the allowlist still see no Agent Run row.
+
+**Merged since the 08:00 UTC STATE** — all via `scripts/ci/box-ci/merge-if-green.sh`, each after an independent review:
+
+| PR | Merge commit | What |
+|---|---|---|
+| #6231 | `91ca5e1e92` | N7 — take-over card in web chat when the agent's computer stops at a password, code or payment step. |
+| #6244 | `141b97ac71` | Test debt — 4 stale tests fixed; the by-id workflow read hides Agent Run from unlisted owners. |
+| #6245 | `4560ad370b` | Friend-link pause/resume — resume after your own pause; the other owner is told on pause, resume and close. Migration `20261006190000` installed. |
+| #6248 | `483e70ba1f` | `read_email_waiting` — a read-only chat tool listing emails still waiting on a reply. |
+| #6250 | `d1a4cfab39` | Routine "Held until 7:00 AM (quiet hours)" note; the health check calls a held routine held, not late. Migration `20261006200000` installed. |
+| #6251 | `6786a8e87e` | Email review runs as the owner's Guide — **no separate Email Agent** (owner ruling 2026-10-06). Migration `20261006170000` installed. #6237 is now **closed** (replaced). |
+
+**Reviewed SAFE, queued to merge** (not merged):
+
+| PR | What |
+|---|---|
+| #6262 | The Guide is found whether its scope is `built-in` or `system`. Migration `20261006210000` **installed and proven**: a ledger row, and both email SQL functions accept `system`. |
+| #6265 | Agent Run works on the ChatGPT-subscription fallback path (its result object is accepted), and the plan-load race is fixed (the saved workflow is seen on turn 1). The review found logs could leak secrets; fixed and re-reviewed. |
+| #6266 | Route hygiene — unlisted owners cannot see the Agent Run row via activation, runs, run detail or the huddle. |
+| #6267 | Friend notes limited to 5 an hour and 20 a day from one owner to another (no migration). |
+| #6268 | System Guides cannot be deleted; global attention accepts a `system` Guide. Migration `20261006220000` **deliberately NOT installed** — it installs right after `20260929110000`..`150000`, which are not installed. The live check passes 35/0. |
+| #6271 | The setup/readiness view hides the row from unlisted owners. |
+| #6272 | Held-note polish — the health check confirms the note is still true; the card keeps "Held until" through skip/Run now; History says "Held for quiet hours". |
+
+**In progress:** the friend-share hard limit enforced in the database (migration `20261006230000`, assigned); the setup dead-end step for unlisted owners; CI test-gap scoping.
+
+| Item | State |
+|---|---|
+| Live build | Production `/api/version` reported `d2ea118ea6` at 12:25 UTC. It contains #6231, #6244, #6245, #6248 and #6250. **#6251 (main `6786a8e87e`, merged 12:15 UTC) was not yet live** at that read. |
+| Live chat test | **FAILED.** The Anthropic credit is exhausted, so chat fell back to ChatGPT, where the strict parser rejected the result. #6265 fixes this; **a live re-test is owed after it deploys.** |
+| Accepted tasks | **5/62 formally, unchanged.** |
+
+**Separate states.**
+- **Implemented, tested, independently reviewed, merged:** #6231, #6244, #6245, #6248, #6250, #6251.
+- **Deployed (in the live build at 12:25 UTC):** #6231, #6244, #6245, #6248, #6250. #6251 merged, not yet seen live.
+- **Installed (database, reported):** `20261006170000`, `20261006190000`, `20261006200000`, `20261006210000`. Not installed by design: `20261006220000`.
+- **Implemented, reviewed SAFE, not merged:** #6262, #6265, #6266, #6267, #6268, #6271, #6272.
+- **Activated:** Agent Run for the owner only.
+- **Live-verified in this update:** nothing new — the live chat test failed.
+- **Formally accepted:** 5/62, unchanged.
+
+### 2. Decisions
+
+- Owner-visible history-ledger entries for the owner's own switch flips **stay visible**.
+- A removed owner cannot switch Agent Run off — **accepted**, because the runtime refuses them anyway.
+- Unchanged from earlier today: no separate Email Agent; email review runs as the Guide (now shipped in #6251).
+
+### 3. Documents a fresh session must read
+
+- This section, then the 08:00 UTC and 02:00 UTC sections below (code map, branches, migrations, live proof).
+- `docs/agent-run/evidence/claude-resume-20261005/live-20261006/README.md`, `docs/agent-run/LIVE-CHECK.md`, `docs/agent-run/RELEASE-STATE-20261005.md`.
+
+### 4. Migrations
+
+- Installed today (reported by the gatekeeper): `20261006170000` (#6251), `20261006190000` (#6245), `20261006200000` (#6250), `20261006210000` (#6262, proven by a ledger row and both email SQL functions accepting `system`).
+- **Hold:** `20261006220000` (#6268) installs only after `20260929110000`..`150000`, which are not installed.
+- Assigned: `20261006230000` (database-enforced friend-share limit, in progress).
+
+### 5. Where everything is
+
+- **Repository:** `jtobkin/suprafx-platform`; main `6786a8e87e` contains everything merged.
+- **Queued PR branches:** `claude/agent-run-p4-guide-scope-20261006` (#6262), `claude/agent-run-p4-subscription-result-20261006` (#6265), `claude/agent-run-p5-route-hygiene-20261006` (#6266), `claude/agent-run-p5-friend-note-limit-20261006` (#6267), `claude/agent-run-p5-guide-followups-20261006` (#6268), `claude/agent-run-p5-readiness-hygiene-20261006` (#6271), `claude/agent-run-p5-held-note-polish-20261006` (#6272).
+- **Record:** branch `codex/agent-run-execution-20260928`; public copy `jtobkin/supraos-agent-completion-handoff`.
+
+### 6. Exact next steps, in order
+
+0. Sign in; fetch; read §1–§5.
+1. Merge the seven queued PRs with `scripts/ci/box-ci/merge-if-green.sh <PR>` from an up-to-date worktree: #6262, #6265, #6266, #6267, #6268, #6271, #6272. Do not install `20261006220000` until `20260929110000`..`150000` are installed.
+2. Confirm #6251 and then #6265 are in the live build (`/api/version` or the deploy log `live:` line).
+3. Re-run the live chat test on the ChatGPT fallback path after #6265 is live.
+4. Finish the in-progress work — database-enforced friend-share limit (`20261006230000`), the setup dead-end step for unlisted owners, CI test-gap scoping — each with an independent adversarial review before merge-if-green.
+5. Prove email-review save on production; formally accept only plan rows proven live.
+6. Keep the record and publish: edit `progress.json`/`plan.json`, run the three renderers, commit to the record branch, copy the four public files to `jtobkin/supraos-agent-completion-handoff`.
+
+**Lessons from today.**
+- When the Anthropic credit runs out, chat silently falls back to ChatGPT; a strict result parser turned that into a failed run. Test the fallback path, not only the primary.
+- The #6265 review found logs that could leak secrets — keep the independent review before every merge.
+
+### 7. What the owner must know or do
+
+1. **The Anthropic account is out of credit.** Chat falls back to ChatGPT until it is topped up.
+2. **Stripe/Link keys are on hold** until the gatekeeper asks for them.
+3. Externals otherwise unchanged: Migadu + DNS for mail.supraos.ai, the independent browser-image reviewer, Twilio + media host.
+
+### 8. Not verified
+
+- The live chat test after #6265 (it failed before the fix; re-test owed).
+- #6251 in the live build (not yet at the 12:25 UTC read).
+- Email-review save on production.
+- The record-keeper did not itself re-check the migration ledger, the Agent Run switch or the allowlist; those come from the gatekeeper's report.
+
+### 9. Prompt for the next session
+
+> Resume the SupraOS Universal Agent project from the handoff section "STATE — October 6, 2026 ~12:40 UTC" (public copy: jtobkin/supraos-agent-completion-handoff; private copy: branch `codex/agent-run-execution-20260928` of jtobkin/suprafx-platform). Assume no local memory, credentials or running agents. Sign in to GitHub normally and fetch. Read §1–§8, then do §6 in order: merge #6262, #6265, #6266, #6267, #6268, #6271 and #6272 with `scripts/ci/box-ci/merge-if-green.sh` from an up-to-date worktree (keep migration 20261006220000 uninstalled until 20260929110000..150000 are installed); confirm #6251 and #6265 are live; re-run the live chat test on the ChatGPT fallback; finish the database friend-share limit (20261006230000), the setup dead-end step and CI test-gap scoping, each independently reviewed; prove email-review save; formally accept only rows proven live. Standing rules: report implemented, tested, reviewed, merged, deployed, activated and live-verified separately; accepted stays 5/62 until a row is proven live; never work around a permission denial; merge only via merge-if-green.sh; keep progress.json, plan.json and the handoff current with the three renderers and publish the four public files after each material step.
+
 ## STATE — October 6, 2026 ~08:00 UTC: live proof on production, six more follow-ups merged, wave 4 running
+
+*History: superseded by the "STATE — October 6, 2026 ~12:40 UTC" section above.*
 
 **Read this section first. It supersedes every section below it; the older sections stay as history.** Every fact here was verified by the coordinator (Claude Code) from GitHub, the deploy log, the live database and the owner's signed-in browser. A fresh session needs only normal GitHub sign-in (`gh auth login --hostname github.com --web`) with access to `jtobkin/suprafx-platform`, plus this document; production steps also need the owner's permissions (§7). **No secret is in this document. Accepted tasks remain 5/62 formally** — the phone-call proof and the live checks below are live evidence, but no plan row has been formally accepted yet.
 
@@ -1012,7 +1116,7 @@ This table is a resume order, not a reduced definition of finished. The full 32-
 | Provider readiness and browser publication | External configuration and specific authorization | Authorized provider/admin owners | Actual approved Link configuration, secure credentials and authorized qualification; Migadu subscription/DNS/delivery; eligible independent publication review |
 | Deployment, activation, all paths and all 16 baseline behaviors | Integrated release/live evidence | Root, operator and independent verifier | Qualified phased release, actual configuration/source readback, authenticated live cases, monitoring and recovery; no task acceptance based on code presence |
 
-QA and production capacity are separate dependencies. Recheck exact applicable floors at every new admission; never lower them. Historical October3 build/native measurements are superseded by the current host receipts. AWS production had67,403,169,792freebytes (~62.8GiB) at12:05UTC onOctober4, below85GiB backup start floor. The pending production-volume capacity proposal does not increase Hetzner QA disk. Local Mac disk recovered5.3GiB after removal of only two completed reproducible model clones; preserve project worktrees and evidence.
+QA and production capacity are separate dependencies. Recheck exact applicable floors at every new admission; never lower them. Historical October3 build/native measurements are superseded by the current host receipts. AWS production had67,403,169,792freebytes (~62.8GiB) at12:05UTC onOctober4, below85GiB backup start floor. The pending production-volume capacity proposal does not increase cc-box QA disk. Local Mac disk recovered5.3GiB after removal of only two completed reproducible model clones; preserve project worktrees and evidence.
 
 The existing [production capacity proposal](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/evidence/pending-production-capacity-20261004/README.md) is now preserved in the private repository with its exact source/receipt hashes, rather than only on the original Mac. It proposes AWS gp3 300→364 GiB plus a recovery snapshot; its specific owner approval remains pending. Do not send the request again or assume it approved. Copying this dormant packet did not execute it or authorize any infrastructure change. A default-branch dependency alert is not automatically a failed frozen-source gate; use the source-specific advisory note and the actual policy. Conversely a production-only audit does not certify all dependencies.
 
