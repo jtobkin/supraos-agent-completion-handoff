@@ -1,6 +1,112 @@
 # SupraOS Universal Agent Completion Handoff
 
+## STATE — October 6, 2026 ~08:00 UTC: live proof on production, six more follow-ups merged, wave 4 running
+
+**Read this section first. It supersedes every section below it; the older sections stay as history.** Every fact here was verified by the coordinator (Claude Code) from GitHub, the deploy log, the live database and the owner's signed-in browser. A fresh session needs only normal GitHub sign-in (`gh auth login --hostname github.com --web`) with access to `jtobkin/suprafx-platform`, plus this document; production steps also need the owner's permissions (§7). **No secret is in this document. Accepted tasks remain 5/62 formally** — the phone-call proof and the live checks below are live evidence, but no plan row has been formally accepted yet.
+
+### 1. What is true right now
+
+**Live proof on production** — 2026-10-06 02:20–02:40 UTC, in the owner's signed-in Chrome. Evidence: `docs/agent-run/evidence/claude-resume-20261005/live-20261006/` (README + 5 screenshots, record commit `46f99b653b`).
+
+| Check | Result |
+|---|---|
+| System workflows tab (`/vms/workspace?tab=system`) | Loads; no Agent Run row for a non-allowlisted owner. |
+| Chat at `/vms/chats` | Replied. |
+| Tool call in chat | `supra_oracle_query` card · done. |
+| Notifications | 33 notifications delivered since the release went live (live database). |
+| Phone-call hotfix (#6194) | **PROVEN.** Autonomy set to Proactive; the CEO was asked to call +1 500 555 0001 → not dialled; a pending approval `phone_call_dispatch` appeared in Settings → Grants; Reject → status rejected; autonomy restored to Balanced. |
+
+**NOT verified on production:** email-review save (0 rows on production); the hotfix's specific card wording.
+
+**Merged since the 02:00 UTC STATE** — all via `scripts/ci/box-ci/merge-if-green.sh`, each after an independent review:
+
+| PR | What |
+|---|---|
+| #6225 | source-map-js pin — a new HIGH upstream advisory (GHSA-68fv-2mgg-jv7q) had failed the G6 audit gate on every PR. |
+| #6216 | Lane H chat route — stored history only for stored threads; the planner→floating-bar handoff joins the active session; put-off loose ends shown read-only; a "preferences unavailable" cue. |
+| #6214 | N6 — see your agent's loose ends. |
+| #6232 | N4 — the morning message in Telegram. Also: `tg_send_message` now reports failed sends as failed, and the AI fallback can never write to Telegram. |
+| #6236 | N5 — routine quiet hours: scheduled messages wait until quiet hours end, nothing is lost, "Run now" never waits, and it fails open; allowlisted owners only. |
+| #6218 | Lane G marks wiring — recipe marks; Telegram "Not confirmed"; Allow-once continuation to Telegram. |
+
+| Item | State |
+|---|---|
+| Live | main `a6c65b4d23` live — `a6c65b4d2 health 200` at 06:44 UTC (deploy log). main later advanced to `08a01c2a66` (other sessions' merges). |
+| Agent Run | Not switched on — the owner's go-ahead is still owed (§7). |
+| Open PRs | **#6231** N7 take-over card in web chat — review SAFE; the first box-ci run failed only on the known AgentOrb animation flake; re-run pending. **#6237** Email Agent readiness + "Fix it" — **ON HOLD by owner decision** (§7). |
+| In progress (wave 4) | Branches `claude/agent-run-p4-*-20261006`: **email-review-uses-guide** (`claude/agent-run-p4-email-review-uses-guide-20261006`, replaces #6237); **friend-link-resume** (resume a paused link + a fixed notice to the other owner); **routines-held-note** ("Held until 07:00" + a health check, with a migration); **read-email-waiting** (a read-only chat tool); **test-debt** (4 tests failing on main + one N1 by-id gap + which test folders CI runs). |
+| Accepted tasks | **5/62 formally, unchanged.** The live proof above is live evidence; no plan row has been formally accepted. |
+
+**Separate states.**
+- **Merged and deployed:** everything in the 02:00 UTC section, plus #6225, #6216, #6214, #6232, #6236, #6218.
+- **Live-verified on production:** the checks in the table above (browser checks in the owner's signed-in Chrome; notifications from the live database), including the phone-call hotfix.
+- **Implemented, reviewed, not merged:** #6231 (box-ci re-run pending). #6237 is on hold.
+- **In progress:** the five wave-4 lanes.
+- **Activated:** nothing — Agent Run is not switched on.
+- **Formally accepted:** 5/62, unchanged.
+
+### 2. Owner decisions today
+
+- **Routine quiet hours design: yes** — wait until quiet hours end; "Run now" never waits; fail open. Shipped in #6236.
+- **"Fix it" button: yes, then SUPERSEDED.** The owner ruled there should be **no separate Email Agent** ("it would splinter context"). Email review will run as the owner's main agent, **the Guide**. #6237 is on hold; the replacement lane `claude/agent-run-p4-email-review-uses-guide-20261006` is in progress.
+- **The plan's main agent is the Guide** — one shared agent across chat and Telegram; CEO and the others are specialists.
+
+### 3. Documents a fresh session must read
+
+- This section, then the "STATE — October 6, 2026 ~02:00 UTC" section below (§3–§5 there still hold for code, branches and migrations).
+- `docs/agent-run/evidence/claude-resume-20261005/live-20261006/README.md` — the live proof.
+- `docs/agent-run/evidence/claude-resume-20261005/NEXT-WAVE-SCOPE.md`, `docs/agent-run/RELEASE-STATE-20261005.md`, `docs/agent-run/LIVE-CHECK.md`, `docs/agent-run/CRON-ROUTES-20261005.md`.
+
+### 4. Migrations and production permissions
+
+- All 19 release packets remain installed (02:00 UTC section §4). The routines-held-note lane carries a new migration; it is not merged.
+- Production writes need the Claude Code allow rule; a chat approval is not enough. The first production run of the live check was denied by the permission layer and **not retried**; it still needs the owner's allow rule `Bash(node scripts/qa/agent-run-live-check.mjs:*)`.
+
+### 5. Where everything is
+
+- **Repository:** `jtobkin/suprafx-platform`; main contains everything merged.
+- **Open PRs:** #6231 (N7), #6237 (on hold).
+- **Wave-4 branches:** `claude/agent-run-p4-*-20261006` (§1).
+- **Now merged (history only):** `claude/agent-run-pr-n6-onto-main-20261005` (#6214), `claude/agent-run-pr-g-onto-main-20261005` (#6218), `claude/agent-run-pr-h-onto-main-20261005` (#6216).
+- **Live proof:** `docs/agent-run/evidence/claude-resume-20261005/live-20261006/`.
+- **Record:** branch `codex/agent-run-execution-20260928`; public copy `jtobkin/supraos-agent-completion-handoff`.
+- Code map, older branches and lane reports: §5 of the 02:00 UTC section below.
+
+### 6. Exact next steps, in order
+
+0. Sign in; fetch; read §3. Ask the owner for the allow rule `Bash(node scripts/qa/agent-run-live-check.mjs:*)`.
+1. **#6231** (N7 take-over card): re-run box-ci (the only failure was the known AgentOrb animation flake); when both statuses are green, `scripts/ci/box-ci/merge-if-green.sh 6231` — run it from an up-to-date worktree, not a stale checkout.
+2. **Wave 4:** finish email-review-uses-guide, friend-link-resume, routines-held-note (with its migration), read-email-waiting and test-debt; an independent adversarial review for each before merge; merge only via merge-if-green. **#6237 stays on hold** (the Guide replaces the separate Email Agent).
+3. With the allow rule: `node scripts/qa/agent-run-live-check.mjs --phase=all` (read-only) → expect PASS.
+4. Prove what is still not verified on production: email-review save, and the hotfix's specific card wording.
+5. With the owner's go-ahead: set the three variables + allowlist on the web and cron containers; the owner flips the switch at `/vms/workspace?tab=system`; run the §5B checks. This is the largest remaining step — accepted tasks only move when a plan row is proven live.
+6. Externals when the owner is ready (§7).
+7. Keep the record and publish: edit `progress.json`/`plan.json`, run the three renderers, commit to the record branch, copy the four public files to `jtobkin/supraos-agent-completion-handoff`.
+
+**Lessons from today.**
+- A new upstream security advisory can fail CI for every PR at once — when everything turns red, check the G6 audit gate first.
+- The main checkout on the original Mac was stale (it had no `merge-if-green.sh`) — run the merge script from an up-to-date worktree.
+- Every reviewer today again found real defects: quiet-hours end-date loss, a Telegram send that failed silently, "Fix it" deleting team memberships, a live-check false PASS. Keep the independent review before every merge.
+- The 02:00 UTC lessons still apply.
+
+### 7. What the owner must do or decide
+
+1. **Allow rule:** `Bash(node scripts/qa/agent-run-live-check.mjs:*)` — the first production run was denied and not retried.
+2. **The go-ahead to switch Agent Run ON for the owner:** three variables (`AGENT_RUN_RUNTIME=on`, `AGENT_RUN_QUALIFIED_CONTRACT=agent-run-20260928-v1`, `AGENT_RUN_OWNER_ALLOWLIST=<owner wallet>`) + allowlist on the web and cron containers, then the owner flips the switch. The largest remaining step.
+3. **Externals unchanged:** Stripe/Link, Migadu + DNS for mail.supraos.ai, the independent browser-image reviewer, Twilio + media host.
+4. **Decided today:** routine quiet hours (yes); no separate Email Agent — email review runs as the Guide (supersedes the "Fix it" decision; #6237 on hold). The other open decisions in the 02:00 UTC section §7 are unchanged.
+
+### 8. Hosts and tools
+
+Unchanged from the 02:00 UTC section §8. Merge only with `scripts/ci/box-ci/merge-if-green.sh <PR>`, run from an up-to-date worktree.
+
+### 9. Prompt for the next session
+
+> Resume the SupraOS Universal Agent project from the handoff section "STATE — October 6, 2026 ~08:00 UTC" (public copy: jtobkin/supraos-agent-completion-handoff; private copy: branch `codex/agent-run-execution-20260928` of jtobkin/suprafx-platform). Assume no local memory, credentials or running agents. Sign in to GitHub normally and fetch. Read §1–§9, the live-proof README `docs/agent-run/evidence/claude-resume-20261005/live-20261006/README.md`, and the 02:00 UTC section's code map. Then do §6 in order: (0) ask the owner for the allow rule `Bash(node scripts/qa/agent-run-live-check.mjs:*)`; (1) re-run box-ci on #6231 (only the known AgentOrb flake failed), then `scripts/ci/box-ci/merge-if-green.sh 6231` from an up-to-date worktree; (2) finish the wave-4 lanes on `claude/agent-run-p4-*-20261006` — email-review-uses-guide (email review runs as the Guide; no separate Email Agent; #6237 stays on hold), friend-link-resume, routines-held-note (with its migration), read-email-waiting, test-debt — each with an independent adversarial review before merge-if-green; after each merge watch `live:` in the deploy log and delete that lane's worktree; (3) run `node scripts/qa/agent-run-live-check.mjs --phase=all` (read-only) and expect PASS; (4) prove email-review save and the hotfix card wording on production; (5) with the owner's go-ahead, set the three Agent Run variables and the allowlist on the web and cron containers, let the owner switch it on, run the §5B checks, and only then formally accept plan rows that are proven live; (6) keep the record. Standing rules: report implemented, tested, reviewed, merged, deployed, activated and live-verified separately; accepted stays 5/62 until a row is formally proven live; when every PR turns red at once, check the G6 audit gate first; ask the owner only for purchases, DNS, consumer test messages, the allow rule / production approvals, or a genuine product/security decision; never work around a permission denial; merge only via merge-if-green.sh; keep progress.json, plan.json and the handoff current with the three renderers and publish the four public files after each material step.
+
 ## STATE — October 6, 2026 ~02:00 UTC: release shipped, follow-ups, full handoff
+
+*History: superseded by the "STATE — October 6, 2026 ~08:00 UTC" section above.*
 
 **Read this section first. It supersedes every section below it; the older sections stay as history.** Every fact here was verified first-hand by the coordinator (Claude Code). A fresh session needs only normal GitHub sign-in (`gh auth login --hostname github.com --web`) with access to `jtobkin/suprafx-platform`, plus this document; production steps also need the owner's permissions (§7). **No secret is in this document. Accepted tasks remain 5/62** — no row was proven live this session.
 

@@ -1,64 +1,80 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-06T01:56:57+00:00. Release shipped 2026-10-05: #6168 merged (main 8e028e3964) and live; all 19 release packets installed and proven; follow-ups #6208 N1, #6217 C, #6215 N3, #6210 I, #6209 batch 1 merged; live 0d25a537b health 200 (22:36 UTC). Agent Run OFF for everyone (flags and allowlist not set). Open: #6214 N6, #6218 G, #6216 H. Accepted 5/62.
+Checkpoint: 2026-10-06T07:36:14+00:00. Live proof on production 2026-10-06 02:20–02:40 UTC (system tab, chat reply, tool card, 33 notifications, phone-call hotfix proven). Merged since 02:00 UTC: #6225, #6216 H, #6214 N6, #6232 N4, #6236 N5, #6218 G; main a6c65b4d23 live (health 200, 06:44 UTC). Open: #6231 N7 (re-run pending), #6237 on hold (owner: no separate Email Agent; email review runs as the Guide). Wave 4 in progress. Agent Run not switched on. Accepted 5/62 formally.
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
 **5 of 62 tasks accepted (8.1%); 56 pending (90.3%); 1 deliberately dropped (1.6%).** This is task acceptance, not a percentage of code or effort. Full Agent Run: release shipped with Agent Run off; not activated; full project not complete; global attention cutover: 0; restoreVerified: false.
 
-## Current state — October 6, 2026 ~02:00 UTC
+## Current state — October 6, 2026 ~08:00 UTC
 
-**Shipped (merged via merge-if-green, deployed):**
+**Live proof on production (2026-10-06 02:20–02:40 UTC, owner's signed-in Chrome):**
 
-- #6168 Agent Run release candidate → 8e028e3964
-- #6208 N1 no Agent Run switch for owners who cannot use it; status card for those who can → 6f2888485c
-- #6217 lane C friend share + shop-call preview → 3978eb7032
-- #6215 N3 read-only live-check script + LIVE-CHECK.md → fb470c1e8a
-- #6210 lane I release hygiene → 7092987f1b
-- #6209 Phase-2 batch 1 (A, B, D, E + email-chase Telegram notice held to allowlisted owners) → ba4b86109b
-- #6194 phone-call hotfix (earlier; live proof owed)
+- System workflows tab loads; no Agent Run row for a non-allowlisted owner
+- /vms/chats reply
+- tool call in chat (supra_oracle_query card · done)
+- 33 notifications delivered since the release went live (live database)
+- phone-call hotfix PROVEN: Proactive autonomy, CEO asked to call +1 500 555 0001 → not dialled, pending approval phone_call_dispatch shown in Settings → Grants, Reject → status rejected, autonomy restored to Balanced
+- Evidence: docs/agent-run/evidence/claude-resume-20261005/live-20261006/ (README + 5 screenshots, commit 46f99b653b)
 
-**Database:** all 19 release packets installed and proven (Phase A 16 on 2026-10-05 06:13–06:25 UTC; Phase S 3 at 13:21 UTC; ledger readback 19/19).
+**Merged since 02:00 UTC (merge-if-green, each after an independent review):**
 
-**Live:** 0d25a537b, health 200 (2026-10-05 22:36 UTC). Agent Run is OFF for everyone — the three variables are not set.
+- #6225 source-map-js pin — new HIGH upstream advisory GHSA-68fv-2mgg-jv7q had failed the G6 audit gate on every PR
+- #6216 lane H chat route — stored history only for stored threads; planner→floating-bar handoff joins the active session; put-off loose ends shown read-only; preferences-unavailable cue
+- #6214 N6 see your agent's loose ends
+- #6232 N4 morning in Telegram — also: tg_send_message now reports failed sends as failed; the AI fallback can never write to Telegram
+- #6236 N5 routine quiet hours — scheduled messages wait until quiet hours end, nothing lost, Run now never waits, fail open; allowlisted owners only
+- #6218 lane G marks wiring — recipe marks; Telegram "Not confirmed"; Allow-once continuation to Telegram
+
+**Live:** main a6c65b4d23, health 200 (2026-10-06 06:44 UTC); main later 08a01c2a66 (other sessions' merges). Agent Run not switched on.
 
 **Open PRs:**
 
-- #6214 N6 see your agent's loose ends — both box-ci statuses success (batch with #6209); independent review SAFE TO MERGE; not merged only because the merge watcher was stopped by a session restart
-- #6218 G marks wiring — independent review SAFE TO MERGE; box-ci error "the PR conflicts with main" (stacked on #6209's squash-merged branch)
-- #6216 H chat route — second independent review's four fixes all pushed (504ab4c618, b7813ed4a6, 3ca14a2659, 5dc5c5aef7); same stacked conflict
+- #6231 N7 take-over card in web chat — review SAFE; first box-ci run failed only the known AgentOrb animation flake; re-run pending
+- #6237 Email Agent readiness + "Fix it" — ON HOLD by owner decision
+
+**In progress (wave 4, claude/agent-run-p4-*-20261006):**
+
+- email-review-uses-guide (claude/agent-run-p4-email-review-uses-guide-20261006) — email review runs as the owner's main agent, the Guide; replaces #6237
+- friend-link-resume — resume a paused link + fixed notice to the other owner
+- routines-held-note — "Held until 07:00" + health check, with a migration
+- read-email-waiting — read-only chat tool
+- test-debt — 4 tests failing on main + one N1 by-id gap + which test folders CI runs
+
+**Owner decisions today:**
+
+- Routine quiet hours design = yes (wait until quiet hours end, Run now never waits, fail open) — shipped in #6236.
+- "Fix it" button = yes, then SUPERSEDED: no separate Email Agent ("it would splinter context"); email review will run as the owner's main agent, the Guide; replacement lane claude/agent-run-p4-email-review-uses-guide-20261006 in progress; #6237 on hold.
+- The plan's main agent = the Guide (one shared agent across chat and Telegram; CEO etc. are specialists).
 
 **Owner actions:**
 
-1. macOS Automation permission for Chrome (System Settings → Privacy & Security → Automation → tick Google Chrome), or the owner does the five production click-throughs personally.
-2. Claude Code allow rule Bash(node scripts/qa/agent-run-live-check.mjs:*) — the first read-only production run of the live check was denied and not retried.
-3. Later, to switch Agent Run on: set AGENT_RUN_RUNTIME=on, AGENT_RUN_QUALIFIED_CONTRACT=agent-run-20260928-v1, AGENT_RUN_OWNER_ALLOWLIST=<owner wallet> on the web and cron containers; the owner flips the switch at /vms/workspace?tab=system.
-4. The 13 decisions in NEXT-WAVE-SCOPE §4, plus: is "digest-imported-history now holds imported-chat memory for every owner" accepted (lane I, CRON-ROUTES-20261005.md); routine quiet-hours design (lane A attempt reverted).
-5. Externals unchanged: Stripe/Link, Migadu + DNS for mail.supraos.ai, independent browser-image reviewer, Twilio + media host.
+1. Claude Code allow rule Bash(node scripts/qa/agent-run-live-check.mjs:*) — the first production run was denied, not retried.
+2. The go-ahead to switch Agent Run ON for the owner: AGENT_RUN_RUNTIME=on, AGENT_RUN_QUALIFIED_CONTRACT=agent-run-20260928-v1, AGENT_RUN_OWNER_ALLOWLIST=<owner wallet> + allowlist on the web and cron containers, then the owner flips the switch — the largest remaining step, because accepted tasks only move when a row is proven live.
+3. Externals unchanged: Stripe/Link, Migadu + DNS for mail.supraos.ai, independent browser-image reviewer, Twilio + media host.
 
 **Next steps, in order:**
 
-0. Sign in, fetch, read the handoff STATE section, NEXT-WAVE-SCOPE.md, RELEASE-STATE-20261005.md and LIVE-CHECK.md; get the owner's allow rule and Chrome permission (or the owner clicks).
-1. Merge #6214 (re-check it still merges with main; merge-if-green.sh 6214).
-2. Bring #6218 up to main (git merge, no rebase, no force), run lane G tests, green, merge-if-green.
-3. Bring #6216 up to main, short independent verification of its four fixes, green, merge-if-green. After each merge: watch live: and delete that PR's worktree.
-4. Run node scripts/qa/agent-run-live-check.mjs --phase=all (read-only) → expect PASS.
-5. Production click-throughs + phone-call hotfix proof, signed in, in a real browser.
-6. With the owner: set the three variables + allowlist; owner activates; run the §5B checks.
-7. Next wave N2, N4, N5, N7 with 3–4 parallel workers, each independently reviewed before merge.
-8. Keep the record and publish.
+0. Sign in, fetch, read the handoff STATE ~08:00 UTC section and the live-proof README; ask the owner for the allow rule.
+1. #6231: re-run box-ci (known AgentOrb flake), then merge-if-green.sh 6231 from an up-to-date worktree.
+2. Wave 4: finish email-review-uses-guide, friend-link-resume, routines-held-note (with its migration), read-email-waiting, test-debt — each independently reviewed, merged only via merge-if-green; #6237 stays on hold.
+3. With the allow rule: node scripts/qa/agent-run-live-check.mjs --phase=all (read-only) → expect PASS.
+4. Prove on production what is still not verified: email-review save; the hotfix's specific card wording.
+5. With the owner's go-ahead: set the three variables + allowlist on the web and cron containers; the owner switches Agent Run on; run the §5B checks; formally accept only rows proven live.
+6. Keep the record and publish.
 
 **Not verified:**
 
-- no signed-in browser check on production of anything
-- the five production click-throughs
-- the phone-call hotfix proof
-- the live-check script has never run against production
-- the full type check against main ran out of memory locally on several lanes (box-ci ran its own and passed on every merged PR)
+- email-review save (0 rows on production)
+- the hotfix's specific card wording
+- the live-check script has never run against production (allow rule owed)
+- Agent Run activation (not switched on)
+
+**Accepted tasks:** 5/62 formally, unchanged. The phone-call proof and live checks are live evidence, but no plan row has been formally accepted.
 
 ## Current delivery boundary
 
-Release shipped (flags off). All 19 release packets installed and proven (ledger readback 19/19). Agent Run OFF for everyone: AGENT_RUN_RUNTIME, AGENT_RUN_QUALIFIED_CONTRACT and AGENT_RUN_OWNER_ALLOWLIST unset on the live container (checked 2026-10-06 ~02:00 UTC). Not verified: any signed-in browser check on production, the five production click-throughs, the phone-call hotfix proof, any production run of the live-check script. Accepted 5/62.
+Release shipped; Agent Run not switched on (owner go-ahead owed). Live proof on production 2026-10-06 02:20–02:40 UTC in the owner's signed-in Chrome: system tab, chat reply, tool card, 33 notifications delivered (DB), phone-call hotfix proven (not dialled; pending approval; rejected). Not verified: email-review save (0 rows on production); the hotfix's specific card wording; any production run of the live-check script. Accepted 5/62 formally — the live proof is live evidence, but no plan row has been formally accepted.
 
 ## How to read this checklist
 
