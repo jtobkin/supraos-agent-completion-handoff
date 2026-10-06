@@ -1,51 +1,64 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-05T08:44:22+00:00. PAUSED 2026-10-05 ~08:45Z by the owner for a fresh-session handoff on a new computer. PR #6168 NOT merged (head 9a0624083f; one generated conflict file after #6059; auto-merge watcher disarmed). Phase A installed and proven on production; Phase S NOT installed. Flags and allowlist not set. Phase-2 lanes pushed, none merged (batch 1 ready; N1 priority; C not cleared). Accepted 5/62.
+Checkpoint: 2026-10-06T01:56:57+00:00. Release shipped 2026-10-05: #6168 merged (main 8e028e3964) and live; all 19 release packets installed and proven; follow-ups #6208 N1, #6217 C, #6215 N3, #6210 I, #6209 batch 1 merged; live 0d25a537b health 200 (22:36 UTC). Agent Run OFF for everyone (flags and allowlist not set). Open: #6214 N6, #6218 G, #6216 H. Accepted 5/62.
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
-**5 of 62 tasks accepted (8.1%); 56 pending (90.3%); 1 deliberately dropped (1.6%).** This is task acceptance, not a percentage of code or effort. Full Agent Run: unshipped; inactive; global attention cutover: 0; restoreVerified: false.
+**5 of 62 tasks accepted (8.1%); 56 pending (90.3%); 1 deliberately dropped (1.6%).** This is task acceptance, not a percentage of code or effort. Full Agent Run: release shipped with Agent Run off; not activated; full project not complete; global attention cutover: 0; restoreVerified: false.
 
-## State at pause — October 5, 2026 ~08:45 UTC
+## Current state — October 6, 2026 ~02:00 UTC
 
-**Installed:** Production database: Phase A (16 packets) installed and proven (ledger 715 → 731; old-site guard true). Phase S (20260929010002 → 20260929080000 → 20261001000000) NOT installed. Merged and deployed from this session: only the phone-call hotfix #6194 (live proof owed). Agent Run flags and allowlist not set.
+**Shipped (merged via merge-if-green, deployed):**
 
-**Not merged:** Release PR #6168 (head 9a0624083f; one generated conflict file after #6059). Every Phase-2 lane: batch 1 (A+B+D+E, ready), C (not cleared), G, H, I, N1 (priority), N2, N3 (done), N6; N4/N5/N7 not started.
+- #6168 Agent Run release candidate → 8e028e3964
+- #6208 N1 no Agent Run switch for owners who cannot use it; status card for those who can → 6f2888485c
+- #6217 lane C friend share + shop-call preview → 3978eb7032
+- #6215 N3 read-only live-check script + LIVE-CHECK.md → fb470c1e8a
+- #6210 lane I release hygiene → 7092987f1b
+- #6209 Phase-2 batch 1 (A, B, D, E + email-chase Telegram notice held to allowlisted owners) → ba4b86109b
+- #6194 phone-call hotfix (earlier; live proof owed)
+
+**Database:** all 19 release packets installed and proven (Phase A 16 on 2026-10-05 06:13–06:25 UTC; Phase S 3 at 13:21 UTC; ledger readback 19/19).
+
+**Live:** 0d25a537b, health 200 (2026-10-05 22:36 UTC). Agent Run is OFF for everyone — the three variables are not set.
+
+**Open PRs:**
+
+- #6214 N6 see your agent's loose ends — both box-ci statuses success (batch with #6209); independent review SAFE TO MERGE; not merged only because the merge watcher was stopped by a session restart
+- #6218 G marks wiring — independent review SAFE TO MERGE; box-ci error "the PR conflicts with main" (stacked on #6209's squash-merged branch)
+- #6216 H chat route — second independent review's four fixes all pushed (504ab4c618, b7813ed4a6, 3ca14a2659, 5dc5c5aef7); same stacked conflict
+
+**Owner actions:**
+
+1. macOS Automation permission for Chrome (System Settings → Privacy & Security → Automation → tick Google Chrome), or the owner does the five production click-throughs personally.
+2. Claude Code allow rule Bash(node scripts/qa/agent-run-live-check.mjs:*) — the first read-only production run of the live check was denied and not retried.
+3. Later, to switch Agent Run on: set AGENT_RUN_RUNTIME=on, AGENT_RUN_QUALIFIED_CONTRACT=agent-run-20260928-v1, AGENT_RUN_OWNER_ALLOWLIST=<owner wallet> on the web and cron containers; the owner flips the switch at /vms/workspace?tab=system.
+4. The 13 decisions in NEXT-WAVE-SCOPE §4, plus: is "digest-imported-history now holds imported-chat memory for every owner" accepted (lane I, CRON-ROUTES-20261005.md); routine quiet-hours design (lane A attempt reverted).
+5. Externals unchanged: Stripe/Link, Migadu + DNS for mail.supraos.ai, independent browser-image reviewer, Twilio + media host.
 
 **Next steps, in order:**
 
-0. Sign in, clone, fetch the branches; read the handoff PAUSED ~08:45 UTC section, NEXT-WAVE-SCOPE.md and the three review documents; get the owner's allow rule Bash(node scripts/apply-migration.mjs:*) and read approval on the new computer.
-1. Ask all peer sessions (or the owner, for other windows) to hold merges; keep the hold until #6168 is merged.
-2. Merge current main into the PR branch (round 7: expect the generated catalog fixture; check for new conflicts), run the affected tests, push fast-forward only.
-3. Wait for both box-ci statuses; merge only via merge-if-green.sh 6168; watch the deploy log for live:.
-4. Install Phase S (3 packets) immediately, each proven; ledger readback (19 rows); say "merges open".
-5. Five production click-throughs + phone-call hotfix proof, signed in, in a real browser.
-6. Follow-up PRs, each re-applied onto main: N1 → batch 1 → N3 → G → H → I → N6 → C (C only after a clean fourth security review).
-7. With the owner: set AGENT_RUN_RUNTIME, AGENT_RUN_QUALIFIED_CONTRACT and AGENT_RUN_OWNER_ALLOWLIST on the web and cron containers; owner activates; run the §5B checks.
-8. Next wave N2, N4, N5, N7 with 3-4 parallel workers; independent adversarial review before every merge.
-9. Keep the record and publish after each material step.
+0. Sign in, fetch, read the handoff STATE section, NEXT-WAVE-SCOPE.md, RELEASE-STATE-20261005.md and LIVE-CHECK.md; get the owner's allow rule and Chrome permission (or the owner clicks).
+1. Merge #6214 (re-check it still merges with main; merge-if-green.sh 6214).
+2. Bring #6218 up to main (git merge, no rebase, no force), run lane G tests, green, merge-if-green.
+3. Bring #6216 up to main, short independent verification of its four fixes, green, merge-if-green. After each merge: watch live: and delete that PR's worktree.
+4. Run node scripts/qa/agent-run-live-check.mjs --phase=all (read-only) → expect PASS.
+5. Production click-throughs + phone-call hotfix proof, signed in, in a real browser.
+6. With the owner: set the three variables + allowlist; owner activates; run the §5B checks.
+7. Next wave N2, N4, N5, N7 with 3–4 parallel workers, each independently reviewed before merge.
+8. Keep the record and publish.
 
-**Open owner decisions:**
+**Not verified:**
 
-1. Which wallets go on the Agent Run allowlist (recommended: the owner's only)
-2. Hide the Agent Run switch from owners not on the list (recommended: yes)
-3. Scheduled routines wait until quiet hours end (recommended: yes; allowlisted owners first; Run now never waits)
-4. If quiet-hours settings can't be read, routines still send (recommended: yes)
-5. Allow a routine to be marked "may interrupt quiet hours" (recommended: yes, off by default)
-6. After the computer is handed back, the agent carries on by itself (recommended: no; the owner replies "continue")
-7. Telegram stop notices and Allow-once reports go to every Telegram user (recommended: yes; already chosen, confirm)
-8. Name the independent reviewer for the browser image
-9. Buy a Twilio number and media host for shop calls now (recommended: wait until chat and Telegram are proven)
-10. Subscribe to Migadu and set DNS for mail.supraos.ai (recommended: yes when ready; Revoke is permanent for that agent)
-11. Real payments: Link test mode first, real money after one reviewed test purchase (recommended: yes)
-12. Keep "exactly one Email Agent assignment" for email review, and show it (recommended: keep)
-13. Friend's notice carries none of the shared words (recommended: keep, for security)
-
-**Externals:** Unchanged: Stripe/Link, Migadu + DNS, image reviewer, Twilio/media host.
+- no signed-in browser check on production of anything
+- the five production click-throughs
+- the phone-call hotfix proof
+- the live-check script has never run against production
+- the full type check against main ran out of memory locally on several lanes (box-ci ran its own and passed on every merged PR)
 
 ## Current delivery boundary
 
-Paused 2026-10-05 ~08:45 UTC. Production database: Phase A (16 packets) installed and proven; ledger 715→731; old-site guard true. Phase S (20260929010002 → 20260929080000 → 20261001000000) NOT installed; only after live: shows the new build. PR #6168 NOT merged (head 9a0624083f; box-ci production-build error: conflicts with main after #6059; one generated conflict file). Agent Run flags and owner allowlist not set (runtime off). Nothing from this session is merged except the phone-call hotfix #6194 (deployed; live proof owed). Phase-2 lanes pushed, none merged. Accepted 5/62.
+Release shipped (flags off). All 19 release packets installed and proven (ledger readback 19/19). Agent Run OFF for everyone: AGENT_RUN_RUNTIME, AGENT_RUN_QUALIFIED_CONTRACT and AGENT_RUN_OWNER_ALLOWLIST unset on the live container (checked 2026-10-06 ~02:00 UTC). Not verified: any signed-in browser check on production, the five production click-throughs, the phone-call hotfix proof, any production run of the live-check script. Accepted 5/62.
 
 ## How to read this checklist
 

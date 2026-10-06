@@ -1,6 +1,147 @@
 # SupraOS Universal Agent Completion Handoff
 
+## STATE — October 6, 2026 ~02:00 UTC: release shipped, follow-ups, full handoff
+
+**Read this section first. It supersedes every section below it; the older sections stay as history.** Every fact here was verified first-hand by the coordinator (Claude Code). A fresh session needs only normal GitHub sign-in (`gh auth login --hostname github.com --web`) with access to `jtobkin/suprafx-platform`, plus this document; production steps also need the owner's permissions (§7). **No secret is in this document. Accepted tasks remain 5/62** — no row was proven live this session.
+
+### 1. What is true right now (verified by the coordinator, not inferred)
+
+**Shipped** — merged via `scripts/ci/box-ci/merge-if-green.sh` and deployed by the AWS `deploy-main` cron:
+
+| PR | What | Merge |
+|---|---|---|
+| #6168 | The Agent Run release candidate | Merged 2026-10-05 12:58 UTC → main `8e028e3964` (squash of head `2da147c231` after merge round 7 onto `a2e04e9a42`); live `8e028e396 health 200` at 13:19 UTC. |
+| #6208 | N1 — no Agent Run switch for owners who cannot use it; status card for those who can | Merged 14:27 UTC → `6f2888485c`; live 14:39 UTC; production showed 0 agent-run workflow rows afterwards (no seeding for non-listed owners). |
+| #6217 | Lane C — friend share + shop-call preview | Merged → `3978eb7032` (2026-10-05 18:41 UTC); four independent security reviews + a final verify (SAFE). |
+| #6215 | N3 — read-only live-check script (`scripts/qa/agent-run-live-check.mjs`, `docs/agent-run/LIVE-CHECK.md`) | Merged → `fb470c1e8a`; review found a false-PASS bug, fixed before merge (90 tests). |
+| #6210 | Lane I — release hygiene | Merged → `7092987f1b`; review found the 010001 rollback could leave email-review save with no writer; fixed (it now refuses: "roll back 20260929010002 first"). `RELEASE-STATE-20261005.md` and `CRON-ROUTES-20261005.md` are in `docs/agent-run/` on main. |
+| #6209 | Phase-2 batch 1 — lanes A daily rhythm, B marks/recall, D mail, E computer/Telegram + the email-chase Telegram notice held to allowlisted owners | Merged → `ba4b86109b` (2026-10-05 19:06 UTC) after three flaky fake-clock tests were made deterministic. |
+| #6194 | Phone-call hotfix (earlier, independent of the release) | Live since 2026-10-05; **its live proof is still owed.** |
+
+| Item | State |
+|---|---|
+| Database | Phase S installed and proven 13:21 UTC (`20260929010002`, `20260929080000`, `20261001000000`) → **all 19 release packets installed** (ledger readback 19/19; ledger 739 at that time). Phase A (16) was installed 06:13–06:25 UTC. |
+| Live now | `live: 0d25a537b health 200` at 2026-10-05 22:36 UTC; main `0d25a537b4` includes everything shipped above. |
+| Agent Run | **OFF for everyone.** None of `AGENT_RUN_RUNTIME` / `AGENT_RUN_QUALIFIED_CONTRACT` / `AGENT_RUN_OWNER_ALLOWLIST` is set on the live container (checked 2026-10-06 ~02:00 UTC). |
+| Open PRs | #6214 (N6), #6218 (lane G), #6216 (lane H) — see §5 and §6. All branches pushed, worktrees clean. |
+| Accepted tasks | **5/62 unchanged.** |
+
+**Separate states.**
+- **Implemented, tested, independently reviewed, merged and deployed:** #6168, #6208, #6217, #6215, #6210, #6209; and earlier #6194.
+- **Installed (database):** all 19 release packets.
+- **Implemented, reviewed, not merged:** #6214 (both box-ci statuses success; review SAFE TO MERGE), #6218 (review SAFE TO MERGE; box-ci error: conflicts with main), #6216 (second review's four fixes pushed; a short independent verification of them is owed; box-ci error: conflicts with main).
+- **Activated:** nothing — the three variables are not set.
+- **Live-verified:** nothing by a signed-in browser check (see the list below).
+
+**NOT verified:**
+- No signed-in browser check on production of anything.
+- The five production click-throughs.
+- The phone-call hotfix proof.
+- The live-check script has never run against production.
+- The full type check against main ran out of memory locally on several lanes (box-ci ran its own and passed on every merged PR).
+
+### 2. The decision and why (unchanged)
+
+The release shipped through the platform's normal path: our own box-ci checks on cc-box, merged only through `scripts/ci/box-ci/merge-if-green.sh` (never `gh pr merge --auto`), deployed by the AWS `deploy-main` cron, with the Agent Run flags off and schema first. The native-VM rehearsal, custom release operator and standalone backup were skipped for this release.
+
+### 3. Documents a fresh session must read
+
+- This section.
+- `docs/agent-run/evidence/claude-resume-20261005/NEXT-WAVE-SCOPE.md` — scope to completion, next wave (§3), the 13 owner decisions (§4), production live checks (§5).
+- `docs/agent-run/RELEASE-STATE-20261005.md` and `docs/agent-run/LIVE-CHECK.md` (on main).
+- `docs/agent-run/CRON-ROUTES-20261005.md` (on main) — lane I's cron-route findings.
+- The review documents under `docs/agent-run/evidence/claude-takeover-20261005/` (`FLAG-OFF-REVIEW.md`, `PHASE2-MAP.md`, `RELEASE-MIGRATION-ORDER-20261005.md`).
+
+### 4. Migration state and production permissions
+
+- **All 19 release packets are installed and proven** (ledger readback 19/19). Phase A (16) 06:13–06:25 UTC; Phase S (3) 13:21 UTC. The list of the 19 is in `docs/agent-run/RELEASE-STATE-20261005.md`.
+- **Production permissions:** production writes need the Claude Code allow rule; a chat approval is not enough. The permission layer sometimes denies a command with no reason — never retry around it. The first real read-only production run of the live check was denied by the permission layer and was NOT retried; it needs the owner's allow rule `Bash(node scripts/qa/agent-run-live-check.mjs:*)` (§7).
+
+### 5. Where everything is
+
+- **Repository:** `jtobkin/suprafx-platform`. **main contains everything merged.**
+- **Open PR branches (on origin):** `claude/agent-run-pr-n6-onto-main-20261005` (#6214), `claude/agent-run-pr-g-onto-main-20261005` (#6218), `claude/agent-run-pr-h-onto-main-20261005` (#6216).
+- **Merged branches (history only):** `claude/agent-run-pr-n1-onto-main-20261005`, `claude/agent-run-pr-batch1-onto-main-20261005`, `claude/agent-run-pr-i-onto-main-20261005`, `claude/agent-run-pr-n3-onto-main-20261005`, `claude/agent-run-pr-c-onto-main-20261005`; `codex/agent-run-release-composition-20261004` (#6168 head `2da147c231`).
+- **Original lane branches (history, old candidate lineage — do not merge):** `claude/agent-run-p2-a-daily-rhythm-20261005`, `claude/agent-run-p2-b-marks-recall-20261005`, `claude/agent-run-p2-d-mail-20261005`, `claude/agent-run-p2-e-computer-telegram-20261005`, `claude/agent-run-p2-batch1-20261005`, `claude/agent-run-p2-c-consent-tools-20261005`, `claude/agent-run-p2-g-marks-wiring-v2-20261005`, `claude/agent-run-p2-h-chat-route-20261005`, `claude/agent-run-p2-i-release-hygiene-20261005`, `claude/agent-run-p2-n1-status-switch-20261005`, `claude/agent-run-p2-n2-email-readiness-20261005`, `claude/agent-run-p2-n3-live-check-kit-20261005`, `claude/agent-run-p2-n6-loose-ends-view-20261005`, `claude/agent-run-release-blockers-20261005`. Note: `claude/agent-run-p2-g-marks-wiring-20261005` is a stale pre-rewrite copy; use `-v2`.
+- **Lane reports (in the repo):** `docs/agent-run/evidence/claude-resume-20261005/` — `LANE-REPORT-*.md`, `NEXT-WAVE-SCOPE.md`, `REVIEW-lane-*-PARTIAL.md`, `briefs/`.
+- **Record:** branch `codex/agent-run-execution-20260928` (this document, `progress.json`, `plan.json`, renderers). **Public handoff repo:** `jtobkin/supraos-agent-completion-handoff`.
+- **Key code:**
+  - `lib/agent-run/` (`owner-allowlist.ts`, `activation.ts`, `runtime.ts`, `marks.ts`, `load-mark.ts`, `loose-ends.ts`, `friend-send.ts`, …)
+  - `app/api/agent-run/` (readiness, loose-ends, mark)
+  - `app/api/agent-chat/stream/route.ts` (chat route)
+  - `lib/integrations/telegram-agent-deliveries.ts` and `lib/integrations/telegram/` (`approval-callback.ts`, `continuation-reply.ts` on #6218)
+  - `core-extensions/core-tools/src/tools/share_with_friend.ts`
+  - `scripts/qa/agent-run-live-check.mjs`, `scripts/qa/agent-run-release-profile.py`, `scripts/apply-migration.mjs`, `scripts/ci/box-ci/merge-if-green.sh`
+  - Migrations in `supabase/migrations` (the 19 packets listed in `docs/agent-run/RELEASE-STATE-20261005.md`).
+- **Local worktrees on the original Mac (not needed by a new computer):** a private workstation or host path (see engineering handoff) (clean, pushed) and older a private workstation or host path (see engineering handoff) folders.
+
+### 6. Exact next steps, in order (a fresh session starts at step 0)
+
+0. Sign in; fetch; read this section, `NEXT-WAVE-SCOPE.md`, `docs/agent-run/RELEASE-STATE-20261005.md` and `LIVE-CHECK.md`. Get the owner's allow rule and the Chrome permission (or the owner does the clicks) — §7.
+1. Merge **#6214** (N6 "see your agent's loose ends"; head `0bb68333fb`; both box-ci statuses success in a batch with #6209; independent review SAFE TO MERGE; not merged only because the session's merge watcher was stopped by a session restart): re-check it still merges with main first, then `scripts/ci/box-ci/merge-if-green.sh 6214`.
+2. Bring **#6218** (lane G marks wiring: recipe marks reach email/friend/Telegram; Telegram "Not confirmed"; Allow-once continuation to Telegram; head `e877706f15`; review SAFE TO MERGE) up to main: it errors "the PR conflicts with main" because it was stacked on #6209's branch, which was squash-merged. Merge `origin/main` into the branch (git merge, not rebase, no force; expect conflicts only where the batch-1 commits and the squash overlap — take main's version for batch-1 files), run lane G tests, push, wait green, `merge-if-green.sh 6218`.
+3. Bring **#6216** (lane H chat route: stored history is the only history for requests naming a stored thread; deferred loose ends shown read-only; preferences-unavailable flag; head `2399caede3`) up to main the same way (same stacked conflict). The second independent review's four fixes are ALL pushed (`504ab4c618` direct-lane wiring test re-pinned; `b7813ed4a6` planner→floating-bar handoff joins the active session; `3ca14a2659` put-off items shown read-only; `5dc5c5aef7` malformed list's chain id dropped). Re-run its suites, get a short independent verification of the four fixes (it changes the chat path for every owner — owner rule: chat code changes get the AI review), then `merge-if-green.sh 6216`.
+   After each merge: watch `live:` in the deploy log and delete that PR's worktree (owner rule).
+4. Run `node scripts/qa/agent-run-live-check.mjs --phase=all` (read-only) → expect PASS.
+5. Production click-throughs + phone-call hotfix proof, signed in, in a real browser (NEXT-WAVE-SCOPE §5A and the §5 batch checks).
+6. With the owner: set the three variables + allowlist; the owner activates; run the §5B checks.
+7. Next wave from NEXT-WAVE-SCOPE §3, with 3–4 parallel workers, each with an independent adversarial review before merge (every lane this session had real defects caught by its reviewer):
+   - N2 email-review readiness — investigation done on branch `claude/agent-run-p2-n2-email-readiness-20261005`; needs an owner/product decision, because no screen exists to fix an "unassigned" or "more than one" Email Agent assignment.
+   - N4 morning in Telegram.
+   - N5 routine quiet hours — needs owner decisions 3–5.
+   - N7 handoff card in web chat.
+8. Keep the record and publish: edit `progress.json`/`plan.json`, run `python3 docs/agent-run/execution-dashboard/render.py`, `python3 docs/agent-run/render-plan.py`, `python3 docs/agent-run/render-public-handoff.py --update-private --output-dir ../agent-run-public-docs`; commit to the record branch; copy the four public files to `jtobkin/supraos-agent-completion-handoff`; verify the anonymous bytes.
+
+**Lessons from this session.**
+- Squash-merges orphan stacked PRs — merge main into each stacked branch afterwards.
+- Fake-clock tests that step a fixed number of event-loop turns flake on a loaded box-ci — advance only while a timer is pending.
+- The session's background merge watchers die with the session — after a restart, re-arm them.
+- A merge hold across sessions works, but it must last until the merge.
+- The Mac saturates at ~9 parallel Opus workers (load 76, 20+ GB swap) — 4–6 is practical.
+- Production writes need the Claude Code allow rule; chat approval is not enough.
+- The permission layer sometimes denies a command with no reason — never retry around it.
+
+### 7. What the owner must do or decide (cannot be worked around)
+
+1. **Chrome control:** macOS Automation permission for Chrome so the agent can drive the owner's signed-in Chrome (osascript was denied with -1743): System Settings → Privacy & Security → Automation → tick Google Chrome. **Or** the owner does the five production click-throughs personally.
+2. **Allow rule:** Claude Code allow rule `Bash(node scripts/qa/agent-run-live-check.mjs:*)`.
+3. **Later, to switch Agent Run on:** set the three variables on the web and cron containers (`AGENT_RUN_RUNTIME=on`, `AGENT_RUN_QUALIFIED_CONTRACT=agent-run-20260928-v1`, `AGENT_RUN_OWNER_ALLOWLIST=<owner wallet>`), and the owner flips the switch at `/vms/workspace?tab=system`.
+4. **Decisions** — the 13 in NEXT-WAVE-SCOPE §4 (the recommendation follows each arrow):
+   1. Which wallets go on the Agent Run allowlist? → the owner's only.
+   2. Should owners not on the list see the Agent Run switch at all? → no, hide it.
+   3. Should scheduled routines that message you wait until quiet hours end? → yes; allowlisted owners first; "Run now" never waits.
+   4. If the quiet-hours settings can't be read, should routines still send? → yes.
+   5. Allow a routine to be marked "may interrupt quiet hours"? → yes, off by default.
+   6. After you hand the computer back, should the agent carry on by itself? → no; you reply "continue".
+   7. Telegram stop notices and Allow-once reports go to every Telegram user, not only the allowlist? → yes (already chosen; confirm).
+   8. Who is the independent reviewer for the browser image? → name a second GitHub person.
+   9. Buy a Twilio number and a media host for shop calls now? → wait until chat and Telegram are proven.
+   10. Subscribe to Migadu and set DNS for mail.supraos.ai? → yes when ready; Revoke is permanent for that agent.
+   11. Real payments: Link test mode first, real money only after one reviewed test purchase? → yes.
+   12. Keep "exactly one Email Agent assignment" for email review? → keep it, and show it on screen.
+   13. Friend sharing: the friend's notice carries none of the shared words (they read them on the Agent Channels page)? → keep this (security).
+
+   **New decisions:**
+   - Is it accepted that "digest-imported-history now holds imported-chat memory for every owner"? (lane I finding, `CRON-ROUTES-20261005.md`)
+   - Routine quiet-hours design (lane A's attempt was reverted).
+
+   **Externals unchanged:** Stripe/Link, Migadu + DNS for mail.supraos.ai, the independent browser-image reviewer, Twilio + media host.
+
+### 8. Hosts and tools (access by normal sign-in only)
+
+- **AWS production host:** user ubuntu; the `deploy-main` cron deploys main every minute; the deploy log `deploy-main.log` in that user's home shows `live: <sha>`. Access details are in the private engineering handoff (section "Data, evidence and host locations") and the owner's memory repo.
+- **QA/build host cc-box:** runs box-ci (paths in `scripts/ci/box-ci/README.md`). Its address is in the private engineering handoff and the owner's memory repo, never in public documents.
+- **Merge:** `scripts/ci/box-ci/merge-if-green.sh <PR>` only.
+- **Live check:** `scripts/qa/agent-run-live-check.mjs`, read-only (see `docs/agent-run/LIVE-CHECK.md`).
+- **Migrations:** `scripts/apply-migration.mjs`.
+
+### 9. Prompt for the next session
+
+> Resume the SupraOS Universal Agent project from the handoff section "STATE — October 6, 2026 ~02:00 UTC" (public copy: jtobkin/supraos-agent-completion-handoff; private copy: branch `codex/agent-run-execution-20260928` of jtobkin/suprafx-platform). You are on a new computer; assume no local memory, credentials or running agents. Sign in to GitHub normally and fetch. Read §1–§9, `docs/agent-run/evidence/claude-resume-20261005/NEXT-WAVE-SCOPE.md`, `docs/agent-run/RELEASE-STATE-20261005.md` and `docs/agent-run/LIVE-CHECK.md`. Then do §6 in order: (0) ask the owner for the allow rule `Bash(node scripts/qa/agent-run-live-check.mjs:*)` and the Chrome Automation permission (or for the owner to do the click-throughs); (1) re-check #6214 still merges with main, then `scripts/ci/box-ci/merge-if-green.sh 6214`; (2) merge origin/main into #6218's branch (git merge, no rebase, no force; take main's version for batch-1 files), run lane G tests, push, wait green, merge-if-green; (3) do the same for #6216, re-run its suites, get a short independent verification of its four review fixes, then merge-if-green — after each merge watch `live:` in the deploy log and delete that PR's worktree; (4) run `node scripts/qa/agent-run-live-check.mjs --phase=all` (read-only) and expect PASS; (5) do the production click-throughs and the phone-call hotfix proof, signed in, in a real browser; (6) with the owner, set the three Agent Run variables and the allowlist, let the owner activate, run the §5B checks; (7) run the next wave N2, N4, N5, N7 from NEXT-WAVE-SCOPE §3 with 3–4 parallel workers; (8) keep the record. Standing rules: report implemented, tested, reviewed, merged, deployed, activated and live-verified separately; accepted stays 5/62 until a row is proven live; ask the owner only for purchases, DNS, consumer test messages, a shared deployment lock, the allow rule / production approvals, or a genuine product/security decision; never work around a permission denial; merge only via merge-if-green.sh; independent adversarial review before every merge; keep progress.json, plan.json and the handoff current with the three renderers and publish the four public files after each material step.
+
 ## PAUSED — October 5, 2026 ~08:45 UTC: full handoff for a fresh session on a new computer
+
+*History: superseded by the "STATE — October 6, 2026 ~02:00 UTC" section above.*
 
 **Read this section first. It supersedes the "RESUMED — October 5, 2026" section and the earlier "PAUSED — October 5, 2026 ~04:50 UTC" section below; both stay as history.** The owner paused the project and asked for a complete handoff for a fresh session on a new computer. Every fact here was verified first-hand by the coordinator (Claude Code). A fresh agent needs only normal GitHub sign-in (`gh auth login --hostname github.com --web`) with access to `jtobkin/suprafx-platform`, plus this document; production steps also need the owner's permissions (§1, §7). **No secret is in this document. Accepted tasks remain 5/62.**
 
@@ -113,7 +254,7 @@ All lanes are based on the candidate lineage. **After #6168 is squash-merged, ea
 
 ## RESUMED — October 5, 2026 ~05:05–07:30 UTC
 
-*History: superseded by the "PAUSED — October 5, 2026 ~08:45 UTC" section above.*
+*History: superseded by the "STATE — October 6, 2026 ~02:00 UTC" and "PAUSED — October 5, 2026 ~08:45 UTC" sections above.*
 
 **Read this section first. It supersedes the "PAUSED — October 5, 2026" section directly below, which stays as history.** Every fact here was verified first-hand by the coordinator (Claude Code). Implemented, tested, reviewed, merged, installed, deployed and live-verified are reported separately. **Accepted tasks remain 5/62.**
 
@@ -189,7 +330,7 @@ Step 0 (re-merge) and step 2 (Phase A with proofs) are done. Step 1: the release
 
 ## PAUSED — October 5, 2026 ~04:50 UTC: full handoff for a fresh session on a new computer
 
-*History: superseded by the "PAUSED — October 5, 2026 ~08:45 UTC" and "RESUMED — October 5, 2026" sections above.*
+*History: superseded by the "STATE — October 6, 2026 ~02:00 UTC", "PAUSED — October 5, 2026 ~08:45 UTC" and "RESUMED — October 5, 2026" sections above.*
 
 **Read this section first; it supersedes every section below it.** The owner paused the Claude session at 04:46 UTC and asked for a complete handoff. Nothing is broken; the work is mid-flight and every artifact is pushed or listed here. A fresh session needs only normal GitHub sign-in (`gh auth login --hostname github.com --web`) with access to `jtobkin/suprafx-platform`, plus the two SSH hosts named below if it will operate production. **No secret is in this document.**
 
