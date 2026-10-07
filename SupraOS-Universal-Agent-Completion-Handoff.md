@@ -1,6 +1,162 @@
 # SupraOS Universal Agent Completion Handoff
 
+## STATE — October 7, 2026 ~12:40 UTC: nineteen more merged, Agent Run being re-enabled, live proof pending, pay-for-me planned
+
+**Read this section first. It supersedes every section below it; the older sections stay as history.** Every PR state below was verified on GitHub (`gh pr view N --json state,mergedAt`) by the record-keeper at ~12:45 UTC. The live build was read from production `/api/version` at 12:47 UTC. Migration installs, the Agent Run switch, live chat turns and the production database counts come from the gatekeeper's running log; the record-keeper did not re-check them. **No secret is in this document. Accepted tasks remain 5/62 formally.** Nothing new was formally accepted: Agent Run is being switched back on now, and the live proof is still pending.
+
+### 1. What is true right now
+
+**Agent Run for the owner.** The owner's turns first engaged Agent Run live at 04:05 UTC on October 7, after #6295. The gatekeeper saw context and result chain rows and two workflow-run rows. For the investor demo, Agent Run was **switched OFF at 04:31 UTC** with the owner's approval; the database showed `is_enabled=false`. At 12:25 UTC the owner authorised the gatekeeper to switch it back on. The plan is to wait until #6318 (the prompt-format fix) is merged **and live**, then flip the row toggle on the System tab, confirm `is_enabled=true` in the database, and prove it with the turn-proof tool in a **fresh** conversation. #6318 merged at 12:42 UTC. It was **not yet in the live build** at 12:47 UTC. Owners who are not on the allowlist still see no Agent Run row.
+
+**Merged since the October 6 ~12:40 UTC STATE.** All 19 were verified MERGED on GitHub. Each went through `merge-if-green.sh` after an independent review (gatekeeper's log).
+
+| PR | Merged (UTC) | Merge commit | What |
+|---|---|---|---|
+| #6266 | 10-06 13:21 | `5f06ce1333` | Route hygiene: unlisted owners cannot see the Agent Run row via activation, runs, run detail or the huddle. |
+| #6265 | 10-06 15:49 | `49465e6b9c` | Agent Run on the ChatGPT-subscription fallback; the plan-load race is fixed. |
+| #6271 | 10-06 16:36 | `b172b8b325` | Readiness hygiene: the setup view hides the row from unlisted owners. |
+| #6293 | 10-06 21:44 | `286b6bddf9` | sharp pinned to 0.35.5. A new HIGH advisory (GHSA-wq5f-xc86-pv6w) had failed the G6 audit on every PR. |
+| #6272 | 10-06 23:46 | `de4a8fa584` | Held-note polish for routines in quiet hours. |
+| #6288 | 10-07 00:47 | `7c08d9cdb8` | Friend-share limit enforced inside the send function under a per-pair lock. Migration `20261006230000` installed. It supersedes #6267, which was **closed**. |
+| #6290 | 10-07 00:47 | `da17b5f633` | CI now runs 25 Agent Run test files outside `tests/unit`. Three stale suites were fixed, and tests no longer dirty `docs/`. |
+| #6284 | 10-07 02:25 | `2df54e7b93` | Guide setup no longer shows an Agent Run step to owners who cannot turn it on (no dead button). |
+| #6262 | 10-07 03:10 | `22650afe87` | The Guide is found whether its scope is `built-in` or `system`. Migration `20261006210000` was installed earlier. |
+| #6295 | 10-07 03:41 | `f599d56520` | The saved-workflow lookup gets 1 s instead of 150 ms, so Agent Run can engage on every eligible turn. |
+| #6313 | 10-07 11:46 | `1454995e74` | Turn-proof tool: one read-only line per owner chat turn, mapped to plan rows. |
+| #6296 | 10-07 11:46 | `5c7f6cc58e` | sharp 0.35.5 in the sub-packages. |
+| #6317 | 10-07 11:46 | `0e225087b8` | E2 "ask your agent to phone a shop": it never dials, and the card is honest when calls are not set up. |
+| #6268 | 10-07 11:47 | `c7e20869ea` | System Guides cannot be deleted, and global attention accepts a `system` Guide. Migration `20261006220000` is **not installed by design** (see §4). |
+| #6310 | 10-07 11:47 | `2523fbd260` | O1 re-close test: GPT and Grok baseline models complete onboarding. |
+| #6314 | 10-07 11:48 | `5314e1eb97` | A5: an owner who is re-listed must switch Agent Run on again (the listing mark is bound into the seal). |
+| #6297 | 10-07 11:48 | `4d64a580d9` | Tests pin the 1 s lookup purpose; the evidence guard now covers the root `tests/`. |
+| #6312 | 10-07 11:48 | `f3ff7fbc7e` | H1: history-chain coverage test, plus a closing line for runs without a result. |
+| #6318 | 10-07 12:42 | `67fc2136b7` | Prompt-format conflict fixed: Agent Run keeps correct prose answers and retries at once. Prose that claims an action was done is never shown as done. |
+
+The merge hold for the demo ran from 05:00 to 11:46 UTC. During it, a peer session merged #6319 and #6325 for the demo with the owner's OK. Those are agent-computer fixes, not Agent Run.
+
+**Open: built and reviewed SAFE (gatekeeper), not merged.** All were verified OPEN on GitHub.
+
+| PR | What |
+|---|---|
+| #6307 | Link test purchases work under D3 (the owner-schema mode). Adds a one-time, 5-minute, test-mode-only purchase approval (owner ruling). The gitleaks false positive is fixed; re-queued. |
+| #6299 | Hosted TEST shop for the Stripe Link test purchase (no real money). |
+| #6320 | Marks honesty: failed turns say Stopped; waiting turns never say Answered. |
+| #6322 | Attention cutover: producer inventory gate, 4 producers fenced, install packet. **The cutover stays OFF.** |
+| #6324 | Stricter claim filter on top of #6318. It blocks about 73% of unseen claim wordings, and about 3.9% of ordinary answers are wrongly blocked (one retry). |
+| #6326 | `parseSuggestions` runs in linear time; a long whitespace reply could stall a request for ~8 s. |
+| #6327 | Attention per owner: notices are held only for allowlisted owners. Two Mission Control ledger gaps are fenced. The cutover stays 0. |
+| #6328 | Phone dial policy: emergency, premium-rate and satellite numbers are refused, and the TwiML `<Dial>`/url bypass is closed. |
+| #6331 | Attention pre-flip must-fixes. Migration `20261007023000` was rehearsed on PG17 and is **not applied**. |
+| #6335 | Phone media relay: a deployable container behind `wss://supraos.ai/phone-media`. **Not deployed.** |
+| #6341 | After Approve, a correct follow-up answer is no longer replaced by "didn't complete every part". Box-ci was pending at 12:45 UTC. |
+| #6309 | Draft, report only: diagnosis of the 04:05 "approval hijack". It was **not** a hijack; it was the prompt-format conflict (§2). |
+
+| Item | State |
+|---|---|
+| Live build | Production `/api/version` reported `9635db3927` at 12:47 UTC (main at 12:09 UTC, #6321). It contains 18 of the 19 merges above. **#6318 is not yet in it.** |
+| Agent Run | Owner-only. OFF since 04:31 UTC (reported). Re-enable is authorised and waits for #6318 to go live. |
+| Accepted tasks | **5/62 formally, unchanged.** |
+
+**Separate states.**
+- **Implemented, tested, independently reviewed, merged:** the 19 PRs in the first table.
+- **Deployed (in the live build at 12:47 UTC):** all of them except #6318.
+- **Installed (database, reported):** `20261006230000` (#6288), plus the earlier `20261006170000`, `20261006190000`, `20261006200000` and `20261006210000`. **Not installed by design:** `20261006220000` (#6268) and `20261007023000` (#6331).
+- **Implemented, reviewed SAFE, not merged:** #6299, #6307, #6320, #6322, #6324, #6326, #6327, #6328, #6331, #6335, #6341 (box-ci pending).
+- **Activated:** Agent Run for the owner only. Currently off for the demo; re-enable pending.
+- **Live-verified in this update:** Agent Run *engaged* on one owner turn at 04:05 UTC (chain rows and run rows, reported). That turn's answer was then discarded by the prompt-format conflict. **No full live proof yet.**
+- **Formally accepted:** 5/62, unchanged.
+
+### 2. New findings
+
+1. **The 150 ms lookup.** With Agent Run on, only ~2 of 6 owner turns on October 6 engaged it. The saved-workflow lookup had a 150 ms budget, but production database reads took 270–470 ms. The fallback was **silent**: no chain row, no run row, no log. A chat "Answered" mark does **not** prove Agent Run ran. Fixed by #6295 (1 s budget for eligible turns, `workflowLookupMs` timing, a warning line). It engaged at 04:05 UTC after #6295 went live.
+2. **The prompt-format conflict.** The chat route demands an "OUTPUT FORMAT — REQUIRED … SUGGESTIONS" block on every reply. The Agent Run result instruction demands "exactly one JSON object, no prose". The model wrote prose, the label gate waited 30 s and retried, and the turn ended "could not answer". In the day before, 5 of ~10 Agent Run runs ended `agent_run_no_final_result`. Fixed by #6318 (merged, not yet live). The stricter claim filter #6324 is queued. Known gaps in the #6318 filter: "Email sent.", "Payment confirmed", emoji-only receipts and non-English claims show as Answered, never Done.
+3. **The approval-continuation audit bug** (reported by a peer session). After the owner presses Approve, the turn's only "user" line is SupraOS's own continuation note. The completion audit split that note into "requests". It then flagged SupraOS's own sentence, so a correct answer was replaced by "I didn't complete every part of your request". This happened in 4 of the last 11 continuation replies on production (counts only). Fix: #6341, open. It reads the note only when the server sets an internal flag.
+4. **The CI gap.** The box-ci security-gates job runs `tests/unit` plus two directories, so **478 test files never run in CI**. In a one-off run, 388 passed, 15 failed for real, and 70 skipped. Three Agent Run tests were red on main. #6290 fixed those three and added the Agent Run files to CI as an explicit list. **Not done (cross-project proposal):** add the 388 green files as one CI step (+2–4 min). Until then, "it passed CI" says nothing about those files; run the relevant non-unit tests yourself.
+
+### 3. Owner rulings since the last STATE
+
+- **2026-10-06 (restated):** there is no separate Email Agent; **email review runs as the Guide**, the owner's main agent. Shipped in #6251. Do not add features that need a separate per-job agent for something the main agent can do.
+- **2026-10-07 — Link test-mode changes approved.** (a) Remove the blanket `D3_OWNER_SCHEMA=1` refusal in the Link store; isolation is unchanged. (b) Add a runtime, owner-bound, single-use, ≤5-minute, test-mode-only per-purchase approval. **Test purchases only:** `PRIVATE_PURCHASE_ACTIVATED` stays false. Implemented in #6307 (open).
+- **2026-10-07 — Link purchases are exempt from the "we hold no keys" rule.** The 2026-09-30 rule (real-money trading only on the user's machine) still governs crypto and trading keys. For Link the server holds a revocable sign-in token and a one-time card number per purchase; Stripe keeps the card. Real money still needs the test purchase proven first, a reviewed activation PR, spend caps and the image-reviewer decision.
+- **2026-10-07 — auto-pay up to $25 after one-time consent.** Purchases of $25 or less may be paid automatically, with no tap, but only after a one-time onboarding consent. The default stays "always hand it to me". Anything above $25 asks the human. Settings and rules must be easy to view and edit. **Not built.** It is gated on the Link test purchase being proven and on Stripe's answer (§6).
+
+### 4. Migrations
+
+- **Installed (reported by the gatekeeper):** `20261006230000_friend_note_limit_in_send` on 10-06 ~13:30 UTC. Proven by a ledger row, the pair lock and limit inside the function, and the function's owner and grants. Earlier installs are unchanged.
+- **Hold:** `20261006220000` (#6268, merged) installs only after `20260929110000`..`150000`. A no-op ledger row now would make it skip later.
+- **Hold:** `20261007023000` (#6331, open). The version was changed because `20261007010000` is taken by open #6280 (Contract Builder). It installs only in the attention flip window, after `110`..`150` and `220000`. Migrations `110`/`120`/`140` change behaviour even at cutover 0 (they refuse three old writers), so they too are flip-window only.
+- **Attention cutover stays 0.** Before any flip to 1: merge #6322, #6327 and #6331; set `CRON_OCCURRENCE_LEASES_MODE=enforce`; and get an owner decision. The cutover constant is global, and #6327 makes the hold apply per owner.
+
+### 5. Where everything is
+
+- **Repository:** `jtobkin/suprafx-platform`. Main is `67fc2136b7` (#6318) at 12:42 UTC; live is `9635db3927`.
+- **Open PR branches:** `claude/agent-run-p6-link-test-shop-20261007` (#6299), `claude/agent-run-p6-link-approval-20261007` (#6307), `claude/agent-run-p7-marks-honesty-20261007` (#6320), `claude/agent-run-p7-attention-cutover-20261007` (#6322), `claude/agent-run-p8-claim-filter-20261007` (#6324), `claude/agent-run-p8-suggestions-speed-20261007` (#6326), `claude/agent-run-p8-attention-per-owner-20261007` (#6327), `claude/agent-run-p8-phone-blocklist-20261007` (#6328), `claude/agent-run-p8-attention-preflip-20261007` (#6331), `claude/agent-run-p8-phone-media-relay-20261007` (#6335), `claude/agent-run-p8-multirequest-audit-20261007` (#6341), `claude/agent-run-p7-approval-hijack-20261007` (#6309, draft report).
+- **Attention flip branch (no PR):** `claude/agent-run-p7-attention-flip-20261007`. Packet: `docs/agent-run/ATTENTION-CUTOVER-PACKET.md` (on #6322).
+- **Turn-proof tool:** merged in #6313. Use it for every live Agent Run proof.
+- **Record:** branch `codex/agent-run-execution-20260928`; public copy `jtobkin/supraos-agent-completion-handoff`.
+
+### 6. Outside blockers and owner decisions still pending
+
+**Owner decisions pending:**
+1. **Mailbox D3 approval.** Mail pickup refuses every Migadu mailbox while the owner-schema mode (`D3_OWNER_SCHEMA=1`) is on. This is the same kind of one-line blocker as Link's, and it needs the owner's explicit "approve mailbox D3 change". The permission layer stopped the matching Link change until the owner approved it.
+2. **Browser-image reviewer: option A, B or C.** GitHub required reviewers do not work on a private repository on a personal account (Enterprise organisation needed). Branch protection currently returns 403, and the hosted runs failed on billing. **A:** move the repo to an Enterprise organisation (paid, big change). **B:** an in-app redesign of the two-person check, for example a second human's signed approval before a cc-box publish, plus an audit (gatekeeper recommends). **C:** skip the second reviewer. (The earlier read-only runbook used different letters: there, option B meant making the repository public, which is not recommended.)
+3. **The Stripe pre-approval question.** Stripe's docs (read 10-07) say every Link spend request needs the human to approve inside Link today; "granular agent controls" are marked "coming soon". So the owner's "auto-pay ≤$25 with no tap" is **not possible on Link today**. The options: wait for Link's controls, use Stripe Issuing (needs Stripe platform approval), or keep one Link approval tap per purchase. Question for the Stripe contact: when can Link users set a budget so that spend requests auto-approve, and is there an early preview?
+
+**Outside blockers:**
+- **Stripe Link keys.** The owner sent a PGP public key to the Stripe contact and is waiting for the encrypted file. Keys alone will not make a test purchase work. Other blockers: #6307 (D3) and #6299 (test shop) must merge; the 5-minute checkout window versus installing the approval; the browser-image reviewer (decision 2); a worker image rotate; and a deploy freeze during the test.
+- **Phone calls (Twilio + media host).** The media relay was not deployable; #6335 builds it, not deployed. `PHONE_AGENT_SHOP_CALL_MEDIA_WSS` is not set. The owner must buy and upgrade a Twilio account and one US voice number. The first test call goes to the owner's own phone, never a shop.
+- **Agent mailbox (Migadu + DNS for mail.supraos.ai).** Blocked by decision 1. Then: the Migadu Mini plan, DNS records in Cloudflare (DKIM CNAMEs "DNS only"), and the two mailbox migrations checked on production.
+- **GitHub billing.** Failed payment / spending limit: hosted runs fail and `main` cannot be protected.
+
+### 7. New workstream: pay for me
+
+The owner asked, after a competitor comparison (Hark Pro, launched 2026-10-06), that agents be able to **pay for the owner or hand the payment to them, as an option**. They also want one-tap "finish it" buttons in Telegram (pay this bill, cancel this subscription). The design is read-only; **nothing is built**.
+- **Modes:** "Always hand it to me" (default, today), "Ask me first — one tap pays", "Pay automatically within my limits". The owner chose auto ≤$25 after one-time consent.
+- **Safety:** a new policy table, written only through owner-signed requests, so no agent can raise its own limit. Caps are reserved atomically in the database (the friend-limit pattern). A shop allowlist (the first visit to any shop is always a hand-off). An instant "Stop all payments". Limit raises wait 1 hour. An alert before and after every payment. Hash-chain receipts.
+- **Code-level blockers today:** a Telegram tap may never approve a purchase, and the database allows "approved" only from a wallet-signed web review; both need an owner ruling plus a security-reviewed migration. Link may force its own approval page every time (decision 3). The card filler only handles plain three-field HTML forms, so most real bill pages will refuse.
+- **Lanes, in order:** merge #6299 and #6307 → A policy store and caps → B Payments settings page, C purchase approval under policy (security-critical) → D auto-advance and Stop sweep, E Telegram pay/stop buttons, H declines, refunds and receipts → F alerts → G prepared final step ("cancel a subscription") → live TEST proof of every mode → owner calls → I real-money activation, last.
+- **Real-money gate:** the test mode proven live → owner rulings (Telegram tap may pay; real money ON) → the image reviewer → a reviewed controlled-live qualification PR → one named pilot of ≤$20 → rollback ready.
+- **Separate:** parallel browsers belong to the agent-computers session, not this project.
+
+### 8. Exact next steps, in order
+
+0. Sign in; fetch; read §1–§7.
+1. Watch the deploy until `/api/version` contains `67fc2136b7` (#6318).
+2. Switch Agent Run back on for the owner: the row toggle on `/vms/workspace?tab=system`, in the owner's browser. Confirm `is_enabled=true` in the database.
+3. **Live proof in a FRESH conversation**, over several turns. Use the turn-proof tool (#6313). Each turn should show `routing.picks.workflow.status = topic_policy_ready`, `agent_run.context` and `agent_run.result` chain rows, and a `vms_system_workflow_runs` row. The answers must be shown, not discarded. Formally accept only plan rows proven this way.
+4. Merge the open reviewed PRs with `scripts/ci/box-ci/merge-if-green.sh <PR>` from an up-to-date worktree: #6324 (after #6318), #6320, #6326, #6328, #6341 (after its re-review and box-ci), #6307, #6299, #6335. Then the attention set #6322 → #6327 → #6331 (cutover stays 0; do not apply `20261007023000`).
+5. Get the three owner decisions (§6), then the Stripe keys. Then run the Link TEST purchase runbook.
+6. Start the pay-for-me lanes (§7) only after #6299 and #6307 are merged.
+7. Keep the record: edit `progress.json` and `plan.json`, run the three renderers, commit to the record branch, and publish the four public files.
+
+**Lessons from this period.**
+- An "Answered" mark is not proof that Agent Run ran. Prove it with chain rows and run rows over several turns.
+- Use a fresh conversation for live tests. A test message posted into another session's demo conversation caused confusion at 04:05 UTC.
+- Never write key-derivation label literals in lane reports. A gitleaks generic-API-key false positive failed #6307's G11 check.
+- Two instructions that both say "required" will fight. Check the prompt the model actually receives, not only each rule in isolation.
+
+### 9. What the owner must know or do
+
+1. Answer decision 1 (mailbox D3), decision 2 (reviewer A/B/C) and decision 3 (whether to ask the Stripe contact about pre-approved spend).
+2. Watch for the Stripe contact's encrypted file. Decrypt it in Terminal only; the values go to the server's parameter store, never into chat or the repository.
+3. Agent Run will be switched back on by the gatekeeper (authorised 12:25 UTC) once #6318 is live.
+
+### 10. Not verified
+
+- Whether Agent Run is on or off at this moment. The record-keeper did not read the database; the last reported state is OFF since 04:31 UTC.
+- #6318 in the live build (not yet at 12:47 UTC).
+- Any full live Agent Run proof after #6318.
+- The migration ledger and the counts reported by the gatekeeper (5 of ~10 runs failed; 4 of 11 continuation replies replaced).
+- Whether the Anthropic account has been topped up. Earlier turns ran on the ChatGPT fallback.
+- Email-review save on production (still 0 rows at the last check).
+
+### 11. Prompt for the next session
+
+> Resume the SupraOS Universal Agent project from the handoff section "STATE — October 7, 2026 ~12:40 UTC" (public copy: jtobkin/supraos-agent-completion-handoff; private copy: branch `codex/agent-run-execution-20260928` of jtobkin/suprafx-platform). Assume no local memory, credentials or running agents. Sign in to GitHub normally and fetch. Read §1–§10, then do §8 in order. Confirm #6318 is live, switch Agent Run back on for the owner and prove it in a fresh conversation with the turn-proof tool (topic_policy_ready, agent_run.context/result chain rows, a run row, the answer shown). Merge the open reviewed PRs with `scripts/ci/box-ci/merge-if-green.sh` from an up-to-date worktree, keeping the attention cutover at 0 and migrations 20261006220000 and 20261007023000 uninstalled. Get the owner's three decisions (mailbox D3, reviewer A/B/C, Stripe pre-approval). Start pay-for-me lanes only after #6299 and #6307 merge. Standing rules: report implemented, tested, reviewed, merged, deployed, activated and live-verified separately; accepted stays 5/62 until a row is proven live; never work around a permission denial; merge only via merge-if-green.sh; keep progress.json, plan.json and the handoff current with the three renderers, and publish the four public files after each material step.
+
 ## STATE — October 6, 2026 ~12:40 UTC: Agent Run on for the owner, six more merged, seven reviewed and queued
+
+*History: superseded by the "STATE — October 7, 2026 ~12:40 UTC" section above.*
 
 **Read this section first. It supersedes every section below it; the older sections stay as history.** PR states below were verified on GitHub (`gh pr view N --json state,mergeCommit`) by the record-keeper; the live build was read from production `/api/version` at 12:25 UTC. Migration installs, the Agent Run switch and the live chat test come from the gatekeeper's report and were not re-checked by the record-keeper. **No secret is in this document. Accepted tasks remain 5/62 formally** — nothing new was proven live in this update.
 

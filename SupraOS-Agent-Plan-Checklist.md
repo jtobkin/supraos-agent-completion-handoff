@@ -1,76 +1,107 @@
 # SupraOS Agent Plan Checklist
 
-Checkpoint: 2026-10-06T12:26:21+00:00. Agent Run ON for the owner (allowlisted). Merged since 08:00 UTC: #6231 N7, #6244, #6245, #6248, #6250, #6251 (email review runs as the Guide; #6237 closed); live build d2ea118ea6 at 12:25 UTC (#6251 not yet in it). Reviewed SAFE, queued: #6262, #6265, #6266, #6267, #6268, #6271, #6272. Live chat test failed (Anthropic credit exhausted → ChatGPT fallback rejected by the strict parser); #6265 fixes it; re-test owed. Accepted 5/62 formally.
+Checkpoint: 2026-10-07T12:47:19+00:00. Agent Run being re-enabled for the owner; live proof pending. Merged since the 10-06 ~12:40 UTC record (verified on GitHub): #6266, #6265, #6271, #6293, #6272, #6288, #6290, #6284, #6262, #6295, #6313, #6296, #6317, #6268, #6310, #6314, #6297, #6312, #6318 (#6267 closed). Live build 9635db3927 at 12:47 UTC (#6318 not yet in it). Open, reviewed: #6307, #6299, #6320, #6322, #6324, #6326, #6327, #6328, #6331, #6335, #6341. New: pay-for-me workstream (design only). Accepted 5/62 formally, unchanged..
 
 [Detailed handoff](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/SupraOS-Universal-Agent-Completion-Handoff.md) · [Execution procedure](https://github.com/jtobkin/supraos-agent-completion-handoff/blob/main/Faster-Verified-SupraOS-Delivery.md) · [Private engineering plan](https://github.com/jtobkin/suprafx-platform/blob/codex/agent-run-execution-20260928/docs/agent-run/EXECUTION-PLAN-20261001.md)
 
-**5 of 62 tasks accepted (8.1%); 56 pending (90.3%); 1 deliberately dropped (1.6%).** This is task acceptance, not a percentage of code or effort. Full Agent Run: release shipped; Agent Run ON for the allowlisted owner only; full project not complete; global attention cutover: 0; restoreVerified: false.
+**5 of 62 tasks accepted (8.1%); 56 pending (90.3%); 1 deliberately dropped (1.6%).** This is task acceptance, not a percentage of code or effort. Full Agent Run: release shipped; Agent Run owner-only, off for the demo since 04:31 UTC and being re-enabled; full project not complete; global attention cutover: 0; restoreVerified: false.
 
-## Current state — October 6, 2026 ~12:40 UTC
+## Current state — October 7, 2026 ~12:40 UTC
 
-**Agent Run:** ON for the owner (allowlisted). Everyone else still sees no Agent Run row.
+**Agent Run:** owner-only. Engaged live on an owner turn at 04:05 UTC after #6295 (reported); switched OFF at 04:31 UTC for the investor demo (owner-approved); being re-enabled once #6318 is live. Full live proof pending. Everyone else still sees no Agent Run row.
 
-**Merged since 08:00 UTC (merge-if-green, each after an independent review; verified on GitHub):**
+**Merged since the 10-06 ~12:40 UTC record (merge-if-green, each after an independent review; MERGED verified on GitHub):**
 
-- #6231 N7 take-over card in web chat — card when the agent's computer stops at a password, code or payment step
-- #6244 test debt + hiding by id — 4 stale tests fixed; the by-id workflow read hides Agent Run from unlisted owners
-- #6245 friend-link pause/resume — resume after your own pause; the other owner is told on pause/resume/close; migration 20261006190000 installed
-- #6248 read_email_waiting chat tool — read-only list of emails still waiting on a reply
-- #6250 routine held-for-quiet-hours note — "Held until 7:00 AM (quiet hours)"; the health check calls a held routine held, not late; migration 20261006200000 installed
-- #6251 email review runs as the Guide — no separate Email Agent (owner ruling 2026-10-06); migration 20261006170000 installed; replaces #6237 (closed)
-
-**Live:** Agent Run is ON for the owner (allowlisted). Production /api/version at 12:25 UTC reported d2ea118ea6, which contains #6231, #6244, #6245, #6248 and #6250; #6251 (main 6786a8e87e, merged 12:15 UTC) was not yet in the live build at that read. The live chat test FAILED: the Anthropic credit is exhausted, so chat fell back to ChatGPT, where the strict parser rejected the result. #6265 fixes this; a live re-test is owed after it deploys.
-
-**Reviewed SAFE, queued to merge:**
-
-- #6262 Guide scope 'system' accepted — migration 20261006210000 installed and proven: a ledger row, and both email SQL functions accept 'system'
-- #6265 Agent Run on the ChatGPT-subscription fallback path; plan-load race fixed — the review found logs could leak secrets; fixed and re-reviewed
 - #6266 route hygiene — unlisted owners cannot see the Agent Run row via activation, runs, run detail or the huddle
-- #6267 friend-note limit — at most 5 an hour and 20 a day from one owner to another; no migration
-- #6268 Guide scope follow-ups — system Guides cannot be deleted; global attention accepts a 'system' Guide; migration 20261006220000 deliberately NOT installed — it installs right after 20260929110000..150000, which are not installed; live check passes 35/0
-- #6271 readiness hygiene — the setup/readiness view hides the row from unlisted owners
-- #6272 held-note polish — health check checks the note is still true; card keeps 'Held until' through skip/Run now; History says 'Held for quiet hours'
+- #6265 Agent Run on the ChatGPT-subscription fallback; plan-load race fixed — log-secret leak fixed and re-reviewed before merge
+- #6271 readiness hygiene — setup view hides the row from unlisted owners
+- #6293 sharp 0.35.5 pin — new HIGH advisory GHSA-wq5f-xc86-pv6w had failed the G6 audit on every PR
+- #6272 held-note polish — routine quiet-hours note stays true through skip/Run now
+- #6288 friend-share limit in the send function under a per-pair lock — migration 20261006230000 installed (reported); supersedes #6267 (closed)
+- #6290 CI coverage for Agent Run tests outside tests/unit — 25 files as an explicit list; 3 stale suites fixed; tests stop dirtying docs/
+- #6284 setup dead-end removed — no Agent Run step for owners who cannot turn it on
+- #6262 Guide scope 'system' accepted — migration 20261006210000 installed earlier
+- #6295 1 s saved-workflow lookup budget — was 150 ms; prod DB reads take 270-470 ms; Agent Run engaged live 04:05Z after deploy (reported)
+- #6313 turn-proof tool — one read-only line per owner chat turn, mapped to plan rows
+- #6296 sharp 0.35.5 in sub-packages — GHSA-wq5f-xc86-pv6w
+- #6317 E2 shop_call_request tool — never dials; honest card when calls are not set up
+- #6268 Guide scope follow-ups — migration 20261006220000 NOT installed by design (after 20260929110000..150000)
+- #6310 O1 re-close test — GPT and Grok baseline models complete onboarding
+- #6314 A5 re-listed owner must switch on again — listing mark bound into the seal
+- #6297 small test follow-ups — pin the 1 s lookup purpose; evidence guard covers root tests
+- #6312 H1 history-chain coverage — closing line for runs without a result
+- #6318 prompt-format conflict fix — Agent Run keeps correct prose answers, instant retry; action-claim prose never shown as done; NOT yet live at 12:47Z
 
-**In progress:**
+**Live:** production /api/version at 12:47 UTC reported 9635db3927, which contains 18 of those 19 merges; #6318 (main 67fc2136b7, merged 12:42 UTC) not yet live.
 
-- friend-share hard limit enforced in the database (migration 20261006230000, assigned)
-- the setup dead-end step for unlisted owners
-- CI test-gap scoping
+**Open, reviewed, not merged:**
 
-**Decisions:**
+- #6307 Link test purchases under D3 + one-time 5-minute test-mode approval (owner ruling 2026-10-07)
+- #6299 hosted TEST shop for the Link test purchase
+- #6320 marks honesty: failed turns say Stopped; waiting turns never say Answered
+- #6322 attention cutover gate + 4 producers fenced + packet; cutover stays OFF
+- #6324 stricter prose claim filter (after #6318)
+- #6326 parseSuggestions linear time
+- #6327 attention held per owner (allowlisted only); cutover stays 0
+- #6328 phone dial policy: emergency/premium/satellite refused; TwiML Dial/url bypass closed
+- #6331 attention pre-flip must-fixes; migration 20261007023000 rehearsed, NOT applied
+- #6335 phone media relay container behind wss://supraos.ai/phone-media; not deployed
+- #6341 approval-continuation audit fix; box-ci pending at 12:45Z
+- #6309 draft report only: 04:05Z "approval hijack" diagnosis (was the prompt-format conflict)
 
-- Owner-visible history-ledger entries for the owner's own switch flips stay visible.
-- A removed owner cannot switch Agent Run off — accepted, because the runtime refuses them.
-- Earlier today (unchanged): no separate Email Agent — email review runs as the Guide (shipped in #6251; #6237 closed).
+**Owner rulings:**
 
-**Owner-facing:**
+- 2026-10-06: no separate Email Agent — email review runs as the Guide (shipped #6251).
+- 2026-10-07: Link test-mode changes approved — remove the blanket D3_OWNER_SCHEMA=1 refusal in the Link store; runtime owner-bound single-use ≤5-minute test-only purchase approval. PRIVATE_PURCHASE_ACTIVATED stays false. Implemented in #6307 (open).
+- 2026-10-07: Link purchases are exempt from the 2026-09-30 "we hold no keys" rule (that rule still governs crypto/trading keys).
+- 2026-10-07: auto-pay up to $25 with no tap after a one-time onboarding consent; above $25 asks the human; settings and rules easy to view and edit. Not built.
 
-1. The Anthropic account is out of credit — chat falls back to ChatGPT until it is topped up.
-2. Stripe/Link keys are on hold until the gatekeeper asks.
-3. Externals otherwise unchanged: Migadu + DNS for mail.supraos.ai, independent browser-image reviewer, Twilio + media host.
+**New findings:**
+
+- 150 ms lookup: Agent Run engaged on only ~2/6 owner turns on 10-06 — saved-workflow lookup budget 150 ms vs prod DB reads 270-470 ms; silent fallback. Fixed by #6295 (1 s).
+- Prompt-format conflict: route requires a SUGGESTIONS block on every reply; Agent Run result instruction requires exactly one JSON object; prose answers were discarded (5 of ~10 runs agent_run_no_final_result). Fixed by #6318 (merged, not yet live); #6324 queued.
+- Approval-continuation audit bug: after Approve, the completion audit split SupraOS's own continuation note into requests and replaced correct answers ("didn't complete every part"); 4 of 11 recent continuation replies on prod. Fix #6341 open.
+- CI gap: box-ci security-gates runs tests/unit + 2 dirs; 478 test files never run (388 green, 15 real failures, 70 skip). #6290 added 25 Agent Run files; adding the 388 green files is a cross-project proposal, not done.
+
+**Owner decisions pending:**
+
+- Mailbox D3 approval: Migadu pickup refuses under D3_OWNER_SCHEMA=1; needs the owner's explicit approval of the code change.
+- Browser-image reviewer option A (Enterprise org) / B (in-app two-person redesign, recommended) / C (skip).
+- Stripe pre-approval question: Link requires a per-spend approval in Link today ("coming soon"); ask the Stripe contact about budgets that auto-approve.
+
+**Outside blockers:**
+
+- Stripe Link keys: owner sent a PGP public key to the Stripe contact; awaiting the encrypted file. Keys alone are not enough (#6307, #6299, 5-minute window, image reviewer, worker image rotate, deploy freeze).
+- Phone calls: media relay #6335 not deployed; PHONE_AGENT_SHOP_CALL_MEDIA_WSS unset; owner must buy/upgrade Twilio + one US voice number.
+- Agent mailbox: blocked by the mailbox D3 decision; then Migadu Mini, Cloudflare DNS, mailbox migrations checked on prod.
+- GitHub billing: hosted runs fail; main cannot be protected (403).
+
+**New workstream — pay for me:** agents may pay for the owner or hand the payment to them, as an option (design only, nothing built). Modes: hand off (default), one tap, auto under limits (owner: ≤$25 after one-time consent). Blocked today by: Telegram tap cannot approve a purchase, DB allows approval only from a signed web review, Link may require its own approval each time, the card filler only handles plain forms. Lanes A–I start after #6299 and #6307 merge; real money last.
 
 **Next steps, in order:**
 
-0. Sign in, fetch, read the handoff STATE ~12:40 UTC section.
-1. Merge the seven reviewed-SAFE PRs via merge-if-green.sh from an up-to-date worktree: #6262, #6265, #6266, #6267, #6268, #6271, #6272. #6268's migration 20261006220000 stays uninstalled until 20260929110000..150000 are installed.
-2. Confirm #6251 and then #6265 are in the live build (/api/version or the deploy log 'live:' line).
-3. Re-run the live chat test after #6265 deploys (ChatGPT fallback path).
-4. Finish the in-progress work: database-enforced friend-share limit (migration 20261006230000), the setup dead-end step for unlisted owners, CI test-gap scoping — each independently reviewed, merged only via merge-if-green.
-5. Prove email-review save on production; formally accept only plan rows proven live.
-6. Keep the record and publish.
+1. Wait for #6318 in the live build.
+2. Switch Agent Run back on for the owner (row toggle on the System tab); confirm is_enabled=true.
+3. Prove it in a fresh conversation with the turn-proof tool over several turns.
+4. Merge the open reviewed PRs via merge-if-green; attention cutover stays 0.
+5. Get the three owner decisions; then the Stripe keys and the Link TEST purchase runbook.
+6. Start pay-for-me lanes after #6299 and #6307 merge.
+7. Keep the record; run the three renderers; publish the four public files.
 
 **Not verified:**
 
-- the live chat test after #6265 (failed before it; re-test owed)
-- #6251 in the live build (not yet at the 12:25 UTC read)
+- whether Agent Run is on or off now (record-keeper did not read the DB; last reported OFF since 04:31 UTC)
+- #6318 in the live build (not at 12:47 UTC)
+- any full live Agent Run proof after #6318
+- migration ledger and gatekeeper-reported counts
+- whether the Anthropic account was topped up
 - email-review save on production
-- the record-keeper did not itself re-check the migration ledger, the Agent Run switch or the allowlist; those come from the gatekeeper's report
 
-**Accepted tasks:** 5/62 formally, unchanged. Agent Run is on for the owner, but no plan row was proven live in this update.
+**Accepted tasks:** 5/62 formally, unchanged. Agent Run is being re-enabled; no plan row was proven live in this update.
 
 ## Current delivery boundary
 
-Agent Run ON for the owner (allowlisted; reported by the gatekeeper). Migrations 20261006170000, 20261006190000, 20261006200000 and 20261006210000 installed (reported); 20261006220000 deliberately not installed. The live chat test FAILED: the Anthropic credit is exhausted, chat fell back to ChatGPT and the strict parser rejected the result; #6265 fixes it; re-test owed after deploy. Not verified: email-review save; #6251 live. Accepted 5/62 formally — no plan row proven live.
+Agent Run is owner-only (allowlisted). It engaged live on an owner turn at 04:05 UTC after #6295 (reported), was switched OFF at 04:31 UTC for the investor demo (owner-approved; is_enabled=false reported), and is being re-enabled after #6318 is live; full live proof pending. Migration 20261006230000 installed (reported); 20261006220000 and 20261007023000 not installed by design. Attention cutover stays 0.
 
 ## How to read this checklist
 
